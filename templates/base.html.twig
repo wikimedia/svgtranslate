@@ -6,27 +6,55 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}">
     </head>
     <body>
-        <header>
-            <h1>{{ msg('svgtranslate') }}</h1>
-            <p class="login">
-                {% if logged_in_user() %}
-                    {{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}
-                    <a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a>
-                {% else %}
-                    <a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a>
-                {% endif %}
-            </p>
-        </header>
+    <div class="container">
+
+        <div class="row justify-content-center header pt-5">
+            <div class="col-sm-10 pt-5">
+                <div class="row">
+                    <header class="col">
+                        <h1>{{ msg('svgtranslate') }}</h1>
+                        <p>{{ msg('intro') }}</p>
+                        <p>{{ msg('beta-message', ['https://meta.wikimedia.org/wiki/Community_Tech/SVG_translation']) }}</p>
+                    </header>
+                    <nav class="col">
+                        {% if logged_in_user() %}
+                            {{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}
+                            <a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a>
+                        {% else %}
+                            <a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a>
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </div>
 
         <main>{% block main %}{% endblock %}</main>
 
-        <footer>
-            <ul>
-                <li>
-                    <a href="https://github.com/wikimedia/svgtranslate">{{ msg('source-code') }}</a>
-                </li>
-            </ul>
+        <footer class="row mt-5 pt-2 pb-2 justify-content-center">
+            <div class="col-sm-10">
+                <div class="row align-items-baseline justify-content-between">
+                    <div class="col-sm-auto align-self-left">
+                        <a href="https://tools.wmflabs.org/">
+                            <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/banners/Powered-by-Toolforge.png" alt="{{ msg('powered-by-toolforge') }}">
+                        </a>
+                    </div>
+                    <div class="col-sm-auto text-right">
+                        <p>{{ msg('made-by-commtech') }}</p>
+                        <p>
+                            Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>
+                            <span>&middot; </span>
+                            View on <a href="https://github.com/wikimedia/SVGTranslate">GitHub</a>
+                            <span>&middot; </span>
+                            <a href="https://foundation.wikimedia.org/wiki/Non-wiki_privacy_policy">Privacy policy</a>
+                            <span>&middot; </span>
+                            <a href="https://phabricator.wikimedia.org/maniphest/task/edit/form/1/?title=%5BBUG%5D%20...&description=%3D%3D%3D%3D%20What%20is%20the%20problem%3F%0D%0A%0D%0A%0D%0A%3D%3D%3D%3D%20Steps%20to%20reproduce%20problem%0D%0A1.%20%0D%0A2.%0D%0A3.%0D%0A%0D%0A**Expected%20behavior%3A**%0D%0A**Observed%20behavior%3A**%20%0D%0A%0D%0A%3D%3D%3D%3D%20Environment%0D%0A**Operating%20system%3A**%0D%0A**Browser%3A**%0D%0A**Wiki(s)%3A**%0D%0A**Editor%2C%20if%20applicable%3A**%0D%0A%0D%0A%3D%3D%3D%3D%20Screenshots%20(if%20applicable)%3A%0D%0A&projects=community-tech&priority=triage">Report a bug</a>
+                            &middot; <a href="#">Help</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </footer>
-        <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
+    </div>
+    <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
     </body>
 </html>

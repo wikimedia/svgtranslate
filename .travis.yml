@@ -13,6 +13,7 @@ install:
 script:
   # Compile assets, and make sure nothing's changed in Git.
   - node_modules/.bin/encore production
+  - git status
   - git status | grep "nothing to commit, working tree clean"
   - composer lint
   - composer test
