@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="SVGTranslate">
+    <rule ref="./vendor/wikimedia/toolforge-bundle/Resources/phpcs/ruleset.xml"/>
+    <file>.</file>
+    <exclude-pattern>.phpunit/</exclude-pattern>
+    <exclude-pattern>vendor/</exclude-pattern>
+    <exclude-pattern>node_modules/</exclude-pattern>
+    <exclude-pattern>var/</exclude-pattern>
+
+    <rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
+        <properties>
+            <property name="rootNamespaces" type="array">
+                <element key="src" value="App" />
+            </property>
+        </properties>
+    </rule>
+</ruleset>

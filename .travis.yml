@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - '7.2'
+
+before_install:
+  - npm -g install npm # Upgrade npm so we can use the ci install command.
+
+install:
+  - composer install
+  - npm ci
+
+script:
+  # Compile assets, and make sure nothing's changed in Git.
+  - node_modules/.bin/encore production
+  - git status | grep "nothing to commit, working tree clean"
+  - composer lint
+  - composer test

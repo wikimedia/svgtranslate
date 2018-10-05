@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ msg('svgtranslate') }}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}">
+    </head>
+    <body>
+        <header>
+            <h1>{{ msg('svgtranslate') }}</h1>
+            <p class="login">
+                {% if logged_in_user() %}
+                    {{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}
+                    <a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a>
+                {% else %}
+                    <a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a>
+                {% endif %}
+            </p>
+        </header>
+
+        <main>{% block main %}{% endblock %}</main>
+
+        <footer>
+            <ul>
+                <li>
+                    <a href="https://github.com/wikimedia/svgtranslate">{{ msg('source-code') }}</a>
+                </li>
+            </ul>
+        </footer>
+        <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
+    </body>
+</html>
