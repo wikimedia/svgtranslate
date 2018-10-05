@@ -19,5 +19,9 @@
   "update-commons": "Update Commons",
   "update-commons-more": "or download directly to your computer.",
   "login": "Log in",
-  "logout": "Log out"
+  "logout": "Log out",
+  "search-label": "File name (without 'File:' prefix) or URL:",
+  "search-placeholder": "100 Years War France 1435.svg",
+  "translate-button": "Translate",
+  "search-help": "Type a file name from Commons"
 }

@@ -7,6 +7,7 @@
         "php": "^7.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "oojs/oojs-ui": "^0.29",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",

@@ -43,16 +43,17 @@
             <div class="col-sm-10 pt-2 pb-2">
                 <div class="row">
                     <div class="col">
-                        <img src="themes/wikimediaui/images/icons/logo-Wikimedia-Commons.svg" alt="">
+                        <img src="{{ asset('assets/images/logo-Wikimedia-Commons.svg') }}" alt="">
                         <h5>{{ msg('pick-an-image') }} <span>&rarr;</span></h5>
                         <p>{{ msg('pick-an-image-more') }}</p>
                     </div>
                     <div class="col">
-                        <img src="themes/wikimediaui/images/icons/language.svg" alt="">
+                        <img src="{{ asset('assets/images/language.svg') }}" alt="">
                         <h5>{{ msg('translate-labels') }} <span>&rarr;</span></h5>
                         <p>{{ msg('translate-labels-more') }}</p>
                     </div>
-                    <div class="col"><img src="themes/wikimediaui/images/icons/download.svg" alt="">
+                    <div class="col">
+                        <img src="{{ asset('assets/images/download.svg') }}" alt="">
                         <h5>{{ msg('update-commons') }}</h5>
                         <p>{{ msg('update-commons-more') }}</p>
                     </div>

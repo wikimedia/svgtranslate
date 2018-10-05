@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ac72ce6e6cbae718362c204bbfac088",
+    "content-hash": "2d1b0b4116406f4f3faf8330227759ed",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -928,6 +928,86 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "oojs/oojs-ui",
+            "version": "v0.29.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/oojs-ui.git",
+                "reference": "1efc1e5e8676093cb00f65b38607d60a9d649f87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/1efc1e5e8676093cb00f65b38607d60a9d649f87",
+                "reference": "1efc1e5e8676093cb00f65b38607d60a9d649f87",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.99"
+            },
+            "require-dev": {
+                "jakub-onderka/php-console-highlighter": "0.3.2",
+                "jakub-onderka/php-parallel-lint": "1.0.0",
+                "mediawiki/mediawiki-codesniffer": "22.0.0",
+                "mediawiki/minus-x": "0.3.1",
+                "phpunit/phpunit": "4.8.36 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "php/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Timo Tijhof",
+                    "email": "krinklemail@gmail.com"
+                },
+                {
+                    "name": "Bartosz Dziewoński",
+                    "email": "matma.rex@gmail.com"
+                },
+                {
+                    "name": "Ed Sanders",
+                    "email": "esanders@wikimedia.org"
+                },
+                {
+                    "name": "James D. Forrester",
+                    "email": "jforrester@wikimedia.org"
+                },
+                {
+                    "name": "Kirsten Menger-Anderson",
+                    "email": "kmenger@wikimedia.org"
+                },
+                {
+                    "name": "Rob Moen",
+                    "email": "rmoen@wikimedia.org"
+                },
+                {
+                    "name": "Roan Kattouw",
+                    "email": "roan@wikimedia.org"
+                },
+                {
+                    "name": "Trevor Parscal",
+                    "email": "trevor@wikimedia.org"
+                },
+                {
+                    "name": "Kunal Mehta",
+                    "email": "legoktm@gmail.com"
+                },
+                {
+                    "name": "Prateek Saxena",
+                    "email": "prtksxna@gmail.com"
+                }
+            ],
+            "description": "Provides library of common widgets, layouts, and windows.",
+            "homepage": "https://www.mediawiki.org/wiki/OOUI",
+            "time": "2018-10-08T19:52:17+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
