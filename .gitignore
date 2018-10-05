@@ -16,6 +16,7 @@
 ###< symfony/web-server-bundle ###
 
 /.idea/
+/node_modules/
 
 ###> squizlabs/php_codesniffer ###
 /.phpcs-cache

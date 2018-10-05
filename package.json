@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.20.1",
+    "bootstrap": "4.1.3"
+  }
+}
