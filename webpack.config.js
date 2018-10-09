@@ -8,6 +8,11 @@ Encore
     // Public URL path used by the web server to access the output path.
     .setPublicPath('assets/')
 
+    // Set up global variables.
+    .autoProvideVariables({
+        $: 'jquery',
+    })
+
     /*
      * ENTRY CONFIG
      *
@@ -19,6 +24,7 @@ Encore
      */
     .addEntry('app', [
         './node_modules/bootstrap/dist/css/bootstrap.css',
+        './node_modules/bootstrap/dist/js/bootstrap.js',
         './assets/app.css',
         './assets/app.js',
     ])
