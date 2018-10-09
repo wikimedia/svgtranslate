@@ -74,7 +74,8 @@
             "./bin/console lint:yaml ./config",
             "./bin/console lint:yaml .travis.yml",
             "./vendor/bin/phpcs -s .",
-            "./vendor/bin/minus-x check ."
+            "./vendor/bin/minus-x check .",
+            "./node_modules/.bin/eslint assets"
         ],
         "test": [
             "./bin/phpunit tests"

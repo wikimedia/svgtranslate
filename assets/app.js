@@ -1,1 +1,1 @@
-console.log('This is SVG Translate.');
+// SVG Translate.
