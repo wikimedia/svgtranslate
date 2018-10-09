@@ -1,3 +1,7 @@
 module.exports = {
-    "extends": "wikimedia"
+    "extends": "wikimedia",
+    "globals": {
+        "$": false,
+        "window": false
+    },
 };
