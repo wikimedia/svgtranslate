@@ -1,0 +1,121 @@
+@import '../node_modules/wikimedia-ui-base/wikimedia-ui-base.css';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var( --wmui-color-base80 );
+    font-size: 0.9rem;
+}
+
+header h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav {
+    text-align: right;
+}
+
+.tool {
+    background: var( --wmui-color-base100 );
+}
+
+.translate-tool {
+    /*border-top: 3px solid #36c;*/
+}
+
+.toolforge-logo {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+.toolforge-logo:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
+#right-col {
+    position: sticky;
+    top: 1rem;
+}
+
+#top-image {
+    border-bottom: 3px solid #36c;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#button-holder > span {
+    float: right;
+    margin-left: 0.5rem;
+}
+
+.oo-ui-dropdownWidget {
+    width: 10rem !important;
+}
+
+#lang-to > div {
+    float: right;
+}
+
+#progress-holder {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+.tutorial {
+    background: transparent;
+    border-radius: 2px;
+    border: 1px solid var( --wmui-color-base50 );
+}
+
+.tutorial .close {
+    display: block;
+    margin-top: 10px;
+}
+
+.tutorial h5 span {
+    display: block;
+    float: right;
+    color: var( --wmui-color-accent30 );
+    font-size: 2rem;
+    margin-top: 10px;
+    padding-right: 15px;
+}
+
+.tutorial p{
+    margin-top: -4px;
+    color: var( --wmui-color-base20 );
+}
+
+.tutorial img {
+    float: left;
+    height: 50px;
+    margin-right: 15px;
+}
+
+/* OOUI override */
+.oo-ui-progressBarWidget{
+    margin: 0;
+    padding: 0;
+    height: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+}
+
+/* Bootstrap override */
+a { color: var( --wmui-color-accent50 ); }

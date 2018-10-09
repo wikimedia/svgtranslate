@@ -14,8 +14,7 @@ class SearchController extends AbstractController
      */
     public function index():Response
     {
-        return $this->render('search/index.html.twig', [
-            'controller_name' => 'SearchController',
+        return $this->render('search.html.twig', [
         ]);
     }
 }

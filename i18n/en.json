@@ -1,3 +1,23 @@
 {
-  "svgtranslate": "SVG Translate"
+  "svgtranslate": "SVG Translate",
+  "info": "Help translate text labels on SVG files. Pick a file on commons to get started.",
+  "beta": "This feature is in early testing.",
+  "learn-more": "Learn more & leave feedback!",
+  "powered-by-toolforge": "Powered by Toolforge",
+  "report-a-bug": "Report a bug",
+  "privacy-policy": "Privacy policy",
+  "view-on-github": "View on Github",
+  "licenced-under": "Licenced under $1",
+  "gpl3": "GPL 3.0 or later",
+  "made-by": "Made by the Wikimedia Foundation's $1",
+  "commtech": "Community Tech team",
+  "help": "Help",
+  "pick-an-image": "Pick an image",
+  "pick-an-image-more": "from Commons.",
+  "translate-labels": "Translate",
+  "translate-labels-more": "the labels in the image.",
+  "update-commons": "Update Commons",
+  "update-commons-more": "or download directly to your computer.",
+  "login": "Log in",
+  "logout": "Log out"
 }
