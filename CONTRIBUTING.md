@@ -10,6 +10,11 @@ project.
 
 ## Install for development
 
+Prerequesites:
+* [PHP](https://www.php.net/)
+* [Composer](https://getcomposer.org/)
+* [npm](https://www.npmjs.com/)
+
 Install code and dependencies:
 
 ```
@@ -26,3 +31,11 @@ Run linting:
 Run tests:
 
     composer test
+
+Run development web server:
+
+    ./bin/console server:run
+
+Generate assets:
+
+    ./node_modules/.bin/encore production --watch
