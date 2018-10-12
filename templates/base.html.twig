@@ -1,83 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang() }}" dir="{% if is_rtl() %}rtl{% else %}ltr{% endif %}">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>{{ msg('svgtranslate') }}</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}" />
     </head>
     <body>
-    <div class="container">
-        <div class="row justify-content-center header pt-5">
-            <div class="col-sm-10 pt-5">
-                <div class="row">
-                    <header class="col">
-                        <h1>{{ msg('svgtranslate') }}</h1>
-                        <p>{{ msg('info') }}</p>
+        <header>
+            <nav class="user">
+                <ul class="inline-list">
+                    <li><a href="#">{{ msg('language-settings') }}</a></li>
+                    {% if logged_in_user() %}
+                        <li>{{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}</li>
+                        <li><a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a></li>
+                    {% else %}
+                        <li><a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <h1>{{ msg('svgtranslate') }}</h1>
+            <p class="info">{{ msg('info') }}</p>
+            <p class="beta-message">
+                {{ msg('beta') }}
+                <a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_translation">{{ msg('learn-more') }}</a>
+            </p>
+        </header>
 
-                        <p>{{ msg('beta') }} <a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_translation">{{ msg('learn-more') }}</a></p>
-                    </header>
-                    <nav class="col">
-                        {% if logged_in_user() %}
-                            {{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}
-                            <a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a>
-                        {% else %}
-                            <a href="{{ path('toolforge_login') }}" id="login">{{ msg('login') }}</a>
-                        {% endif %}
-                    </nav>
-                </div>
-            </div>
-        </div>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
 
-        <div class="tool row justify-content-center header mt-4">
-            <div class="col-sm-10 pt-5 pb-5">
-                <main id="select-form">{% block main %}{% endblock %}</main>
-            </div>
-        </div>
+        <aside class="tutorial">
+            <ol>
+                <li>
+                    <p class="image"><img src="{{ asset('assets/images/logo-Wikimedia-Commons.svg') }}" alt="{{ msg('commons-logo-alt') }}" /></p>
+                    <p class="words"><strong>{{ msg('pick-an-image') }}</strong> <span>{{ msg('pick-an-image-more') }}</span></p>
+                    <p class="arrow">&rarr;</p>
+                </li>
+                <li>
+                    <p class="image"><img src="{{ asset('assets/images/language.svg') }}" alt="{{ msg('language-logo-alt') }}" /></p>
+                    <p class="words"><strong>{{ msg('translate-labels') }}</strong> <span>{{ msg('translate-labels-more') }}</span></p>
+                    <p class="arrow">&rarr;</p>
+                </li>
+                <li>
+                    <p class="image"><img src="{{ asset('assets/images/download.svg') }}" alt="{{ msg('download-logo-alt') }}" /></p>
+                    <p class="words"><strong>{{ msg('update-commons') }}</strong> <span>{{ msg('update-commons-more') }}</span></p>
+                </li>
+            </ol>
+        </aside>
 
-        <div class="tutorial row justify-content-center header mt-5 mb-5">
-            <div class="col-sm-12">
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="col-sm-10 pt-2 pb-2">
-                <div class="row">
-                    <div class="col">
-                        <img src="{{ asset('assets/images/logo-Wikimedia-Commons.svg') }}" alt="">
-                        <h5>{{ msg('pick-an-image') }} <span>&rarr;</span></h5>
-                        <p>{{ msg('pick-an-image-more') }}</p>
-                    </div>
-                    <div class="col">
-                        <img src="{{ asset('assets/images/language.svg') }}" alt="">
-                        <h5>{{ msg('translate-labels') }} <span>&rarr;</span></h5>
-                        <p>{{ msg('translate-labels-more') }}</p>
-                    </div>
-                    <div class="col">
-                        <img src="{{ asset('assets/images/download.svg') }}" alt="">
-                        <h5>{{ msg('update-commons') }}</h5>
-                        <p>{{ msg('update-commons-more') }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="row mt-5 pt-2 pb-2 justify-content-center">
-            <div class="col-sm-10">
-                <div class="row align-items-baseline justify-content-between">
-                    <div class="col-sm-auto align-self-left">
-                        <a href="https://tools.wmflabs.org/">
-                            <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/banners/Powered-by-Toolforge.png" alt="{{ msg('powered-by-toolforge') }}">
-                        </a>
-                    </div>
-                    <div class="col-sm-auto text-right">
-                        <p>
-                            {{ msg( 'made-by', ['<a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech">'~msg('commtech')~'</a>'] ) }}
-                        </p>
-                        <p>
-                            {{ msg( 'licenced-under', ['<a href="https://www.gnu.org/licenses/gpl-3.0.html">'~msg('gpl3')~'</a>'] ) }}
-                            <span> &middot; </span><a href="https://github.com/wikimedia/svgtranslate">{{ msg('view-on-github') }}</a>
-                            <span> &middot; </span><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Non-wiki_privacy_policy">{{ msg('privacy-policy') }}</a>
-                            {% set issue_template %}
+        <footer>
+            <p class="toolforge">
+                <a href="https://tools.wmflabs.org/">
+                    <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/banners/Powered-by-Toolforge.png" alt="{{ msg('powered-by-toolforge') }}">
+                </a>
+            </p>
+            <div class="info">
+                <p>
+                    {{ msg( 'made-by', ['<a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech">'~msg('commtech')~'</a>'] ) }}
+                </p>
+                <ul class="inline-list">
+                    <li>{{ msg( 'licenced-under', ['<a href="https://www.gnu.org/licenses/gpl-3.0.html">'~msg('gpl3')~'</a>'] ) }}</li>
+                    <li><a href="https://github.com/wikimedia/svgtranslate">{{ msg('view-on-github') }}</a></li>
+                    <li><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Non-wiki_privacy_policy">{{ msg('privacy-policy') }}</a></li>
+                    {% set issue_template %}
 ==== What is the problem?
 
 
@@ -97,15 +83,13 @@
 
 ==== Screenshots (if applicable):
 
-                            {% endset %}
-                            <span> &middot; </span><a href="https://phabricator.wikimedia.org/maniphest/task/edit/form/1/?title=%5BBUG%5D%20...&description={{ issue_template|escape('url') }}&projects=community-tech,svg_translate_tool&priority=triage">{{ msg('report-a-bug') }}</a>
-                            &middot; <a href="#">{{ msg('help') }}</a> </p>
-                    </div>
-                </div>
+                    {% endset %}
+                    <li><a href="https://phabricator.wikimedia.org/maniphest/task/edit/form/1/?title=%5BBUG%5D%20...&description={{ issue_template|escape('url') }}&projects=community-tech,svg_translate_tool&priority=triage">{{ msg('report-a-bug') }}</a></li>
+                    <li><a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_Translate">{{ msg('help') }}</a></li>
+                </ul>
             </div>
         </footer>
 
-    </div>{# .container #}
     <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
     </body>
 </html>

@@ -25,10 +25,6 @@
 		 * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
 		 */
 		.addEntry( 'app', [
-			// Bootstrap.
-			'./node_modules/bootstrap/dist/css/bootstrap.css',
-			'./node_modules/bootstrap/dist/js/bootstrap.js',
-
 			// JQuery.
 			'./node_modules/jquery/dist/jquery.js',
 
@@ -39,14 +35,13 @@
 			'./node_modules/oojs-ui/dist/oojs-ui-core.js',
 			'./node_modules/oojs-ui/dist/oojs-ui-core-wikimediaui.css',
 
-			// Wikimedia UI.
-			'./node_modules/wikimedia-ui-base/wikimedia-ui-base.css',
-
 			'./assets/app.js',
-			'./assets/app.css'
+			'./assets/app.less',
+			'./assets/search.less'
 		] )
 
 		// Other options.
+		.enableLessLoader()
 		.cleanupOutputBeforeBuild()
 		.enableSourceMaps( !Encore.isProduction() )
 		.enableVersioning( Encore.isProduction() );
