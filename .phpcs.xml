@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <ruleset name="SVGTranslate">
-    <rule ref="./vendor/wikimedia/toolforge-bundle/Resources/phpcs/ruleset.xml"/>
+    <rule ref="./vendor/wikimedia/toolforge-bundle/Resources/phpcs/ruleset.xml">
+        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification"/>
+    </rule>
     <file>.</file>
     <exclude-pattern>*.js</exclude-pattern><!-- Javascript linting is handled by ESLint; see .eslintrc.js -->
     <exclude-pattern>.phpunit/</exclude-pattern>

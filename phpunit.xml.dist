@@ -45,4 +45,10 @@
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
+
+    <groups>
+        <exclude>
+            <group>Broken</group>
+        </exclude>
+    </groups>
 </phpunit>
