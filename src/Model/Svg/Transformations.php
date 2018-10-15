@@ -31,7 +31,7 @@ class Transformations
      * @see self::mapFromAttribute()
      * @param string $name Parameter name (e.g. color, bold)
      * @param string $value Parameter value (e.g. black, yes)
-     * @return array Numerical array, [0] = attribute name, [1] = value
+     * @return string[] Numerical array, [0] = attribute name, [1] = value
      */
     public static function mapToAttribute(string $name, string $value): array
     {
@@ -78,7 +78,7 @@ class Transformations
      * @see self::mapToAttribute()
      * @param string $name Attribute name (e.g. fill, font-weight)
      * @param string $value Attribute value (e.g. black, bold)
-     * @return array Numerical array, [0] = parameter name, [1] = parameter value
+     * @return string[] Numerical array, [0] = parameter name, [1] = parameter value
      */
     public static function mapFromAttribute(string $name, string $value): array
     {

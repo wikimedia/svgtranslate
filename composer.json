@@ -6,6 +6,7 @@
     "require": {
         "php": "^7.2",
         "ext-ctype": "*",
+        "ext-dom": "*",
         "ext-iconv": "*",
         "oojs/oojs-ui": "^0.29",
         "sensio/framework-extra-bundle": "^5.1",

@@ -407,7 +407,7 @@ class SvgFile
      * Try to return $this->inFileTranslations. If it is not cached, analyse the SVG
      * and hence generate it.
      *
-     * @return array
+     * @return mixed[]
      */
     public function getInFileTranslations(): array
     {
@@ -421,7 +421,7 @@ class SvgFile
      * Try to return $this->savedLanguages (a list of languages which have one or more
      * translations in-file). If it is not cached, analyse the SVG and hence generate it.
      *
-     * @return array
+     * @return string[]
      */
     public function getSavedLanguages(): array
     {
@@ -434,7 +434,7 @@ class SvgFile
     /**
      * Get a list of languages which have one or more translations in-file
      *
-     * @return array Array of languages, split into 'full' and 'partial' subarrays
+     * @return string[][] Array of languages, split into 'full' and 'partial' subarrays
      */
     public function getSavedLanguagesFiltered(): array
     {
@@ -464,7 +464,7 @@ class SvgFile
      * Try to return $this->filteredTextNodes (an array of <text> nodes that contain only
      * child elements). If it is not cached, analyse the SVG and hence generate it.
      *
-     * @return array
+     * @return mixed[]
      */
     public function getFilteredTextNodes(): array
     {
@@ -478,7 +478,7 @@ class SvgFile
      * Compile an updated DOM model of the SVG using the provided set of translations
      *
      * @param array $translations
-     * @return array Array with keys 'expanded' and 'started', each an array of language names
+     * @return string[][] Array with keys 'expanded' and 'started', each an array of language names
      */
     public function switchToTranslationSet(array $translations): array
     {
@@ -619,7 +619,7 @@ class SvgFile
      * converted.
      *
      * @param DOMNode $node A DOMNode object (probably a <text> or <tspan>)
-     * @return array An associative array of properties, including 'text'
+     * @return string[] An associative array of properties, including 'text'
      */
     public function nodeToArray(DOMNode $node): array
     {
