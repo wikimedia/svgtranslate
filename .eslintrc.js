@@ -3,6 +3,7 @@ module.exports = {
     "globals": {
         "App": false,
         "appConfig": false,
+        "OO": false,
         "$": false,
         "window": false,
         "global": false,
