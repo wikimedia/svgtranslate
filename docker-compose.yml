@@ -4,24 +4,12 @@ services:
         build: .docker/apache
         container_name: svgtranslate_sf4_apache
         ports:
-          - 80:80
-        #   - 8080:80
+          - 8042:80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
         depends_on:
           - php
-
-    # mysql:
-    #     image: mysql
-    #     container_name: svgtranslate_sf4_mysql
-    #     volumes:
-    #         - .docker/data/db:/var/lib/mysql
-    #     environment:
-    #         MYSQL_ROOT_PASSWORD: root
-    #         MYSQL_DATABASE: sf4
-    #         MYSQL_USER: sf4
-    #         MYSQL_PASSWORD: sf4
 
     php:
         build: .docker/php
@@ -29,29 +17,3 @@ services:
         volumes:
           - .:/home/wwwroot/sf4
           - .docker/php/php.ini:/usr/local/etc/php/php.ini
-        # environment:
-        #   - maildev_host=sf4_maildev
-        # depends_on:
-        #   - maildev
-        #   - mysql
-
-    # composer:
-    #     image: composer/composer
-    #     volumes:
-    #       - .:/home/wwwroot/sf4
-    #     command: install
-        # depends_on: php
-
-    # phpmyadmin:
-    #     image: phpmyadmin/phpmyadmin
-    #     container_name: svgtranslate_sf4_phpmyadmin
-    #     ports:
-    #         - 8080:80
-    #     links:
-    #         - mysql
-
-    # maildev:
-    #     image: djfarrelly/maildev
-    #     container_name: svgtranslate_sf4_maildev
-    #     ports:
-    #       - 8001:80
