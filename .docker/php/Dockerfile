@@ -2,7 +2,7 @@ FROM php:7.2.3-fpm
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends vim curl debconf subversion git apt-transport-https apt-utils \
-    build-essential locales acl mailutils wget zip unzip \
+    build-essential locales acl mailutils wget zlib1g-dev zip unzip \
     gnupg gnupg1 gnupg2
 
 RUN docker-php-ext-install zip
