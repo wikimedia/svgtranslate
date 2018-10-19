@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Install Dependencies and start Lighttpd
+composer install -d /var/www || exit 1;
+lighttpd -D -f /etc/lighttpd/lighttpd.conf || exit 1;

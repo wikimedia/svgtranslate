@@ -1,4 +1,5 @@
-FROM php:7.2.3-fpm
+# FROM php:7.2.3-fpm
+FROM docker-registry.tools.wmflabs.org/toollabs-php-web
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends vim curl debconf subversion git apt-transport-https apt-utils \
@@ -23,8 +24,8 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 
 WORKDIR /home/wwwroot/
 
-# ENV COMPOSER_ALLOW_SUPERUSER 1
-# RUN composer install -d /home/wwwroot/sf4 || exit 1;
+ENV COMPOSER_ALLOW_SUPERUSER 1
+RUN composer install -d /home/wwwroot/sf4 || exit 1;
 
 EXPOSE 9000
 CMD ["php-fpm"]

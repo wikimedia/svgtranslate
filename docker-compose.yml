@@ -1,19 +1,23 @@
 version: '3'
 services:
-    apache:
-        build: .docker/apache
-        container_name: svgtranslate_sf4_apache
+    # apache:
+    #     build: .docker/apache
+    #     container_name: svgtranslate_sf4_apache
+    #     ports:
+    #       - 8042:80
+    #     volumes:
+    #       - .docker/config/vhosts:/etc/apache2/sites-enabled
+    #       - .:/var/www:cached
+    #     depends_on:
+    #       - php
+
+    web:
+        build: ./
+        container_name: svgtranslate_sf4_php
         ports:
           - 8042:80
         volumes:
-          - .docker/config/vhosts:/etc/apache2/sites-enabled
-          - .:/home/wwwroot/sf4
-        depends_on:
-          - php
-
-    php:
-        build: .docker/php
-        container_name: svgtranslate_sf4_php
-        volumes:
-          - .:/home/wwwroot/sf4
-          - .docker/php/php.ini:/usr/local/etc/php/php.ini
+          - ./etc/lighttpd.conf:/etc/lighttpd/lighttpd.conf:cached
+          - ./:/var/www:cached
+          # - .docker/config/vhosts:/etc/apache2/sites-enabled:cached
+          # - .docker/php/php.ini:/usr/local/etc/php/php.ini
