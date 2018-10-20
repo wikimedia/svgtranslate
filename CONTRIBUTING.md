@@ -10,7 +10,27 @@ project.
 
 ## Install for development
 
-Prerequesites:
+### Install using Docker
+Prerequisites: 
+* [Docker](https://www.docker.com/)
+
+Instructions:
+```
+git clone https://github.com/wikimedia/svgtranslate
+cd svgtranslate
+docker-compose up
+```
+
+To run composer commands on the server, connect to the container:
+
+`docker exec -it -u dev svgtranslate_web bash`
+
+Then,
+* To run linting: `composer lint`
+* To run tests: `composer test`
+
+### Install manually
+Prerequisites:
 * [PHP](https://www.php.net/)
 * [Composer](https://getcomposer.org/)
 * [npm](https://www.npmjs.com/)
