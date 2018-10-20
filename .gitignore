@@ -22,7 +22,3 @@
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
-
-###> docker ###
-.docker/data/*
-###< docker ###
