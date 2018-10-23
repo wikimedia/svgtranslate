@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a150294dc96000320d507ce26c51e36c",
+    "content-hash": "8715e077a370ce05b540472f63cc0489",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4112,16 +4112,16 @@
         },
         {
             "name": "wikimedia/toolforge-bundle",
-            "version": "0.8.0",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/ToolforgeBundle.git",
-                "reference": "661e80dd8a85bdc35c7f04ec99332d901f5ce3c9"
+                "reference": "de453468589e3638b62949fb271adef11b7bbce5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/661e80dd8a85bdc35c7f04ec99332d901f5ce3c9",
-                "reference": "661e80dd8a85bdc35c7f04ec99332d901f5ce3c9",
+                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/de453468589e3638b62949fb271adef11b7bbce5",
+                "reference": "de453468589e3638b62949fb271adef11b7bbce5",
                 "shasum": ""
             },
             "require": {
@@ -4154,7 +4154,7 @@
             ],
             "description": "Symfony 4 bundle providing useful Toolforge features.",
             "homepage": "https://github.com/wikimedia/toolforgebundle",
-            "time": "2018-10-12T03:29:54+00:00"
+            "time": "2018-10-23T09:13:55+00:00"
         }
     ],
     "packages-dev": [

@@ -36,15 +36,21 @@ header {
 
 footer {
     .toolforge {
-        float: left;
-    }
-    .toolforge-logo {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-    }
-    .toolforge-logo:hover {
-        -webkit-filter: none;
-        filter: none;
+        a {
+            float: left;
+            width: 128px;
+            display: flex;
+            align-items: center;
+        }
+        .toolforge-logo {
+            padding-right: 4px;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+        a:hover .toolforge-logo {
+            -webkit-filter: none;
+            filter: none;
+        }
     }
     .info {
         text-align: right;

@@ -1,4 +1,34 @@
 {
   "svgtranslate": "The title of the application.",
-  "language-settings": "Label for link that opens the language settings dialog."
+  "info": "Sentences describing what this tool does and how to get started.",
+  "beta": "Message informing the user that the application is currently of beta quality.",
+  "learn-more": "Text for a link to the on-wiki project page for the tool (the same destination as the link of {{msg-mw|help}}).",
+
+  "help": "Text for a 'help' link to the tool's project page on Meta (the same destination as the link of {{msg-mw|learn-more}}). Displayed in the footer on every page.",
+  "login": "Label for the 'log in' link. Displayed in the header on every page when not logged in.",
+  "logout": "Label for the 'log out' link. Displayed in the header on every page when logged in.",
+  "language-settings": "Label for link that opens the language settings dialog.",
+
+  "search-help": "Help text for the search box.",
+  "search-label": "Label for the search box.",
+  "search-placeholder": "An example filename visible in the search box. Doesn't have to exist on Commons.",
+  "translate-button": "Search button text.",
+
+  "download-icon-alt": "Alt text for the download icon.",
+  "pick-an-image-title": "The title of the 'pick an image' step of the tutorial box.",
+  "pick-an-image-desc": "The short description of the 'pick an image' part of the tutorial box. May be a continuation of the phrase in {{msg-mw|pick-an-image-title}}.",
+  "translate-icon-alt": "Alt text for the translate icon.",
+  "translate-labels-title": "The title of the 'translate' step of the tutorial box.",
+  "translate-labels-desc": "The short description of the 'translate' step of the tutorial box. May be a continuation of the phrase in {{msg-mw|translate-labels-title}}.",
+  "commons-logo-alt": "Alt text for the Wikimedia Commons logo.",
+  "update-commons-title": "The title of the 'update commons' step of the tutorial box.",
+  "update-commons-desc": "The short description of the 'update commons' step of the tutorial box. May be a continuation of the phrase in {{msg-mw|update-commons-title}}.",
+
+  "licenced-under": "Sentence describing the licence of the application, shown as a link. Displayed in the footer on every page.",
+  "developed-by": "By-line for the application, shown as a link to CommTech's wiki page. Displayed in the footer on every page.",
+  "toolforge-logo-alt": "Alt text for the Toolforge anvil image.",
+  "powered-by-toolforge": "Label for the link to the Toolforge homepage. Displayed in the footer on every page.",
+  "privacy-policy": "Label for the link to the Wikimedia privacy policy. Displayed in the footer on every page.",
+  "report-issue": "Label for issue-reporting link to Phabricator. Displayed in the footer on every page.",
+  "view-source": "Label for the link to the Github project page. Displayed in the footer on every page."
 }

@@ -34,17 +34,17 @@
             <ol>
                 <li>
                     <p class="image"><img src="{{ asset('assets/images/logo-Wikimedia-Commons.svg') }}" alt="{{ msg('commons-logo-alt') }}" /></p>
-                    <p class="words"><strong>{{ msg('pick-an-image') }}</strong> <span>{{ msg('pick-an-image-more') }}</span></p>
+                    <p class="words"><strong>{{ msg('pick-an-image-title') }}</strong><span>{{ msg('pick-an-image-desc') }}</span></p>
                     <p class="arrow">&rarr;</p>
                 </li>
                 <li>
-                    <p class="image"><img src="{{ asset('assets/images/language.svg') }}" alt="{{ msg('language-logo-alt') }}" /></p>
-                    <p class="words"><strong>{{ msg('translate-labels') }}</strong> <span>{{ msg('translate-labels-more') }}</span></p>
+                    <p class="image"><img src="{{ asset('assets/images/language.svg') }}" alt="{{ msg('language-icon-alt') }}" /></p>
+                    <p class="words"><strong>{{ msg('translate-labels-title') }}</strong><span>{{ msg('translate-labels-desc') }}</span></p>
                     <p class="arrow">&rarr;</p>
                 </li>
                 <li>
-                    <p class="image"><img src="{{ asset('assets/images/download.svg') }}" alt="{{ msg('download-logo-alt') }}" /></p>
-                    <p class="words"><strong>{{ msg('update-commons') }}</strong> <span>{{ msg('update-commons-more') }}</span></p>
+                    <p class="image"><img src="{{ asset('assets/images/download.svg') }}" alt="{{ msg('download-icon-alt') }}" /></p>
+                    <p class="words"><strong>{{ msg('update-commons-title') }}</strong><span>{{ msg('update-commons-desc') }}</span></p>
                 </li>
             </ol>
         </aside>
@@ -52,16 +52,17 @@
         <footer>
             <p class="toolforge">
                 <a href="https://tools.wmflabs.org/">
-                    <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/banners/Powered-by-Toolforge.png" alt="{{ msg('powered-by-toolforge') }}">
+                    <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/logos/anvil-64.png" alt="{{ msg('toolforge-logo-alt') }}" width="64" height="48" />
+                    <span>{{ msg('powered-by-toolforge') }}</span>
                 </a>
             </p>
             <div class="info">
                 <p>
-                    {{ msg( 'made-by', ['<a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech">'~msg('commtech')~'</a>'] ) }}
+                    <a href='https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech'>{{ msg( 'developed-by' ) }}</a>
                 </p>
                 <ul class="inline-list">
-                    <li>{{ msg( 'licenced-under', ['<a href="https://www.gnu.org/licenses/gpl-3.0.html">'~msg('gpl3')~'</a>'] ) }}</li>
-                    <li><a href="https://github.com/wikimedia/svgtranslate">{{ msg('view-on-github') }}</a></li>
+                    <li><a href="https://www.gnu.org/licenses/gpl-3.0.html">{{ msg( 'licenced-under' ) }}</a></li>
+                    <li><a href="https://github.com/wikimedia/svgtranslate">{{ msg('view-source') }}</a></li>
                     <li><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Non-wiki_privacy_policy">{{ msg('privacy-policy') }}</a></li>
                     {% set issue_template %}
 ==== What is the problem?
@@ -84,8 +85,8 @@
 ==== Screenshots (if applicable):
 
                     {% endset %}
-                    <li><a href="https://phabricator.wikimedia.org/maniphest/task/edit/form/1/?title=%5BBUG%5D%20...&description={{ issue_template|escape('url') }}&projects=community-tech,svg_translate_tool&priority=triage">{{ msg('report-a-bug') }}</a></li>
-                    <li><a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_Translate">{{ msg('help') }}</a></li>
+                    <li><a href="https://phabricator.wikimedia.org/maniphest/task/edit/form/1/?title=%5BBUG%5D%20...&description={{ issue_template|escape('url') }}&projects=community-tech,svg_translate_tool&priority=triage">{{ msg('report-issue') }}</a></li>
+                    <li><a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_translation">{{ msg('help') }}</a></li>
                 </ul>
             </div>
         </footer>
