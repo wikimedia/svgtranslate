@@ -1,0 +1,113 @@
+@import '../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';
+
+:root {
+    // Workaround for https://github.com/webpack-contrib/css-loader/issues/708
+    border: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: @wmui-color-base80;
+    font-size: 0.9rem;
+}
+
+header,
+footer {
+    max-width: @width-breakpoint-tablet;
+    margin: 3rem auto;
+}
+
+header {
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: @font-family-base;
+    }
+    nav.user {
+        float: right;
+        text-align: right;
+    }
+}
+
+footer {
+    .toolforge {
+        float: left;
+    }
+    .toolforge-logo {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    .toolforge-logo:hover {
+        -webkit-filter: none;
+        filter: none;
+    }
+    .info {
+        text-align: right;
+    }
+}
+
+main,
+aside.tutorial {
+    margin: 1.5rem auto;
+    max-width: @width-breakpoint-desktop-wide;
+    padding: 1rem;
+}
+
+main {
+    background-color: @background-color-base;
+}
+
+aside.tutorial {
+    border-radius: @border-radius-base;
+    border: 1px solid @border-color-base;
+    ol {
+        max-width: @width-breakpoint-desktop;
+        list-style-type: none;
+        display: flex;
+        margin: auto;
+    }
+    li {
+        font-size: 1rem;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    p.image {
+        flex: 1;
+        img {
+            height: 50px;
+        }
+    }
+    p.words {
+        flex: 3;
+        strong {
+            display: block;
+        }
+        span {
+            color: @wmui-color-base20;
+        }
+    }
+    p.arrow {
+        flex: 1;
+        color: @wmui-color-accent30;
+        font-size: 2rem;
+    }
+}
+
+.inline-list {
+    li::before {
+        content: " · ";
+    }
+    li:first-child::before {
+        content: none;
+    }
+    li {
+        display: inline;
+    }
+}
+
