@@ -9,6 +9,7 @@ use OOUI\ActionFieldLayout;
 use OOUI\ButtonInputWidget;
 use OOUI\FormLayout;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -22,7 +23,7 @@ class SearchController extends AbstractController
     {
         $searchField = new SearchWidget([
             'placeholder' => $intuition->msg('search-placeholder'),
-            'name' => 'q',
+            'name' => 'filename',
             'id' => 'search-widget',
             'infusable' => true,
         ]);
@@ -43,6 +44,7 @@ class SearchController extends AbstractController
             'items' => [$fieldLayout],
         ]);
         return $this->render('search.html.twig', [
+            'page_class' => 'search',
             'form' => $form,
         ]);
     }
@@ -50,10 +52,19 @@ class SearchController extends AbstractController
     /**
      * @Route("/search", name="search")
      */
-    public function search():Response
+    public function search(Request $request):Response
     {
-        return $this->render('search.html.twig', [
-            'form' => '',
-        ]);
+        $filename = $request->get('filename');
+        if (!$filename) {
+            return $this->redirectToRoute('home');
+        }
+
+        $filePrefixPos = stripos($filename, 'File:');
+        if (false !== $filePrefixPos) {
+            // Strip any 'File:' prefix, including if a URL has been supplied.
+            $filename = substr($filename, $filePrefixPos + strlen('File:'));
+        }
+
+        return $this->redirectToRoute('translate', ['filename' => $filename]);
     }
 }

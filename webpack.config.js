@@ -51,6 +51,7 @@
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.js',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.css',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-interactions.css',
+			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-wikimedia.css',
 
 			// jQuery i18n.
 			'./node_modules/jquery.i18n/src/jquery.i18n.js',
@@ -77,7 +78,8 @@
 			'./assets/app.js',
 			'./assets/app.less',
 			'./assets/SearchWidget.js',
-			'./assets/search.less'
+			'./assets/search.less',
+			'./assets/translate.less'
 		] )
 
 		// Other options.

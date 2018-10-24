@@ -1,0 +1,59 @@
+@import '../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';
+
+body.translate {
+
+  header h1,
+  header p {
+    margin: 0;
+  }
+  main {
+    max-width: @width-breakpoint-desktop-extrawide;
+
+    form {
+      display: flex;
+      align-items: flex-start;
+
+      .form-column,
+      .image-column {
+        flex-grow: 1;
+      }
+      
+      .form-column .language-selectors,
+      .image-column .buttons {
+        margin-bottom: 2rem;
+      }
+
+      .form-column {
+        margin-right: 1rem;
+
+        .language-selectors {
+          display: flex;
+          align-items: center;
+          .source-lang-widget {
+            flex-grow: 2;
+            text-align: left;
+          }
+          .source-to-target-label {
+            flex-grow: 1;
+            text-align: center;
+          }
+          .source-lang-widget {
+            flex-grow: 2;
+            text-align: right;
+          }
+        }
+
+      }
+
+      .image-column {
+        position: sticky;
+        top: 1rem;
+        text-align: right;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+}

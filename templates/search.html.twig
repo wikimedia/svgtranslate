@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    <h1>{{ msg('svgtranslate') }}</h1>
+    <p>{{ msg('info') }}</p>
+    <p>
+        {{ msg('beta') }}
+        <a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_translation">{{ msg('learn-more') }}</a>
+    </p>
+{% endblock %}
+
 {% block main %}
 
     <div class="search-form">{{ form|raw }}</div>

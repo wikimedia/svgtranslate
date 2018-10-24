@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    <p><a href="{{ path('home') }}">{{ msg('pick-another') }}</a></p>
+    <h1>{{ filename }}</h1>
+    <p>
+        <a href="https://commons.wikimedia.org/wiki/File:{{ filename }}" target="_blank"
+           title="{{ msg('opens-in-new-tab') }}">{{ msg('view-on-commons') }}</a>
+    </p>
+{% endblock %}
+
+{% block main %}
+    <form action="{{ path('translate', {filename: filename}) }}" method="post">
+        <div class="form-column">
+            {{ language_selectors|raw }}
+            <div class="translation-fields">
+                {% for field in fields %}
+                    {{ field|raw }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="image-column">
+            <div class="buttons">{{ download_button|raw }}{{ upload_button|raw }}</div>
+            <div class="image">
+                {# @TODO Add correct image here. #}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/100_Years_War_France_1435.svg/601px-100_Years_War_France_1435.svg.png" alt="{{ msg('translation-image-alt') }}" />
+            </div>
+        </div>
+    </form>
+{% endblock %}
