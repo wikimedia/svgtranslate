@@ -10,7 +10,32 @@ project.
 
 ## Install for development
 
-Prerequesites:
+### Install using Docker
+
+Prerequisites: 
+
+* [Docker](https://www.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+Install code and start development environment:
+
+```
+git clone https://github.com/wikimedia/svgtranslate
+cd svgtranslate
+docker-compose up
+```
+
+Now you should be able to view the tool at [http://localhost:8042/](http://localhost:8042/)
+If you need to change the port, edit `TOOLFORGE_DOCKER_PORT` in your `svgtranslate/.env` file.
+
+To run Composer commands on the server, connect to the container:
+
+    docker exec -it -u dev svgtranslate_web bash
+
+### Install manually
+
+Prerequisites:
+
 * [PHP](https://www.php.net/)
 * [Composer](https://getcomposer.org/)
 * [npm](https://www.npmjs.com/)
@@ -24,6 +49,12 @@ composer install
 npm install
 ```
 
+Run development web server:
+
+    ./bin/console server:run
+
+## Development commands
+
 Run linting:
 
     composer lint
@@ -32,10 +63,9 @@ Run tests:
 
     composer test
 
-Run development web server:
-
-    ./bin/console server:run
-
 Generate assets:
 
-    ./node_modules/.bin/encore production --watch
+    ./node_modules/.bin/encore production
+
+Note that the generated assets (in `public/assets/`) are also committed to Git,
+for ease of deployment in production (where we don't have Node).
