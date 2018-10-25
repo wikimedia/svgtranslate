@@ -11,5 +11,4 @@ composer install -d /var/www || exit 1;
 
 # Start the Lighttpd web server. 
 echo SVG Translate is now at http://localhost:$TOOLFORGE_DOCKER_PORT
-echo Press Ctrl-C to quit.
 lighttpd -D -f /etc/lighttpd/lighttpd.conf || exit 1;
