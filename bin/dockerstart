@@ -1,5 +1,15 @@
 #!/bin/sh
 
-# Install Dependencies and start Lighttpd
+# Check that we're running within docker-compose.
+if [ -z $TOOLFORGE_DOCKER_PORT ]; then
+    echo "This script is only for use via Docker."
+    exit 1
+fi
+
+# Install dependencies.
 composer install -d /var/www || exit 1;
+
+# Start the Lighttpd web server. 
+echo SVG Translate is now at http://localhost:$TOOLFORGE_DOCKER_PORT
+echo Press Ctrl-C to quit.
 lighttpd -D -f /etc/lighttpd/lighttpd.conf || exit 1;
