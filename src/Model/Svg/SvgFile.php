@@ -739,7 +739,7 @@ class SvgFile
         foreach (array_keys($newNodes) as $index) {
             // One-indexed (no $0)
             $realIndex = $index + 1;
-            if (!in_array($realIndex, $matches[1])) {
+            if (!in_array($realIndex, $matches[1]) || !isset($newNodes[$index])) {
                 // Sanity check
                 continue;
             }
