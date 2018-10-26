@@ -22,6 +22,7 @@ Install code and start development environment:
 ```
 git clone https://github.com/wikimedia/svgtranslate
 cd svgtranslate
+cp .env.dist .env
 docker-compose up
 ```
 
