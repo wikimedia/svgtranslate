@@ -7,8 +7,16 @@
   "help": "Help",
   "login": "Log in",
   "logout": "Log out",
-  "language-settings": "Language settings",
   "logged-in-as": "Logged in as $1",
+
+  "language-settings": "Language settings",
+  "done": "Done",
+  "cancel": "Cancel",
+  "interface-lang-field-label": "Tool's language:",
+  "interface-lang-field-help": "The tool itself will be shown in this language.",
+  "preferred-langs-field-label": "Preferred languages to translate to/from:",
+  "preferred-langs-field-help": "These languages are shown near the top when you're switching between them in the translate page.",
+  "add-preferred-lang": "Add",
 
   "search-help": "Type a file name from Commons",
   "search-label": "File name (without 'File:' prefix) or URL:",

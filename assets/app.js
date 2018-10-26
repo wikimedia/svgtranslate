@@ -11,9 +11,6 @@ require( 'oojs-ui/dist/themes/wikimediaui/images/icons/language.svg' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/logo-Wikimedia-Commons.svg' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/download.svg' );
 
-// Set up App namespace.
-global.App = {};
-
 // Load i18n message files.
 $( function () {
 	var lang = $( 'html' ).attr( 'lang' ),
@@ -39,11 +36,19 @@ App.addLanguageSettingsLink = function () {
 	// Create the link.
 	var $langSelectorButton = $( '<a>' )
 		.html( $.i18n( 'language-settings' ) )
-		.attr( 'href', '#lang-dialog' );
-	// Configure ULS on the link.
-	$langSelectorButton.uls( {
-		languages: appConfig.languages
-	} );
+		.attr( 'href', '#lang-dialog' )
+		.on( 'click', function () {
+			var windowManager = OO.ui.getWindowManager(),
+				processDialog = new App.LanguageDialog( {
+					interfaceLang: $( 'html' ).attr( 'lang' )
+				} );
+			if ( !windowManager.isElementAttached() ) {
+				// Add the window manager to the DOM if required.
+				$( 'body' ).append( windowManager.$element );
+			}
+			windowManager.addWindows( [ processDialog ] );
+			windowManager.openWindow( processDialog );
+		} );
 	// Add the link to the DOM.
 	$( 'nav.user ul' ).prepend( $( '<li>' ).append( $langSelectorButton ) );
 };

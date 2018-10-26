@@ -9,6 +9,7 @@
         "ext-dom": "*",
         "ext-iconv": "*",
         "ext-mbstring": "*",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3",
         "oojs/oojs-ui": "^0.29",
         "sensio/framework-extra-bundle": "^5.1",

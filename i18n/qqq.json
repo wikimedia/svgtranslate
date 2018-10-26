@@ -7,8 +7,16 @@
   "help": "Text for a 'help' link to the tool's project page on Meta (the same destination as the link of {{msg-mw|learn-more}}). Displayed in the footer on every page.",
   "login": "Label for the 'log in' link. Displayed in the header on every page when not logged in.",
   "logout": "Label for the 'log out' link. Displayed in the header on every page when logged in.",
-  "language-settings": "Label for link that opens the language settings dialog.",
   "logged-in-as": "Text indicating that the user is logged in. $1 is the username of the current user.",
+
+  "language-settings": "Label for link that opens the language settings dialog.",
+  "done": "Label for the button in the language settings dialog that saves the changes and closes the dialog.",
+  "cancel": "Label for the button in the language settings dialog that closes the dialog (without saving any changes).",
+  "interface-lang-field-label": "Label for the settings field for the interface language of the application.",
+  "interface-lang-field-help": "Help text for the settings field for the interface language of the application. Shown near {{msg-wm|interface-lang-field-label}}",
+  "preferred-langs-field-label": "Label for the settings field for the list of preferred translation languages.",
+  "preferred-langs-field-help": "Help text for the settings field for the list of preferred translation languages. Shown near {{msg-wm|preferred-langs-field-label}}",
+  "add-preferred-lang": "Label for the button that opens a popup for selecting a new language to add to the list of preferred languages.",
 
   "search-help": "Help text for the search box.",
   "search-label": "Label for the search box.",
