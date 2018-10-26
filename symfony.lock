@@ -83,6 +83,9 @@
     "oojs/oojs-ui": {
         "version": "v0.29.1"
     },
+    "php-coveralls/php-coveralls": {
+        "version": "v2.1.0"
+    },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
     },

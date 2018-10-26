@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Unit tests for SVGFile class.
- * @covers SvgFile
+ * @covers \App\Model\Svg\SvgFile
  */
 class SvgFileTest extends TestCase
 {

@@ -31,14 +31,15 @@
         "wikimedia/toolforge-bundle": "^0.9"
     },
     "require-dev": {
+        "mediawiki/minus-x": "^0.3",
+        "php-coveralls/php-coveralls": "^2.1",
+        "slevomat/coding-standard": "^4.8",
         "symfony/debug-pack": "^1.0",
         "symfony/dotenv": "^4.1",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",
         "symfony/test-pack": "^1.0",
-        "symfony/web-server-bundle": "^4.1",
-        "slevomat/coding-standard": "^4.8",
-        "mediawiki/minus-x": "^0.3"
+        "symfony/web-server-bundle": "^4.1"
     },
     "config": {
         "sort-packages": true
