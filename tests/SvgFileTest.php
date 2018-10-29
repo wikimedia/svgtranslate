@@ -453,10 +453,6 @@ class SvgFileTest extends TestCase
         $this->assertEquals($expected, $this->svg->getFilteredTextNodes());
     }
 
-    /**
-     * @group Broken
-     * @see https://phabricator.wikimedia.org/T179774
-     */
     public function testSwitchTranslationSetRoundtrip(): void
     {
         // Functions already tested above
