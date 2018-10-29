@@ -25,7 +25,7 @@
         "symfony/validator": "^4.1",
         "symfony/web-link": "^4.1",
         "symfony/yaml": "^4.1",
-        "wikimedia/toolforge-bundle": "^0.8"
+        "wikimedia/toolforge-bundle": "^0.9"
     },
     "require-dev": {
         "symfony/debug-pack": "^1.0",
