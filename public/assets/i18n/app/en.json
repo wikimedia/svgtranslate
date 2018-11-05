@@ -1,0 +1,34 @@
+{
+  "svgtranslate": "SVG Translate",
+  "info": "Help translate text labels on SVG files. Pick a file on commons to get started.",
+  "beta": "This feature is in early testing.",
+  "learn-more": "Learn more & leave feedback!",
+
+  "help": "Help",
+  "login": "Log in",
+  "logout": "Log out",
+  "language-settings": "Language settings",
+
+  "search-help": "Type a file name from Commons",
+  "search-label": "File name (without 'File:' prefix) or URL:",
+  "search-placeholder": "100 Years War France 1435.svg",
+  "translate-button": "Translate",
+
+  "download-icon-alt": "An icon indicating file-download",
+  "pick-an-image-title": "Pick an image",
+  "pick-an-image-desc": "from Commons.",
+  "translate-icon-alt": "An icon indicating multiple languages",
+  "translate-labels-title": "Translate",
+  "translate-labels-desc": "the labels in the image.",
+  "commons-logo-alt": "The Wikimedia Commons logo",
+  "update-commons-title": "Update Commons",
+  "update-commons-desc": "or download directly to your computer.",
+
+  "licenced-under": "Licenced under GPL 3.0 or later",
+  "developed-by": "Developed by the Wikimedia Foundation's Community Tech team",
+  "toolforge-logo-alt": "Toolforge 'anvil' logo",
+  "powered-by-toolforge": "Powered by Toolforge",
+  "privacy-policy": "Privacy policy",
+  "report-issue": "Report a bug",
+  "view-source": "View on Github"
+}

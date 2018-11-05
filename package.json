@@ -1,15 +1,22 @@
 {
+  "//": [
+    "Note that an unreleased version of css-loader is being to solve https://github.com/webpack-contrib/css-loader/issues/781"
+  ],
   "dependencies": {
     "@symfony/webpack-encore": "^0.20.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "git+https://github.com/webpack-contrib/css-loader.git#21fcddfe500cb6fc7679ed1fc4d034b55f647945",
     "jquery": "^3.3.1",
+    "jquery.i18n": "git+https://github.com/wikimedia/jquery.i18n.git",
+    "jquery.uls": "^0.1.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "oojs-ui": "^0.29",
+    "oojs-ui": "^0.29.3",
     "popper.js": "^1.14.4",
     "wikimedia-ui-base": "^0.12.0"
   },
   "devDependencies": {
-    "eslint": "^5.7.0",
+    "eslint": "^5.8.0",
     "eslint-config-wikimedia": "^0.8.1"
   }
 }
