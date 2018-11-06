@@ -9,7 +9,6 @@
         <header>
             <nav class="user">
                 <ul class="inline-list">
-                    <li><a href="#">{{ msg('language-settings') }}</a></li>
                     {% if logged_in_user() %}
                         <li>{{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}</li>
                         <li><a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a></li>
@@ -91,6 +90,13 @@
             </div>
         </footer>
 
+    <script type="text/javascript">
+        var appConfig = {
+            assetsPath: "{{ asset('assets') }}",
+            {# This var is used for the Universal Language Selector. #}
+            languages: {{ all_langs()|json_encode|raw }}
+        };
+    </script>
     <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
     </body>
 </html>

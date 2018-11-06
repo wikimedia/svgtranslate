@@ -1,5 +1,6 @@
 ( function () {
-	var Encore = require( '@symfony/webpack-encore' );
+	var Encore = require( '@symfony/webpack-encore' ),
+		CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 	Encore
 
@@ -12,8 +13,15 @@
 		// Set up global variables.
 		.autoProvideVariables( {
 			OO: 'oojs',
+			jQuery: 'jquery',
 			$: 'jquery'
 		} )
+
+		// Copy i18n files for use by jquery.i18n.
+		.addPlugin( new CopyWebpackPlugin( [
+			{ from: './node_modules/jquery.uls/i18n/', to: 'i18n/jquery.uls/' },
+			{ from: './i18n/', to: 'i18n/app/' }
+		] ) )
 
 		/*
 		 * ENTRY CONFIG
@@ -35,6 +43,28 @@
 			'./node_modules/oojs-ui/dist/oojs-ui-core.js',
 			'./node_modules/oojs-ui/dist/oojs-ui-core-wikimediaui.css',
 
+			// jQuery i18n.
+			'./node_modules/jquery.i18n/src/jquery.i18n.js',
+			'./node_modules/jquery.i18n/src/jquery.i18n.messagestore.js',
+			'./node_modules/jquery.i18n/src/jquery.i18n.fallbacks.js',
+			'./node_modules/jquery.i18n/src/jquery.i18n.parser.js',
+			'./node_modules/jquery.i18n/src/jquery.i18n.emitter.js',
+			'./node_modules/jquery.i18n/src/jquery.i18n.language.js',
+			'./node_modules/jquery.i18n/src/languages/he.js',
+			'./node_modules/jquery.i18n/src/languages/fi.js',
+			'./node_modules/jquery.i18n/src/languages/ml.js',
+
+			// Universal Language Selector.
+			'./node_modules/jquery.uls/src/jquery.uls.data.js',
+			'./node_modules/jquery.uls/src/jquery.uls.data.utils.js',
+			'./node_modules/jquery.uls/src/jquery.uls.lcd.js',
+			'./node_modules/jquery.uls/src/jquery.uls.languagefilter.js',
+			'./node_modules/jquery.uls/src/jquery.uls.core.js',
+			'./node_modules/jquery.uls/css/jquery.uls.css',
+			'./node_modules/jquery.uls/css/jquery.uls.grid.css',
+			'./node_modules/jquery.uls/css/jquery.uls.lcd.css',
+
+			// This app.
 			'./assets/app.js',
 			'./assets/app.less',
 			'./assets/search.less'
@@ -48,4 +78,8 @@
 
 	// eslint-disable-next-line no-undef
 	module.exports = Encore.getWebpackConfig();
+
+	// Set a relative path for image assets; see https://github.com/symfony/webpack-encore/issues/88
+	// eslint-disable-next-line no-undef
+	module.exports.module.rules[ 2 ].options.publicPath = '../assets/';
 }() );
