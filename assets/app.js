@@ -1,5 +1,11 @@
 // SVG Translate.
 
+// Workaround for OOUI and Webpack not loading things to global scope.
+global.OO = OO;
+
+// Set up App namespace.
+global.App = {};
+
 // Require images used in HTML, so they can be used as assets.
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/language.svg' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/logo-Wikimedia-Commons.svg' );
@@ -41,3 +47,8 @@ App.addLanguageSettingsLink = function () {
 	// Add the link to the DOM.
 	$( 'nav.user ul' ).prepend( $( '<li>' ).append( $langSelectorButton ) );
 };
+
+// Enable the search form.
+$( function () {
+	OO.ui.infuse( 'search-widget' );
+} );

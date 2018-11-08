@@ -3,11 +3,11 @@ declare(strict_types = 1);
 
 namespace App\Controller;
 
+use App\OOUI\SearchWidget;
 use Krinkle\Intuition\Intuition;
 use OOUI\ActionFieldLayout;
 use OOUI\ButtonInputWidget;
 use OOUI\FormLayout;
-use OOUI\TextInputWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,9 +20,11 @@ class SearchController extends AbstractController
      */
     public function index(Intuition $intuition):Response
     {
-        $searchField = new TextInputWidget([
+        $searchField = new SearchWidget([
             'placeholder' => $intuition->msg('search-placeholder'),
             'name' => 'q',
+            'id' => 'search-widget',
+            'infusable' => true,
         ]);
         $submitButton = new ButtonInputWidget([
             'type' => 'submit',
