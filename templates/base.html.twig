@@ -2,10 +2,13 @@
 <html lang="{{ lang() }}" dir="{% if is_rtl() %}rtl{% else %}ltr{% endif %}">
     <head>
         <meta charset="utf-8">
-        <title>{{ msg('svgtranslate') }}</title>
+        <title>
+            {% if title is defined %}{{ title }} | {% endif %}
+            {{ msg('svgtranslate') }}
+        </title>
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}" />
     </head>
-    <body>
+    <body class="{{ page_class }}">
         <header>
             <nav class="user">
                 <ul class="inline-list">
@@ -17,12 +20,9 @@
                     {% endif %}
                 </ul>
             </nav>
-            <h1>{{ msg('svgtranslate') }}</h1>
-            <p class="info">{{ msg('info') }}</p>
-            <p class="beta-message">
-                {{ msg('beta') }}
-                <a href="https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech/SVG_translation">{{ msg('learn-more') }}</a>
-            </p>
+            {% block title %}
+                <h1>{{ msg('svgtranslate') }}</h1>
+            {% endblock %}
         </header>
 
         <main>
