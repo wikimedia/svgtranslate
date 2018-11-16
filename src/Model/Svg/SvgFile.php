@@ -54,9 +54,8 @@ class SvgFile
     private $fallbackLanguage;
 
     /**
-     * Construct an SVGFile object.
+     * Construct an SvgFile object.
      *
-     * @see self::newFromMessageGroup
      * @param string $path
      * @param string $fallbackLanguage
      * @todo Handle DOM warnings
