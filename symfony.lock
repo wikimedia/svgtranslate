@@ -50,6 +50,15 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "guzzlehttp/guzzle": {
+        "version": "v3.8.1"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.4.2"
+    },
     "krinkle/intuition": {
         "version": "v1.1.0"
     },
@@ -88,6 +97,9 @@
     },
     "psr/container": {
         "version": "1.0.0"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
     },
     "psr/link": {
         "version": "1.0.0"

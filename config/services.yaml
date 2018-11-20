@@ -27,5 +27,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    App\Service\MediaWikiApi:
+        arguments:
+            $entryPoint: 'https://commons.wikimedia.org/w/api.php'
+
+    App\Service\FileCache:
+        arguments:
+            $directory: '%kernel.project_dir%/var/cache/images'
