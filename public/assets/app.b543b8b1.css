@@ -5398,14 +5398,20 @@ body.translate main form .form-column .language-selectors {
 body.translate main form .form-column .language-selectors .source-lang-widget {
   flex-grow: 2;
   text-align: left;
+  width: 100%;
 }
 body.translate main form .form-column .language-selectors .source-to-target-label {
   flex-grow: 1;
   text-align: center;
 }
-body.translate main form .form-column .language-selectors .source-lang-widget {
+body.translate main form .form-column .language-selectors .target-lang-widget {
   flex-grow: 2;
-  text-align: right;
+  width: 100%;
+}
+body.translate main form .form-column .language-selectors .target-lang-widget button {
+  text-align: left;
+  width: 100%;
+  font-weight: normal;
 }
 body.translate main form .image-column {
   position: sticky;
