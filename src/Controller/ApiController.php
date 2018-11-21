@@ -75,6 +75,23 @@ class ApiController extends AbstractController
     }
 
     /**
+     * @Route("/api/languages/{fileName}", name="api_languages", methods="GET")
+     *
+     * @param string $fileName
+     * @return Response
+     */
+    public function getLanguages(string $fileName): Response
+    {
+        $fileName = Title::normalize($fileName);
+        $path = $this->cache->getPath($fileName);
+        $file = new SvgFile($path, 'en');
+        $langs = $file->getSavedLanguages();
+        sort($langs);
+
+        return $this->json($langs);
+    }
+
+    /**
      * Serves an SVG
      *
      * @param string $content
