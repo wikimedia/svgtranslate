@@ -54,15 +54,15 @@
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-wikimedia.css',
 
 			// jQuery i18n.
-			'./node_modules/jquery.i18n/src/jquery.i18n.js',
-			'./node_modules/jquery.i18n/src/jquery.i18n.messagestore.js',
-			'./node_modules/jquery.i18n/src/jquery.i18n.fallbacks.js',
-			'./node_modules/jquery.i18n/src/jquery.i18n.parser.js',
-			'./node_modules/jquery.i18n/src/jquery.i18n.emitter.js',
-			'./node_modules/jquery.i18n/src/jquery.i18n.language.js',
-			'./node_modules/jquery.i18n/src/languages/he.js',
-			'./node_modules/jquery.i18n/src/languages/fi.js',
-			'./node_modules/jquery.i18n/src/languages/ml.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.messagestore.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.fallbacks.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.parser.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.emitter.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/jquery.i18n.language.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/languages/he.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/languages/fi.js',
+			'./node_modules/@wikimedia/jquery.i18n/src/languages/ml.js',
 
 			// Universal Language Selector.
 			'./node_modules/jquery.uls/src/jquery.uls.data.js',
@@ -77,9 +77,12 @@
 			// This app.
 			'./assets/app.js',
 			'./assets/app.less',
-			'./assets/SearchWidget.js',
 			'./assets/search.less',
-			'./assets/translate.less'
+			'./assets/translate.less',
+			'./assets/InterfaceLangButton.js',
+			'./assets/LanguageDialog.js',
+			'./assets/SearchWidget.js',
+			'./assets/UlsTagMultiselectWidget.js'
 		] )
 
 		// Other options.
