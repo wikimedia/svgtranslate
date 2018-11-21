@@ -329,6 +329,7 @@ class SvgFile
         $number = $switches->length;
         $translations = [];
         $this->filteredTextNodes = []; // Reset
+        $this->savedLanguages = [];
 
         for ($i = 0; $i < $number; $i++) {
             /** @var DOMElement $switch */
@@ -356,6 +357,7 @@ class SvgFile
                 // Don't want to manipulate actual node
                 /** @var DOMElement $actualNode */
                 $actualNode = $texts->item($j);
+                /** @var DOMElement $text */
                 $text = $actualNode->cloneNode(true);
                 $numChildren = $text->childNodes->length;
                 $hasActualTextContent = self::hasActualTextContent($text);
@@ -365,7 +367,7 @@ class SvgFile
                 $counter = 1;
                 for ($k = 0; $k < $numChildren; $k++) {
                     $child = $text->childNodes->item($k);
-                    if (1 === $child->nodeType) {
+                    if (XML_ELEMENT_NODE === $child->nodeType) {
                         // Per the checks in makeTranslationReady() this is a tspan so
                         // register it as a child node.
 
