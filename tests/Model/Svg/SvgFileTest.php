@@ -484,4 +484,10 @@ class SvgFileTest extends TestCase
         // Check that we are not actually destroying the XML file
         $this->assertGreaterThan(1500, strlen(file_get_contents($tempPath)));
     }
+
+    public function testEmptySvg(): void
+    {
+        $file = new SvgFile(__DIR__.'/../../data/empty.svg', 'en');
+        $this->assertEquals([], $file->getInFileTranslations());
+    }
 }

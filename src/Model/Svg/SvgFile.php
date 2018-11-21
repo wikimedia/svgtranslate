@@ -329,6 +329,7 @@ class SvgFile
         $number = $switches->length;
         $translations = [];
         $this->filteredTextNodes = []; // Reset
+        $this->savedLanguages = [];
 
         for ($i = 0; $i < $number; $i++) {
             /** @var DOMElement $switch */
