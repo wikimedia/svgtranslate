@@ -51,7 +51,6 @@ class ApiControllerTest extends TestCase
 
     /**
      * @covers ApiController::getTranslations()
-     * @covers ApiController::serveContent()
      */
     public function testGetTranslations(): void
     {
@@ -63,6 +62,21 @@ class ApiControllerTest extends TestCase
         self::assertEquals('application/json', $response->headers->get('Content-Type'));
         $json = \GuzzleHttp\json_decode($response->getContent(), true);
         self::assertEquals(SvgFileTest::EXPECTED_TRANSLATIONS, $json);
+    }
+
+    /**
+     * @covers ApiController::getLanguages()
+     */
+    public function testGetLanguages(): void
+    {
+        $controller = $this->makeController();
+
+        $response = $controller->getLanguages('Foo.svg');
+
+        self::assertEquals(200, $response->getStatusCode());
+        self::assertEquals('application/json', $response->headers->get('Content-Type'));
+        $json = \GuzzleHttp\json_decode($response->getContent(), true);
+        self::assertEquals(['de', 'en', 'fr', 'nl', 'tlh-ca'], $json);
     }
 
     private function makeController(): ApiController
