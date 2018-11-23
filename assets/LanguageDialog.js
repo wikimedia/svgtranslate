@@ -13,6 +13,16 @@ OO.inheritClass( App.LanguageDialog, OO.ui.ProcessDialog );
 
 // Dialog name.
 App.LanguageDialog.static.name = 'languageDialog';
+App.LanguageDialog.static.size = 'medium';
+
+/**
+ * Set the height to a reasonable maximum.
+ * @return {number} Body height.
+ */
+App.LanguageDialog.prototype.getBodyHeight = function () {
+	// The dialog's "medium" width is 500 (from OO.ui.WindowManager.static.sizes).
+	return 300;
+};
 
 /**
  * Called each time the window is opened.
