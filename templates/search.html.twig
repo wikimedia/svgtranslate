@@ -17,3 +17,24 @@
     <div class="search-form">{{ form|raw }}</div>
 
 {% endblock %}
+
+{% block prefooter %}
+    <aside class="tutorial">
+        <ol>
+            <li>
+                <p class="image"><img src="{{ asset('assets/images/logo-Wikimedia-Commons.svg') }}" alt="{{ msg('commons-logo-alt') }}" /></p>
+                <p class="words"><strong>{{ msg('pick-an-image-title') }}</strong><span>{{ msg('pick-an-image-desc') }}</span></p>
+                <p class="arrow">&rarr;</p>
+            </li>
+            <li>
+                <p class="image"><img src="{{ asset('assets/images/language.svg') }}" alt="{{ msg('language-icon-alt') }}" /></p>
+                <p class="words"><strong>{{ msg('translate-labels-title') }}</strong><span>{{ msg('translate-labels-desc') }}</span></p>
+                <p class="arrow">&rarr;</p>
+            </li>
+            <li>
+                <p class="image"><img src="{{ asset('assets/images/download.svg') }}" alt="{{ msg('download-icon-alt') }}" /></p>
+                <p class="words"><strong>{{ msg('update-commons-title') }}</strong><span>{{ msg('update-commons-desc') }}</span></p>
+            </li>
+        </ol>
+    </aside>
+{% endblock %}

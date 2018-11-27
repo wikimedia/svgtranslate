@@ -16,17 +16,18 @@ body.translate {
   }
 
   main {
-    max-width: @width-breakpoint-desktop-extrawide;
 
     form {
+      padding: 2rem 5rem;
       display: flex;
       align-items: flex-start;
 
       .form-column,
       .image-column {
         flex-grow: 1;
+        width: 50%;
       }
-      
+
       .form-column .language-selectors,
       .image-column .buttons {
         margin-bottom: 2rem;
@@ -39,23 +40,25 @@ body.translate {
           display: flex;
           align-items: center;
           .source-lang-widget {
-            flex-grow: 2;
+            flex: 2;
             text-align: left;
-            width: 100%;
           }
           .source-to-target-label {
-            flex-grow: 1;
+            flex-grow: 2;
             text-align: center;
           }
           .target-lang-widget {
-            flex-grow: 2;
-            width: 100%;
+            flex: 2;
             button {
               text-align: left;
               width: 100%;
               font-weight: normal;
             }
           }
+        }
+
+        .oo-ui-fieldLayout {
+          margin-bottom: 1.5rem;
         }
 
       }
@@ -69,12 +72,14 @@ body.translate {
           flex-direction: row-reverse;
           align-items: center;
           .oo-ui-widget {
+            margin-right: 0;
           }
           .download-or-upload {
             margin: 0 1rem 0 0.8rem;
           }
         }
         img {
+          margin-top: 1rem;
           max-width: 100%;
         }
       }

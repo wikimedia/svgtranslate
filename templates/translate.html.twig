@@ -29,8 +29,7 @@
                 {{ download_button|raw }}
             </div>
             <div class="image">
-                {# @TODO Add correct image here. #}
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/100_Years_War_France_1435.svg/601px-100_Years_War_France_1435.svg.png" alt="{{ msg('translation-image-alt') }}" />
+                <img src="{{ path('api_file', {fileName: filename}) }}" alt="{{ msg('translation-image-alt') }}" />
             </div>
         </div>
     </form>

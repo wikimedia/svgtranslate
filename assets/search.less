@@ -2,9 +2,54 @@
 
 body.search {
 
+  main,
+  aside.tutorial {
+    max-width: 1140px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
   main form {
     max-width: 950px;
     margin: 3rem auto;
+  }
+
+  aside.tutorial {
+    border-radius: @border-radius-base;
+    border: 1px solid @border-color-base;
+    margin: 1.5rem auto;
+    ol {
+      max-width: @width-breakpoint-desktop;
+      list-style-type: none;
+      display: flex;
+      margin: auto;
+    }
+    li {
+      font-size: 1rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    p.image {
+      flex: 1;
+      img {
+        height: 50px;
+      }
+    }
+    p.words {
+      flex: 3;
+      strong {
+        display: block;
+      }
+      span {
+        color: @wmui-color-base20;
+      }
+    }
+    p.arrow {
+      flex: 1;
+      color: @wmui-color-accent30;
+      font-size: 2rem;
+    }
   }
 
 }
