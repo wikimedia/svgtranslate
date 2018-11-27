@@ -26,6 +26,7 @@
   "pick-another": "Label for backlink from the translate page to the search page.",
   "view-on-commons": "Link to view the file on Commons. The whole phrase is linked.",
   "opens-in-new-tab": "Tooltip text for links that will open in a new browser tab.",
+  "default-language": "Label at the top of the source-language dropdown list indicating that the SVG file's default language will be used (we don't know what the specific language is).",
   "source-to-target": "Joining label between the source-language selector and the target language selector.",
   "upload-button-label": "Label for the button that uploads the translated SVG to Wikimedia Commons.",
   "download-button-label": "Label for the button that downloads the translated SVG to the user's local computer.",

@@ -123,12 +123,10 @@ App.LanguageDialog.prototype.getActionProcess = function ( action ) {
 			// Store the new cookie value.
 			// This is the only place the SVG Translate cookie is written.
 			Cookies.set( 'svgtranslate', cookieVal );
-			if ( cookieVal.interfaceLang !== dialog.interfaceLang ) {
-				// Redirect back to where we currently are (without the #lang-settings fragment),
-				// in order to reload the interface in the new language.
-				newUrl = window.location.href.slice( 0, window.location.href.indexOf( '#' ) );
-				window.location.href = newUrl;
-			}
+			// Redirect back to where we currently are (without the #lang-settings fragment),
+			// in order to reload the interface in the new language.
+			newUrl = window.location.href.slice( 0, window.location.href.indexOf( '#' ) );
+			window.location.href = newUrl;
 			dialog.close( { action: action } );
 		} );
 	}

@@ -3,6 +3,9 @@ declare(strict_types = 1);
 
 namespace App\Controller;
 
+use App\Model\Svg\SvgFile;
+use App\Model\Title;
+use App\Service\FileCache;
 use Krinkle\Intuition\Intuition;
 use OOUI\ButtonInputWidget;
 use OOUI\DropdownInputWidget;
@@ -32,9 +35,13 @@ class TranslateController extends AbstractController
     /**
      * @Route("/File:{filename<.+>}", name="translate", methods={"GET"})
      */
-    public function translate(Request $request, Intuition $intuition, Session $session):Response
+    public function translate(Request $request, Intuition $intuition, Session $session, FileCache $cache):Response
     {
+        // Fetch the SVG from Commons.
         $filename = $this->getFilename($request);
+        $fileName = Title::normalize($filename);
+        $path = $cache->getPath($fileName);
+        $svgFile = new SvgFile($path, 'en');
 
         // Upload and download buttons.
         $downloadButton = new ButtonInputWidget([
@@ -53,12 +60,18 @@ class TranslateController extends AbstractController
         }
 
         // Source and target language selectors.
-        // @TODO Get this data from the SVG.
         $availableLangs = [
-            [ 'data' => 'fallback', 'label' => 'Default' ],
-            [ 'data' => 'en', 'label' => 'English' ],
-            [ 'data' => 'fr', 'label' => 'Français' ],
+            ['data' => 'fallback', 'label' => $intuition->msg('default-language')],
         ];
+        foreach ($svgFile->getSavedLanguagesFiltered()['full'] as $lang) {
+            $langName = $intuition->getLangName($lang);
+            if ($langName) {
+                $availableLangs[] = [
+                    'data' => $lang,
+                    'label' => $langName,
+                ];
+            }
+        }
         $sourceLang = new DropdownInputWidget([
             'label' => $intuition->msg('source-lang-label'),
             'options' => $availableLangs,
@@ -66,12 +79,20 @@ class TranslateController extends AbstractController
             'value' => 'fallback',
             'classes' => ['source-lang-widget'],
         ]);
-        $targetLang = new DropdownInputWidget([
-            'label' => $intuition->msg('target-lang-label'),
-            'options' => $availableLangs,
-            // @TODO Get this value from the session.
-            'value' => 'fr',
+        $targetLangDefault = $intuition->getLang();
+        $cookie = $request->cookies->get('svgtranslate');
+        if ($cookie) {
+            $cookieValue = json_decode($cookie);
+            if (isset($cookieValue->interfaceLang)) {
+                $targetLangDefault = $cookieValue->interfaceLang;
+            }
+        }
+        $targetLang = new ButtonInputWidget([
+            'label' => $intuition->getLangName($targetLangDefault),
+            'value' => $targetLangDefault,
             'classes' => ['target-lang-widget'],
+            'indicator' => 'down',
+            'infusable' => true,
         ]);
         $languageSelectorsLayout = new HorizontalLayout([
             'items' => [
@@ -86,21 +107,7 @@ class TranslateController extends AbstractController
         ]);
 
         // Messages.
-        // @TODO Get this data from the SVG.
-        $translations = [
-            'node-id-1' => [
-                'fr' => ['text' => 'Mots en français'],
-                'fallback' => ['text' => 'Words in English'],
-            ],
-            'node-id-2' => [
-                'fr' => ['text' => 'Plus de mots en français'],
-                'fallback' => ['text' => 'More words in English'],
-            ],
-        ];
-        $translations = array_merge(
-            $translations,
-            array_fill(1, 15, ['fallback' => ['text' => 'Lorem ipsum']])
-        );
+        $translations = $svgFile->getInFileTranslations();
         $formFields = [];
         foreach ($translations as $nodeId => $langs) {
             $inputWidget = new TextInputWidget([

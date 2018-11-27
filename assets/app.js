@@ -30,6 +30,29 @@ $( function () {
 } );
 
 /**
+ * Helper function for getting values out of the 'svgtranslate' cookie.
+ * @param {string} key The key to get, either 'interfaceLang' or 'preferredLangs'.
+ * @param {*} defaultVal The default value to use if none is set in the cookie.
+ * @return {*}
+ */
+App.getCookieVal = function ( key, defaultVal ) {
+	var cookieData,
+		Cookies = require( 'js-cookie' ),
+		cookie = Cookies.get( 'svgtranslate' );
+	if ( cookie ) {
+		try {
+			cookieData = JSON.parse( cookie );
+			return cookieData[ key ];
+		} catch ( e ) {
+			// If we can't parse the cookie value or fetch the required key, return the default.
+			return defaultVal;
+		}
+	}
+	// If no cookie is set, return the default.
+	return defaultVal;
+};
+
+/**
  * Add the language-settings link to the user nav list. Called after i18n messages are loaded.
  */
 App.addLanguageSettingsLink = function () {
@@ -58,4 +81,26 @@ $( function () {
 	if ( $( '#search-widget' ).length > 0 ) {
 		OO.ui.infuse( 'search-widget' );
 	}
+} );
+
+// Add ULS to the target-language button.
+$( function () {
+	var targetLangButton,
+		$targetLangButton = $( '.target-lang-widget' );
+	if ( $targetLangButton.length === 0 ) {
+		// If the widget isn't present, do nothing.
+		return;
+	}
+	targetLangButton = OO.ui.infuse( $targetLangButton );
+	targetLangButton.$element.uls( {
+		// Save the language name and code in the widget.
+		onSelect: function ( language ) {
+			this.setLabel( $.uls.data.languages[ language ][ 2 ] );
+			this.setData( language );
+		}.bind( targetLangButton ),
+		// Add the preferred languages as the quick-list.
+		quickList: App.getCookieVal( 'preferredLangs', [] ),
+		// @HACK: Re-align the ULS menu because we're customizing its layout in translate.less.
+		left: targetLangButton.$element.offset().left
+	} );
 } );

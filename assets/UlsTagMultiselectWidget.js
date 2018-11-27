@@ -4,22 +4,10 @@
  * @constructor
  */
 App.UlsTagMultiselectWidget = function AppUlsTagMultiselectWidget( config ) {
-	var i, cookie, cookieData,
-		preferredLangs = [],
-		preferredLangsData = [],
-		Cookies = require( 'js-cookie' );
+	var i,
+		preferredLangs = App.getCookieVal( 'preferredLangs', [] ),
+		preferredLangsData = [];
 
-	// See if there are any preferred languages in the cookie.
-	cookie = Cookies.get( 'svgtranslate' );
-	if ( cookie ) {
-		try {
-			cookieData = JSON.parse( cookie );
-			preferredLangs = cookieData.preferredLangs;
-		} catch ( e ) {
-			// If we can't parse the cookie value, default to none.
-			preferredLangs = [];
-		}
-	}
 	// Reorganise the saved preferred languages into the form required by the widget.
 	for ( i = 0; i < preferredLangs.length; i++ ) {
 		preferredLangsData.push( {
