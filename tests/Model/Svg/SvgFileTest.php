@@ -490,4 +490,32 @@ class SvgFileTest extends TestCase
         $file = new SvgFile(__DIR__.'/../../data/empty.svg', 'en');
         $this->assertEquals([], $file->getInFileTranslations());
     }
+
+    public function testUnevenTspans(): void
+    {
+        $file = new SvgFile(__DIR__.'/../../data/tspans.svg', 'en');
+        $this->assertEquals(
+            [
+                'trsvg3' => [
+                    'ru' => [
+                        'text' => 'RU',
+                        'id' => 'trsvg1',
+                        'data-parent' => 'trsvg6',
+                    ],
+                    'de' => [
+                        'text' => 'DE',
+                        'id' => 'trsvg2',
+                        'data-parent' => 'trsvg6',
+
+                    ],
+                    'fallback' => [
+                        'text' => 'fallback',
+                        'id' => 'trsvg3',
+                        'data-parent' => 'trsvg6',
+                    ],
+                ],
+            ],
+            $file->getInFileTranslations()
+        );
+    }
 }
