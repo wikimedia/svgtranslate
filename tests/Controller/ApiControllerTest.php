@@ -13,8 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 class ApiControllerTest extends TestCase
 {
     /**
-     * @covers ApiController::getFile()
-     * @covers ApiController::serveContent()
+     * @covers \App\Controller\ApiController::getFile()
+     * @covers \App\Controller\ApiController::serveContent()
      */
     public function testGetFile(): void
     {
@@ -50,7 +50,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @covers ApiController::getTranslations()
+     * @covers \App\Controller\ApiController::getTranslations()
      */
     public function testGetTranslations(): void
     {
@@ -65,7 +65,7 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @covers ApiController::getLanguages()
+     * @covers \App\Controller\ApiController::getLanguages()
      */
     public function testGetLanguages(): void
     {

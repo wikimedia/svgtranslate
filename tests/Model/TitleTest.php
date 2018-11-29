@@ -9,8 +9,8 @@ use PHPUnit\Framework\TestCase;
 class TitleTest extends TestCase
 {
     /**
-     * @covers Title::normalize()
-     * @covers Title::removeNamespace()
+     * @covers \App\Model\Title::normalize()
+     * @covers \App\Model\Title::removeNamespace()
      * @dataProvider provideNormalize
      *
      * @param string $title

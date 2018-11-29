@@ -17,3 +17,6 @@ script:
   - git status | grep "nothing to commit, working tree clean"
   - composer lint
   - composer test
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls --coverage_clover=var/log/phpunit_clover.xml

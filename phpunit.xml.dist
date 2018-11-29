@@ -51,4 +51,8 @@
             <group>Broken</group>
         </exclude>
     </groups>
+
+    <logging>
+        <log type="coverage-clover" target="var/log/phpunit_clover.xml" />
+    </logging>
 </phpunit>

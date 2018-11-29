@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class RetrieverTest extends TestCase
 {
     /**
-     * @covers Retriever::retrieve()
+     * @covers \App\Service\Retriever::retrieve()
      */
     public function testRetrieve(): void
     {
