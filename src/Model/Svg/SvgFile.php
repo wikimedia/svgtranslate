@@ -166,7 +166,17 @@ class SvgFile
             }
             $translatableNodes[] = $tspan;
         }
+        /** @var DOMElement $text */
         foreach ($texts as $text) {
+            // For uniformity, if a <text> doesn't have <tspan>s, create one
+            if (0 === $text->getElementsByTagName('tspan')->length) {
+                $tspan = $this->document->createElement('tspan');
+                while ($text->childNodes->length > 0) {
+                    $tspan->appendChild($text->childNodes[0]);
+                }
+                $translatableNodes[] = $tspan;
+                $text->appendChild($tspan);
+            }
             $translatableNodes[] = $text;
         }
         foreach ($translatableNodes as $translatableNode) {
@@ -373,6 +383,9 @@ class SvgFile
 
                         /** @var DOMElement $childTspan */
                         $childTspan = $fallbackText->getElementsByTagName('tspan')->item($counter - 1);
+                        if (!$childTspan) {
+                            continue;
+                        }
 
                         $childId = $childTspan->getAttribute('id');
                         $translations[$childId][$langCode] = $this->nodeToArray($child);
