@@ -78,6 +78,7 @@
 			'./assets/app.js',
 			'./assets/app.less',
 			'./assets/search.less',
+			'./assets/translate.js',
 			'./assets/translate.less',
 			'./assets/InterfaceLangButton.js',
 			'./assets/LanguageDialog.js',
