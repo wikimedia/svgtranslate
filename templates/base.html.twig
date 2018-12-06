@@ -10,19 +10,20 @@
     </head>
     <body class="{{ page_class }}">
         <header>
-            <nav class="user">
-                <ul class="inline-list">
-                    {% if logged_in_user() %}
-                        <li>{{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}</li>
-                        <li><a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a></li>
-                    {% endif %}
-                </ul>
-            </nav>
-            {% block title %}
-                <h1>{{ msg('svgtranslate') }}</h1>
-            {% endblock %}
+            <div class="top-row">
+                <div class="top-row-left">{% block top_row_left %}{% endblock %}</div>
+                <nav class="user">
+                    <ul class="inline-list">
+                        {% if logged_in_user() %}
+                            <li>{{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}</li>
+                            <li><a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a></li>
+                        {% else %}
+                            <li><a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="description">{% block description %}{% endblock %}</div>
         </header>
 
         <main>
