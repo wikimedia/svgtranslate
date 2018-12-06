@@ -8,6 +8,7 @@
 
 html,
 body {
+    margin: 0;
     height: 100%;
 }
 
@@ -57,6 +58,10 @@ footer {
             width: 128px;
             display: flex;
             align-items: center;
+            font-size: smaller;
+            color: #7f7f7f;
+            font-variant: small-caps;
+            line-height: 1rem;
         }
         .toolforge-logo {
             padding-right: 4px;
@@ -73,52 +78,9 @@ footer {
     }
 }
 
-main,
-aside.tutorial {
-    margin: 1.5rem auto;
-    max-width: 1140px;
-    padding: 1rem;
-}
-
 main {
+    padding: 1rem;
     background-color: @background-color-base;
-}
-
-aside.tutorial {
-    border-radius: @border-radius-base;
-    border: 1px solid @border-color-base;
-    ol {
-        max-width: @width-breakpoint-desktop;
-        list-style-type: none;
-        display: flex;
-        margin: auto;
-    }
-    li {
-        font-size: 1rem;
-        flex: 1;
-        display: flex;
-        align-items: center;
-    }
-    p.image {
-        flex: 1;
-        img {
-            height: 50px;
-        }
-    }
-    p.words {
-        flex: 3;
-        strong {
-            display: block;
-        }
-        span {
-            color: @wmui-color-base20;
-        }
-    }
-    p.arrow {
-        flex: 1;
-        color: @wmui-color-accent30;
-        font-size: 2rem;
-    }
 }
 
 .inline-list {

@@ -5261,6 +5261,7 @@ a:focus {
 }
 html,
 body {
+  margin: 0;
   height: 100%;
 }
 body {
@@ -5302,6 +5303,10 @@ footer .toolforge a {
   width: 128px;
   display: flex;
   align-items: center;
+  font-size: smaller;
+  color: #7f7f7f;
+  font-variant: small-caps;
+  line-height: 1rem;
 }
 footer .toolforge .toolforge-logo {
   padding-right: 4px;
@@ -5315,50 +5320,9 @@ footer .toolforge a:hover .toolforge-logo {
 footer .info {
   text-align: right;
 }
-main,
-aside.tutorial {
-  margin: 1.5rem auto;
-  max-width: 1140px;
-  padding: 1rem;
-}
 main {
+  padding: 1rem;
   background-color: #fff;
-}
-aside.tutorial {
-  border-radius: 2px;
-  border: 1px solid #a2a9b1;
-}
-aside.tutorial ol {
-  max-width: 1000px;
-  list-style-type: none;
-  display: flex;
-  margin: auto;
-}
-aside.tutorial li {
-  font-size: 1rem;
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-aside.tutorial p.image {
-  flex: 1;
-}
-aside.tutorial p.image img {
-  height: 50px;
-}
-aside.tutorial p.words {
-  flex: 3;
-}
-aside.tutorial p.words strong {
-  display: block;
-}
-aside.tutorial p.words span {
-  color: #54595d;
-}
-aside.tutorial p.arrow {
-  flex: 1;
-  color: #2a4b8d;
-  font-size: 2rem;
 }
 .inline-list li::before {
   content: " \B7   ";
@@ -5373,9 +5337,52 @@ aside.tutorial p.arrow {
  * WikimediaUI Base v0.12.0
  * Wikimedia Foundation user interface base variables
  */
+body.search main,
+body.search aside.tutorial {
+  max-width: 1140px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
 body.search main form {
   max-width: 950px;
   margin: 3rem auto;
+}
+body.search aside.tutorial {
+  border-radius: 2px;
+  border: 1px solid #a2a9b1;
+  margin: 1.5rem auto;
+}
+body.search aside.tutorial ol {
+  max-width: 1000px;
+  list-style-type: none;
+  display: flex;
+  margin: auto;
+}
+body.search aside.tutorial li {
+  font-size: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+body.search aside.tutorial p.image {
+  flex: 1;
+}
+body.search aside.tutorial p.image img {
+  height: 50px;
+}
+body.search aside.tutorial p.words {
+  flex: 3;
+}
+body.search aside.tutorial p.words strong {
+  display: block;
+}
+body.search aside.tutorial p.words span {
+  color: #54595d;
+}
+body.search aside.tutorial p.arrow {
+  flex: 1;
+  color: #2a4b8d;
+  font-size: 2rem;
 }
 /**
  * WikimediaUI Base v0.12.0
@@ -5393,16 +5400,15 @@ body.translate header h1 {
   font-size: 1.5rem;
   letter-spacing: 1px;
 }
-body.translate main {
-  max-width: 2000px;
-}
 body.translate main form {
+  padding: 2rem 5rem;
   display: flex;
   align-items: flex-start;
 }
 body.translate main form .form-column,
 body.translate main form .image-column {
   flex-grow: 1;
+  width: 50%;
 }
 body.translate main form .form-column .language-selectors,
 body.translate main form .image-column .buttons {
@@ -5416,22 +5422,23 @@ body.translate main form .form-column .language-selectors {
   align-items: center;
 }
 body.translate main form .form-column .language-selectors .source-lang-widget {
-  flex-grow: 2;
+  flex: 2;
   text-align: left;
-  width: 100%;
 }
 body.translate main form .form-column .language-selectors .source-to-target-label {
-  flex-grow: 1;
+  flex-grow: 2;
   text-align: center;
 }
 body.translate main form .form-column .language-selectors .target-lang-widget {
-  flex-grow: 2;
-  width: 100%;
+  flex: 2;
 }
 body.translate main form .form-column .language-selectors .target-lang-widget button {
   text-align: left;
   width: 100%;
   font-weight: normal;
+}
+body.translate main form .form-column .oo-ui-fieldLayout {
+  margin-bottom: 1.5rem;
 }
 body.translate main form .image-column {
   position: sticky;
@@ -5443,9 +5450,13 @@ body.translate main form .image-column .buttons {
   flex-direction: row-reverse;
   align-items: center;
 }
+body.translate main form .image-column .buttons .oo-ui-widget {
+  margin-right: 0;
+}
 body.translate main form .image-column .buttons .download-or-upload {
   margin: 0 1rem 0 0.8rem;
 }
 body.translate main form .image-column img {
+  margin-top: 1rem;
   max-width: 100%;
 }
