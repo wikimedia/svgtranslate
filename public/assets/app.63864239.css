@@ -5269,21 +5269,33 @@ body {
 }
 header,
 footer {
-  max-width: 720px;
+  max-width: 950px;
   margin: 3rem auto;
 }
 header h1 {
   font-size: 2.25rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   font-family: 'Helvetica Neue', 'Helvetica', 'Nimbus Sans L', 'Arial', 'Liberation Sans', sans-serif;
+  margin: 0;
 }
-header nav.user {
-  float: right;
+header .top-row {
+  display: flex;
+  align-items: center;
+}
+header .top-row .left {
+  flex: 2;
+}
+header .top-row nav.user {
+  flex: 1;
   text-align: right;
 }
-header nav.user ul {
+header .top-row nav.user ul {
   margin: 0;
+}
+header .description p {
+  width: 50%;
+  margin: 0 0 0.8rem 0;
 }
 footer .toolforge a {
   float: left;
@@ -5306,7 +5318,7 @@ footer .info {
 main,
 aside.tutorial {
   margin: 1.5rem auto;
-  max-width: 1200px;
+  max-width: 1140px;
   padding: 1rem;
 }
 main {
@@ -5362,16 +5374,24 @@ aside.tutorial p.arrow {
  * Wikimedia Foundation user interface base variables
  */
 body.search main form {
-  max-width: 720px;
+  max-width: 950px;
   margin: 3rem auto;
 }
 /**
  * WikimediaUI Base v0.12.0
  * Wikimedia Foundation user interface base variables
  */
+body.translate header {
+  margin: 2rem auto 2.1rem auto;
+}
 body.translate header h1,
 body.translate header p {
   margin: 0;
+}
+body.translate header h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 body.translate main {
   max-width: 2000px;
@@ -5417,6 +5437,14 @@ body.translate main form .image-column {
   position: sticky;
   top: 1rem;
   text-align: right;
+}
+body.translate main form .image-column .buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+body.translate main form .image-column .buttons .download-or-upload {
+  margin: 0 1rem 0 0.8rem;
 }
 body.translate main form .image-column img {
   max-width: 100%;

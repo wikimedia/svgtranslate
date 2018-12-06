@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
+{% block top_row_left %}
     <p><a href="{{ path('home') }}">{{ msg('pick-another') }}</a></p>
+{% endblock %}
+
+{% block description %}
     <h1>{{ filename }}</h1>
     <p>
         <a href="https://commons.wikimedia.org/wiki/File:{{ filename }}" target="_blank"
@@ -20,7 +23,11 @@
             </div>
         </div>
         <div class="image-column">
-            <div class="buttons">{{ download_button|raw }}{{ upload_button|raw }}</div>
+            <div class="buttons">
+                {{ upload_button|raw }}
+                <span class="download-or-upload">{{ msg('download-or-upload') }}</span>
+                {{ download_button|raw }}
+            </div>
             <div class="image">
                 {# @TODO Add correct image here. #}
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/100_Years_War_France_1435.svg/601px-100_Years_War_France_1435.svg.png" alt="{{ msg('translation-image-alt') }}" />

@@ -46,13 +46,15 @@ class TranslateController extends AbstractController
         // Upload and download buttons.
         $downloadButton = new ButtonInputWidget([
             'label' => $intuition->msg('download-button-label'),
+            'flags' => [ 'progressive' ],
             'type' => 'submit',
+            'framed' => false,
         ]);
         $uploadButton = new ButtonInputWidget([
             'label' => $intuition->msg('upload-button-label'),
             'flags' => [ 'progressive' ],
-            'icon' => 'logoWikimediaCommons',
             'type' => 'submit',
+            'icon' => 'logoWikimediaCommons',
         ]);
         if (!$session->get('logged_in_user')) {
             // Only logged in users can upload.
