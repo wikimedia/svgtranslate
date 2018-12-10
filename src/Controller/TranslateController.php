@@ -41,7 +41,7 @@ class TranslateController extends AbstractController
         $filename = $this->getFilename($request);
         $fileName = Title::normalize($filename);
         $path = $cache->getPath($fileName);
-        $svgFile = new SvgFile($path, 'en');
+        $svgFile = new SvgFile($path);
 
         // Upload and download buttons.
         $downloadButton = new ButtonInputWidget([

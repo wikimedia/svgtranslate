@@ -53,7 +53,7 @@ class ApiController extends AbstractController
 
         $translations = \GuzzleHttp\json_decode($json, true);
         $path = $this->cache->getPath($fileName);
-        $file = new SvgFile($path, 'en');
+        $file = new SvgFile($path);
         $file->switchToTranslationSet($translations);
 
         return $this->serveContent($file->saveToString());
@@ -69,7 +69,7 @@ class ApiController extends AbstractController
     {
         $fileName = Title::normalize($fileName);
         $path = $this->cache->getPath($fileName);
-        $file = new SvgFile($path, 'en');
+        $file = new SvgFile($path);
 
         return $this->json($file->getInFileTranslations());
     }
@@ -84,7 +84,7 @@ class ApiController extends AbstractController
     {
         $fileName = Title::normalize($fileName);
         $path = $this->cache->getPath($fileName);
-        $file = new SvgFile($path, 'en');
+        $file = new SvgFile($path);
         $langs = $file->getSavedLanguages();
         sort($langs);
 

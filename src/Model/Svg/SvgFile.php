@@ -57,13 +57,11 @@ class SvgFile
      * Construct an SvgFile object.
      *
      * @param string $path
-     * @param string $fallbackLanguage
      * @todo Handle DOM warnings
      */
-    public function __construct(string $path, string $fallbackLanguage)
+    public function __construct(string $path)
     {
-        // Save sourceLanguage for later (mostly so we can understand which language is the fallback)
-        $this->fallbackLanguage = $fallbackLanguage;
+        $this->fallbackLanguage = 'fallback';
 
         $this->document = new DOMDocument('1.0');
 
