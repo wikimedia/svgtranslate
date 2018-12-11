@@ -76,7 +76,7 @@ class ApiControllerTest extends TestCase
         self::assertEquals(200, $response->getStatusCode());
         self::assertEquals('application/json', $response->headers->get('Content-Type'));
         $json = \GuzzleHttp\json_decode($response->getContent(), true);
-        self::assertEquals(['de', 'en', 'fr', 'nl', 'tlh-ca'], $json);
+        self::assertEquals(['de', 'fallback', 'fr', 'nl', 'tlh-ca'], $json);
     }
 
     private function makeController(): ApiController

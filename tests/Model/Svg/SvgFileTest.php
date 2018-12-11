@@ -287,7 +287,7 @@ class SvgFileTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->svg = new SvgFile(self::TEST_FILE, 'en');
+        $this->svg = new SvgFile(self::TEST_FILE);
     }
 
     /*
@@ -323,7 +323,7 @@ class SvgFileTest extends TestCase
     public function testGetSavedLanguages(): void
     {
         $expected = [
-            'de', 'fr', 'nl', 'tlh-ca', 'en',
+            'de', 'fr', 'nl', 'tlh-ca', 'fallback',
         ];
         $this->assertEquals($expected, $this->svg->getSavedLanguages());
     }
@@ -331,7 +331,7 @@ class SvgFileTest extends TestCase
     public function testGetSavedLanguagesFiltered(): void
     {
         $expected = [
-            'full' => [ 'fr', 'nl', 'tlh-ca', 'en' ],
+            'full' => [ 'fr', 'nl', 'tlh-ca', 'fallback' ],
             'partial' => [ 'de' ],
         ];
         $this->assertEquals($expected, $this->svg->getSavedLanguagesFiltered());
@@ -487,13 +487,13 @@ class SvgFileTest extends TestCase
 
     public function testEmptySvg(): void
     {
-        $file = new SvgFile(__DIR__.'/../../data/empty.svg', 'en');
+        $file = new SvgFile(__DIR__.'/../../data/empty.svg');
         $this->assertEquals([], $file->getInFileTranslations());
     }
 
     public function testUnevenTspans(): void
     {
-        $file = new SvgFile(__DIR__.'/../../data/tspans.svg', 'en');
+        $file = new SvgFile(__DIR__.'/../../data/tspans.svg');
         $this->assertEquals(
             [
                 'trsvg3' => [
