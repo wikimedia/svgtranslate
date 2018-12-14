@@ -34,3 +34,7 @@
         </div>
     </form>
 {% endblock %}
+
+{% block script %}
+appConfig.translations = {{ translations|json_encode|raw }};
+{% endblock %}

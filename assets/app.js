@@ -82,25 +82,3 @@ $( function () {
 		OO.ui.infuse( 'search-widget' );
 	}
 } );
-
-// Add ULS to the target-language button.
-$( function () {
-	var targetLangButton,
-		$targetLangButton = $( '.target-lang-widget' );
-	if ( $targetLangButton.length === 0 ) {
-		// If the widget isn't present, do nothing.
-		return;
-	}
-	targetLangButton = OO.ui.infuse( $targetLangButton );
-	targetLangButton.$element.uls( {
-		// Save the language name and code in the widget.
-		onSelect: function ( language ) {
-			this.setLabel( $.uls.data.languages[ language ][ 2 ] );
-			this.setData( language );
-		}.bind( targetLangButton ),
-		// Add the preferred languages as the quick-list.
-		quickList: App.getCookieVal( 'preferredLangs', [] ),
-		// @HACK: Re-align the ULS menu because we're customizing its layout in translate.less.
-		left: targetLangButton.$element.offset().left
-	} );
-} );

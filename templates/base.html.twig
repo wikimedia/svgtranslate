@@ -79,6 +79,7 @@
             {# This var is used for the Universal Language Selector. #}
             languages: {{ all_langs()|json_encode|raw }}
         };
+        {% block script %}{% endblock %}
     </script>
     <script type="text/javascript" src="{{ asset('assets/app.js') }}"></script>
     </body>

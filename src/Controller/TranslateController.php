@@ -80,6 +80,7 @@ class TranslateController extends AbstractController
             // @TODO Get this value from the session.
             'value' => 'fallback',
             'classes' => ['source-lang-widget'],
+            'infusable' => true,
         ]);
         $targetLangDefault = $intuition->getLang();
         $cookie = $request->cookies->get('svgtranslate');
@@ -115,12 +116,13 @@ class TranslateController extends AbstractController
             $inputWidget = new TextInputWidget([
                 'name' => 'translation-field-'.$nodeId,
                 'value' => isset($langs[$targetLang->getValue()]) ? $langs[$targetLang->getValue()]['text'] : '',
+                'data' => ['nodeId' => $nodeId],
             ]);
             $field = new FieldLayout(
                 $inputWidget,
                 [
                     'label' => $langs[$sourceLang->getValue()]['text'],
-                    'id' => 'translation-field-'.$nodeId,
+                    'infusable' => true,
                 ]
             );
             $formFields[] = $field;
