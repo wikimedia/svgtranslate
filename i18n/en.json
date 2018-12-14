@@ -27,6 +27,7 @@
   "view-on-commons": "View on Commons",
   "opens-in-new-tab": "Opens in new tab",
   "default-language": "Default language",
+  "source-lang-not-found": "Untranslated. Default: $1",
   "source-to-target": "to",
   "upload-button-label": "Upload to Commons",
   "download-button-label": "Download",
