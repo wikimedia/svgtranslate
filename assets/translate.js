@@ -52,9 +52,19 @@ $( function () {
 		// Go through all the field labels and fetch new values from the translations.
 		$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 			var fieldLayout = OO.ui.infuse( $( this ) ),
-				nodeId = fieldLayout.getField().data.nodeId,
-				newLabel = appConfig.translations[ nodeId ][ newLangCode ].text;
-			fieldLayout.setLabel( newLabel );
+				nodeId = fieldLayout.getField().data.nodeId;
+			if ( appConfig.translations[ nodeId ][ newLangCode ] === undefined ) {
+				// If there's no source language available for a string,
+				// show a message and the fallback language.
+				fieldLayout.setLabel( $.i18n(
+					'source-lang-not-found',
+					[ appConfig.translations[ nodeId ].fallback.text ]
+				) );
+				fieldLayout.$element.addClass( 'source-lang-not-found' );
+			} else {
+				// Where available, set the source language string.
+				fieldLayout.setLabel( appConfig.translations[ nodeId ][ newLangCode ].text );
+			}
 		} );
 	} );
 } );

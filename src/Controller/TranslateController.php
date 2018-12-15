@@ -65,7 +65,7 @@ class TranslateController extends AbstractController
         $availableLangs = [
             ['data' => 'fallback', 'label' => $intuition->msg('default-language')],
         ];
-        foreach ($svgFile->getSavedLanguagesFiltered()['full'] as $lang) {
+        foreach ($svgFile->getSavedLanguages() as $lang) {
             $langName = $intuition->getLangName($lang);
             if ($langName) {
                 $availableLangs[] = [

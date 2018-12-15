@@ -5440,6 +5440,10 @@ body.translate main form .form-column .language-selectors .target-lang-widget bu
 body.translate main form .form-column .oo-ui-fieldLayout {
   margin-bottom: 1.5rem;
 }
+body.translate main form .form-column .source-lang-not-found label {
+  font-style: italic;
+  color: #72777d;
+}
 body.translate main form .image-column {
   position: sticky;
   top: 1rem;
