@@ -5,6 +5,7 @@ php:
 
 before_install:
   - npm -g install npm # Upgrade npm so we can use the ci install command.
+  - sudo apt-get install -y librsvg2-bin
 
 install:
   - composer install
@@ -15,7 +16,9 @@ script:
   - node_modules/.bin/encore production
   - git status
   - git status | grep "nothing to commit, working tree clean"
+  # Run linting.
   - composer lint
+  # Run tests.
   - composer test
 
 after_success:

@@ -5,6 +5,7 @@ namespace App\Tests\Controller;
 
 use App\Controller\ApiController;
 use App\Service\FileCache;
+use App\Service\Renderer;
 use App\Tests\Model\Svg\SvgFileTest;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
@@ -12,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ApiControllerTest extends TestCase
 {
+
     /**
      * @covers \App\Controller\ApiController::getFile()
      * @covers \App\Controller\ApiController::serveContent()
@@ -19,11 +21,10 @@ class ApiControllerTest extends TestCase
     public function testGetFile(): void
     {
         $controller = $this->makeController();
-
-        $response = $controller->getFile('file: foo.svg');
+        $response = $controller->getFile('file: foo.svg', 'de');
         self::assertEquals(200, $response->getStatusCode());
-        self::assertEquals('image/svg+xml', $response->headers->get('Content-Type'));
-        self::assertEquals('test content', $response->getContent());
+        self::assertEquals('image/png', $response->headers->get('Content-Type'));
+        self::assertStringEqualsFile(SvgFileTest::TEST_FILE_RENDERED, $response->getContent());
     }
 
     /**
@@ -43,7 +44,7 @@ class ApiControllerTest extends TestCase
         ];
         $request = new Request([], [], [], [], [], [], \GuzzleHttp\json_encode($translations));
 
-        $response = $controller->getFileWithTranslations('Foo.svg', $request);
+        $response = $controller->getFileWithTranslations('Foo.svg', 'ru', $request);
         self::assertEquals(200, $response->getStatusCode());
         self::assertEquals('image/svg+xml', $response->headers->get('Content-Type'));
         self::assertNotFalse(strpos($response->getContent(), 'Прив1ет'));
@@ -99,7 +100,7 @@ class ApiControllerTest extends TestCase
             ->willReturn('test content');
 
         /** @var FileCache $cache */
-        $controller = new ApiController($cache);
+        $controller = new ApiController($cache, new Renderer('rsvg-convert'));
         $controller->setContainer($container);
 
         return $controller;

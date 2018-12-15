@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\Service\FileCache;
+use App\Service\Renderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,47 +17,59 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ApiController extends AbstractController
 {
+
     /** @var FileCache */
     private $cache;
 
-    public function __construct(FileCache $cache)
+    /** @var Renderer */
+    protected $svgRenderer;
+
+    public function __construct(FileCache $cache, Renderer $svgRenderer)
     {
         $this->cache = $cache;
+        $this->svgRenderer = $svgRenderer;
     }
 
     /**
-     * @Route("/api/file/{fileName}", name="api_file", methods="GET")
+     * Serve a PNG rendering of the given SVG in the given language.
+     * @Route("/api/file/{filename}/{lang}.png", name="api_file", methods="GET")
      *
-     * @param string $fileName
+     * @param string $filename
      * @return Response
      */
-    public function getFile(string $fileName): Response
+    public function getFile(string $filename, string $lang): Response
     {
-        $fileName = Title::normalize($fileName);
-        $content = $this->cache->getContent($fileName);
-        return $this->serveContent($content);
+        $filename = Title::normalize($filename);
+        return $this->serveContent($this->cache->getPath($filename), $lang);
     }
 
     /**
-     * @Route("/api/file/{fileName}", name="api_file_translated", methods="POST")
-     * @param string $fileName
+     * Serve a PNG rendering of the given SVG in the given language, based on the POSTed translations.
+     * @Route("/api/file/{filename}/{lang}.png", name="api_file_translated", methods="POST")
+     * @param string $filename
      * @param Request $request
      * @return Response
      */
-    public function getFileWithTranslations(string $fileName, Request $request): Response
+    public function getFileWithTranslations(string $filename, string $lang, Request $request): Response
     {
-        $fileName = Title::normalize($fileName);
+        $filename = Title::normalize($filename);
         $json = $request->getContent();
         if ('' === $json) {
-            return $this->getFile($fileName);
+            return $this->getFile($filename, $lang);
         }
 
         $translations = \GuzzleHttp\json_decode($json, true);
-        $path = $this->cache->getPath($fileName);
+        $path = $this->cache->getPath($filename);
         $file = new SvgFile($path);
         $file->switchToTranslationSet($translations);
 
-        return $this->serveContent($file->saveToString());
+        // Write SVG file to filesystem, so it can be converted by rsvg. Use a unique filename
+        // because multiple users can be translating the same file at the same time (whereas
+        // getFile() above only ever serves the one version of a file).
+        $tmpSvgFilename = $this->cache->getTempSvgFile();
+        $file->saveToPath($tmpSvgFilename);
+
+        return $this->serveContent($tmpSvgFilename, $lang);
     }
 
     /**
@@ -92,15 +105,17 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Serves an SVG
+     * Serves an SVG as a PNG.
      *
-     * @param string $content
+     * @param string $svgFilename Full path to the SVG file to convert and serve as a PNG.
+     * @param string $lang The language to use for the SVG's text.
      * @return Response
      */
-    private function serveContent(string $content): Response
+    private function serveContent(string $svgFilename, string $lang): Response
     {
+        $content = $this->svgRenderer->render($svgFilename, $lang);
         return new Response($content, 200, [
-            'Content-Type' => 'image/svg+xml',
+            'Content-Type' => 'image/png',
             'X-File-Hash' => sha1($content),
         ]);
     }

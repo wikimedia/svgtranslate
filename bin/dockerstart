@@ -7,6 +7,8 @@ if [ -z $TOOLFORGE_DOCKER_PORT ]; then
 fi
 
 # Install dependencies.
+apt-get update
+apt-get install librsvg2-bin
 composer install -d /var/www || exit 1;
 
 # Start the Lighttpd web server. 
