@@ -14,10 +14,11 @@ final class Title
      */
     public static function removeNamespace(string $title): string
     {
-        return preg_replace('/^file\s*:\s*/i', '', $title);
+        return preg_replace('/.*file\s*:\s*/i', '', $title);
     }
 
     /**
+     * Get the 'DB key' form of a title (underscores not spaces, and uppercase first character).
      * @param string $title
      * @return string
      */
@@ -29,5 +30,15 @@ final class Title
         $title = str_replace(' ', '_', $title);
 
         return $title;
+    }
+
+    /**
+     * Get the 'text' form of a title (spaces not underscores).
+     * @param string $title
+     * @return string
+     */
+    public static function text(string $title): string
+    {
+        return str_replace('_', ' ', static::normalize($title));
     }
 }

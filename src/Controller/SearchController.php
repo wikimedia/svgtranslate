@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Controller;
 
+use App\Model\Title;
 use App\OOUI\SearchWidget;
 use Krinkle\Intuition\Intuition;
 use OOUI\ActionFieldLayout;
@@ -59,12 +60,6 @@ class SearchController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        $filePrefixPos = stripos($filename, 'File:');
-        if (false !== $filePrefixPos) {
-            // Strip any 'File:' prefix, including if a URL has been supplied.
-            $filename = substr($filename, $filePrefixPos + strlen('File:'));
-        }
-
-        return $this->redirectToRoute('translate', ['filename' => $filename]);
+        return $this->redirectToRoute('translate', ['filename' => Title::normalize($filename)]);
     }
 }

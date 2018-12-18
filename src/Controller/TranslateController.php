@@ -23,24 +23,34 @@ class TranslateController extends AbstractController
 {
 
     /**
-     * Get the filename parameter from the given Request.
-     * @param Request $request Normalized filename.
-     * @return string
+     * The translate page.
+     *
+     * The 'prefix' part of this route is actually a fixed string 'File', but in order to make it
+     * case-insensitive we have to make it a route variable with a regex requirement. Then we can
+     * also check it and redirect to the canonical form when required.
+     * @Route( "/{prefix}:{filename}",
+     *     name="translate",
+     *     methods={"GET"},
+     *     requirements={"prefix"="(?i:File)", "filename"="(.+)"}
+     *     )
      */
-    protected function getFilename(Request $request):string
-    {
-        return str_replace('_', ' ', $request->get('filename'));
-    }
+    public function translate(
+        Request $request,
+        Intuition $intuition,
+        Session $session,
+        FileCache $cache,
+        string $filename,
+        string $prefix = 'File'
+    ): Response {
+        $normalizedFilename = Title::normalize($filename);
 
-    /**
-     * @Route("/File:{filename<.+>}", name="translate", methods={"GET"})
-     */
-    public function translate(Request $request, Intuition $intuition, Session $session, FileCache $cache):Response
-    {
+        // Redirect to normalized URL if required.
+        if ('File' !== $prefix || $filename !== $normalizedFilename) {
+            return $this->redirectToRoute('translate', ['filename' => $normalizedFilename]);
+        }
+
         // Fetch the SVG from Commons.
-        $filename = $this->getFilename($request);
-        $fileName = Title::normalize($filename);
-        $path = $cache->getPath($fileName);
+        $path = $cache->getPath($filename);
         $svgFile = new SvgFile($path);
 
         // Upload and download buttons.
@@ -130,8 +140,8 @@ class TranslateController extends AbstractController
 
         return $this->render('translate.html.twig', [
             'page_class' => 'translate',
-            'title' => $filename,
-            'filename' => $filename,
+            'title' => Title::text($filename),
+            'filename' => $normalizedFilename,
             'fields' => $formFields,
             'download_button' => $downloadButton,
             'upload_button' => $uploadButton,
@@ -139,15 +149,5 @@ class TranslateController extends AbstractController
             'translations' => $translations,
             'target_lang' => $targetLangDefault,
         ]);
-    }
-
-    /**
-     * @Route("/File:{filename<.+>}", name="svg", methods={"POST"}))
-     */
-    public function svg(Request $request, Intuition $intuition, Session $session):Response
-    {
-        $filename = $this->getFilename($request);
-        return $this->redirectToRoute('translate', ['filename' => $filename]);
-        // @TODO Modify and return SVG.
     }
 }
