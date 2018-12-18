@@ -107,4 +107,14 @@ class FileCache
     {
         return $this->directory.DIRECTORY_SEPARATOR.$fileName;
     }
+
+    /**
+     * Create a file with a unique .svg filename, with access permission set to 0600,
+     * and return its name.
+     * @return string
+     */
+    public function getTempSvgFile(): string
+    {
+        return tempnam($this->directory, 'temp_').'.svg';
+    }
 }

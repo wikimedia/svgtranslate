@@ -137,6 +137,7 @@ class TranslateController extends AbstractController
             'upload_button' => $uploadButton,
             'language_selectors' => $languageSelectorsLayout,
             'translations' => $translations,
+            'target_lang' => $targetLangDefault,
         ]);
     }
 

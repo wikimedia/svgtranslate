@@ -21,6 +21,12 @@ class SvgFileTest extends TestCase
 {
     public const TEST_FILE = __DIR__.'/../../data/Speech_bubbles.svg';
 
+    /**
+     * This PNG file is generated as part of the Composer installation process,
+     * because rsvg is not deterministic.
+     */
+    public const TEST_FILE_RENDERED = __DIR__.'/../../data/Speech_bubbles.png';
+
     public const EXPECTED_TRANSLATIONS = [
         'tspan2987' =>
             [

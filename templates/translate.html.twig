@@ -29,7 +29,7 @@
                 {{ download_button|raw }}
             </div>
             <div class="image">
-                <img src="{{ path('api_file', {fileName: filename}) }}" alt="{{ msg('translation-image-alt') }}" />
+                <img src="{{ path('api_file', {filename: filename, lang: target_lang}) }}" alt="{{ msg('translation-image-alt') }}" />
             </div>
         </div>
     </form>

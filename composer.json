@@ -68,10 +68,15 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@generate-test-data"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@generate-test-data"
+        ],
+        "generate-test-data": [
+            "LANG=de rsvg-convert ./tests/data/Speech_bubbles.svg > ./tests/data/Speech_bubbles.png"
         ],
         "lint": [
             "composer validate",

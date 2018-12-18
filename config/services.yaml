@@ -34,3 +34,7 @@ services:
     App\Service\FileCache:
         arguments:
             $directory: '%kernel.project_dir%/var/cache/images'
+
+    App\Service\Renderer:
+        arguments:
+            $rsvgCommand: '/usr/bin/rsvg-convert'
