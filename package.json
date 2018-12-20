@@ -7,6 +7,7 @@
     "jquery": "3.3",
     "jquery.uls": "0.1",
     "js-cookie": "2.2",
+    "leaflet": "1.4.0",
     "less": "3.9",
     "less-loader": "4.1",
     "oojs-ui": "0.30.2",

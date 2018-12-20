@@ -82,6 +82,10 @@
 			'./node_modules/jquery.uls/css/jquery.uls.grid.css',
 			'./node_modules/jquery.uls/css/jquery.uls.lcd.css',
 
+			// Leaflet.
+			'./node_modules/leaflet/dist/leaflet.js',
+			'./node_modules/leaflet/dist/leaflet.css',
+
 			// This app.
 			'./assets/app.js',
 			'./assets/app.less',

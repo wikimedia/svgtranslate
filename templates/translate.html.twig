@@ -28,7 +28,7 @@
                 <span class="download-or-upload">{{ msg('download-or-upload') }}</span>
                 {{ download_button|raw }}
             </div>
-            <div class="image">
+            <div class="image" id="translation-image">
                 <img src="{{ path('api_file', {filename: filename, lang: target_lang}) }}"
                      alt="{{ msg('translation-image-alt') }}"
                      data-filename="{{ filename }}" />
