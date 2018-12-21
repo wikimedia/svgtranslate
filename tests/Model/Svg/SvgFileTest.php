@@ -476,6 +476,13 @@ class SvgFileTest extends TestCase
         $this->assertEquals(str_replace(' ', '', $origXml), str_replace(' ', '', $this->svg->saveToString()));
     }
 
+    public function testSetTranslations(): void
+    {
+        // The test file does not contain Spanish.
+        $this->svg->setTranslations('es', ['tspan2993' => 'FooBar']);
+        static::assertContains('FooBar', $this->svg->saveToString());
+    }
+
     public function testSaveToString(): void
     {
         // Check that we are not actually destroying the XML file

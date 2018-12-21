@@ -431,6 +431,38 @@ class SvgFile
     }
 
     /**
+     * Set translations for a single language.
+     * @param string $lang Language code of the translations being provided.
+     * @param string[] $translations Array of tspan-IDs to message texts.
+     * @return string[][]
+     */
+    public function setTranslations(string $lang, array $translations): array
+    {
+        // Load the existing translation structure, and go through it swapping the messages.
+        $inFileTranslations = $this->getInFileTranslations();
+        $filteredTextNodes = $this->getFilteredTextNodes();
+        foreach ($translations as $tspanId => $msg) {
+            // Set up the tspan node (including adding in the new message).
+            if (!isset($inFileTranslations[$tspanId][$lang])) {
+                $inFileTranslations[$tspanId][$lang] = $inFileTranslations[$tspanId]['fallback'];
+                $inFileTranslations[$tspanId][$lang]['id'] .= "-$lang";
+            }
+            if (!empty($msg)) {
+                $inFileTranslations[$tspanId][$lang]['text'] = $msg;
+            }
+            // Set up the text node (if this is a new language).
+            $textId = $inFileTranslations[$tspanId][$lang]['data-parent'];
+            if (!isset($filteredTextNodes[$textId][$lang])) {
+                $filteredTextNodes[$textId][$lang] = $filteredTextNodes[$textId]['fallback'];
+                $filteredTextNodes[$textId][$lang]['id'] .= "-$lang";
+            }
+        }
+        $allTranslations = array_merge($inFileTranslations, $filteredTextNodes);
+        // Add the updated translations back into the file.
+        return $this->switchToTranslationSet($allTranslations);
+    }
+
+    /**
      * Try to return $this->savedLanguages (a list of languages which have one or more
      * translations in-file). If it is not cached, analyse the SVG and hence generate it.
      *

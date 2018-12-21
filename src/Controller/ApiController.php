@@ -8,8 +8,11 @@ use App\Model\Title;
 use App\Service\FileCache;
 use App\Service\Renderer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -31,45 +34,87 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Serve a PNG rendering of the given SVG in the given language.
+     * Serve a PNG rendering of the given SVG in the given language (without any user-provided
+     * translation strings).
+     *
      * @Route("/api/file/{filename}/{lang}.png", name="api_file", methods="GET")
      *
      * @param string $filename
+     * @param string $lang
      * @return Response
      */
     public function getFile(string $filename, string $lang): Response
     {
         $filename = Title::normalize($filename);
-        return $this->serveContent($this->cache->getPath($filename), $lang);
+        $content = $this->svgRenderer->render($this->cache->getPath($filename), $lang);
+        return new Response($content, 200, [
+            'Content-Type' => 'image/png',
+            'X-File-Hash' => sha1($content),
+        ]);
     }
 
     /**
-     * Serve a PNG rendering of the given SVG in the given language, based on the POSTed translations.
-     * @Route("/api/file/{filename}/{lang}.png", name="api_file_translated", methods="POST")
+     * Get a full filesystem path to a temporary PNG file.
+     * @param string $filename The base SVG filename.
+     * @param string $key They unique key to append to the filename.
+     * @return string
+     */
+    protected function getTempPngFilename(string $filename, string $key): string
+    {
+        return $this->cache->fullPath($filename.'_'.$key.'.png');
+    }
+
+    /**
+     * Take POST data, write new translations into the SVG file, render a resultant PNG out to the
+     * filesystem, and return an identifier for that PNG file.
+     *
+     * @Route("/api/translate/{filename}/{lang}", name="api_file_request", methods="POST")
+     */
+    public function requestFileWithTranslations(string $filename, string $lang, Request $request): Response
+    {
+        // Get the SVG file, and add in the new translations.
+        $filename = Title::normalize($filename);
+        $path = $this->cache->getPath($filename);
+        $file = new SvgFile($path);
+        $translations = $request->request->all();
+        $file->setTranslations($lang, $translations);
+
+        // Write the modified SVG out to the filesystem, named with a unique key. This is necessary
+        // both because multiple people could be translating the same file at the same time, and
+        // also means we can use the same key for the rendered PNG file. The key is generated from
+        // the translation set so that the
+        $fileKey = md5(serialize($translations));
+        $tempPngFilename = $this->getTempPngFilename($filename, $fileKey);
+        $file->saveToPath($tempPngFilename);
+
+        // Render the modified SVG to PNG, and return it's URL.
+        $renderedPngContents = $this->svgRenderer->render($tempPngFilename, $lang);
+        file_put_contents($tempPngFilename, $renderedPngContents);
+        $relativeUrl = $this->generateUrl('api_file_translated', [
+            'filename' => $filename,
+            'key' => $fileKey,
+            'lang' => $lang,
+        ]);
+        return new JsonResponse(['imageSrc' => $relativeUrl]);
+    }
+
+    /**
+     * Get a request for a already-rendered, custom-translated PNG (identified by a key), and
+     * return that file.
+     *
+     * @Route("/api/file/{filename}/{lang}/{key}.png", name="api_file_translated", methods="GET")
+     *
      * @param string $filename
      * @param Request $request
      * @return Response
      */
-    public function getFileWithTranslations(string $filename, string $lang, Request $request): Response
+    public function getFileWithTranslations(string $filename, string $lang, string $key, Request $request): Response
     {
-        $filename = Title::normalize($filename);
-        $json = $request->getContent();
-        if ('' === $json) {
-            return $this->getFile($filename, $lang);
+        $tempPngFilename = $this->getTempPngFilename($filename, $key);
+        if (file_exists($tempPngFilename)) {
+            return new BinaryFileResponse($tempPngFilename);
         }
-
-        $translations = \GuzzleHttp\json_decode($json, true);
-        $path = $this->cache->getPath($filename);
-        $file = new SvgFile($path);
-        $file->switchToTranslationSet($translations);
-
-        // Write SVG file to filesystem, so it can be converted by rsvg. Use a unique filename
-        // because multiple users can be translating the same file at the same time (whereas
-        // getFile() above only ever serves the one version of a file).
-        $tmpSvgFilename = $this->cache->getTempSvgFile();
-        $file->saveToPath($tmpSvgFilename);
-
-        return $this->serveContent($tmpSvgFilename, $lang);
+        throw new NotFoundHttpException();
     }
 
     /**
@@ -102,21 +147,5 @@ class ApiController extends AbstractController
         sort($langs);
 
         return $this->json($langs);
-    }
-
-    /**
-     * Serves an SVG as a PNG.
-     *
-     * @param string $svgFilename Full path to the SVG file to convert and serve as a PNG.
-     * @param string $lang The language to use for the SVG's text.
-     * @return Response
-     */
-    private function serveContent(string $svgFilename, string $lang): Response
-    {
-        $content = $this->svgRenderer->render($svgFilename, $lang);
-        return new Response($content, 200, [
-            'Content-Type' => 'image/png',
-            'X-File-Hash' => sha1($content),
-        ]);
     }
 }
