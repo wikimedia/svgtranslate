@@ -84,9 +84,8 @@
             "composer validate",
             "./bin/console lint:twig ./templates",
             "./bin/console lint:yaml ./config",
-            "./bin/console lint:yaml .travis.yml",
-            "./vendor/bin/phpcs -s .",
-            "./vendor/bin/minus-x check ."
+            "phpcs -s .",
+            "minus-x check ."
         ],
         "test": [
             "./bin/phpunit tests"

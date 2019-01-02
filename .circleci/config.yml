@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    machine:
+      enabled: true
+      image: circleci/classic:latest
+
+    steps:
+      - checkout
+
+      - run:
+          name: Start containers
+          command: |
+            docker-compose up --build -d
+            docker-compose exec web composer install
+
+      - run:
+          name: Run linting
+          command: |
+            docker-compose exec web composer lint
+            docker-compose exec assets npm run lint
+
+      - run:
+          name: Run tests
+          command: |
+            docker-compose exec web composer test
+            docker-compose exec assets npm run test

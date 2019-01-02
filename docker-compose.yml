@@ -1,12 +1,30 @@
 version: '3'
 services:
+
     web:
-        build: ./
-        container_name: svgtranslate_web
+        build:
+            dockerfile: ./.docker/web/Dockerfile
+            context: .
         ports:
-          - ${TOOLFORGE_DOCKER_PORT}:80
+            - 8042:80
         volumes:
-          - ./.docker/lighttpd.conf:/etc/lighttpd/lighttpd.conf:cached
-          - ./:/var/www:cached
-        environment:
-          TOOLFORGE_DOCKER_PORT: ${TOOLFORGE_DOCKER_PORT}
+            - .:/var/www:cached
+
+    assets:
+        image: node:11.5
+        working_dir: /svgtranslate
+        volumes:
+            - ./:/svgtranslate:cached
+        command: ./.docker/assets/run.sh
+
+    wiki:
+        build:
+            dockerfile: ./.docker/wiki/Dockerfile
+            context: .
+        ports:
+            - 8043:80
+        volumes:
+            - ./var/wiki:/var/www/html/images
+            - ./.docker/wiki/LocalSettings.php:/var/www/html/LocalSettings_tmp.php
+            - ./.docker/wiki/run.sh:/usr/local/bin/docker-run.sh
+        command: /usr/local/bin/docker-run.sh
