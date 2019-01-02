@@ -29,9 +29,12 @@ docker-compose up
 Now you should be able to view the tool at [http://localhost:8042/](http://localhost:8042/)
 If you need to change the port, edit `TOOLFORGE_DOCKER_PORT` in your `svgtranslate/.env` file.
 
-To run Composer commands on the server, connect to the container:
+Asset files will be regenerated whenever you save any changes to any files in `assets/`.
 
-    docker exec -it -u dev svgtranslate_web bash
+To run commands (e.g. `composer` or `npm`) on the server, connect to one of the containers:
+
+    docker exec -it svgtranslate_web bash
+    docker exec -it svgtranslate_assets bash
 
 ### Install manually
 

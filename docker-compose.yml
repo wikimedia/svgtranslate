@@ -1,12 +1,19 @@
 version: '3'
 services:
+
     web:
-        build: ./
+        build: ./.docker/web
         container_name: svgtranslate_web
         ports:
           - ${TOOLFORGE_DOCKER_PORT}:80
         volumes:
-          - ./.docker/lighttpd.conf:/etc/lighttpd/lighttpd.conf:cached
+          - ./.docker/web/lighttpd.conf:/etc/lighttpd/lighttpd.conf:cached
           - ./:/var/www:cached
         environment:
           TOOLFORGE_DOCKER_PORT: ${TOOLFORGE_DOCKER_PORT}
+
+    assets:
+        build: ./.docker/assets
+        container_name: svgtranslate_assets
+        volumes:
+          - ./:/svgtranslate:cached
