@@ -32,6 +32,10 @@ class TitleTest extends TestCase
             ['file:тест_123.svg', 'Тест_123.svg'],
             ['Тест.svg', 'Тест.svg'],
             ['тест_123.svg', 'Тест_123.svg'],
+            [
+                'https://commons.wikimedia.org/wiki/File:Flag_of_Pakistan_Construction.svg',
+                'Flag_of_Pakistan_Construction.svg',
+            ],
         ];
     }
 }
