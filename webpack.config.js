@@ -26,6 +26,14 @@
 		// Add extra loader for OOUI's *.cur cursor image files.
 		.addLoader( { test: /\.cur$/, loader: 'file-loader' } )
 
+		// Remove deprecated options from css-loader.
+		// @TODO remove this after the options have been removed from Encore defaults.
+		.configureCssLoader( function ( options ) {
+			delete options.minimize;
+			delete options.sourceMap;
+			return options;
+		} )
+
 		/*
 		 * ENTRY CONFIG
 		 *
@@ -49,7 +57,7 @@
 			// That can be removed when the above issue's fix makes it into a release.
 			'./node_modules/oojs-ui/dist/oojs-ui.js',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.js',
-			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.css',
+			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.css',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-interactions.css',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-wikimedia.css',
 
@@ -89,6 +97,7 @@
 		// Other options.
 		.enableLessLoader()
 		.cleanupOutputBeforeBuild()
+		.disableSingleRuntimeChunk()
 		.enableSourceMaps( !Encore.isProduction() )
 		.enableVersioning( Encore.isProduction() );
 

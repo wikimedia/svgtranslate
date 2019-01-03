@@ -11,7 +11,7 @@
         "ext-mbstring": "*",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "oojs/oojs-ui": "^0.29",
+        "oojs/oojs-ui": "^0.30",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
