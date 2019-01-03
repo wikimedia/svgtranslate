@@ -78,7 +78,8 @@ App.addLanguageSettingsLink = function () {
 
 // Enable the search form.
 $( function () {
-	if ( $( '#search-widget' ).length > 0 ) {
-		OO.ui.infuse( 'search-widget' );
+	var $searchWidget = $( '#search-widget' );
+	if ( $searchWidget.length > 0 ) {
+		OO.ui.infuse( $searchWidget );
 	}
 } );

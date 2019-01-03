@@ -4,7 +4,7 @@ php:
   - '7.2'
 
 before_install:
-  - npm -g install npm # Upgrade npm so we can use the ci install command.
+  - nvm install # Use node version as defined in .nvmrc, for deterministic webpack builds.
   - sudo apt-get install -y librsvg2-bin
 
 install:
