@@ -10,6 +10,7 @@ declare(strict_types = 1);
 
 namespace App\Model\Svg;
 
+use App\Exception\SvgLoadException;
 use DOMDocument;
 use DOMElement;
 use DOMNode;
@@ -57,7 +58,7 @@ class SvgFile
      * Construct an SvgFile object.
      *
      * @param string $path
-     * @todo Handle DOM warnings
+     * @throws SvgLoadException
      */
     public function __construct(string $path)
     {
@@ -66,10 +67,10 @@ class SvgFile
         $this->document = new DOMDocument('1.0');
 
         // Warnings need to be suppressed in case there are DOM warnings
-        //wfSuppressWarnings();
-        $this->document->load($path);
+        if (!$this->document->load($path, LIBXML_NOWARNING)) {
+            throw new SvgLoadException();
+        }
         $this->xpath = new DOMXpath($this->document);
-        //wfRestoreWarnings();
 
         $this->xpath->registerNamespace('svg', 'http://www.w3.org/2000/svg');
 
