@@ -20,4 +20,11 @@
             </property>
         </properties>
     </rule>
+
+    <rule ref="Generic.NamingConventions.CamelCapsFunctionName">
+        <properties>
+            <property name="strict" value="true" />
+        </properties>
+    </rule>
+
 </ruleset>
