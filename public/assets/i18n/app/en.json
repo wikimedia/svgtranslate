@@ -33,6 +33,7 @@
   "download-button-label": "Download",
   "download-or-upload": "or",
   "translation-image-alt": "The image that's currently being translated. No description available.",
+  "preview-error-occurred": "An error occurred when fetching the preview. Please continue translating, but if this error persists do report a bug (via the link in the footer below).",
 
   "download-icon-alt": "An icon indicating file-download",
   "pick-an-image-title": "Pick an image",

@@ -122,16 +122,19 @@ class TranslateController extends AbstractController
         // Messages.
         $translations = $svgFile->getInFileTranslations();
         $formFields = [];
-        foreach ($translations as $nodeId => $langs) {
+        foreach ($translations as $tspanId => $translation) {
+            $fieldValue = isset($translation[$targetLang->getValue()])
+                ? $translation[$targetLang->getValue()]['text']
+                : '';
             $inputWidget = new TextInputWidget([
-                'name' => 'translation-field-'.$nodeId,
-                'value' => isset($langs[$targetLang->getValue()]) ? $langs[$targetLang->getValue()]['text'] : '',
-                'data' => ['nodeId' => $nodeId],
+                'name' => 'translation-field-'.$tspanId,
+                'value' => $fieldValue,
+                'data' => ['tspan-id' => $tspanId],
             ]);
             $field = new FieldLayout(
                 $inputWidget,
                 [
-                    'label' => $langs[$sourceLang->getValue()]['text'],
+                    'label' => $translation[$sourceLang->getValue()]['text'],
                     'infusable' => true,
                 ]
             );

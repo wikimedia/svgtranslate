@@ -16,12 +16,11 @@ class ApiControllerTest extends TestCase
 
     /**
      * @covers \App\Controller\ApiController::getFile()
-     * @covers \App\Controller\ApiController::serveContent()
      */
     public function testGetFile(): void
     {
         $controller = $this->makeController();
-        $response = $controller->getFile('file: foo.svg', 'de');
+        $response = $controller->getFile('file: foo.svg', 'de', new Request());
         self::assertEquals(200, $response->getStatusCode());
         self::assertEquals('image/png', $response->headers->get('Content-Type'));
         self::assertStringEqualsFile(SvgFileTest::TEST_FILE_RENDERED, $response->getContent());
@@ -44,7 +43,7 @@ class ApiControllerTest extends TestCase
         ];
         $request = new Request([], [], [], [], [], [], \GuzzleHttp\json_encode($translations));
 
-        $response = $controller->getFileWithTranslations('Foo.svg', 'ru', $request);
+        $response = $controller->getFile('Foo.svg', 'ru', $request);
         self::assertEquals(200, $response->getStatusCode());
         self::assertEquals('image/svg+xml', $response->headers->get('Content-Type'));
         self::assertNotFalse(strpos($response->getContent(), 'Прив1ет'));

@@ -71,7 +71,7 @@ class FileCache
             return;
         }
 
-        foreach (glob($this->fullPath('*.svg')) as $fileName) {
+        foreach (glob($this->fullPath('*.*')) as $fileName) {
             $this->statFile($fileName);
         }
     }
@@ -103,18 +103,8 @@ class FileCache
      * @param string $fileName
      * @return string
      */
-    protected function fullPath(string $fileName): string
+    public function fullPath(string $fileName): string
     {
         return $this->directory.DIRECTORY_SEPARATOR.$fileName;
-    }
-
-    /**
-     * Create a file with a unique .svg filename, with access permission set to 0600,
-     * and return its name.
-     * @return string
-     */
-    public function getTempSvgFile(): string
-    {
-        return tempnam($this->directory, 'temp_').'.svg';
     }
 }

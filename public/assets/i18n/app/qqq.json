@@ -33,6 +33,7 @@
   "download-button-label": "Label for the button that downloads the translated SVG to the user's local computer.",
   "download-or-upload": "Label positioned between the download and the upload buttons.",
   "translation-image-alt": "Alt text for the image that's currently being translated. Doesn't explain the image, just explains that we don't explain it.",
+  "preview-error-occurred": "Error message displayed in a popup when fetching a preview failed. The only option is 'OK' to close the popup.",
 
   "download-icon-alt": "Alt text for the download icon.",
   "pick-an-image-title": "The title of the 'pick an image' step of the tutorial box.",
