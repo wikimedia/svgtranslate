@@ -29,6 +29,8 @@
   "default-language": "Default language",
   "source-lang-not-found": "Untranslated. Default: $1",
   "source-to-target": "to",
+  "confirmation-to-switch-target-lang": "You are trying to change the translation language but you have unsaved translations. Changing the language will result in loss of any added translations. Please upload the translations to Commons or download the translated file before proceeding. Do you wish to continue?",
+  "confirm-change-target-lang": "Change language",
   "upload-button-label": "Upload to Commons",
   "download-button-label": "Download",
   "download-or-upload": "or",

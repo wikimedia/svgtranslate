@@ -8,11 +8,12 @@ $( function () {
 		// If the widget isn't present, do nothing.
 		return;
 	}
-	function onSelectTargetLang( language ) {
+	function switchToNewTargetLang( ulsElement, language ) {
 		// 1. Save the language name and code in the widget.
-		this.setLabel( $.uls.data.languages[ language ][ 2 ] );
-		this.setData( language );
-		this.setValue( language );
+		ulsElement.setLabel( $.uls.data.languages[ language ][ 2 ] );
+		ulsElement.setData( language );
+		ulsElement.setValue( language );
+
 		// 2. Switch what's displayed in the form when a new language is selected in the ULS.
 		$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 			var field = OO.ui.infuse( $( this ) ).getField(),
@@ -27,8 +28,27 @@ $( function () {
 				field.setValue( '' );
 			}
 		} );
+
 		// 3. Update the image by faking a blur event on a form input.
 		$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget input:first' ).trigger( 'blur' );
+
+		// 4. Mark the translation state as not unsaved.
+		appConfig.unsaved = false;
+	}
+	function onSelectTargetLang( language ) {
+		var ulsElement = this;
+		// If any translations are currently unsaved, warn the user that they're about to lose their
+		// work.
+		// @TODO Set the 'OK' button to 'confirm-change-target-lang'.
+		if ( appConfig.unsaved === true ) {
+			OO.ui.confirm( $.i18n( 'confirmation-to-switch-target-lang' ) ).done( function ( confirmed ) {
+				if ( confirmed ) {
+					switchToNewTargetLang( ulsElement, language );
+				}
+			} );
+		} else {
+			switchToNewTargetLang( ulsElement, language );
+		}
 	}
 	targetLangButton = OO.ui.infuse( $targetLangButton );
 	targetLangButton.$element.uls( {
@@ -74,7 +94,7 @@ $( function () {
 } );
 
 /**
- * When a translation field is changed, update the image preview.
+ * When a translation field is changed, update the image preview, and also mark the form as unsaved.
  */
 $( function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
@@ -106,6 +126,9 @@ $( function () {
 		// Update the preview image on field blur and after two seconds of no typing.
 		inputWiget.$input.on( 'blur', updatePreviewImage );
 		inputWiget.on( 'change', OO.ui.debounce( updatePreviewImage, 2000 ) );
+		inputWiget.on( 'change', function () {
+			appConfig.unsaved = true;
+		} );
 	} );
 	// Trigger a pretend blur on the first input field, in order to force a refresh of the preview
 	// on page load (to catch browser-cached input values).
