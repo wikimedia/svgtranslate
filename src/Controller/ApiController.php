@@ -56,7 +56,7 @@ class ApiController extends AbstractController
     /**
      * Get a full filesystem path to a temporary PNG file.
      * @param string $filename The base SVG filename.
-     * @param string $key They unique key to append to the filename.
+     * @param string $key The unique key to append to the filename.
      * @return string
      */
     protected function getTempPngFilename(string $filename, string $key): string
@@ -72,7 +72,10 @@ class ApiController extends AbstractController
      */
     public function requestFileWithTranslations(string $filename, string $lang, Request $request): Response
     {
-        // Get the SVG file, and add in the new translations.
+        // Get the SVG file, and add in the new translations. The traslations come from the form and
+        // are already in the form of a mapping of tspan-IDs to language strings. Only a single
+        // language's translations can be set at a time (which is fine here, because we're only ever
+        // receiving one language at a time).
         $filename = Title::normalize($filename);
         $path = $this->cache->getPath($filename);
         $file = new SvgFile($path);
