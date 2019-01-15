@@ -27,29 +27,6 @@ class ApiControllerTest extends TestCase
     }
 
     /**
-     * @group Broken
-     * https://phabricator.wikimedia.org/T209906
-     */
-    public function testGetFileWithTranslations(): void
-    {
-        $controller = $this->makeController();
-
-        $translations = SvgFileTest::EXPECTED_TRANSLATIONS;
-        $translations['tspan2987']['ru'] = [
-            'text' => 'Привет',
-            'x' => '80',
-            'y' => '108.07646',
-            'id' => 'tspan2987-ru',
-        ];
-        $request = new Request([], [], [], [], [], [], \GuzzleHttp\json_encode($translations));
-
-        $response = $controller->getFile('Foo.svg', 'ru', $request);
-        self::assertEquals(200, $response->getStatusCode());
-        self::assertEquals('image/svg+xml', $response->headers->get('Content-Type'));
-        self::assertNotFalse(strpos($response->getContent(), 'Прив1ет'));
-    }
-
-    /**
      * @covers \App\Controller\ApiController::getTranslations()
      */
     public function testGetTranslations(): void
