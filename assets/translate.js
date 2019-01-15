@@ -9,7 +9,6 @@ $( function () {
 		return;
 	}
 	function onSelectTargetLang( language ) {
-		var $imgElement, newImageUrl;
 		// 1. Save the language name and code in the widget.
 		this.setLabel( $.uls.data.languages[ language ][ 2 ] );
 		this.setData( language );
@@ -28,10 +27,8 @@ $( function () {
 				field.setValue( '' );
 			}
 		} );
-		// 3. Update the image.
-		$imgElement = $( '.image img' );
-		newImageUrl = $imgElement.attr( 'src' ).replace( /[a-z_-]*\.png.*$/, language + '.png' );
-		$imgElement.attr( 'src', newImageUrl );
+		// 3. Update the image by faking a blur event on a form input.
+		$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget input:first' ).trigger( 'blur' );
 	}
 	targetLangButton = OO.ui.infuse( $targetLangButton );
 	targetLangButton.$element.uls( {
