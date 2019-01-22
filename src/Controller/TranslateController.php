@@ -123,6 +123,14 @@ class TranslateController extends AbstractController
         $translations = $svgFile->getInFileTranslations();
         $formFields = [];
         foreach ($translations as $tspanId => $translation) {
+            // Do not display translations that are only white-space. https://stackoverflow.com/a/4167053/99667
+            // @TODO SvgFile should probably be handling this for us.
+            $whitespacePattern = '/^[\pZ\pC]+|[\pZ\pC]+$/u';
+            $sourceLabel = preg_replace($whitespacePattern, '', $translation[$sourceLang->getValue()]['text']);
+            if ('' === $sourceLabel) {
+                continue;
+            }
+            // Add fields for all other translations.
             $fieldValue = isset($translation[$targetLang->getValue()])
                 ? $translation[$targetLang->getValue()]['text']
                 : '';
@@ -134,7 +142,7 @@ class TranslateController extends AbstractController
             $field = new FieldLayout(
                 $inputWidget,
                 [
-                    'label' => $translation[$sourceLang->getValue()]['text'],
+                    'label' => $sourceLabel,
                     'infusable' => true,
                 ]
             );
