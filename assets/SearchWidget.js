@@ -30,7 +30,7 @@ App.SearchWidget.prototype.getLookupRequest = function () {
 		val = val.substring( val.indexOf( 'File:' ) + 'File:'.length );
 	}
 	return $.ajax( {
-		url: 'https://commons.wikimedia.org/w/api.php',
+		url: appConfig.wikiUrl,
 		dataType: 'jsonp',
 		data: {
 			format: 'json',
