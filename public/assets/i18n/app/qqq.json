@@ -47,6 +47,11 @@
   "update-commons-title": "The title of the 'update commons' step of the tutorial box.",
   "update-commons-desc": "The short description of the 'update commons' step of the tutorial box. May be a continuation of the phrase in {{msg-mw|update-commons-title}}.",
 
+  "upload-complete": "Header text for the banner shown after successful upload of a file.",
+  "upload-complete-message": "Text in the banner shown after successful upload of a file.\n$1 is the filename of the image (without link).",
+  "upload-complete-commons": "First of two buttons shown in the successful-upload banner, linking to the newly-uploaded file on Commons.",
+  "upload-complete-translate-another": "Second of two buttons shown in the successful-upload banner, linking back to the SVG Translate search form.",
+
   "licenced-under": "Sentence describing the licence of the application, shown as a link. Displayed in the footer on every page.",
   "developed-by": "By-line for the application, shown as a link to CommTech's wiki page. Displayed in the footer on every page.",
   "toolforge-logo-alt": "Alt text for the Toolforge anvil image.",

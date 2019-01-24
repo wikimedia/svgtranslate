@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\Service\FileCache;
+use App\Service\Uploader;
 use Krinkle\Intuition\Intuition;
 use OOUI\ButtonInputWidget;
 use OOUI\DropdownInputWidget;
@@ -14,8 +15,10 @@ use OOUI\HorizontalLayout;
 use OOUI\LabelWidget;
 use OOUI\TextInputWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -65,6 +68,7 @@ class TranslateController extends AbstractController
             'flags' => [ 'progressive' ],
             'type' => 'submit',
             'icon' => 'logoWikimediaCommons',
+            'name' => 'upload',
         ]);
         if (!$session->get('logged_in_user')) {
             // Only logged in users can upload.
@@ -106,6 +110,7 @@ class TranslateController extends AbstractController
             'classes' => ['target-lang-widget'],
             'indicator' => 'down',
             'infusable' => true,
+            'name' => 'target-lang',
         ]);
         $languageSelectorsLayout = new HorizontalLayout([
             'items' => [
@@ -135,7 +140,7 @@ class TranslateController extends AbstractController
                 ? $translation[$targetLang->getValue()]['text']
                 : '';
             $inputWidget = new TextInputWidget([
-                'name' => 'translation-field-'.$tspanId,
+                'name' => $tspanId,
                 'value' => $fieldValue,
                 'data' => ['tspan-id' => $tspanId],
             ]);
@@ -160,5 +165,51 @@ class TranslateController extends AbstractController
             'translations' => $translations,
             'target_lang' => $targetLangDefault,
         ]);
+    }
+
+    /**
+     * @Route( "/File:{filename}", name="updownload", methods={"POST"})
+     */
+    public function updownload(
+        string $filename,
+        Request $request,
+        FileCache $cache,
+        Uploader $uploader
+    ): Response {
+        $requestParams = $request->request->all();
+
+        // Are we uploading or downloading?
+        $isUpload = false;
+        if (isset($requestParams['upload'])) {
+            $isUpload = true;
+            unset($requestParams['upload']);
+        }
+
+        // Target language.
+        $targetLang = $requestParams['target-lang'];
+        unset($requestParams['target-lang']);
+
+        // Add the translations to the file and save it to the filesystem.
+        $file = new SvgFile($cache->getPath(Title::normalize($filename)));
+        $file->setTranslations($targetLang, $requestParams);
+        $tmpFilename = $cache->fullPath($filename.uniqid().'.svg');
+        file_put_contents($tmpFilename, $file->saveToString());
+
+        // Download or upload.
+        if (!$isUpload) {
+            // Prompt for download.
+            return new BinaryFileResponse(
+                $tmpFilename,
+                200,
+                [],
+                false,
+                ResponseHeaderBag::DISPOSITION_ATTACHMENT
+            );
+        } else {
+            // Send to Commons.
+            $url = $uploader->upload($tmpFilename, $filename);
+            $this->addFlash('upload-complete', $url);
+            return $this->redirectToRoute('translate', ['filename' => $filename]);
+        }
     }
 }
