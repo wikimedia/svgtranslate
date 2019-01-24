@@ -27,6 +27,9 @@
         <!-- Delivery is disabled by default via "null://localhost" -->
         <env name="MAILER_URL" value="null://localhost"/>
         <!-- ###- symfony/swiftmailer-bundle ### -->
+
+        <env name="WIKI_URL" value="https://commons.wikimedia.org/w/api.php" />
+
     </php>
 
     <testsuites>

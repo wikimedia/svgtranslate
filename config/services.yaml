@@ -29,7 +29,7 @@ services:
 
     App\Service\MediaWikiApi:
         arguments:
-            $entryPoint: 'https://commons.wikimedia.org/w/api.php'
+            $entryPoint: '%env(WIKI_URL)%'
 
     App\Service\FileCache:
         arguments:
