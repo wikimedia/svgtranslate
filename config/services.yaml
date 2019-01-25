@@ -37,4 +37,4 @@ services:
 
     App\Service\Renderer:
         arguments:
-            $rsvgCommand: '/usr/bin/rsvg-convert'
+            $rsvgCommand: 'rsvg-convert'
