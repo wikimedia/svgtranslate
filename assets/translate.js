@@ -99,7 +99,7 @@ $( function () {
 $( function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
-			$imgElement = $( '#translation-image' ),
+			$imgElement = $( '#translation-image img' ),
 			targetLangWidget = OO.ui.infuse( $( '.target-lang-widget' ) ),
 			targetLangCode = targetLangWidget.getValue(),
 			requestParams = {},
