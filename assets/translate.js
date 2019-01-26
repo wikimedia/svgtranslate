@@ -99,7 +99,7 @@ $( function () {
 $( function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
-			$imgElement = $( '.image img' ),
+			$imgElement = $( '#translation-image' ),
 			targetLangWidget = OO.ui.infuse( $( '.target-lang-widget' ) ),
 			targetLangCode = targetLangWidget.getValue(),
 			requestParams = {},
@@ -116,7 +116,7 @@ $( function () {
 					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangCode,
 					data: requestParams,
 					success: function ( result ) {
-						$imgElement.attr( 'src', result.imageSrc );
+						appConfig.imageMapLayer.setUrl( result.imageSrc );
 					},
 					error: function () {
 						OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
@@ -133,4 +133,29 @@ $( function () {
 	// Trigger a pretend blur on the first input field, in order to force a refresh of the preview
 	// on page load (to catch browser-cached input values).
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget input:first' ).trigger( 'blur' );
+} );
+
+/**
+ * Add LeafletJS to image, for zooming and panning.
+ */
+$( function () {
+	var imagemap, $imageElement,
+		$imageWrapper = $( '#translation-image' );
+	if ( $imageWrapper.length !== 1 ) {
+		// Don't do anything if the translation image isn't present.
+		return;
+	}
+	$imageElement = $imageWrapper.find( 'img' );
+	$imageElement.css( 'visibility', 'hidden' );
+	$imageWrapper.css( {
+		height: '80vh',
+		width: 'auto'
+	} );
+	imagemap = L.map( $imageWrapper.attr( 'id' ), {
+		crs: L.CRS.Simple,
+		center: [ $imageElement.height() / 2, $imageElement.width() / 2 ],
+		zoom: 0
+	} );
+	appConfig.imageMapLayer = L.imageOverlay( $imageElement.attr( 'src' ), [ [ 0, 0 ], [ $imageElement.height(), $imageElement.width() ] ] );
+	appConfig.imageMapLayer.addTo( imagemap );
 } );
