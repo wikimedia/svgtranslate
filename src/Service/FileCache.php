@@ -98,6 +98,19 @@ class FileCache
     }
 
     /**
+     * Delete a cached file, if it exists.
+     *
+     * @param string $fileName The name file to delete, with no path component.
+     */
+    public function delete(string $fileName): void
+    {
+        $path = $this->fullPath($fileName);
+        if (is_file($path)) {
+            unlink($path);
+        }
+    }
+
+    /**
      * Returns a full path for the given file
      *
      * @param string $fileName

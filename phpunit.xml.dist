@@ -28,6 +28,9 @@
         <env name="MAILER_URL" value="null://localhost"/>
         <!-- ###- symfony/swiftmailer-bundle ### -->
 
+        <env name="OAUTH_KEY" value="" />
+        <env name="OAUTH_SECRET" value="" />
+        <env name="OAUTH_URL" value="https://meta.wikimedia.org/w/index.php?title=Special:OAuth" />
         <env name="WIKI_URL" value="https://commons.wikimedia.org/w/api.php" />
 
     </php>

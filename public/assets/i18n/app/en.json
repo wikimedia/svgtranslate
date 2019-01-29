@@ -47,6 +47,11 @@
   "update-commons-title": "Update Commons",
   "update-commons-desc": "or download directly to your computer.",
 
+  "upload-complete": "Upload complete",
+  "upload-complete-message": "Thanks! Your translations to $1 have been uploaded. You may continue translating the labels and upload again to update the image.",
+  "upload-complete-commons": "View image",
+  "upload-complete-translate-another": "Translate another image",
+
   "licenced-under": "Licenced under GPL 3.0 or later",
   "developed-by": "Developed by the Wikimedia Foundation's Community Tech team",
   "toolforge-logo-alt": "Toolforge 'anvil' logo",

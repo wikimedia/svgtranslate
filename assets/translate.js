@@ -9,10 +9,11 @@ $( function () {
 		return;
 	}
 	function switchToNewTargetLang( ulsElement, language ) {
-		// 1. Save the language name and code in the widget.
+		// 1. Save the language name and code in the widget and the hidden form field.
 		ulsElement.setLabel( $.uls.data.languages[ language ][ 2 ] );
 		ulsElement.setData( language );
 		ulsElement.setValue( language );
+		$( "input[name='target-lang']" ).val( language );
 
 		// 2. Switch what's displayed in the form when a new language is selected in the ULS.
 		$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {

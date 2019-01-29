@@ -30,6 +30,8 @@ services:
     App\Service\MediaWikiApi:
         arguments:
             $entryPoint: '%env(WIKI_URL)%'
+            $client: '@MediaWiki\OAuthClient\Client'
+            $session: "@session"
 
     App\Service\FileCache:
         arguments:

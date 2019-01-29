@@ -10,6 +10,22 @@ project.
 
 ## Install for development
 
+All methods of installation require the registration of an OAuth consumer
+on the wiki to which you will upload SVGs (probably a local development wiki).
+Do this via e.g. `http://localhost/wiki/Special:OAuthConsumerRegistration/propose`
+and make sure you include the following grants:
+
+* Create, edit, and move pages
+* Upload new files
+* Upload, replace, and move files
+
+The `OAUTH_URL` environment variable must be set to the long form of the URL
+such as `http://localhost/w/index.php?title=Special:OAuth`.
+
+To configure the wiki that's used to fetch images and for upload
+you should also set `WIKI_URL` environment variable
+to the API URL of your development wiki, e.g. `http://localhost/w/api.php`.
+
 ### Install using Docker
 
 Prerequisites: 

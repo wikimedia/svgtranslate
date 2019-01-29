@@ -4,7 +4,13 @@ declare(strict_types = 1);
 namespace App\Service;
 
 use App\Exception\ImageNotFoundException;
+use CURLFile;
+use Exception;
 use GuzzleHttp\Client;
+use MediaWiki\OAuthClient\Client as OauthClient;
+use MediaWiki\OAuthClient\Token;
+use stdClass;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * A service for interacting with MediaWiki API
@@ -16,12 +22,20 @@ class MediaWikiApi
      */
     private $entryPoint;
 
+    /** @var OauthClient */
+    protected $oauthClient;
+
+    /** @var Token */
+    protected $oauthAccessToken;
+
     /**
      * @param string $entryPoint Fully-qualified URL of the wiki's api.php
      */
-    public function __construct(string $entryPoint)
+    public function __construct(string $entryPoint, OauthClient $client, Session $session)
     {
         $this->entryPoint = $entryPoint;
+        $this->oauthClient = $client;
+        $this->oauthAccessToken = $session->get('oauth.access_token');
     }
 
     /**
@@ -71,5 +85,58 @@ class MediaWikiApi
         ];
         $response = $client->request($method, '', $requestOptions);
         return \GuzzleHttp\json_decode($response->getBody()->getContents(), true);
+    }
+
+    /**
+     * Upload a file to the OAuth wiki.
+     * @param string $file The filesystem path to the file to upload.
+     * @param string $destinationFilename The filename to give the file on the wiki.
+     * @return stdClass Information about the upload.
+     * @throws Exception If the CSRF token can not be retrieved or the upload was not successful.
+     */
+    public function upload(string $file, string $destinationFilename): stdClass
+    {
+        // 1. Get the CSRF token.
+        $csrfTokenParams = [
+            'format' => 'json',
+            'action' => 'query',
+            'meta' => 'tokens',
+            'type' => 'csrf',
+        ];
+        $csrfTokenResponse = $this->oauthClient->makeOAuthCall(
+            $this->oauthAccessToken,
+            $this->entryPoint,
+            true,
+            $csrfTokenParams
+        );
+        $csrfTokenData = \GuzzleHttp\json_decode($csrfTokenResponse);
+        if (!isset($csrfTokenData->query->tokens->csrftoken)) {
+            throw new Exception("Unable to get CSRF token from: $csrfTokenResponse");
+        }
+
+        // 2. Upload the file.
+        $uploadParams = [
+            'format' => 'json',
+            'action' => 'upload',
+            'filename' => $destinationFilename,
+            'token' => $csrfTokenData->query->tokens->csrftoken,
+            'comment' => 'Uploaded from SVG Translate.',
+            'filesize' => filesize($file),
+            'file' => new CURLFile($file),
+            // We have to ignore warnings so that we can overwrite the existing image.
+            'ignorewarnings' => true,
+        ];
+        $uploadResponse = $this->oauthClient->makeOAuthCall(
+            $this->oauthAccessToken,
+            $this->entryPoint,
+            true,
+            $uploadParams
+        );
+        $uploadResponseData = \GuzzleHttp\json_decode($uploadResponse);
+        if (!isset($uploadResponseData->upload->result) || 'Success' !== $uploadResponseData->upload->result) {
+            throw new Exception('Upload failed. Response was: '.$uploadResponse);
+        }
+
+        return $uploadResponseData->upload;
     }
 }

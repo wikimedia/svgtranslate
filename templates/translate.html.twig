@@ -13,7 +13,22 @@
 {% endblock %}
 
 {% block main %}
-    <form action="{{ path('translate', {filename: filename}) }}" method="post">
+
+    {# The upload-URL will be the first and only element in the flash messages. #}
+    {% set uploadUrl = app.session.flashbag.get('upload-complete') %}
+    {% if uploadUrl %}
+        <aside class="upload-complete">
+            <h3>{{ msg('upload-complete') }}</h3>
+            <p>{{ msg('upload-complete-message', [filename]) }}</p>
+            <p class="buttons">
+                <a href="{{ uploadUrl.0 }}">{{ msg('upload-complete-commons') }}</a>
+                <a href="{{ path('home') }}">{{ msg('upload-complete-translate-another') }}</a>
+            </p>
+        </aside>
+    {% endif %}
+
+    <form action="{{ path('updownload', {filename: filename}) }}" method="post">
+        <input type="hidden" name="target-lang" value="{{ target_lang }}" />
         <div class="form-column">
             {{ language_selectors|raw }}
             <div class="translation-fields">
