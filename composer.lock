@@ -988,19 +988,20 @@
         },
         {
             "name": "mediawiki/oauthclient",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/mediawiki-oauthclient-php.git",
-                "reference": "19bb20eec43937eff12f52065fbac5f1137a4c17"
+                "reference": "890efc8817b40e15232b57d574dc7691b7c21215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/mediawiki-oauthclient-php/zipball/19bb20eec43937eff12f52065fbac5f1137a4c17",
-                "reference": "19bb20eec43937eff12f52065fbac5f1137a4c17",
+                "url": "https://api.github.com/repos/wikimedia/mediawiki-oauthclient-php/zipball/890efc8817b40e15232b57d574dc7691b7c21215",
+                "reference": "890efc8817b40e15232b57d574dc7691b7c21215",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": ">=5.6.99",
                 "psr/log": "^1.0"
             },
@@ -1037,7 +1038,7 @@
             ],
             "description": "PHP OAuth client for use with Wikipedia and other MediaWiki-based wikis running the OAuth extension",
             "homepage": "https://www.mediawiki.org/wiki/oauthclient-php",
-            "time": "2019-01-23T18:59:29+00:00"
+            "time": "2019-01-29T19:26:19+00:00"
         },
         {
             "name": "monolog/monolog",
