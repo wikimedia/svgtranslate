@@ -97,7 +97,7 @@ $( function () {
 /**
  * When a translation field is changed, update the image preview, and also mark the form as unsaved.
  */
-$( function () {
+$( window ).on( 'load', function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
 			$imgElement = $( '#translation-image img' ),
@@ -139,7 +139,7 @@ $( function () {
 /**
  * Add LeafletJS to image, for zooming and panning.
  */
-$( function () {
+$( window ).on( 'load', function () {
 	var imagemap, $imageElement,
 		$imageWrapper = $( '#translation-image' );
 	if ( $imageWrapper.length !== 1 ) {
