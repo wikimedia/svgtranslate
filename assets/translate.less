@@ -61,6 +61,11 @@ body.translate {
         .language-selectors {
           display: flex;
           align-items: center;
+          > * {
+            // Get rid of the margin from the following three elements, so the .language-selectors can be treated the
+            // same as the .buttons element (for vertical positioning).
+            margin-bottom: 0;
+          }
           .source-lang-widget {
             flex: 2;
             text-align: left;
@@ -80,7 +85,12 @@ body.translate {
         }
 
         .oo-ui-fieldLayout {
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.75rem;
+        }
+        fieldset:not(:first-child) {
+          margin-top: 0;
+          padding-top: 0.75rem;
+          border-top: 1px solid @wmui-color-base80;
         }
         .source-lang-not-found label {
           font-style: italic;

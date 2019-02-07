@@ -5,15 +5,14 @@ namespace App\Controller;
 
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
+use App\OOUI\TranslationsFieldset;
 use App\Service\FileCache;
 use App\Service\Uploader;
 use Krinkle\Intuition\Intuition;
 use OOUI\ButtonInputWidget;
 use OOUI\DropdownInputWidget;
-use OOUI\FieldLayout;
 use OOUI\HorizontalLayout;
 use OOUI\LabelWidget;
-use OOUI\TextInputWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -124,41 +123,19 @@ class TranslateController extends AbstractController
             'classes' => ['language-selectors'],
         ]);
 
-        // Messages.
+        // Form fields for translation messages are in a fieldset which contains fieldsets for each group of messages.
         $translations = $svgFile->getInFileTranslations();
-        $formFields = [];
-        foreach ($translations as $tspanId => $translation) {
-            // Do not display translations that are only white-space. https://stackoverflow.com/a/4167053/99667
-            // @TODO SvgFile should probably be handling this for us.
-            $whitespacePattern = '/^[\pZ\pC]+|[\pZ\pC]+$/u';
-            $sourceLabel = preg_replace($whitespacePattern, '', $translation[$sourceLang->getValue()]['text']);
-            if ('' === $sourceLabel) {
-                continue;
-            }
-            // Add fields for all other translations.
-            $fieldValue = isset($translation[$targetLang->getValue()])
-                ? $translation[$targetLang->getValue()]['text']
-                : '';
-            $inputWidget = new TextInputWidget([
-                'name' => $tspanId,
-                'value' => $fieldValue,
-                'data' => ['tspan-id' => $tspanId],
-            ]);
-            $field = new FieldLayout(
-                $inputWidget,
-                [
-                    'label' => $sourceLabel,
-                    'infusable' => true,
-                ]
-            );
-            $formFields[] = $field;
-        }
+        $translationsFieldset = new TranslationsFieldset([
+            'translations' => $translations,
+            'source_lang_code' => $sourceLang->getValue(),
+            'target_lang_code' => $targetLang->getValue(),
+        ]);
 
         return $this->render('translate.html.twig', [
             'page_class' => 'translate',
             'title' => Title::text($filename),
             'filename' => $normalizedFilename,
-            'fields' => $formFields,
+            'translation_fieldset' => $translationsFieldset,
             'download_button' => $downloadButton,
             'upload_button' => $uploadButton,
             'language_selectors' => $languageSelectorsLayout,
