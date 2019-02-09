@@ -31,11 +31,7 @@
         <input type="hidden" name="target-lang" value="{{ target_lang }}" />
         <div class="form-column">
             {{ language_selectors|raw }}
-            <div class="translation-fields">
-                {% for field in fields %}
-                    {{ field|raw }}
-                {% endfor %}
-            </div>
+            <div class="translation-fields">{{ translation_fieldset|raw }}</div>
         </div>
         <div class="image-column">
             <div class="buttons">
