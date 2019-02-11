@@ -8,8 +8,8 @@ before_install:
   - sudo apt-get install -y librsvg2-bin
 
 install:
-  - composer install
-  - npm ci
+  - travis_retry composer install
+  - travis_retry npm ci
 
 script:
   # Compile assets, and make sure nothing's changed in Git.
