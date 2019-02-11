@@ -20,6 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class TranslateController extends AbstractController
 {
@@ -184,7 +185,9 @@ class TranslateController extends AbstractController
             );
         } else {
             // Send to Commons.
-            $url = $uploader->upload($tmpFilename, $filename);
+            $url = $this->generateUrl('home', [], UrlGeneratorInterface::ABSOLUTE_URL);
+            $comment = "File uploaded using svgtranslate tool ($url). Added translation for $targetLang.";
+            $url = $uploader->upload($tmpFilename, $filename, $comment);
             $this->addFlash('upload-complete', $url);
             return $this->redirectToRoute('translate', ['filename' => $filename]);
         }
