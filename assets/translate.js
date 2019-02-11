@@ -160,3 +160,27 @@ $( window ).on( 'load', function () {
 	appConfig.imageMapLayer = L.imageOverlay( $imageElement.attr( 'src' ), [ [ 0, 0 ], [ $imageElement.height(), $imageElement.width() ] ] );
 	appConfig.imageMapLayer.addTo( imagemap );
 } );
+
+/**
+ * Disable the upload button once it's been clicked.
+ */
+$( function () {
+	var uploadButtonWidget,
+		$uploadButtonElement = $( '#upload-button-widget' );
+	if ( $uploadButtonElement.length === 1 ) {
+		// If there is an upload button, infuse it and modify its submission behaviour.
+		uploadButtonWidget = OO.ui.infuse( $uploadButtonElement );
+		uploadButtonWidget.on( 'click', function () {
+			// Because we want to disable the upload button after its been clicked but before the
+			// form has been submitted, we need to make sure the 'upload' parameter is still sent
+			// (because that's how we distinguish between upload and download; they're both form
+			// submission buttons on the same form). We do this by creating a new hidden element.
+			var $form = uploadButtonWidget.$element.parents( 'form' ),
+				$hiddenUpload = $( '<input>' ).attr( 'type', 'hidden' ).attr( 'name', 'upload' );
+			$form.prepend( $hiddenUpload );
+			uploadButtonWidget.setLabel( $.i18n( 'upload-button-in-progress' ) );
+			uploadButtonWidget.setDisabled( true );
+			$form.submit();
+		} );
+	}
+} );

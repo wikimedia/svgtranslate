@@ -69,6 +69,8 @@ class TranslateController extends AbstractController
             'type' => 'submit',
             'icon' => 'logoWikimediaCommons',
             'name' => 'upload',
+            'id' => 'upload-button-widget',
+            'infusable' => true,
         ]);
         if (!$session->get('logged_in_user')) {
             // Only logged in users can upload.
