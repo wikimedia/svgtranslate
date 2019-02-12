@@ -25,11 +25,12 @@ class Uploader
      *
      * @param string $file The full filesystem path of the file to upload.
      * @param string $destinationFilename The title to give the file on the wiki.
+     * @param string $comment The upload revision comment.
      * @return string The full URL to the file's page on Commons.
      */
-    public function upload(string $file, string $destinationFilename): string
+    public function upload(string $file, string $destinationFilename, string $comment): string
     {
-        $uploadDetails = $this->api->upload($file, $destinationFilename);
+        $uploadDetails = $this->api->upload($file, $destinationFilename, $comment);
         $this->fileCache->delete($destinationFilename);
         return $uploadDetails->imageinfo->descriptionurl;
     }

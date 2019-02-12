@@ -91,10 +91,11 @@ class MediaWikiApi
      * Upload a file to the OAuth wiki.
      * @param string $file The filesystem path to the file to upload.
      * @param string $destinationFilename The filename to give the file on the wiki.
+     * @param string $comment Upload revision comment.
      * @return stdClass Information about the upload.
      * @throws Exception If the CSRF token can not be retrieved or the upload was not successful.
      */
-    public function upload(string $file, string $destinationFilename): stdClass
+    public function upload(string $file, string $destinationFilename, string $comment): stdClass
     {
         // 1. Get the CSRF token.
         $csrfTokenParams = [
@@ -120,7 +121,7 @@ class MediaWikiApi
             'action' => 'upload',
             'filename' => $destinationFilename,
             'token' => $csrfTokenData->query->tokens->csrftoken,
-            'comment' => 'Uploaded from SVG Translate.',
+            'comment' => $comment,
             'filesize' => filesize($file),
             'file' => new CURLFile($file),
             // We have to ignore warnings so that we can overwrite the existing image.
