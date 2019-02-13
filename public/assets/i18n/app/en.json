@@ -32,6 +32,7 @@
   "confirmation-to-switch-target-lang": "You are trying to change the translation language but you have unsaved translations. Changing the language will result in loss of any added translations. Please upload the translations to Commons or download the translated file before proceeding. Do you wish to continue?",
   "confirm-change-target-lang": "Change language",
   "upload-button-label": "Upload to Commons",
+  "upload-button-in-progress": "Uploading to Commons…",
   "download-button-label": "Download",
   "download-or-upload": "or",
   "translation-image-alt": "The image that's currently being translated. No description available.",
