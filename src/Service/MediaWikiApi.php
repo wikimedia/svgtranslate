@@ -11,6 +11,7 @@ use MediaWiki\OAuthClient\Client as OauthClient;
 use MediaWiki\OAuthClient\Token;
 use stdClass;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * A service for interacting with MediaWiki API
@@ -134,7 +135,12 @@ class MediaWikiApi
             $uploadParams
         );
         $uploadResponseData = \GuzzleHttp\json_decode($uploadResponse);
+        if (isset($uploadResponseData->error->info)) {
+            // Throw any returned error.
+            throw new HttpException(500, $uploadResponseData->error->info);
+        }
         if (!isset($uploadResponseData->upload->result) || 'Success' !== $uploadResponseData->upload->result) {
+            // Just in case something else went wrong and there's no actual error response.
             throw new Exception('Upload failed. Response was: '.$uploadResponse);
         }
 

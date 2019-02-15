@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block top_row_left %}
+    <p>
+        <a href="{{ path('home') }}">
+            {% if is_rtl() %}→{% else %}←{% endif %}
+            {{ msg('return-to-home') }}
+        </a>
+    </p>
+{% endblock %}
+
+{% block description %}
+    <h1>{{ status_code }}: {{ status_text }}</h1>
+{% endblock %}
+
+{% block main %}
+    <p class="error-message">{{ exception.message }}</p>
+{% endblock %}

@@ -3,6 +3,7 @@
   "info": "Sentences describing what this tool does and how to get started.",
   "beta": "Message informing the user that the application is currently of beta quality.",
   "learn-more": "Text for a link to the on-wiki project page for the tool (the same destination as the link of {{msg-mw|help}}).",
+  "return-to-home": "Link to homepage that's displayed on error message pages.",
 
   "help": "Text for a 'help' link to the tool's project page on Meta (the same destination as the link of {{msg-mw|learn-more}}). Displayed in the footer on every page.",
   "login": "Label for the 'log in' link. Displayed in the header on every page when not logged in.",
