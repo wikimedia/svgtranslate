@@ -9,6 +9,8 @@ use OOUI\TextInputWidget;
 
 class TranslationsFieldset extends FieldsetLayout
 {
+    /** @var bool Whether controls should be initially disabled */
+    private $disabled = false;
 
     /**
      * @param array $config Configuration options
@@ -21,6 +23,7 @@ class TranslationsFieldset extends FieldsetLayout
         $currentFieldset = new FieldsetLayout();
         $fieldsets = [$currentFieldset];
         $prevTranslation = null;
+        $this->disabled = $config['disabled'] ?? false;
         foreach ($config['translations'] as $tspanId => $translation) {
             $fieldValue = isset($translation[$config['target_lang_code']])
                 ? $translation[$config['target_lang_code']]['text']
@@ -62,6 +65,7 @@ class TranslationsFieldset extends FieldsetLayout
             'value' => $value,
             'data' => ['tspan-id' => $tspanId],
         ]);
+        $inputWidget->setDisabled($this->disabled);
         return new FieldLayout($inputWidget, ['label' => $sourceLabel, 'infusable' => true]);
     }
 }

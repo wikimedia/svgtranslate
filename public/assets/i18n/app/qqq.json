@@ -30,6 +30,7 @@
   "default-language": "Label at the top of the source-language dropdown list indicating that the SVG file's default language will be used (we don't know what the specific language is).",
   "source-lang-not-found": "Label shown when the selected source-language is not available. $1 is the label in the default language (we don't know what the specific language is).",
   "source-to-target": "Joining label between the source-language selector and the target language selector.",
+  "select-language": "Default text of the destination language selector.",
   "confirmation-to-switch-target-lang": "Confirmation message shown when a user tries to switch the target language but has unsaved changes in the form.",
   "confirm-change-target-lang": "Label for the confirm button for {{msg-wm|confirmation-to-switch-target-lang}}, to appear next to 'Cancel' (i.e. {{wm-msg|ooui-dialog-message-reject}}).",
   "upload-button-label": "Label for the button that uploads the translated SVG to Wikimedia Commons.",
