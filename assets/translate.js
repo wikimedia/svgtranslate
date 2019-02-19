@@ -1,18 +1,5 @@
 require( './js/Model.js' );
 
-window.alreadyUpdating = false;
-window.enableInputs = function () {
-	window.alreadyUpdating = true;
-	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
-		var inputWiget = OO.ui.infuse( $( this ) );
-		inputWiget.setDisabled( false );
-	} );
-	window.alreadyUpdating = false;
-
-	// We need it only once
-	window.enableInputs = function () {};
-};
-
 /**
  * Add ULS to the target-language button.
  */
@@ -25,33 +12,11 @@ $( function () {
 	}
 	function switchToNewTargetLang( ulsElement, language ) {
 		// 1. Save the language name and code in the widget and the hidden form field.
-		ulsElement.setLabel( $.uls.data.languages[ language ][ 2 ] );
-		ulsElement.setData( language );
 		ulsElement.setValue( language );
-		$( "input[name='target-lang']" ).val( language );
-
-		// 2. Switch what's displayed in the form when a new language is selected in the ULS.
-		$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
-			var field = OO.ui.infuse( $( this ) ).getField(),
-				tspanId = field.data[ 'tspan-id' ];
-			if ( appConfig.translations[ tspanId ] &&
-				appConfig.translations[ tspanId ][ language ]
-			) {
-				// If there's a translation available, set the field's value.
-				field.setValue( appConfig.translations[ tspanId ][ language ].text );
-			} else {
-				// Otherwise, blank the field.
-				field.setValue( '' );
-			}
-		} );
-
-		// 3. Update the image by faking a blur event on a form input.
+		// 2. Update the image by faking a blur event on a form input.
 		$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget input:first' ).trigger( 'blur' );
-
-		// 4. Mark the translation state as not unsaved.
+		// 3. Mark the translation state as not unsaved.
 		appConfig.unsaved = false;
-
-		window.enableInputs();
 	}
 	function onSelectTargetLang( language ) {
 		var ulsElement = this;
@@ -79,12 +44,13 @@ $( function () {
 } );
 
 /**
- * Switch displayed 'from' language.
+ * Add model event handlers to the widgets.
  */
 $( function () {
-	var sourceLangWidget,
+	var sourceLangWidget, targetLangWidget,
 		model = new App.Model( appConfig.translations ),
-		$sourceLangWidget = $( '.source-lang-widget' );
+		$sourceLangWidget = $( '.source-lang-widget' ),
+		$targetLangWidget = $( '.target-lang-widget' );
 
 	// Change the source lang value.
 	if ( $sourceLangWidget.length === 1 ) {
@@ -94,12 +60,29 @@ $( function () {
 		} );
 	}
 
-	// Change field labels when the source lang changes.
+	// Change the target lang value.
+	if ( $targetLangWidget.length === 1 ) {
+		targetLangWidget = OO.ui.infuse( $targetLangWidget[ 0 ] );
+		targetLangWidget.on( 'change', function () {
+			model.setTargetLang( targetLangWidget.getValue() );
+		} );
+		model.on( 'targetLangSet', function () {
+			// Modify the form value that will be submitted.
+			$( "input[name='target-lang']" ).val( model.getTargetLang() );
+			// We can assume ULS contains the language, because that's how it's been set.
+			targetLangWidget.setLabel( $.uls.data.languages[ model.getTargetLang() ][ 2 ] );
+			targetLangWidget.setData( model.getTargetLang() );
+		} );
+	}
+
+	// Add event handlers for the translation fields.
 	$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
-		var fieldLayout = OO.ui.infuse( $( this ) );
+		var fieldLayout = OO.ui.infuse( $( this ) ),
+			nodeId = fieldLayout.getField().data[ 'tspan-id' ];
+
+		// Change field labels when the source lang changes.
 		model.on( 'sourceLangSet', function () {
-			var nodeId = fieldLayout.getField().data[ 'tspan-id' ],
-				sourceTranslation = model.getSourceTranslation( nodeId );
+			var sourceTranslation = model.getSourceTranslation( nodeId );
 			if ( !sourceTranslation.exists ) {
 				fieldLayout.setLabel(
 					$.i18n( 'source-lang-not-found', [ sourceTranslation.label ] )
@@ -110,7 +93,19 @@ $( function () {
 				fieldLayout.$element.removeClass( 'source-lang-not-found' );
 			}
 		} );
+
+		// Change field values when the target lang changes.
+		model.on( 'targetLangSet', function () {
+			var targetTranslation = model.getTargetTranslation( nodeId );
+			fieldLayout.getField().setValue( targetTranslation );
+			fieldLayout.getField().setDisabled( false );
+		} );
 	} );
+
+	// After adding all the event handlers above, update the widget values.
+	model.loadFromLocalStorage();
+	sourceLangWidget.setValue( model.getSourceLang() );
+	targetLangWidget.setValue( model.getTargetLang() );
 } );
 
 /**
@@ -155,11 +150,6 @@ $( window ).on( 'load', function () {
 				} );
 			};
 
-		if ( targetLangWidget.getValue() !== 'fallback' ) {
-			// 'fallback' means no language preselected, otherwise enable the controls
-			inputWiget.setDisabled( false );
-		}
-
 		// Update the preview image on field blur and after two seconds of no typing.
 		inputWiget.$input.on( 'blur', updatePreviewImage );
 		inputWiget.on( 'change', OO.ui.debounce( updatePreviewImage, 2000 ) );
@@ -167,9 +157,6 @@ $( window ).on( 'load', function () {
 			appConfig.unsaved = true;
 		} );
 	} );
-	// Trigger a pretend blur on the first input field, in order to force a refresh of the preview
-	// on page load (to catch browser-cached input values).
-	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget input:first' ).trigger( 'blur' );
 } );
 
 /**
