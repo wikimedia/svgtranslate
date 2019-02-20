@@ -447,9 +447,10 @@ class SvgFile
                 $inFileTranslations[$tspanId][$lang] = $inFileTranslations[$tspanId]['fallback'];
                 $inFileTranslations[$tspanId][$lang]['id'] .= "-$lang";
             }
-            if (!empty($msg)) {
-                $inFileTranslations[$tspanId][$lang]['text'] = $msg;
+            if (empty($msg)) {
+                continue;
             }
+            $inFileTranslations[$tspanId][$lang]['text'] = $msg;
             // Set up the text node (if this is a new language).
             $textId = $inFileTranslations[$tspanId][$lang]['data-parent'];
             if (!isset($filteredTextNodes[$textId][$lang])) {
