@@ -4708,16 +4708,16 @@
         },
         {
             "name": "wikimedia/toolforge-bundle",
-            "version": "0.12.0",
+            "version": "0.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/ToolforgeBundle.git",
-                "reference": "1f64958250e140f979f755601c88e85fd2812dda"
+                "reference": "b2bcec769e0034b2c3718b9dd8b03ac14964219d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/1f64958250e140f979f755601c88e85fd2812dda",
-                "reference": "1f64958250e140f979f755601c88e85fd2812dda",
+                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/b2bcec769e0034b2c3718b9dd8b03ac14964219d",
+                "reference": "b2bcec769e0034b2c3718b9dd8b03ac14964219d",
                 "shasum": ""
             },
             "require": {
@@ -4750,7 +4750,7 @@
             ],
             "description": "Symfony 4 bundle providing useful Toolforge features.",
             "homepage": "https://github.com/wikimedia/toolforgebundle",
-            "time": "2019-02-21T01:09:48+00:00"
+            "time": "2019-02-21T02:02:24+00:00"
         }
     ],
     "packages-dev": [
