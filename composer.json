@@ -31,12 +31,12 @@
         "symfony/validator": "^4.1",
         "symfony/web-link": "^4.1",
         "symfony/yaml": "^4.1",
-        "wikimedia/toolforge-bundle": "^0.11"
+        "wikimedia/toolforge-bundle": "^0.12"
     },
     "require-dev": {
         "mediawiki/minus-x": "^0.3",
         "php-coveralls/php-coveralls": "^2.1",
-        "slevomat/coding-standard": "^4.8",
+        "slevomat/coding-standard": "^5.0",
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",

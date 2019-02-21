@@ -214,7 +214,7 @@ class SvgFile
         // Create id attributes for text, tspan nodes missing it
         foreach ($translatableNodes as $translatableNode) {
             if (!$translatableNode->hasAttribute('id')) {
-                $newId = ( max($idsInUse) + 1 );
+                $newId = max($idsInUse) + 1;
                 $translatableNode->setAttribute('id', 'trsvg'.$newId);
                 $idsInUse[] = $newId;
             }
