@@ -1,3 +1,16 @@
+window.alreadyUpdating = false;
+window.enableInputs = function () {
+	window.alreadyUpdating = true;
+	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
+		var inputWiget = OO.ui.infuse( $( this ) );
+		inputWiget.setDisabled( false );
+	} );
+	window.alreadyUpdating = false;
+
+	// We need it only once
+	window.enableInputs = function () {};
+};
+
 /**
  * Add ULS to the target-language button.
  */
@@ -35,6 +48,8 @@ $( function () {
 
 		// 4. Mark the translation state as not unsaved.
 		appConfig.unsaved = false;
+
+		window.enableInputs();
 	}
 	function onSelectTargetLang( language ) {
 		var ulsElement = this;
@@ -105,6 +120,10 @@ $( window ).on( 'load', function () {
 			targetLangCode = targetLangWidget.getValue(),
 			requestParams = {},
 			updatePreviewImage = function () {
+				if ( window.alreadyUpdating ) {
+					// Otherwise, it will needlessly update when the input is being enabled
+					return;
+				}
 				// Go through all fields and construct the request parameters.
 				$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 					var fieldLayout = OO.ui.infuse( $( this ) ),
@@ -124,6 +143,12 @@ $( window ).on( 'load', function () {
 					}
 				} );
 			};
+
+		if ( targetLangCode !== 'fallback' ) {
+			// 'fallback' means no language preselected, otherwise enable the controls
+			inputWiget.setDisabled( false );
+		}
+
 		// Update the preview image on field blur and after two seconds of no typing.
 		inputWiget.$input.on( 'blur', updatePreviewImage );
 		inputWiget.on( 'change', OO.ui.debounce( updatePreviewImage, 2000 ) );

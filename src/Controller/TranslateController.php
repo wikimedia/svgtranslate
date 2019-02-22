@@ -98,16 +98,10 @@ class TranslateController extends AbstractController
             'classes' => ['source-lang-widget'],
             'infusable' => true,
         ]);
-        $targetLangDefault = $intuition->getLang();
-        $cookie = $request->cookies->get('svgtranslate');
-        if ($cookie) {
-            $cookieValue = json_decode($cookie);
-            if (isset($cookieValue->interfaceLang)) {
-                $targetLangDefault = $cookieValue->interfaceLang;
-            }
-        }
+        $targetLangDefault = 'fallback';
+        $targetLangLabel = $intuition->msg('select-language');
         $targetLang = new ButtonInputWidget([
-            'label' => $intuition->getLangName($targetLangDefault),
+            'label' => $targetLangLabel,
             'value' => $targetLangDefault,
             'classes' => ['target-lang-widget'],
             'indicator' => 'down',
@@ -132,6 +126,7 @@ class TranslateController extends AbstractController
             'translations' => $translations,
             'source_lang_code' => $sourceLang->getValue(),
             'target_lang_code' => $targetLang->getValue(),
+            'disabled' => 'fallback' === $targetLangDefault,
         ]);
 
         return $this->render('translate.html.twig', [
