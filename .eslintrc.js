@@ -6,6 +6,7 @@ module.exports = {
         "OO": false,
         "L": false,
         "$": false,
+        "QUnit": false,
         "window": false,
         "global": false,
         "require": false

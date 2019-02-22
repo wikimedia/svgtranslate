@@ -75,10 +75,12 @@ Run development web server:
 Run linting:
 
     composer lint
+    npm run lint
 
 Run tests:
 
     composer test
+    npm run test
 
 Generate assets:
 
