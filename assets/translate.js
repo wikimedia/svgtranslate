@@ -117,7 +117,6 @@ $( window ).on( 'load', function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
 			$imgElement = $( '#translation-image img' ),
 			targetLangWidget = OO.ui.infuse( $( '.target-lang-widget' ) ),
-			targetLangCode = targetLangWidget.getValue(),
 			requestParams = {},
 			updatePreviewImage = function () {
 				if ( window.alreadyUpdating ) {
@@ -133,7 +132,7 @@ $( window ).on( 'load', function () {
 				// Update the image.
 				$.ajax( {
 					type: 'POST',
-					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangCode,
+					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangWidget.getValue(),
 					data: requestParams,
 					success: function ( result ) {
 						appConfig.imageMapLayer.setUrl( result.imageSrc );
@@ -144,7 +143,7 @@ $( window ).on( 'load', function () {
 				} );
 			};
 
-		if ( targetLangCode !== 'fallback' ) {
+		if ( targetLangWidget.getValue() !== 'fallback' ) {
 			// 'fallback' means no language preselected, otherwise enable the controls
 			inputWiget.setDisabled( false );
 		}
