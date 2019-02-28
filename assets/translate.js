@@ -130,6 +130,7 @@ $( window ).on( 'load', function () {
 					requestParams[ tspanId ] = fieldLayout.getField().getValue();
 				} );
 				// Update the image.
+				$( '.image-column' ).addClass( 'loading' );
 				$.ajax( {
 					type: 'POST',
 					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangWidget.getValue(),
@@ -139,6 +140,9 @@ $( window ).on( 'load', function () {
 					},
 					error: function () {
 						OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
+					},
+					complete: function () {
+						$( '.image-column' ).removeClass( 'loading' );
 					}
 				} );
 			};
