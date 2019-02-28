@@ -23,6 +23,7 @@
   "search-label": "Label for the search box.",
   "search-placeholder": "An example filename visible in the search box. Doesn't have to exist on Commons.",
   "translate-button": "Search button text.",
+  "no-translations": "Error message displayed for SVGs that have nothing to translate.",
 
   "pick-another": "Label for backlink from the translate page to the search page.",
   "view-on-commons": "Link to view the file on Commons. The whole phrase is linked.",

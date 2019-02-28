@@ -9,9 +9,11 @@ use Krinkle\Intuition\Intuition;
 use OOUI\ActionFieldLayout;
 use OOUI\ButtonInputWidget;
 use OOUI\FormLayout;
+use OOUI\HtmlSnippet;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class SearchController extends AbstractController
@@ -20,23 +22,33 @@ class SearchController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(Intuition $intuition):Response
+    public function index(Intuition $intuition, Session $session):Response
     {
+        $failedSearchTerm = $session->getFlashBag()->get('search-redirect');
         $searchField = new SearchWidget([
             'placeholder' => $intuition->msg('search-placeholder'),
             'name' => 'filename',
             'id' => 'search-widget',
             'infusable' => true,
+            'value' => $failedSearchTerm[0] ?? '',
         ]);
         $submitButton = new ButtonInputWidget([
             'type' => 'submit',
             'label' => $intuition->msg('translate-button'),
             'flags' =>  ['primary', 'progressive'],
         ]);
+        // The flashed search errors are HTML, so we have to turn them into objects that FieldLayout will understand.
+        $searchErrors = array_map(
+            function ($text) {
+                return new HtmlSnippet($text);
+            },
+            $session->getFlashBag()->get('search-errors')
+        );
         $fieldLayoutOpts = [
             'align' => 'top',
             'label' => $intuition->msg('search-label'),
             'help' => $intuition->msg('search-help'),
+            'errors' => $searchErrors,
         ];
         $fieldLayout = new ActionFieldLayout($searchField, $submitButton, $fieldLayoutOpts);
         $form = new FormLayout([
@@ -60,6 +72,9 @@ class SearchController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
+        // Add a flash message that we can use to track whether the user has arrived
+        // on the translate page directly or via search.
+        $this->addFlash('search-redirect', $filename);
         return $this->redirectToRoute('translate', ['filename' => Title::normalize($filename)]);
     }
 }

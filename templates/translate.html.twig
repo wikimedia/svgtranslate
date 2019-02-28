@@ -31,6 +31,9 @@
         <input type="hidden" name="target-lang" value="{{ target_lang }}" />
         <div class="form-column">
             {{ language_selectors|raw }}
+            {% if no_translations_message %}
+            {{ no_translations_message|raw }}
+            {% endif %}
             <div class="translation-fields">{{ translation_fieldset|raw }}</div>
         </div>
         <div class="image-column">

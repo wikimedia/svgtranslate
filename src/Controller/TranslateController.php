@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
+use App\OOUI\NoTranslationsMessage;
 use App\OOUI\TranslationsFieldset;
 use App\Service\FileCache;
 use App\Service\Uploader;
@@ -55,6 +56,24 @@ class TranslateController extends AbstractController
         // Fetch the SVG from Commons.
         $path = $cache->getPath($filename);
         $svgFile = new SvgFile($path);
+
+        // If there are no strings to translate, tell the user.
+        //   - If they've come from the search form redirect then back there with an error.
+        //   - If they've come directly to this page, just show the message here.
+        // The flash message is checked first so that it is always cleared.
+        $translations = $svgFile->getInFileTranslations();
+        $isSearchRedirect = $session->getFlashBag()->get('search-redirect');
+        $noTranslationsMessage = null;
+        if (0 === count($translations)) {
+            $noTranslationsMessage = new NoTranslationsMessage();
+            $noTranslationsMessage->setIntuition($intuition);
+            if ($isSearchRedirect) {
+                $this->addFlash('search-errors', (string)$noTranslationsMessage);
+                // Also flash the failed filename so we can populate the search form.
+                $this->addFlash('search-redirect', $normalizedFilename);
+                return $this->redirectToRoute('home');
+            }
+        }
 
         // Upload and download buttons.
         $downloadButton = new ButtonInputWidget([
@@ -121,7 +140,6 @@ class TranslateController extends AbstractController
         ]);
 
         // Form fields for translation messages are in a fieldset which contains fieldsets for each group of messages.
-        $translations = $svgFile->getInFileTranslations();
         $translationsFieldset = new TranslationsFieldset([
             'translations' => $translations,
             'source_lang_code' => $sourceLang->getValue(),
@@ -141,6 +159,7 @@ class TranslateController extends AbstractController
             'translations' => $translations,
             'target_lang' => $targetLangDefault,
             'wiki' => $wiki,
+            'no_translations_message' => $noTranslationsMessage,
         ]);
     }
 
