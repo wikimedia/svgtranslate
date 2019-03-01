@@ -51,13 +51,11 @@
 			'./node_modules/oojs/dist/oojs.js',
 
 			// OOJS-UI.
-			// There's a problem with ./images/grab.cur etc. in oojs-ui-wikimediaui.css
-			// and until https://github.com/webpack-contrib/css-loader/issues/781 has
-			// been rolled out we're installing a fixed version of css-loader in package.json.
-			// That can be removed when the above issue's fix makes it into a release.
 			'./node_modules/oojs-ui/dist/oojs-ui.js',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.js',
-			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui.min.css',
+			'./node_modules/oojs-ui/dist/oojs-ui-core-wikimediaui.css',
+			'./node_modules/oojs-ui/dist/oojs-ui-widgets-wikimediaui.css',
+			'./node_modules/oojs-ui/dist/oojs-ui-windows-wikimediaui.css',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-interactions.css',
 			'./node_modules/oojs-ui/dist/oojs-ui-wikimediaui-icons-wikimedia.css',
 
