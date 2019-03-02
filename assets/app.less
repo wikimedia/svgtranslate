@@ -1,6 +1,15 @@
 @import '../node_modules/wikimedia-ui-base/wikimedia-ui-base.less';
 @import '../vendor/wikimedia/toolforge-bundle/Resources/assets/wikimedia-base.less';
 
+// @HACK: This image should be loaded by OOUI, but because the OOUI images stylesheet is too large
+// for Webpack to reliably cope with, and indicators don't get their own submodule (unlike icons),
+// we're manually adding this here. It's the only indicator we use (there are three others).
+// More info: T217393
+.oo-ui-indicator-down {
+    background-image: url('../node_modules/oojs-ui/dist/themes/wikimediaui/images/indicators/down.png');
+    background-image: linear-gradient(transparent, transparent), url('../node_modules/oojs-ui/dist/themes/wikimediaui/images/indicators/down.svg');
+}
+
 :root {
     // Workaround for https://github.com/webpack-contrib/css-loader/issues/708
     border: 0;
