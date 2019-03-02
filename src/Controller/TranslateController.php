@@ -128,6 +128,7 @@ class TranslateController extends AbstractController
             'target_lang_code' => $targetLang->getValue(),
             'disabled' => 'fallback' === $targetLangDefault,
         ]);
+        $wiki = parse_url($this->getParameter('wiki_url'))['host'];
 
         return $this->render('translate.html.twig', [
             'page_class' => 'translate',
@@ -139,6 +140,7 @@ class TranslateController extends AbstractController
             'language_selectors' => $languageSelectorsLayout,
             'translations' => $translations,
             'target_lang' => $targetLangDefault,
+            'wiki' => $wiki,
         ]);
     }
 

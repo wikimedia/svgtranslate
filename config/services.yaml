@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    wiki_url: '%env(WIKI_URL)%'
 
 services:
     # default configuration for services in *this* file
@@ -29,7 +30,7 @@ services:
 
     App\Service\MediaWikiApi:
         arguments:
-            $entryPoint: '%env(WIKI_URL)%'
+            $entryPoint: '%wiki_url%'
             $client: '@MediaWiki\OAuthClient\Client'
             $session: "@session"
 
