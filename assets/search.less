@@ -12,6 +12,19 @@ body.search {
   main form {
     max-width: 950px;
     margin: 3rem auto;
+
+    // Override error message display to remove the icon and make it a bit more compact.
+    .oo-ui-fieldLayout-messages {
+      padding: 0;
+      .oo-ui-fieldLayout-messages-error {
+        .oo-ui-iconWidget {
+          display: none;
+        }
+        .oo-ui-labelWidget {
+          padding: 0;
+        }
+      }
+    }
   }
 
   aside.tutorial {
