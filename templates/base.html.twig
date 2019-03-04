@@ -76,7 +76,7 @@
     <script type="text/javascript">
 
         {# Matomo usage tracking #}
-        {% if 'prod' == app.environment and 'localhost' != app.request.server.get('SERVER_NAME') %}
+        {% if 'tools.wmflabs.org' == app.request.HttpHost and '/svgtranslate/' == asset('') %}
         var _paq = _paq || [];
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
