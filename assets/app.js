@@ -10,6 +10,7 @@ global.App = require( './js/App.js' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/language.svg' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/logo-Wikimedia-Commons.svg' );
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/download.svg' );
+require( './fa-question-circle-solid.svg' );
 
 // Load i18n message files.
 $( function () {

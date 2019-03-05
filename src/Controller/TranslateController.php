@@ -5,7 +5,6 @@ namespace App\Controller;
 
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
-use App\OOUI\NoTranslationsMessage;
 use App\OOUI\TranslationsFieldset;
 use App\Service\FileCache;
 use App\Service\Uploader;
@@ -65,8 +64,10 @@ class TranslateController extends AbstractController
         $isSearchRedirect = $session->getFlashBag()->get('search-redirect');
         $noTranslationsMessage = null;
         if (0 === count($translations)) {
-            $noTranslationsMessage = new NoTranslationsMessage();
-            $noTranslationsMessage->setIntuition($intuition);
+            $noTranslationsMessage = $this->renderView(
+                'error_message.html.twig',
+                ['msg_name' => 'no-translations']
+            );
             if ($isSearchRedirect) {
                 $this->addFlash('search-errors', (string)$noTranslationsMessage);
                 // Also flash the failed filename so we can populate the search form.
