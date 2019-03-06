@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Controller;
 
+use App\Exception\ImageNotFoundException;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
@@ -53,7 +54,18 @@ class TranslateController extends AbstractController
         }
 
         // Fetch the SVG from Commons.
-        $path = $cache->getPath($filename);
+        try {
+            $path = $cache->getPath($filename);
+        } catch (ImageNotFoundException $exception) {
+            $notFoundMessage = $this->renderView(
+                'error_message.html.twig',
+                ['msg_name' => 'not-found']
+            );
+            $this->addFlash('search-errors', (string)$notFoundMessage);
+            // Also flash the failed filename so we can populate the search form.
+            $this->addFlash('search-redirect', $normalizedFilename);
+            return $this->redirectToRoute('home');
+        }
         $svgFile = new SvgFile($path);
 
         // If there are no strings to translate, tell the user.
