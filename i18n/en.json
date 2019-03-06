@@ -24,6 +24,7 @@
   "search-placeholder": "100 Years War France 1435.svg",
   "translate-button": "Translate",
   "no-translations": "This file does not have any labels available for translation. Please pick another image.",
+  "not-found": "The file you requested could not be found. Please pick another image.",
 
   "pick-another": "← pick another file",
   "view-on-commons": "View on Commons",
