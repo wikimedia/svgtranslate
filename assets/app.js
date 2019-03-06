@@ -4,7 +4,7 @@
 global.OO = OO;
 
 // Set up App namespace.
-global.App = {};
+global.App = require( './js/App.js' );
 
 // Require images used in HTML, so they can be used as assets.
 require( 'oojs-ui/dist/themes/wikimediaui/images/icons/language.svg' );

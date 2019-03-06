@@ -1,3 +1,5 @@
+require( './js/Model.js' );
+
 window.alreadyUpdating = false;
 window.enableInputs = function () {
 	window.alreadyUpdating = true;
@@ -81,29 +83,31 @@ $( function () {
  */
 $( function () {
 	var sourceLangWidget,
+		model = new App.Model( appConfig.translations ),
 		$sourceLangWidget = $( '.source-lang-widget' );
-	if ( $sourceLangWidget.length !== 1 ) {
-		// Don't do anything if the widget isn't present.
-		return;
+
+	// Change the source lang value.
+	if ( $sourceLangWidget.length === 1 ) {
+		sourceLangWidget = OO.ui.infuse( $sourceLangWidget[ 0 ] );
+		sourceLangWidget.on( 'change', function () {
+			model.setSourceLang( sourceLangWidget.getValue() );
+		} );
 	}
-	sourceLangWidget = OO.ui.infuse( $sourceLangWidget[ 0 ] );
-	sourceLangWidget.on( 'change', function () {
-		var newLangCode = sourceLangWidget.getValue();
-		// Go through all the field labels and fetch new values from the translations.
-		$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
-			var fieldLayout = OO.ui.infuse( $( this ) ),
-				nodeId = fieldLayout.getField().data[ 'tspan-id' ];
-			if ( appConfig.translations[ nodeId ][ newLangCode ] === undefined ) {
-				// If there's no source language available for a string,
-				// show a message and the fallback language.
-				fieldLayout.setLabel( $.i18n(
-					'source-lang-not-found',
-					[ appConfig.translations[ nodeId ].fallback.text ]
-				) );
+
+	// Change field labels when the source lang changes.
+	$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
+		var fieldLayout = OO.ui.infuse( $( this ) );
+		model.on( 'sourceLangSet', function () {
+			var nodeId = fieldLayout.getField().data[ 'tspan-id' ],
+				sourceTranslation = model.getSourceTranslation( nodeId );
+			if ( !sourceTranslation.exists ) {
+				fieldLayout.setLabel(
+					$.i18n( 'source-lang-not-found', [ sourceTranslation.label ] )
+				);
 				fieldLayout.$element.addClass( 'source-lang-not-found' );
 			} else {
-				// Where available, set the source language string.
-				fieldLayout.setLabel( appConfig.translations[ nodeId ][ newLangCode ].text );
+				fieldLayout.setLabel( sourceTranslation.label );
+				fieldLayout.$element.removeClass( 'source-lang-not-found' );
 			}
 		} );
 	} );

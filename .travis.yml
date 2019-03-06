@@ -18,8 +18,10 @@ script:
   - git status | grep "nothing to commit, working tree clean"
   # Run linting.
   - composer lint
+  - npm run lint
   # Run tests.
   - composer test
+  - npm run test
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls --coverage_clover=var/log/phpunit_clover.xml --json_path=var/coveralls-upload.json
