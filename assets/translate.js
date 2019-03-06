@@ -123,6 +123,8 @@ $( window ).on( 'load', function () {
 					// Otherwise, it will needlessly update when the input is being enabled
 					return;
 				}
+				// Show loading indicator.
+				$( '.image-column' ).addClass( 'loading' );
 				// Go through all fields and construct the request parameters.
 				$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 					var fieldLayout = OO.ui.infuse( $( this ) ),
@@ -130,18 +132,20 @@ $( window ).on( 'load', function () {
 					requestParams[ tspanId ] = fieldLayout.getField().getValue();
 				} );
 				// Update the image.
-				$( '.image-column' ).addClass( 'loading' );
 				$.ajax( {
 					type: 'POST',
 					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangWidget.getValue(),
 					data: requestParams,
 					success: function ( result ) {
+						// Remove the loading class after the image layer has re-loaded.
+						appConfig.imageMapLayer.on( 'load', function () {
+							$( '.image-column' ).removeClass( 'loading' );
+						} );
+						// Set the new image URL.
 						appConfig.imageMapLayer.setUrl( result.imageSrc );
 					},
 					error: function () {
 						OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
-					},
-					complete: function () {
 						$( '.image-column' ).removeClass( 'loading' );
 					}
 				} );
