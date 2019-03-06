@@ -1,6 +1,6 @@
 {
-  "assets/app.css": "assets/app.78d16691.css",
-  "assets/app.js": "assets/app.a4cbe6f7.js",
+  "assets/app.css": "assets/app.3876858b.css",
+  "assets/app.js": "assets/app.97158d61.js",
   "assets/grabbing.cur": "assets/a8c874b93b3d848f39a71260c57e3863.cur",
   "assets/grab.cur": "assets/b06c243f534d9c5461d16528156cd5a8.cur",
   "assets/i18n/app/af.json": "assets/i18n/app/af.json",
@@ -348,6 +348,7 @@
   "assets/images/ellipsis-progressive.png": "assets/images/ellipsis-progressive.672865dc.png",
   "assets/images/ellipsis.svg": "assets/images/ellipsis.1a98c218.svg",
   "assets/images/ellipsis.png": "assets/images/ellipsis.814d66f8.png",
+  "assets/images/fa-question-circle-solid.svg": "assets/images/fa-question-circle-solid.266cfdc5.svg",
   "assets/images/feedback-ltr-invert.png": "assets/images/feedback-ltr-invert.eb31e405.png",
   "assets/images/feedback-ltr-invert.svg": "assets/images/feedback-ltr-invert.ebf2b8ee.svg",
   "assets/images/feedback-ltr-progressive.svg": "assets/images/feedback-ltr-progressive.12ead3ef.svg",
