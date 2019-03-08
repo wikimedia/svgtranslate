@@ -59,6 +59,7 @@ class MediaWikiApi
         if (!isset($response['query']['pages'])
             || 1 !== count($response['query']['pages'])
             || isset(reset($response['query']['pages'])['missing'])
+            || isset(reset($response['query']['pages'])['invalid'])
         ) {
             throw new ImageNotFoundException($fileName);
         }
