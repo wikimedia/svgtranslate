@@ -9,24 +9,10 @@ namespace App\Model\Svg;
 
 class Transformations
 {
-    private const DEFAULT_PROPERTIES = [
-        'x'         => '', 'y' => '', 'font-family' => 'other',
-        'font-size' => '', 'units' => 'other', 'color' => '',
-        'underline' => '', 'italic' => '', 'bold' => '',
-    ];
-
-    private const OPTIONAL_PROPERTIES = [
-        'id',
-        'data-children',
-        'xml:space',
-        'sodipodi:role',
-        'sodipodi:linespacing',
-    ];
-
     /**
-     * Maps from the kind of <parameter name,value> combination used in
+     * Maps from the kind of <parameter name, value> combination used in
      * a property string to the kind of <attribute name, value> combination
-     * used in an SVG file. Also validates to prevent arbitary input.
+     * used in an SVG file.
      *
      * @see self::mapFromAttribute()
      * @param string $name Parameter name (e.g. color, bold)
@@ -38,15 +24,11 @@ class Transformations
         $name = trim($name);
         $value = trim($value);
 
-        $supported = array_merge(
-            array_keys(self::DEFAULT_PROPERTIES),
-            self::OPTIONAL_PROPERTIES
-        );
-
-        if (!in_array($name, $supported)) {
-            // Quietly drop: injection attempt?
-            return [ false, false ];
+        // systemLanguage will be re-added separately.
+        if ('systemLanguage' === $name) {
+            return [false, false];
         }
+
         switch ($name) {
             case 'bold':
                 $name = 'font-weight';
@@ -73,7 +55,7 @@ class Transformations
     /**
      * Maps from the kind of <attribute name, value> combination used in
      * an SVG file to the kind of <parameter name,value> combination used in
-     * a property string. Also validates to prevent arbitary input.
+     * a property string. Also validates to prevent arbitrary input.
      *
      * @see self::mapToAttribute()
      * @param string $name Attribute name (e.g. fill, font-weight)
@@ -84,20 +66,6 @@ class Transformations
     {
         $name = trim($name);
         $value = trim($value);
-
-        $supported = array_merge(
-            [
-                'x', 'y', 'font-size', 'font-weight', 'font-style',
-                'text-decoration', 'font-family', 'fill', 'style',
-                'systemLanguage',
-            ],
-            self::OPTIONAL_PROPERTIES
-        );
-        if (!in_array($name, $supported)) {
-            // Not editable, so not suitable for extraction
-            return [ false, false ];
-        }
-
         switch ($name) {
             case 'font-weight':
                 $name = 'bold';
