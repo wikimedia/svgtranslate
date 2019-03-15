@@ -4,10 +4,13 @@ framework:
     #csrf_protection: true
     #http_method_override: true
 
-    # Enables session support. Note that the session will ONLY be started if you read or write from it.
-    # Remove or comment this section to explicitly disable session support.
+    # Enable session support. Note that the session will ONLY be started if you read or write from it.
+    # Write session files to the var/ directory
+    # and make sure they're limited to the tool's own path on Toolforge.
     session:
-        handler_id: ~
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        cookie_path: "@=service('request').getBaseUrl()"
 
     #esi: true
     #fragments: true
