@@ -243,12 +243,6 @@ class SvgFile
                 $switch->appendChild($text);
             }
 
-            // Transforms on individual texts are particular problematic, should move it to the <switch>
-            if ($text->hasAttribute('transform')) {
-                $text->parentNode->setAttribute('transform', $text->getAttribute('transform'));
-                $text->removeAttribute('transform');
-            }
-
             // Non-translatable style elements on texts get lost, so bump up to switch
             if ($text->hasAttribute('style')) {
                 $style = $text->getAttribute('style');
