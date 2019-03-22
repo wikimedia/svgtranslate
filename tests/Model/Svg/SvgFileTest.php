@@ -206,7 +206,7 @@ class SvgFileTest extends TestCase
             [
                 'fr' =>
                     [
-                        'text' => 'et toi',
+                        'text' => 'et toi?',
                         'x' => '117.42857',
                         'y' => '368.64789',
                         'id' => 'tspan2999-fr',
@@ -214,7 +214,7 @@ class SvgFileTest extends TestCase
                     ],
                 'nl' =>
                     [
-                        'text' => 'met jou',
+                        'text' => 'met jou?',
                         'x' => '101.42857',
                         'y' => '368.64789',
                         'font-size' => '90%',
@@ -223,7 +223,7 @@ class SvgFileTest extends TestCase
                     ],
                 'tlh-ca' =>
                     [
-                        'text' => 'met jou',
+                        'text' => 'met jou?',
                         'x' => '101.42857',
                         'y' => '368.64789',
                         'font-size' => '90%',
@@ -232,7 +232,7 @@ class SvgFileTest extends TestCase
                     ],
                 'fallback' =>
                     [
-                        'text' => '   you',
+                        'text' => '   you?',
                         'x' => '101.42857',
                         'y' => '368.64789',
                         'id' => 'tspan2999',
@@ -240,60 +240,11 @@ class SvgFileTest extends TestCase
                         'data-parent' => 'text2995',
                     ],
             ],
-        'text2995' =>
-            [
-                'fr' =>
-                    [
-                        'text' => '$1$2?',
-                        'xml:space' => 'preserve',
-                        'x' => '101.42857',
-                        'y' => '318.64789',
-                        'id' => 'text2995-fr',
-                        'sodipodi:linespacing' => '125%',
-                        'data-children' => 'tspan2997|tspan2999',
-                    ],
-                'nl' =>
-                    [
-                        'text' => '$1$2?',
-                        'xml:space' => 'preserve',
-                        'x' => '101.42857',
-                        'y' => '318.64789',
-                        'id' => 'text2995-nl',
-                        'sodipodi:linespacing' => '125%',
-                        'data-children' => 'tspan2997|tspan2999',
-                    ],
-                'tlh-ca' =>
-                    [
-                        'text' => '$1$2?',
-                        'xml:space' => 'preserve',
-                        'x' => '101.42857',
-                        'y' => '318.64789',
-                        'id' => 'text2995-nl',
-                        'sodipodi:linespacing' => '125%',
-                        'data-children' => 'tspan2997|tspan2999',
-                    ],
-                'fallback' =>
-                    [
-                        'text' => '$1$2?',
-                        'xml:space' => 'preserve',
-                        'x' => '101.42857',
-                        'y' => '318.64789',
-                        'id' => 'text2995',
-                        'sodipodi:linespacing' => '125%',
-                        'data-children' => 'tspan2997|tspan2999',
-                    ],
-            ],
     ];
 
-    /**
-     * @var SvgFile
-     */
-    private $svg;
-
-    public function setUp(): void
+    private function getSvg(string $fileName = 'Speech_bubbles.svg'): SvgFile
     {
-        parent::setUp();
-        $this->svg = new SvgFile(self::TEST_FILE);
+        return new SvgFile(__DIR__."/../../data/$fileName");
     }
 
     /*
@@ -313,17 +264,18 @@ class SvgFileTest extends TestCase
         $dom = new DOMDocument('1.0', 'UTF-8');
         $dom->loadXML('<text id="tspan2987-de" font-weight="bold">Hallo!</text>');
 
-        $node = $this->svg->arrayToNode($array, 'tspan');
-        $this->assertEquals($this->svg->nodeToArray($dom->firstChild), $this->svg->nodeToArray($node));
+        $svg = $this->getSvg();
+        $node = $svg->arrayToNode($array, 'tspan');
+        $this->assertEquals($svg->nodeToArray($dom->firstChild), $svg->nodeToArray($node));
 
         $expectedArray = $array;
         unset($expectedArray['data-parent'], $expectedArray['non-existent']);
-        $this->assertEquals($expectedArray, $this->svg->nodeToArray($node));
+        $this->assertEquals($expectedArray, $svg->nodeToArray($node));
     }
 
     public function testGetInFileTranslations(): void
     {
-        $this->assertEquals(self::EXPECTED_TRANSLATIONS, $this->svg->getInFileTranslations());
+        $this->assertEquals(self::EXPECTED_TRANSLATIONS, $this->getSvg()->getInFileTranslations());
     }
 
     public function testGetSavedLanguages(): void
@@ -331,7 +283,7 @@ class SvgFileTest extends TestCase
         $expected = [
             'de', 'fr', 'nl', 'tlh-ca', 'fallback',
         ];
-        $this->assertEquals($expected, $this->svg->getSavedLanguages());
+        $this->assertEquals($expected, $this->getSvg()->getSavedLanguages());
     }
 
     public function testGetSavedLanguagesFiltered(): void
@@ -340,7 +292,7 @@ class SvgFileTest extends TestCase
             'full' => [ 'fr', 'nl', 'tlh-ca', 'fallback' ],
             'partial' => [ 'de' ],
         ];
-        $this->assertEquals($expected, $this->svg->getSavedLanguagesFiltered());
+        $this->assertEquals($expected, $this->getSvg()->getSavedLanguagesFiltered());
     }
 
     public function testGetFilteredTextNodes(): void
@@ -457,36 +409,80 @@ class SvgFileTest extends TestCase
                             'data-children' => 'tspan2991|tspan2993',
                         ],
                 ],
+            'text2995' => [
+                'fr' =>
+                    [
+                        'text' => '$1$2',
+                        'xml:space' => 'preserve',
+                        'x' => '101.42857',
+                        'y' => '318.64789',
+                        'id' => 'text2995-fr',
+                        'sodipodi:linespacing' => '125%',
+                        'data-children' => 'tspan2997|tspan2999',
+                    ],
+                'nl' =>
+                    [
+                        'text' => '$1$2',
+                        'xml:space' => 'preserve',
+                        'x' => '101.42857',
+                        'y' => '318.64789',
+                        'id' => 'text2995-nl',
+                        'sodipodi:linespacing' => '125%',
+                        'data-children' => 'tspan2997|tspan2999',
+                    ],
+                'tlh-ca' =>
+                    [
+                        'text' => '$1$2',
+                        'xml:space' => 'preserve',
+                        'x' => '101.42857',
+                        'y' => '318.64789',
+                        'id' => 'text2995-nl',
+                        'sodipodi:linespacing' => '125%',
+                        'data-children' => 'tspan2997|tspan2999',
+                    ],
+                'fallback' =>
+                    [
+                        'text' => '$1$2',
+                        'xml:space' => 'preserve',
+                        'x' => '101.42857',
+                        'y' => '318.64789',
+                        'id' => 'text2995',
+                        'sodipodi:linespacing' => '125%',
+                        'data-children' => 'tspan2997|tspan2999',
+                    ],
+                ],
         ];
-        $this->assertEquals($expected, $this->svg->getFilteredTextNodes());
+        $this->assertEquals($expected, $this->getSvg()->getFilteredTextNodes());
     }
 
     public function testSwitchTranslationSetRoundtrip(): void
     {
         // Functions already tested above
-        $origXml = $this->svg->saveToString();
-        $current = $this->svg->getInFileTranslations();
-        $filteredTextNodes = $this->svg->getFilteredTextNodes();
-        $ret = $this->svg->switchToTranslationSet(array_merge($current, $filteredTextNodes));
+        $svg = $this->getSvg();
+        $origXml = $svg->saveToString();
+        $current = $svg->getInFileTranslations();
+        $filteredTextNodes = $svg->getFilteredTextNodes();
+        $ret = $svg->switchToTranslationSet(array_merge($current, $filteredTextNodes));
 
-        $this->assertEquals($current, $this->svg->getInFileTranslations());
-        $this->assertEquals($filteredTextNodes, $this->svg->getFilteredTextNodes());
+        $this->assertEquals($current, $svg->getInFileTranslations());
+        $this->assertEquals($filteredTextNodes, $svg->getFilteredTextNodes());
         $this->assertEquals([ 'started' => [], 'expanded' => [] ], $ret);
 
-        $this->assertEquals(str_replace(' ', '', $origXml), str_replace(' ', '', $this->svg->saveToString()));
+        $this->assertEquals(str_replace(' ', '', $origXml), str_replace(' ', '', $svg->saveToString()));
     }
 
     public function testSetTranslations(): void
     {
         // The test file does not contain Spanish.
-        $this->svg->setTranslations('es', ['tspan2993' => 'FooBarX']);
-        static::assertContains('FooBarX', $this->svg->saveToString());
+        $svg = $this->getSvg();
+        $svg->setTranslations('es', ['tspan2993' => 'FooBarX']);
+        static::assertContains('FooBarX', $svg->saveToString());
 
         // Test that multiple languages can be set, and modified.
-        $this->svg->setTranslations('es', ['tspan2993' => 'FooBarModified']);
-        $this->svg->setTranslations('fr', ['tspan2993' => 'BarFoo']);
+        $svg->setTranslations('es', ['tspan2993' => 'FooBarModified']);
+        $svg->setTranslations('fr', ['tspan2993' => 'BarFoo']);
 
-        $svgContent = $this->svg->saveToString();
+        $svgContent = $svg->saveToString();
         static::assertContains('FooBarModified', $svgContent);
         static::assertContains('BarFoo', $svgContent);
         static::assertNotContains('FooBarX', $svgContent);
@@ -495,8 +491,9 @@ class SvgFileTest extends TestCase
     public function testT214717(): void
     {
         $fileName = tempnam(sys_get_temp_dir(), 'SvgFile');
-        $this->svg->setTranslations('ru', ['tspan2993' => '']);
-        $this->svg->saveToPath($fileName);
+        $svg = $this->getSvg();
+        $svg->setTranslations('ru', ['tspan2993' => '']);
+        $svg->saveToPath($fileName);
 
         $newSvg = new SvgFile($fileName);
         unlink($fileName);
@@ -507,13 +504,13 @@ class SvgFileTest extends TestCase
     public function testSaveToString(): void
     {
         // Check that we are not actually destroying the XML file
-        $this->assertGreaterThan(1500, strlen($this->svg->saveToString()));
+        $this->assertGreaterThan(1500, strlen($this->getSvg()->saveToString()));
     }
 
     public function testSaveToPath(): void
     {
         $tempPath = tempnam(sys_get_temp_dir(), 'test');
-        $this->svg->saveToPath($tempPath);
+        $this->getSvg()->saveToPath($tempPath);
 
         // Check that we are not actually destroying the XML file
         $this->assertGreaterThan(1500, strlen(file_get_contents($tempPath)));
@@ -521,13 +518,13 @@ class SvgFileTest extends TestCase
 
     public function testEmptySvg(): void
     {
-        $file = new SvgFile(__DIR__.'/../../data/empty.svg');
+        $file = $this->getSvg('empty.svg');
         $this->assertEquals([], $file->getInFileTranslations());
     }
 
     public function testUnevenTspans(): void
     {
-        $file = new SvgFile(__DIR__.'/../../data/tspans.svg');
+        $file = $this->getSvg('tspans.svg');
         $this->assertEquals(
             [
                 'trsvg3' => [
@@ -551,5 +548,15 @@ class SvgFileTest extends TestCase
             ],
             $file->getInFileTranslations()
         );
+    }
+
+    /**
+     * https://phabricator.wikimedia.org/T216283
+     * Handle some parts of a <text> being <tspan> and some not
+     */
+    public function testMixedTextContent(): void
+    {
+        $svg = $this->getSvg('mixed.svg');
+        $this->assertCount(6, $svg->getInFileTranslations());
     }
 }
