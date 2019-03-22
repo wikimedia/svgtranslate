@@ -105,7 +105,8 @@ class TranslateController extends AbstractController
             'id' => 'upload-button-widget',
             'infusable' => true,
         ]);
-        if (!$session->get('logged_in_user')) {
+        $user = $session->get('logged_in_user');
+        if (!$user) {
             // Only logged in users can upload.
             $uploadButton->setDisabled(true);
         }
