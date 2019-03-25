@@ -165,16 +165,28 @@ class SvgFile
             }
             $translatableNodes[] = $tspan;
         }
+
         /** @var DOMElement $text */
         foreach ($texts as $text) {
-            // For uniformity, if a <text> doesn't have <tspan>s, create one
-            if (0 === $text->getElementsByTagName('tspan')->length) {
-                $tspan = $this->document->createElement('tspan');
-                while ($text->childNodes->length > 0) {
-                    $tspan->appendChild($text->childNodes[0]);
+            // Everything in a <text> should be a <tspan>s, otherwise we can't translate it
+            for ($i = 0; $i < count($text->childNodes); $i++) {
+                $node = $text->childNodes[$i];
+                if ('tspan' === $node->nodeName) {
+                    continue;
                 }
+                if (XML_TEXT_NODE !== $node->nodeType) {
+                    // Anything but tspans and text nodes is unexpected
+                    return false;
+                }
+                if ('' === trim($node->nodeValue)) {
+                    // Don't bother with whitespace-only nodes
+                    continue;
+                }
+                // Wrap text in <tspan>
+                $tspan = $this->document->createElement('tspan');
+                $text->replaceChild($tspan, $node);
+                $tspan->appendChild($node);
                 $translatableNodes[] = $tspan;
-                $text->appendChild($tspan);
             }
             $translatableNodes[] = $text;
         }
@@ -411,8 +423,14 @@ class SvgFile
     }
 
     /**
-     * Try to return $this->inFileTranslations. If it is not cached, analyse the SVG
-     * and hence generate it.
+     * Returns a list of translations present in the loaded file, in the following format:
+     *
+     *   'message id' => [
+     *     'language code' => [
+     *       'text' => 'Translatable message',
+     *       'id' => 'foo',
+     *       ...
+     *       (other <text> or <tspan> attributes)
      *
      * @return mixed[]
      */
@@ -458,8 +476,7 @@ class SvgFile
     }
 
     /**
-     * Try to return $this->savedLanguages (a list of languages which have one or more
-     * translations in-file). If it is not cached, analyse the SVG and hence generate it.
+     * Return a list of languages which have one or more translations in-file.
      *
      * @return string[]
      */
@@ -501,10 +518,9 @@ class SvgFile
     }
 
     /**
-     * Try to return $this->filteredTextNodes (an array of <text> nodes that contain only
-     * child elements). If it is not cached, analyse the SVG and hence generate it.
+     * Returns an array of <text> nodes that contain only child elements.
      *
-     * @return mixed[]
+     * @return mixed[] The same message ID => language code => attributes mapping as in getInFileTranslations()
      */
     public function getFilteredTextNodes(): array
     {

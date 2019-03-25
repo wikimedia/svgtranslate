@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg>
+    <g>
+        <text>foo<tspan>bar</tspan></text>
+        <text><tspan>foo</tspan>bar<tspan>baz</tspan>quux</text>
+    </g>
+</svg>
