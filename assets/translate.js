@@ -104,8 +104,10 @@ $( function () {
 
 	// After adding all the event handlers above, update the widget values.
 	model.loadFromLocalStorage();
-	sourceLangWidget.setValue( model.getSourceLang() );
-	targetLangWidget.setValue( model.getTargetLang() );
+	if ( sourceLangWidget && targetLangWidget ) {
+		sourceLangWidget.setValue( model.getSourceLang() );
+		targetLangWidget.setValue( model.getTargetLang() );
+	}
 } );
 
 /**
