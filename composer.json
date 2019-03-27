@@ -31,7 +31,7 @@
         "symfony/validator": "^4.1",
         "symfony/web-link": "^4.1",
         "symfony/yaml": "^4.1",
-        "wikimedia/toolforge-bundle": "^0.12"
+        "wikimedia/toolforge-bundle": "^0.14"
     },
     "require-dev": {
         "mediawiki/minus-x": "^0.3",
