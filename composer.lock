@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9acc46dcbfbc8d69d95ea462d500b020",
+    "content-hash": "4aed65703be43fa025637d9206986b55",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4708,16 +4708,16 @@
         },
         {
             "name": "wikimedia/toolforge-bundle",
-            "version": "0.12.1",
+            "version": "0.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/ToolforgeBundle.git",
-                "reference": "b2bcec769e0034b2c3718b9dd8b03ac14964219d"
+                "reference": "f60bd0b9e55b3bc04fc29c5d6441a652960160da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/b2bcec769e0034b2c3718b9dd8b03ac14964219d",
-                "reference": "b2bcec769e0034b2c3718b9dd8b03ac14964219d",
+                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/f60bd0b9e55b3bc04fc29c5d6441a652960160da",
+                "reference": "f60bd0b9e55b3bc04fc29c5d6441a652960160da",
                 "shasum": ""
             },
             "require": {
@@ -4725,6 +4725,7 @@
                 "mediawiki/oauthclient": "^1.0",
                 "symfony/config": "^4.1",
                 "symfony/http-kernel": "^4.1",
+                "symfony/process": "^4.1",
                 "symfony/routing": "^4.1",
                 "symfony/twig-bridge": "^4.1"
             },
@@ -4750,7 +4751,7 @@
             ],
             "description": "Symfony 4 bundle providing useful Toolforge features.",
             "homepage": "https://github.com/wikimedia/toolforgebundle",
-            "time": "2019-02-21T02:02:24+00:00"
+            "time": "2019-03-28T06:49:06+00:00"
         }
     ],
     "packages-dev": [
