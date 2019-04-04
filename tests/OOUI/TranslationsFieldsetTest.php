@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace App\Tests\OOUI;
 
 use App\OOUI\TranslationsFieldset;
+use OOUI\FieldsetLayout;
 use PHPUnit\Framework\TestCase;
 
 class TranslationsFieldsetTest extends TestCase
@@ -12,11 +13,11 @@ class TranslationsFieldsetTest extends TestCase
     /**
      * @dataProvider fieldsetGroupingProvider()
      */
-    public function testFieldsetGrouping(array $translations, int $fieldsetCount): void
+    public function testFieldsetGrouping(array $translations, int $fieldsetCount, string $sourceLang = 'fallback'): void
     {
         $fieldset = new TranslationsFieldset([
             'translations' => $translations,
-            'source_lang_code' => 'fallback',
+            'source_lang_code' => $sourceLang,
             'target_lang_code' => 'eo',
         ]);
         static::assertCount($fieldsetCount, $fieldset->getItems());
@@ -43,6 +44,24 @@ class TranslationsFieldsetTest extends TestCase
             'single field' => [$singleField, 1],
             'two unrelated fields' => [$twoUnrelatedFields, 2],
             'three fields in two groups' => [$threeFieldsInTwoGroups, 2],
+            'source language missing' => [$singleField, 1, 'de'],
         ];
+    }
+
+    /**
+     * https://phabricator.wikimedia.org/T219227
+     */
+    public function testMissingSourceLanguage(): void
+    {
+        $fieldset = new TranslationsFieldset([
+            'translations' => [
+                'span1' => ['fallback' => ['text' => 'Hello', 'data-parent' => 'text1']],
+            ],
+            'source_lang_code' => 'de',
+            'target_lang_code' => 'eo',
+        ]);
+        /** @var FieldsetLayout[] $items */
+        $items = $fieldset->getItems();
+        static::assertCount(0, $items[0]->getItems());
     }
 }
