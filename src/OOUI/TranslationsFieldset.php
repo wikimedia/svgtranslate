@@ -24,11 +24,17 @@ class TranslationsFieldset extends FieldsetLayout
         $fieldsets = [$currentFieldset];
         $prevTranslation = null;
         $this->disabled = $config['disabled'] ?? false;
+        $sourceLang = $config['source_lang_code'];
+        $targetLang = $config['target_lang_code'];
+
         foreach ($config['translations'] as $tspanId => $translation) {
-            $fieldValue = isset($translation[$config['target_lang_code']])
-                ? $translation[$config['target_lang_code']]['text']
-                : '';
-            $field = $this->getField($tspanId, $translation[$config['source_lang_code']]['text'], $fieldValue);
+            // Don't suggest to translate a nonexistent message
+            if (!isset($translation[$sourceLang]['text'])) {
+                continue;
+            }
+
+            $fieldValue = $translation[$targetLang]['text'] ?? '';
+            $field = $this->getField($tspanId, $translation[$sourceLang]['text'], $fieldValue);
             if (!$field) {
                 continue;
             }
