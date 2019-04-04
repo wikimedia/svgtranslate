@@ -248,7 +248,6 @@ class SvgFileTest extends TestCase
     }
 
     /*
-     * @todo: add additional attributes
      * @todo: consider if data-parent needs to survive roundtrip, and, if so, how
      */
     public function testArrayToNodeToArray(): void
@@ -257,19 +256,19 @@ class SvgFileTest extends TestCase
             'text' => 'Hallo!',
             'id' => 'tspan2987-de',
             'font-weight' => 'bold',
-            'non-existent' => 'foobar',
+            'text-anchor' => 'end',
             'data-parent' => 'text2985',
         ];
 
         $dom = new DOMDocument('1.0', 'UTF-8');
-        $dom->loadXML('<text id="tspan2987-de" font-weight="bold">Hallo!</text>');
+        $dom->loadXML('<text id="tspan2987-de" font-weight="bold" text-anchor="end">Hallo!</text>');
 
         $svg = $this->getSvg();
         $node = $svg->arrayToNode($array, 'tspan');
         $this->assertEquals($svg->nodeToArray($dom->firstChild), $svg->nodeToArray($node));
 
         $expectedArray = $array;
-        unset($expectedArray['data-parent'], $expectedArray['non-existent']);
+        unset($expectedArray['data-parent']);
         $this->assertEquals($expectedArray, $svg->nodeToArray($node));
     }
 
