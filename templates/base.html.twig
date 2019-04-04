@@ -94,7 +94,8 @@
             wikiUrl: "{{ wiki_url }}",
             assetsPath: "{{ asset('assets') }}",
             {# This var is used for the Universal Language Selector. #}
-            languages: {{ all_langs()|json_encode|raw }}
+            languages: {{ all_langs()|json_encode|raw }},
+            loggedIn: {{ logged_in_user() ? true : false|json_encode|raw }}
         };
         {% block script %}{% endblock %}
     </script>

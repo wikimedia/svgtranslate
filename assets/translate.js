@@ -118,8 +118,12 @@ $( window ).on( 'load', function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
 			$imgElement = $( '#translation-image img' ),
 			targetLangWidget = OO.ui.infuse( $( '.target-lang-widget' ) ),
-			requestParams = {},
 			updatePreviewImage = function () {
+				var requestParams = {},
+					canUpload = false,
+					$uploadButtonElement = $( '#upload-button-widget' ),
+					uploadButtonWidget = OO.ui.infuse( $uploadButtonElement );
+
 				if ( window.alreadyUpdating ) {
 					// Otherwise, it will needlessly update when the input is being enabled
 					return;
@@ -129,8 +133,11 @@ $( window ).on( 'load', function () {
 				// Go through all fields and construct the request parameters.
 				$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 					var fieldLayout = OO.ui.infuse( $( this ) ),
-						tspanId = fieldLayout.getField().data[ 'tspan-id' ];
-					requestParams[ tspanId ] = fieldLayout.getField().getValue();
+						tspanId = fieldLayout.getField().data[ 'tspan-id' ],
+						text = fieldLayout.getField().getValue(),
+						textChanged = text !== '' && text !== appConfig.translations[ tspanId ][ targetLangWidget.getValue() ].text;
+					requestParams[ tspanId ] = text;
+					canUpload = canUpload || ( textChanged && appConfig.loggedIn );
 				} );
 				// Update the image.
 				$.ajax( {
@@ -150,6 +157,9 @@ $( window ).on( 'load', function () {
 						$( '.image-column' ).removeClass( 'loading' );
 					}
 				} );
+
+				// Disable the upload image if there's nothing to translate
+				uploadButtonWidget.setDisabled( !canUpload );
 			};
 
 		// Update the preview image on field blur and after two seconds of no typing.
