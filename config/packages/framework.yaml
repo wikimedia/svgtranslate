@@ -8,9 +8,8 @@ framework:
     # Write session files to the var/ directory
     # and make sure they're limited to the tool's own path on Toolforge.
     session:
-        handler_id: session.handler.native_file
+        storage_id: Wikimedia\ToolforgeBundle\Service\NativeSessionStorage
         save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
-        cookie_path: "@=service('request').getBaseUrl()"
 
     #esi: true
     #fragments: true
