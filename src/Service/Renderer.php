@@ -32,8 +32,12 @@ class Renderer
     public function render(string $file, string $lang) : string
     {
         $process = new Process([$this->rsvgCommand, $file]);
-        // Set the LANG environment variable, which will be interpreted as the SVG systemLanguage.
-        $process->setEnv(['LANG' => $lang]);
+        if ('fallback' !== $lang) {
+            // Set the LANG environment variable, which will be interpreted as the SVG
+            // systemLanguage. If the fallback language is being requested, the OS's default will be
+            // used instead (as is done in MediaWiki).
+            $process->setEnv(['LANG' => $lang]);
+        }
         $process->run();
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
