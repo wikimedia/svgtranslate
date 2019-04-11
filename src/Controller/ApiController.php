@@ -115,7 +115,7 @@ class ApiController extends AbstractController
     {
         $tempPngFilename = $this->getTempPngFilename($filename, $key);
         if (file_exists($tempPngFilename)) {
-            return new BinaryFileResponse($tempPngFilename);
+            return new BinaryFileResponse($tempPngFilename, 200, ['X-Accel-Buffering' => 'no']);
         }
         throw new NotFoundHttpException();
     }
