@@ -6,7 +6,7 @@
             {% if title is defined %}{{ title }} | {% endif %}
             {{ msg('svgtranslate') }}
         </title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{% if is_rtl() %}{{ asset('assets/rtl.app.css') }}{% else %}{{ asset('assets/app.css') }}{% endif %}" />
     </head>
     <body class="{{ page_class }}">
         <header>
