@@ -1,6 +1,7 @@
 ( function () {
 	var Encore = require( '@symfony/webpack-encore' ),
-		CopyWebpackPlugin = require( 'copy-webpack-plugin' );
+		CopyWebpackPlugin = require( 'copy-webpack-plugin' ),
+		CSSJanusPlugin = require( '@mooeypoo/cssjanus-webpack' );
 
 	Encore
 
@@ -22,6 +23,8 @@
 			{ from: './node_modules/jquery.uls/i18n/', to: 'i18n/jquery.uls/' },
 			{ from: './i18n/', to: 'i18n/app/' }
 		] ) )
+
+		.addPlugin( new CSSJanusPlugin( [ 'app' ] ) )
 
 		// Add extra loader for OOUI's *.cur cursor image files.
 		.addLoader( { test: /\.cur$/, loader: 'file-loader' } )

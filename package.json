@@ -15,6 +15,7 @@
     "wikimedia-ui-base": "0.13"
   },
   "devDependencies": {
+    "@mooeypoo/cssjanus-webpack": "^1.0.1",
     "eslint": "5.13.0",
     "eslint-config-wikimedia": "0.10.1",
     "qunit": "2.9.2"
