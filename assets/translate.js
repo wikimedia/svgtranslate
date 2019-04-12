@@ -117,7 +117,7 @@ $( window ).on( 'load', function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
 			$imgElement = $( '#translation-image img' ),
-			targetLangWidget = OO.ui.infuse( $( '.target-lang-widget' ) ),
+			targetLang = OO.ui.infuse( $( '.target-lang-widget' ) ).getValue(),
 			updatePreviewImage = function () {
 				var requestParams = {},
 					canUpload = false,
@@ -132,17 +132,22 @@ $( window ).on( 'load', function () {
 				$( '.image-column' ).addClass( 'loading' );
 				// Go through all fields and construct the request parameters.
 				$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
-					var fieldLayout = OO.ui.infuse( $( this ) ),
+					var textChanged,
+						originalText = '',
+						fieldLayout = OO.ui.infuse( $( this ) ),
 						tspanId = fieldLayout.getField().data[ 'tspan-id' ],
-						text = fieldLayout.getField().getValue(),
-						textChanged = text !== '' && text !== appConfig.translations[ tspanId ][ targetLangWidget.getValue() ].text;
+						text = fieldLayout.getField().getValue();
+					if ( appConfig.translations[ tspanId ][ targetLang ] !== undefined ) {
+						originalText = appConfig.translations[ tspanId ][ targetLang ].text;
+					}
+					textChanged = text !== '' && text !== originalText;
 					requestParams[ tspanId ] = text;
 					canUpload = canUpload || ( textChanged && appConfig.loggedIn );
 				} );
 				// Update the image.
 				$.ajax( {
 					type: 'POST',
-					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLangWidget.getValue(),
+					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLang,
 					data: requestParams,
 					success: function ( result ) {
 						// Remove the loading class after the image layer has re-loaded.
