@@ -42,6 +42,11 @@
                 <span class="download-or-upload">{{ msg('download-or-upload') }}</span>
                 {{ download_button|raw }}
             </div>
+            {% if not logged_in_user() %}
+                <p class="upload-login-warning">
+                    <a href="{{ path('toolforge_login') }}">{{ msg('upload-login-warning') }}</a>
+                </p>
+            {% endif %}
             <div class="image" id="translation-image">
                 <img src="{{ path('api_file', {filename: filename, lang: target_lang}) }}"
                      alt="{{ msg('translation-image-alt') }}"

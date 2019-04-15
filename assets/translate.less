@@ -50,9 +50,10 @@ body.translate {
         width: 50%;
       }
 
-      .form-column .language-selectors,
-      .image-column .buttons {
-        margin-bottom: 2rem;
+      .translation-fields,
+      .image {
+        // The top margin of .image will be changed below in .upload-login-warning if the user isn't logged in.
+        margin-top: 2rem;
       }
 
       .form-column {
@@ -112,6 +113,14 @@ body.translate {
           }
           .download-or-upload {
             margin: 0 1rem 0 0.8rem;
+          }
+        }
+        .upload-login-warning {
+          margin: 0;
+          // The two 1rem dimensions here add up to the total used for .translation-fields above.
+          height: 1rem;
+          + .image {
+            margin-top: 1rem;
           }
         }
         .leaflet-container,

@@ -37,6 +37,7 @@
   "confirm-change-target-lang": "Change language",
   "upload-button-label": "Upload to Commons",
   "upload-button-in-progress": "Uploading to Commons…",
+  "upload-login-warning": "Log in to enable uploading",
   "download-button-label": "Download",
   "download-or-upload": "or",
   "translation-image-alt": "The image that's currently being translated. No description available.",
