@@ -50,7 +50,8 @@ $( function () {
 	var sourceLangWidget, targetLangWidget,
 		model = new App.Model( appConfig.translations ),
 		$sourceLangWidget = $( '.source-lang-widget' ),
-		$targetLangWidget = $( '.target-lang-widget' );
+		$targetLangWidget = $( '.target-lang-widget' ),
+		translationFields = [];
 
 	// Change the source lang value.
 	if ( $sourceLangWidget.length === 1 ) {
@@ -79,6 +80,12 @@ $( function () {
 	$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
 		var fieldLayout = OO.ui.infuse( $( this ) ),
 			nodeId = fieldLayout.getField().data[ 'tspan-id' ];
+		translationFields.push( fieldLayout.getField() );
+
+		// Set target translation.
+		fieldLayout.getField().on( 'change', function () {
+			model.setTargetTranslation( nodeId, fieldLayout.getField().getValue() );
+		} );
 
 		// Change field labels when the source lang changes.
 		model.on( 'sourceLangSet', function () {
@@ -108,6 +115,9 @@ $( function () {
 		sourceLangWidget.setValue( model.getSourceLang() );
 		targetLangWidget.setValue( model.getTargetLang() );
 	}
+	translationFields.forEach( function ( field ) {
+		field.setValue( model.getTargetTranslation( field.data[ 'tspan-id' ] ) );
+	} );
 } );
 
 /**
@@ -117,7 +127,7 @@ $( window ).on( 'load', function () {
 	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 		var inputWiget = OO.ui.infuse( $( this ) ),
 			$imgElement = $( '#translation-image img' ),
-			targetLang = OO.ui.infuse( $( '.target-lang-widget' ) ).getValue(),
+			targetLang = $( ':input[name="target-lang"]' ).val(),
 			updatePreviewImage = function () {
 				var requestParams = {},
 					canUpload = false,
@@ -128,6 +138,7 @@ $( window ).on( 'load', function () {
 					// Otherwise, it will needlessly update when the input is being enabled
 					return;
 				}
+				window.alreadyUpdating = true;
 				// Show loading indicator.
 				$( '.image-column' ).addClass( 'loading' );
 				// Go through all fields and construct the request parameters.
@@ -160,6 +171,9 @@ $( window ).on( 'load', function () {
 					error: function () {
 						OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
 						$( '.image-column' ).removeClass( 'loading' );
+					},
+					complete: function () {
+						window.alreadyUpdating = false;
 					}
 				} );
 
@@ -173,6 +187,8 @@ $( window ).on( 'load', function () {
 		inputWiget.on( 'change', function () {
 			appConfig.unsaved = true;
 		} );
+		// Also update on initial page load, to catch any browser- or model-supplied changes.
+		updatePreviewImage();
 	} );
 } );
 
