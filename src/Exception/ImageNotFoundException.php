@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Exception;
 
-use Exception;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ImageNotFoundException extends Exception
+class ImageNotFoundException extends NotFoundHttpException
 {
     public function __construct(string $fileName)
     {
