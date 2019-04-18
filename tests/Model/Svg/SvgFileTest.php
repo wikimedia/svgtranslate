@@ -280,7 +280,7 @@ class SvgFileTest extends TestCase
     public function testGetSavedLanguages(): void
     {
         $expected = [
-            'de', 'fr', 'nl', 'tlh-ca', 'fallback',
+            'tlh-ca', 'de', 'fr', 'nl', 'fallback',
         ];
         $this->assertEquals($expected, $this->getSvg()->getSavedLanguages());
     }
@@ -288,7 +288,7 @@ class SvgFileTest extends TestCase
     public function testGetSavedLanguagesFiltered(): void
     {
         $expected = [
-            'full' => [ 'fr', 'nl', 'tlh-ca', 'fallback' ],
+            'full' => [ 'tlh-ca', 'fr', 'nl', 'fallback' ],
             'partial' => [ 'de' ],
         ];
         $this->assertEquals($expected, $this->getSvg()->getSavedLanguagesFiltered());

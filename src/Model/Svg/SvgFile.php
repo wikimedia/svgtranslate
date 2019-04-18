@@ -808,16 +808,26 @@ class SvgFile
         }
     }
 
+    /**
+     * Reorder text elements within the document so that all sublocales (i.e. systemLanguage values
+     * containing a hyphen or underscore, e.g. de_CH) are moved to the beginning of the switch
+     * element, and all fallback elements are moved to the end.
+     */
     protected function reorderTexts(): void
     {
         // Move sublocales to the beginning of their switch elements
         $sublocales = $this->xpath->query(
-            "//text[contains(@systemLanguage,'_')]"."|"."//svg:text[contains(@systemLanguage,'_')]"
+            "//text[contains(@systemLanguage,'-') or contains(@systemLanguage,'_')]"
+            ."|//svg:text[contains(@systemLanguage,'-') or contains(@systemLanguage,'_')]"
         );
         $count = $sublocales->length;
         for ($i = 0; $i < $count; $i++) {
-            $firstSibling = $sublocales->item($i)->parentNode->childNodes->item(0);
-            $sublocales->item($i)->parentNode->insertBefore($sublocales->item($i), $firstSibling);
+            $sublocale = $sublocales->item($i);
+            $firstSibling = $sublocale->parentNode->childNodes->item(0);
+            // If it's not already the first sibling, move the current element to the beginning.
+            if ($sublocale !== $firstSibling) {
+                $sublocale->parentNode->insertBefore($sublocale, $firstSibling);
+            }
         }
 
         // Move fallbacks to the end of their switch elements
