@@ -489,35 +489,6 @@ class SvgFile
     }
 
     /**
-     * Get a list of languages which have one or more translations in-file
-     *
-     * @return string[][] Array of languages, split into 'full' and 'partial' subarrays
-     */
-    public function getSavedLanguagesFiltered(): array
-    {
-        $translations = $this->getInFileTranslations();
-        $savedLanguages = $this->getSavedLanguages();
-
-        $full = [];
-        $partial = [];
-        foreach ($savedLanguages as $savedLanguage) {
-            $fullSoFar = true;
-            foreach ($translations as $languages) {
-                if (!isset($languages[$savedLanguage])) {
-                    $fullSoFar = false;
-                    break;
-                }
-            }
-            if ($fullSoFar || $savedLanguage == $this->fallbackLanguage) {
-                $full[] = $savedLanguage;
-            } else {
-                $partial[] = $savedLanguage;
-            }
-        }
-        return [ 'full' => $full, 'partial' => $partial ];
-    }
-
-    /**
      * Returns an array of <text> nodes that contain only child elements.
      *
      * @return mixed[] The same message ID => language code => attributes mapping as in getInFileTranslations()
