@@ -375,7 +375,6 @@ class SvgFile
                 /** @var DOMElement $text */
                 $text = $actualNode->cloneNode(true);
                 $numChildren = $text->childNodes->length;
-                $hasActualTextContent = self::hasActualTextContent($text);
                 $lang = $text->hasAttribute('systemLanguage') ? $text->getAttribute('systemLanguage') : 'fallback';
                 $langCode = str_replace('_', '-', strtolower($lang));
 
@@ -407,13 +406,7 @@ class SvgFile
                         $counter++;
                     }
                 }
-                if ($hasActualTextContent) {
-                    // If the <text> has *its own* text content, rather than just <tspan>s, register it
-                    // for translation.
-                    $translations[$fallbackTextId][$langCode] = $this->nodeToArray($text);
-                } else {
-                    $this->filteredTextNodes[$fallbackTextId][$langCode] = $this->nodeToArray($text);
-                }
+                $this->filteredTextNodes[$fallbackTextId][$langCode] = $this->nodeToArray($text);
                 $savedLang = 'fallback' === $langCode ? $this->fallbackLanguage : $langCode;
                 $this->savedLanguages[] = $savedLang;
             }
@@ -731,40 +724,6 @@ class SvgFile
             }
         }
         return $newNode;
-    }
-
-    /**
-     * Checks whether a given DOMNode has some non-negligible text content (as
-     * opposed to just whitespace or other tags. Whitespace *between* tags
-     * counts, as it does get rendered.
-     *
-     * @param DOMNode $node The node to check for text content
-     * @return bool True if content found, false if not
-     */
-    public static function hasActualTextContent(DOMNode $node): bool
-    {
-        // No text nodes means no text content
-        if (!$node->hasChildNodes()) {
-            return false;
-        }
-
-        // Search child nodes looking for matching content
-        $children = $node->childNodes;
-        $numChildren = $children->length;
-        for ($i = 0; $i < $numChildren; $i++) {
-            if (XML_TEXT_NODE == $children->item($i)->nodeType) {
-                // Whitespace at beginning and end doesn't count, but
-                // otherwise we have a match
-                if (!0 === $i || $i === ( $numChildren - 1 )
-                    || !0 === strlen(trim($children->item($i)->textContent))
-                ) {
-                    return true;
-                }
-            }
-        }
-
-        // Didn't find any
-        return false;
     }
 
     /**
