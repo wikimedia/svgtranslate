@@ -9,6 +9,7 @@ App.Model = function appModel( translations ) {
 	OO.EventEmitter.call( this );
 	this.localStorageKey = 'svgtranslate';
 	this.translations = translations || {};
+	this.originalTranslations = OO.copy( this.translations );
 	this.sourceLang = null;
 	this.targetLang = null;
 	this.langs = this.getLangs( this.translations );
@@ -107,6 +108,53 @@ App.Model.prototype.getSourceTranslation = function ( nodeId ) {
 	};
 };
 
+/**
+ * Set a single target translation string for the current target language.
+ * @param {string} nodeId
+ * @param {string} translation
+ */
+App.Model.prototype.setTargetTranslation = function ( nodeId, translation ) {
+	var changedTranslations = {},
+		model = this;
+	// Do nothing if no target language has yet been set.
+	if ( this.targetLang === null ) {
+		return;
+	}
+	// Do nothing with unknown nodes.
+	if ( this.translations[ nodeId ] === undefined ) {
+		return;
+	}
+	// Make sure the target language object exists.
+	if ( this.translations[ nodeId ][ this.targetLang ] === undefined ) {
+		this.translations[ nodeId ][ this.targetLang ] = {};
+	}
+	// Make sure it's changed.
+	if ( this.translations[ nodeId ][ this.targetLang ].text === translation ) {
+		// Do nothing if the new translation is the same as what we're already got.
+		return;
+	}
+	// Save the new translation.
+	this.translations[ nodeId ][ this.targetLang ].text = translation;
+	// Also save to local storage if it differs from the original translation.
+	Object.keys( this.translations ).forEach( function ( nodeId ) {
+		var origTrans, currentTrans;
+		currentTrans = model.translations[ nodeId ][ model.targetLang ] !== undefined ?
+			model.translations[ nodeId ][ model.targetLang ].text :
+			'';
+		origTrans = model.originalTranslations[ nodeId ][ model.targetLang ] !== undefined ?
+			model.originalTranslations[ nodeId ][ model.targetLang ].text :
+			'';
+		if ( currentTrans !== origTrans ) {
+			changedTranslations[ nodeId ] = model.translations[ nodeId ][ model.targetLang ].text;
+		} else {
+			delete changedTranslations[ nodeId ];
+		}
+	} );
+	if ( changedTranslations ) {
+		this.saveToLocalStorage( 'changedTranslations', changedTranslations );
+	}
+};
+
 App.Model.prototype.getTargetTranslation = function ( nodeId ) {
 	if ( this.translations[ nodeId ][ this.targetLang ] === undefined ) {
 		return '';
@@ -118,8 +166,16 @@ App.Model.prototype.getTargetTranslation = function ( nodeId ) {
  * Load model values from LocalStorage.
  */
 App.Model.prototype.loadFromLocalStorage = function () {
+	var model = this,
+		changedTranslations = this.getLocalStorageValue( 'changedTranslations' );
 	this.setSourceLang( this.getLocalStorageValue( 'sourceLang' ) );
 	this.setTargetLang( this.getLocalStorageValue( 'targetLang' ) );
+	// After setting the target language, update the translations.
+	if ( changedTranslations ) {
+		Object.keys( changedTranslations ).forEach( function ( nodeId ) {
+			model.setTargetTranslation( nodeId, changedTranslations[ nodeId ] );
+		} );
+	}
 };
 
 /**

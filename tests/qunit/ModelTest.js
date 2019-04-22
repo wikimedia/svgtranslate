@@ -35,3 +35,18 @@ QUnit.test( 'get source translation labels', function ( assert ) {
 		{ label: 'Bar', exists: false }
 	);
 } );
+
+QUnit.test( 'set target translation', function ( assert ) {
+	var model = new App.Model( {
+		n1: {
+			fr: { text: 'Bar' }
+		},
+		n2: {
+			fr: { text: 'Bar2' }
+		}
+	} );
+	model.setTargetLang( 'fr' );
+	assert.equal( model.getTargetTranslation( 'n1' ), 'Bar' );
+	model.setTargetTranslation( 'n1', 'Foo' );
+	assert.equal( model.getTargetTranslation( 'n1' ), 'Foo' );
+} );
