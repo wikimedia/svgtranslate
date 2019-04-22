@@ -8,7 +8,7 @@ global.OO = require( '../../node_modules/oojs/dist/oojs.js' );
 App.Model = function appModel( translations ) {
 	OO.EventEmitter.call( this );
 	this.localStorageKey = 'svgtranslate';
-	this.translations = translations || {};
+	this.translations = OO.copy( translations ) || {};
 	this.originalTranslations = OO.copy( this.translations );
 	this.sourceLang = null;
 	this.targetLang = null;
@@ -164,18 +164,24 @@ App.Model.prototype.getTargetTranslation = function ( nodeId ) {
 
 /**
  * Load model values from LocalStorage.
+ * @return {boolean} Whether translation changes were loaded.
  */
 App.Model.prototype.loadFromLocalStorage = function () {
 	var model = this,
-		changedTranslations = this.getLocalStorageValue( 'changedTranslations' );
+		changedTranslations = this.getLocalStorageValue( 'changedTranslations' ),
+		changesFromOriginal = false;
 	this.setSourceLang( this.getLocalStorageValue( 'sourceLang' ) );
 	this.setTargetLang( this.getLocalStorageValue( 'targetLang' ) );
 	// After setting the target language, update the translations.
 	if ( changedTranslations ) {
 		Object.keys( changedTranslations ).forEach( function ( nodeId ) {
-			model.setTargetTranslation( nodeId, changedTranslations[ nodeId ] );
+			if ( model.getTargetTranslation( nodeId ) !== changedTranslations[ nodeId ] ) {
+				changesFromOriginal = true;
+				model.setTargetTranslation( nodeId, changedTranslations[ nodeId ] );
+			}
 		} );
 	}
+	return changesFromOriginal;
 };
 
 /**
