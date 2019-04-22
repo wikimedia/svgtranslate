@@ -285,15 +285,6 @@ class SvgFileTest extends TestCase
         $this->assertEquals($expected, $this->getSvg()->getSavedLanguages());
     }
 
-    public function testGetSavedLanguagesFiltered(): void
-    {
-        $expected = [
-            'full' => [ 'tlh-ca', 'fr', 'nl', 'fallback' ],
-            'partial' => [ 'de' ],
-        ];
-        $this->assertEquals($expected, $this->getSvg()->getSavedLanguagesFiltered());
-    }
-
     public function testGetFilteredTextNodes(): void
     {
         // The important things here are:
