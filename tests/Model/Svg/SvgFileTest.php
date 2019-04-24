@@ -549,4 +549,15 @@ class SvgFileTest extends TestCase
         $svg = $this->getSvg('mixed.svg');
         $this->assertCount(6, $svg->getInFileTranslations());
     }
+
+    /**
+     * https://phabricator.wikimedia.org/T220522
+     */
+    public function testChildOnly(): void
+    {
+        $svg = $this->getSvg('child-only.svg');
+        $svg->setTranslations('ru', ['trsvg1' => 'foo', 'trsvg2' => '']);
+        // Dummy assertion to avoid this test being marked as risky; the measure of success here is no crash.
+        static::assertTrue(true);
+    }
 }

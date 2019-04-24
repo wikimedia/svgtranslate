@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Tests\OOUI;
 
+use App\Model\Svg\SvgFile;
 use App\OOUI\TranslationsFieldset;
 use OOUI\FieldsetLayout;
 use PHPUnit\Framework\TestCase;
@@ -63,5 +64,22 @@ class TranslationsFieldsetTest extends TestCase
         /** @var FieldsetLayout[] $items */
         $items = $fieldset->getItems();
         static::assertCount(0, $items[0]->getItems());
+    }
+
+    /**
+     * Tests for undefined index warning
+     */
+    public function testChildOnlyTranslations(): void
+    {
+        $svg = new SvgFile(dirname(__DIR__).'/data/child-only.svg');
+
+        $fieldset = new TranslationsFieldset([
+            'translations' => $svg->getInFileTranslations(),
+            'source_lang_code' => 'fallback',
+            'target_lang_code' => 'ru',
+        ]);
+
+        // One group
+        static::assertCount(1, $fieldset->getItems());
     }
 }
