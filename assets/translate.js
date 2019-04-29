@@ -110,7 +110,7 @@ $( function () {
 	} );
 
 	// After adding all the event handlers above, update the widget values.
-	model.loadFromLocalStorage();
+	appConfig.unsaved = model.loadFromLocalStorage();
 	if ( sourceLangWidget && targetLangWidget ) {
 		sourceLangWidget.setValue( model.getSourceLang() );
 		targetLangWidget.setValue( model.getTargetLang() );
@@ -124,71 +124,80 @@ $( function () {
  * When a translation field is changed, update the image preview, and also mark the form as unsaved.
  */
 $( window ).on( 'load', function () {
-	$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
-		var inputWiget = OO.ui.infuse( $( this ) ),
-			$imgElement = $( '#translation-image img' ),
-			targetLang = $( ':input[name="target-lang"]' ).val(),
-			updatePreviewImage = function () {
-				var requestParams = {},
-					canUpload = false,
-					$uploadButtonElement = $( '#upload-button-widget' ),
-					uploadButtonWidget = OO.ui.infuse( $uploadButtonElement );
+	$( function () {
+		$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
+			var inputWiget = OO.ui.infuse( $( this ) ),
+				$imgElement = $( '#translation-image img' ),
+				targetLang = $( ':input[name="target-lang"]' ).val(),
+				updatePreviewImage = function () {
+					var requestParams = {},
+						$uploadButtonElement = $( '#upload-button-widget' ),
+						uploadButtonWidget = OO.ui.infuse( $uploadButtonElement );
 
-				if ( window.alreadyUpdating ) {
-					// Otherwise, it will needlessly update when the input is being enabled
-					return;
-				}
-				window.alreadyUpdating = true;
-				// Show loading indicator.
-				$( '.image-column' ).addClass( 'loading' );
-				// Go through all fields and construct the request parameters.
-				$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
-					var textChanged,
-						originalText = '',
-						fieldLayout = OO.ui.infuse( $( this ) ),
-						tspanId = fieldLayout.getField().data[ 'tspan-id' ],
-						text = fieldLayout.getField().getValue();
-					if ( appConfig.translations[ tspanId ][ targetLang ] !== undefined ) {
-						originalText = appConfig.translations[ tspanId ][ targetLang ].text;
+					if ( window.alreadyUpdating ) {
+						// Otherwise, it will needlessly update when the input is being enabled
+						return;
 					}
-					textChanged = text !== '' && text !== originalText;
-					requestParams[ tspanId ] = text;
-					canUpload = canUpload || ( textChanged && appConfig.loggedIn );
-				} );
-				// Update the image.
-				$.ajax( {
-					type: 'POST',
-					url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLang,
-					data: requestParams,
-					success: function ( result ) {
-						// Remove the loading class after the image layer has re-loaded.
-						appConfig.imageMapLayer.on( 'load', function () {
+					appConfig.unsaved = false;
+					window.alreadyUpdating = true;
+					// Show loading indicator.
+					$( '.image-column' ).addClass( 'loading' );
+					// Go through all fields and construct the request parameters.
+					$( '.translation-fields .oo-ui-fieldLayout' ).each( function () {
+						var textChanged,
+							originalText = '',
+							fieldLayout = OO.ui.infuse( $( this ) ),
+							tspanId = fieldLayout.getField().data[ 'tspan-id' ],
+							text = fieldLayout.getField().getValue();
+						if ( appConfig.translations[ tspanId ][ targetLang ] !== undefined ) {
+							originalText = appConfig.translations[ tspanId ][ targetLang ].text;
+						}
+						textChanged = text !== '' && text !== originalText;
+						requestParams[ tspanId ] = text;
+						appConfig.unsaved = appConfig.unsaved || textChanged;
+					} );
+
+					// Update the image.
+					$.ajax( {
+						type: 'POST',
+						url: appConfig.baseUrl + 'api/translate/' + $imgElement.data( 'filename' ) + '/' + targetLang,
+						data: requestParams,
+						success: function ( result ) {
+							// Remove the loading class after the image layer has re-loaded.
+							appConfig.imageMapLayer.on( 'load', function () {
+								$( '.image-column' ).removeClass( 'loading' );
+							} );
+							// Set the new image URL.
+							appConfig.imageMapLayer.setUrl( result.imageSrc );
+						},
+						error: function () {
+							OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
 							$( '.image-column' ).removeClass( 'loading' );
-						} );
-						// Set the new image URL.
-						appConfig.imageMapLayer.setUrl( result.imageSrc );
-					},
-					error: function () {
-						OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
-						$( '.image-column' ).removeClass( 'loading' );
-					},
-					complete: function () {
-						window.alreadyUpdating = false;
-					}
-				} );
+						},
+						complete: function () {
+							window.alreadyUpdating = false;
+						}
+					} );
 
-				// Disable the upload image if there's nothing to translate
-				uploadButtonWidget.setDisabled( !canUpload );
-			};
+					// Disable the upload image if there's nothing to translate.
+					uploadButtonWidget.setDisabled( !appConfig.unsaved || !appConfig.loggedIn );
+				};
 
-		// Update the preview image on field blur and after two seconds of no typing.
-		inputWiget.$input.on( 'blur', updatePreviewImage );
-		inputWiget.on( 'change', OO.ui.debounce( updatePreviewImage, 2000 ) );
-		inputWiget.on( 'change', function () {
-			appConfig.unsaved = true;
+			// Update the preview image on field blur and after two seconds of no typing.
+			inputWiget.$input.on( 'blur', updatePreviewImage );
+			inputWiget.on( 'change', OO.ui.debounce( updatePreviewImage, 2000 ) );
+
+			// Also update on initial page load, to catch any browser- or model-supplied changes.
+			updatePreviewImage();
+
+			// And update on form submission.
+			$( 'form' ).on( 'submit', function ( e ) {
+				updatePreviewImage();
+				if ( !appConfig.unsaved ) {
+					return e.preventDefault();
+				}
+			} );
 		} );
-		// Also update on initial page load, to catch any browser- or model-supplied changes.
-		updatePreviewImage();
 	} );
 } );
 
