@@ -192,9 +192,12 @@ $( window ).on( 'load', function () {
 
 			// And update on form submission.
 			$( 'form' ).on( 'submit', function ( e ) {
+				if ( inputWiget.isDisabled() ) {
+					return;
+				}
 				updatePreviewImage();
 				if ( !appConfig.unsaved ) {
-					return e.preventDefault();
+					e.preventDefault();
 				}
 			} );
 		} );
