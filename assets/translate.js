@@ -105,6 +105,9 @@ $( function () {
 		model.on( 'targetLangSet', function () {
 			var targetTranslation = model.getTargetTranslation( nodeId );
 			fieldLayout.getField().setValue( targetTranslation );
+			fieldLayout.getField().setDir(
+				$.uls.data.isRtl( model.getTargetLang() ) ? 'rtl' : 'ltr'
+			);
 			fieldLayout.getField().setDisabled( false );
 		} );
 	} );
