@@ -192,17 +192,6 @@ $( window ).on( 'load', function () {
 
 			// Also update on initial page load, to catch any browser- or model-supplied changes.
 			updatePreviewImage();
-
-			// And update on form submission.
-			$( 'form' ).on( 'submit', function ( e ) {
-				if ( inputWiget.isDisabled() ) {
-					return;
-				}
-				updatePreviewImage();
-				if ( !appConfig.unsaved ) {
-					e.preventDefault();
-				}
-			} );
 		} );
 	} );
 } );
