@@ -12,6 +12,8 @@ use App\Service\Uploader;
 use Krinkle\Intuition\Intuition;
 use OOUI\ButtonInputWidget;
 use OOUI\DropdownInputWidget;
+use OOUI\Element;
+use OOUI\FieldLayout;
 use OOUI\HorizontalLayout;
 use OOUI\LabelWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -127,32 +129,30 @@ class TranslateController extends AbstractController
             }
         }
         $sourceLang = new DropdownInputWidget([
-            'label' => $intuition->msg('source-lang-label'),
             'options' => $availableLangs,
             // @TODO Get this value from the session.
             'value' => 'fallback',
             'classes' => ['source-lang-widget'],
             'infusable' => true,
         ]);
+        $sourceLangField = new FieldLayout($sourceLang, [
+            'label' => $intuition->msg('source-lang-label'),
+            'align' => 'top',
+        ]);
         $targetLangDefault = 'fallback';
-        $targetLangLabel = $intuition->msg('select-language');
         $targetLang = new ButtonInputWidget([
-            'label' => $targetLangLabel,
             'value' => $targetLangDefault,
             'classes' => ['target-lang-widget'],
             'indicator' => 'down',
             'infusable' => true,
             'name' => 'target-lang',
         ]);
+        $targetLangField = new FieldLayout($targetLang, [
+            'label' => $intuition->msg('target-lang-label'),
+            'align' => 'top',
+        ]);
         $languageSelectorsLayout = new HorizontalLayout([
-            'items' => [
-                $sourceLang,
-                new LabelWidget([
-                    'label' => $intuition->msg('source-to-target'),
-                    'classes' => ['source-to-target-label'],
-                ]),
-                $targetLang,
-            ],
+            'items' => [$sourceLangField, $targetLangField],
             'classes' => ['language-selectors'],
         ]);
 

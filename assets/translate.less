@@ -63,25 +63,18 @@ body.translate {
           display: flex;
           align-items: center;
           > * {
-            // Get rid of the margin from the following three elements, so the .language-selectors can be treated the
-            // same as the .buttons element (for vertical positioning).
+            flex: 1;
+            // Get rid of the margin from the two child FieldLayout elements, so the .language-selectors
+            // can be treated the same as the .buttons element (for vertical positioning).
             margin-bottom: 0;
           }
-          .source-lang-widget {
-            flex: 2;
-            text-align: left;
-          }
-          .source-to-target-label {
-            flex-grow: 2;
-            text-align: center;
-          }
           .target-lang-widget {
-            flex: 2;
-            button {
-              text-align: left;
-              width: 100%;
-              font-weight: normal;
-            }
+            width: 100%
+          }
+          button {
+            text-align: left;
+            width: 100%;
+            font-weight: normal;
           }
         }
 
@@ -108,6 +101,7 @@ body.translate {
           display: flex;
           flex-direction: row-reverse;
           align-items: center;
+          margin-top: 2.1rem;
           .oo-ui-widget {
             margin-right: 0;
           }
