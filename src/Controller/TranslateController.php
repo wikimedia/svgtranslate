@@ -95,6 +95,8 @@ class TranslateController extends AbstractController
             'flags' => [ 'progressive' ],
             'type' => 'submit',
             'framed' => false,
+            'id' => 'download-button-widget',
+            'infusable' => true,
         ]);
         $uploadButton = new ButtonInputWidget([
             'label' => $intuition->msg('upload-button-label'),

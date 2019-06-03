@@ -127,6 +127,11 @@ $( function () {
  * When a translation field is changed, update the image preview, and also mark the form as unsaved.
  */
 $( window ).on( 'load', function () {
+	/**
+	 * TODO: Refactor this functionality to make the different states and flow easier to manage
+	 * and understand. Removing some of the nesting and wrapping a promise around the api/translate
+	 * request to handle the different event states is recommended.
+	 */
 	$( function () {
 		$( '.translation-fields .oo-ui-fieldLayout .oo-ui-inputWidget' ).each( function () {
 			var inputWiget = OO.ui.infuse( $( this ) ),
@@ -135,7 +140,9 @@ $( window ).on( 'load', function () {
 				updatePreviewImage = function () {
 					var requestParams = {},
 						$uploadButtonElement = $( '#upload-button-widget' ),
-						uploadButtonWidget = OO.ui.infuse( $uploadButtonElement );
+						uploadButtonWidget = OO.ui.infuse( $uploadButtonElement ),
+						$downloadButtonElement = $( '#download-button-widget' ),
+						downloadButtonWidget = OO.ui.infuse( $downloadButtonElement );
 
 					if ( window.alreadyUpdating ) {
 						// Otherwise, it will needlessly update when the input is being enabled
@@ -160,6 +167,7 @@ $( window ).on( 'load', function () {
 						appConfig.unsaved = appConfig.unsaved || textChanged;
 					} );
 
+					downloadButtonWidget.setDisabled( true );
 					// Update the image.
 					$.ajax( {
 						type: 'POST',
@@ -179,6 +187,7 @@ $( window ).on( 'load', function () {
 						},
 						complete: function () {
 							window.alreadyUpdating = false;
+							downloadButtonWidget.setDisabled( false );
 						}
 					} );
 
