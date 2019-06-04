@@ -24,6 +24,13 @@ final class Title
      */
     public static function normalize(string $title): string
     {
+        $title = trim($title);
+
+        // Filenames will never have a slash, so if there is one we assume $title is a path.
+        if (false !== stripos($title, '/')) {
+            $title = basename($title);
+        }
+
         $title = self::removeNamespace($title);
         // Unicode-friendly ucfirst()
         $title = mb_strtoupper(mb_substr($title, 0, 1)).mb_substr($title, 1);
