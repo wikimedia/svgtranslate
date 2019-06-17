@@ -1,4 +1,47 @@
 {
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
 	"help": "Hulp",
-	"logout": "Afmelden"
+	"login": "Aanmelden",
+	"logout": "Afmelden",
+	"logged-in-as": "Aangemeld als $1",
+	"language-settings": "Taalinstellingen",
+	"done": "Afgerond",
+	"cancel": "Annuleren",
+	"preferred-langs-field-label": "Voorkeurstalen om van/naar te vertalen:",
+	"add-preferred-lang": "Toevoegen",
+	"search-label": "Bestandsnaam (zonder het 'File:' voorvoegsel) of URL:",
+	"search-placeholder": "100 jarige oorlog Frankrijk 1435.svg",
+	"translate-button": "Vertalen",
+	"no-translations": "Dit bestand heeft geen labels beschikbaar voor vertaling. Kies een andere afbeelding.",
+	"not-found": "Het door u gekozen bestand kon niet worden gevonden. Kies een ander bestand.",
+	"pick-another": "← een ander bestand kiezen",
+	"view-on-commons": "Op Commons bekijken",
+	"opens-in-new-tab": "Opent een nieuw tabblad",
+	"default-language": "Standaard taal",
+	"source-lang-not-found": "Niet vertaald. Standaard: $1",
+	"source-to-target": "naar",
+	"select-language": "Selecteer een taal",
+	"confirm-change-target-lang": "Taal wijzigen",
+	"upload-button-label": "Naar Commons uploaden",
+	"upload-button-in-progress": "Bezig met uploaden naar Commons...",
+	"upload-login-warning": "Meld u aan om uploaden in te schakelen",
+	"download-button-label": "Downloaden",
+	"download-or-upload": "of",
+	"pick-an-image-title": "Kies een afbeelding",
+	"pick-an-image-desc": "van Commons.",
+	"translate-icon-alt": "Een pictogram dat meerdere talen toont",
+	"translate-labels-title": "Vertalen",
+	"commons-logo-alt": "Het Wikimedia Commons logo",
+	"update-commons-desc": "of download direct naar uw computer.",
+	"upload-complete": "Upload geslaagd",
+	"upload-complete-commons": "Afbeelding bekijken",
+	"upload-complete-translate-another": "Een andere afbeelding vertalen",
+	"licenced-under": "Beschikbaar onder de GPL 3.0 of later licentie",
+	"privacy-policy": "Privacybeleid",
+	"report-issue": "Probleem melden",
+	"view-source": "Bekijk Github"
 }
