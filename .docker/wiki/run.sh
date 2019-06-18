@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ ! -f "/var/www/html/images/my_wiki.sqlite" ]]; then
     php /var/www/html/maintenance/install.php --dbtype sqlite --pass admin123 --dbpath /var/www/html/images svgtranslate admin
