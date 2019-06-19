@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Give the web server access to write cache and log files.
 mkdir -p .composer vendor
