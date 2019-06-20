@@ -1,4 +1,37 @@
 {
+	"@metadata": {
+		"authors": [
+			"Omotecho"
+		]
+	},
+	"svgtranslate": "SVG 翻訳",
+	"info": "SVG ファイル内のテキストラベルの翻訳を支援します。コモンスでファイルを選び、作業を開始します。",
+	"beta": "この拡張機能はテストの初期段階に入ったばかりです。",
+	"learn-more": "詳細を読んだりフィードバックを投稿しましょう！",
+	"return-to-home": "ホーム画面に戻る",
 	"help": "ヘルプ",
-	"logout": "ログアウト"
+	"login": "ログイン",
+	"logout": "ログアウト",
+	"logged-in-as": "$1 としてログインしています。",
+	"language-settings": "言語の設定",
+	"done": "完了",
+	"cancel": "キャンセル",
+	"interface-lang-field-label": "ツールの言語：",
+	"interface-lang-field-help": "ツール自体がこの言語で表示されます。",
+	"preferred-langs-field-label": "翻訳元言語と翻訳言語の指定：",
+	"preferred-langs-field-help": "翻訳ページでこれらの言語を切り替えると、ページ上部付近に表示されます。",
+	"add-preferred-lang": "追加",
+	"search-help": "コモンズのファイル名を入力",
+	"search-label": "ファイル名（ファイル:など接頭辞は不用）もしくは URL：",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "翻訳",
+	"no-translations": "このファイルには翻訳対象の文字ラベルがありません。他の画像を選び直してください。",
+	"not-found": "お探しのファイルが見つかりませんでした。別の画像を選び直してください。",
+	"pick-another": "← 別のファイルを選択",
+	"view-on-commons": "コモンズで閲覧",
+	"opens-in-new-tab": "新しいタブで開く",
+	"default-language": "既定の言語",
+	"source-lang-not-found": "未翻訳です。既定：$1",
+	"source-to-target": "から",
+	"select-language": "言語を選択"
 }

@@ -1,4 +1,28 @@
 {
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
 	"help": "အ​ကူ​အ​ညီ​",
-	"logout": "ထွက်ရန်"
+	"login": "အကောင့်ဝင်ရန်",
+	"logout": "ထွက်ရန်",
+	"logged-in-as": "$1 အဖြစ် လော့ဂ်အင်ဝင်ခဲ့သည်",
+	"language-settings": "ဘာသာစကား အပြင်အဆင်များ",
+	"done": "ပြီးပြီ",
+	"cancel": "မလုပ်တော့ပါ",
+	"add-preferred-lang": "ပေါင်းရန်",
+	"translate-button": "ဘာသာပြန်ပါ",
+	"view-on-commons": "ကွန်မွန်းစ်ပေါ်တွင် ကြည့်ရှုရန်",
+	"default-language": "ပင်မ ဘာသာစကား",
+	"select-language": "ဘာသာစကားတစ်ခု ရွေးရန်",
+	"confirm-change-target-lang": "ဘာသာစကား ပြောင်းလဲရန်",
+	"upload-button-label": "ကွန်မွန်းစ်သို့ အက်ပလုဒ်တင်ရန်",
+	"download-button-label": "ဒေါင်းလုဒ်",
+	"download-or-upload": "သို့မဟုတ်",
+	"translate-labels-title": "ဘာသာပြန်ပါ",
+	"upload-complete-commons": "ရုပ်ပုံ ကြည့်ရန်",
+	"upload-complete-translate-another": "အခြားပုံတစ်ခု ဘာသာပြန်ရန်",
+	"privacy-policy": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ",
+	"report-issue": "အခက်အခဲများ သတင်းပို့ရန်"
 }
