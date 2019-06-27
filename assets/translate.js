@@ -53,6 +53,11 @@ $( function () {
 		$targetLangWidget = $( '.target-lang-widget' ),
 		translationFields = [];
 
+	// Make sure we're on the translate page.
+	if ( appConfig.translations === undefined ) {
+		return;
+	}
+
 	// Change the source lang value.
 	if ( $sourceLangWidget.length === 1 ) {
 		sourceLangWidget = OO.ui.infuse( $sourceLangWidget[ 0 ] );
