@@ -1,5 +1,24 @@
 {
-	"developed-by": "פותח על ידי צוות Community Tech",
+	"@metadata": {
+		"authors": [
+			"Steeve815"
+		]
+	},
+	"svgtranslate": "תרגום SVG",
 	"help": "עזרה",
-	"logout": "יציאה מהחשבון"
+	"login": "כניסה לחשבון",
+	"logout": "יציאה מהחשבון",
+	"cancel": "ביטול",
+	"interface-lang-field-label": "שפת הכלי:",
+	"interface-lang-field-help": "הכלי עצמו יוצג בשפה זו.",
+	"select-language": "נא לבחור בשפה",
+	"confirm-change-target-lang": "שינוי שפה",
+	"upload-button-in-progress": "מעלה לוויקישיתוף...",
+	"download-button-label": "הורדה",
+	"pick-an-image-desc": "מוויקישיתוף.",
+	"translate-labels-title": "תרגום",
+	"commons-logo-alt": "לוגו ויקישיתוף",
+	"upload-complete": "ההעלאה הושלמה",
+	"developed-by": "פותח על ידי צוות Community Tech",
+	"report-issue": "דיווח על באג"
 }

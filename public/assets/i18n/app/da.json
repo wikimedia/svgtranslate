@@ -1,4 +1,22 @@
 {
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
 	"help": "Hjælp",
-	"logout": "Log ud"
+	"logout": "Log ud",
+	"language-settings": "Sprogindstillinger",
+	"done": "Udført",
+	"add-preferred-lang": "Tilføj",
+	"translate-button": "Oversæt",
+	"default-language": "Standardsprog",
+	"source-to-target": "til",
+	"select-language": "Vælg et sprog",
+	"confirm-change-target-lang": "Ændre sprog",
+	"download-or-upload": "eller",
+	"pick-an-image-title": "Vælg et billede",
+	"pick-an-image-desc": "fra Commons.",
+	"translate-labels-title": "Oversæt",
+	"upload-complete-translate-another": "Oversæt et andet billede"
 }

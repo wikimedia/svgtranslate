@@ -1,4 +1,29 @@
 {
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"svgtranslate": "SVG Iwwersetzen",
 	"help": "Hëllef",
-	"logout": "Ausloggen"
+	"logout": "Ausloggen",
+	"done": "Fäerdeg",
+	"cancel": "Ofbriechen",
+	"add-preferred-lang": "Derbäisetzen",
+	"translate-button": "Iwwersetzen",
+	"view-on-commons": "Op Commons weisen",
+	"default-language": "Standard-Sprooch",
+	"select-language": "Sicht eng Sprooch eraus",
+	"confirm-change-target-lang": "Sprooch wiesselen",
+	"upload-button-label": "Op Commons eroplueden",
+	"download-button-label": "Eroflueden",
+	"download-or-upload": "oder",
+	"pick-an-image-title": "E Bild eraussichen",
+	"pick-an-image-desc": "vu Commons",
+	"translate-labels-title": "Iwwersetzen",
+	"update-commons-title": "Commons aktualiséieren",
+	"upload-complete-message": "Merci! Är Iwwersetzunge fir $1 goufen eropgelueden. Dir kënnt virufuere fir d'Etiketten z'iwwersetzen an nees eropluede fir d'Bild z'aktualiséieren.",
+	"upload-complete-commons": "Bild weisen",
+	"upload-complete-translate-another": "Een anert Bild iwwersetzen",
+	"report-issue": "E Feeler mellen"
 }
