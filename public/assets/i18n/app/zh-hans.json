@@ -1,5 +1,30 @@
 {
-	"developed-by": "由社群技术团队开发",
+	"@metadata": {
+		"authors": [
+			"神樂坂秀吉"
+		]
+	},
+	"svgtranslate": "SVG 翻译",
 	"help": "帮助",
-	"logout": "退出"
+	"login": "登录",
+	"logout": "退出",
+	"language-settings": "语言设置",
+	"done": "完成",
+	"cancel": "取消",
+	"add-preferred-lang": "添加",
+	"translate-button": "翻译",
+	"opens-in-new-tab": "在新标签页打开",
+	"default-language": "默认语言",
+	"confirm-change-target-lang": "更改语言",
+	"upload-button-label": "上传至维基共享资源",
+	"download-button-label": "下载",
+	"translate-labels-title": "翻译",
+	"upload-complete": "上传完成",
+	"upload-complete-commons": "查看图片",
+	"upload-complete-translate-another": "翻译另一张图片",
+	"licenced-under": "以GPL3.0以及更新版本授权",
+	"developed-by": "由社群技术团队开发",
+	"privacy-policy": "隐私政策",
+	"report-issue": "报告错误",
+	"view-source": "在Github上查看"
 }

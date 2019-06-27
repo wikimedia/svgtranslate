@@ -1,4 +1,40 @@
 {
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"beta": "이 기능은 초기 테스트 단계입니다.",
+	"learn-more": "더 알아보기 & 의견 남기기!",
 	"help": "도움말",
-	"logout": "로그아웃"
+	"login": "로그인",
+	"logout": "로그아웃",
+	"logged-in-as": "$1님으로 로그인됨",
+	"language-settings": "언어 설정",
+	"done": "완료",
+	"cancel": "취소",
+	"interface-lang-field-label": "도구 언어:",
+	"add-preferred-lang": "추가",
+	"search-help": "공용으로부터 파일 이름 입력하기",
+	"search-label": "파일 이름 ('파일:' 접두어 없이) 또는 URL:",
+	"not-found": "요청한 파일을 찾을 수 없습니다. 다른 이미지를 선택해 주십시오.",
+	"pick-another": "← 다른 파일 선택",
+	"opens-in-new-tab": "새 탭에서 열기",
+	"default-language": "기본 언어",
+	"select-language": "언어 선택",
+	"confirm-change-target-lang": "언어 변경",
+	"upload-button-label": "공용에 업로드",
+	"upload-button-in-progress": "공용에 업로드하는 중...",
+	"upload-login-warning": "업로드 활성화를 위해 로그인",
+	"download-button-label": "다운로드",
+	"download-or-upload": "또는",
+	"pick-an-image-title": "이미지 선택",
+	"commons-logo-alt": "위키미디어 공용 로고",
+	"upload-complete": "업로드 완료",
+	"upload-complete-message": "감사합니다! $1의 번역이 업로드되었습니다. 이미지 업데이트를 위해 레이블을 번역하고 다시 업로드해도 됩니다.",
+	"upload-complete-commons": "이미지 보기",
+	"powered-by-toolforge": "Toolforge에 의해 지원됨",
+	"privacy-policy": "개인정보 정책",
+	"report-issue": "버그 보고",
+	"view-source": "깃허브에서 보기"
 }
