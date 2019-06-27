@@ -186,7 +186,13 @@ $( window ).on( 'load', function () {
 							// Set the new image URL.
 							appConfig.imageMapLayer.setUrl( result.imageSrc );
 						},
-						error: function () {
+						error: function ( xhr ) {
+							// Only show an error if we're not in the process of leaving the page
+							// (readyState is 0 during window unload).
+							// https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest/readyState
+							if ( xhr.readyState === 0 ) {
+								return;
+							}
 							OO.ui.alert( $.i18n( 'preview-error-occurred' ) );
 							$( '.image-column' ).removeClass( 'loading' );
 						},
