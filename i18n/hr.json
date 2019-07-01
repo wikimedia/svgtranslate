@@ -1,3 +1,24 @@
 {
-	"help": "Pomoć"
+	"@metadata": {
+		"authors": [
+			"Astrind"
+		]
+	},
+	"help": "Pomoć",
+	"login": "Prijavite se",
+	"logout": "Odjavi se",
+	"language-settings": "Jezične postavke",
+	"done": "Gotovo",
+	"cancel": "Odustani",
+	"add-preferred-lang": "Dodaj",
+	"translate-button": "Prevedi",
+	"default-language": "Zadani jezik",
+	"select-language": "Odaberite jezik",
+	"confirm-change-target-lang": "Promijeni jezik",
+	"download-button-label": "Preuzmi",
+	"download-or-upload": "ili",
+	"translate-labels-title": "Prevedi",
+	"upload-complete-commons": "Vidi sliku",
+	"report-issue": "Prijavi pogrešku (''bug'')",
+	"view-source": "Vidi na Githubu"
 }
