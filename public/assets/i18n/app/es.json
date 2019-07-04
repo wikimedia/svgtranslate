@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"MarcoAurelio"
 		]
 	},
 	"svgtranslate": "Traducir SVG",
@@ -10,6 +11,7 @@
 	"help": "Ayuda",
 	"login": "Acceder",
 	"logout": "Salir",
+	"language-settings": "Configuración de idioma",
 	"done": "Hecho",
 	"cancel": "Cancelar",
 	"interface-lang-field-label": "Idioma de herramienta:",
@@ -18,13 +20,24 @@
 	"search-label": "Nombre de archivo (sin prefijo «File:») o URL:",
 	"translate-button": "Traducir",
 	"pick-another": "← seleccionar otro archivo",
+	"view-on-commons": "Ver en Commons",
 	"opens-in-new-tab": "Se abre en otra pestaña",
+	"default-language": "Idioma predeterminado",
+	"select-language": "Selecciona un idioma",
+	"confirm-change-target-lang": "Cambiar idioma",
+	"upload-button-label": "Cargar en Commons",
+	"upload-button-in-progress": "Cargando en Commons…",
+	"download-button-label": "Descargar",
 	"download-or-upload": "o bien",
+	"pick-an-image-desc": "de Commons.",
 	"translate-labels-title": "Traducir",
 	"translate-labels-desc": "las etiquetas en la imagen.",
+	"upload-complete": "Carga completa",
+	"upload-complete-commons": "Ver imagen",
 	"upload-complete-translate-another": "Traducir otra imagen",
 	"licenced-under": "Disponible según los términos de la GPL 3.0+",
 	"developed-by": "Desarrollado por el equipo de tecnología comunitaria de la Fundación Wikimedia",
+	"powered-by-toolforge": "Propulsado por Toolforge",
 	"privacy-policy": "Normativa de privacidad",
 	"report-issue": "Informar de un defecto",
 	"view-source": "Ver en GitHub"
