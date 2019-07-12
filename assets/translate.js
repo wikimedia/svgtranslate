@@ -89,7 +89,8 @@ $( function () {
 
 		// Set target translation.
 		fieldLayout.getField().on( 'change', function () {
-			model.setTargetTranslation( nodeId, fieldLayout.getField().getValue() );
+			var filename = $( '#translation-image img' ).data( 'filename' );
+			model.setTargetTranslation( filename, nodeId, fieldLayout.getField().getValue() );
 		} );
 
 		// Change field labels when the source lang changes.
@@ -118,7 +119,7 @@ $( function () {
 	} );
 
 	// After adding all the event handlers above, update the widget values.
-	appConfig.unsaved = model.loadFromLocalStorage();
+	appConfig.unsaved = model.loadFromLocalStorage( $( '#translation-image img' ).data( 'filename' ) );
 	if ( sourceLangWidget && targetLangWidget ) {
 		sourceLangWidget.setValue( model.getSourceLang() );
 		targetLangWidget.setValue( model.getTargetLang() );

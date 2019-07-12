@@ -47,6 +47,6 @@ QUnit.test( 'set target translation', function ( assert ) {
 	} );
 	model.setTargetLang( 'fr' );
 	assert.equal( model.getTargetTranslation( 'n1' ), 'Bar' );
-	model.setTargetTranslation( 'n1', 'Foo' );
+	model.setTargetTranslation( 'test filename', 'n1', 'Foo' );
 	assert.equal( model.getTargetTranslation( 'n1' ), 'Foo' );
 } );
