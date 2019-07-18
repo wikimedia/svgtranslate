@@ -110,10 +110,11 @@ App.Model.prototype.getSourceTranslation = function ( nodeId ) {
 
 /**
  * Set a single target translation string for the current target language.
+ * @param {string} filename
  * @param {string} nodeId
  * @param {string} translation
  */
-App.Model.prototype.setTargetTranslation = function ( nodeId, translation ) {
+App.Model.prototype.setTargetTranslation = function ( filename, nodeId, translation ) {
 	var changedTranslations = {},
 		model = this;
 	// Do nothing if no target language has yet been set.
@@ -152,6 +153,7 @@ App.Model.prototype.setTargetTranslation = function ( nodeId, translation ) {
 	} );
 	if ( changedTranslations ) {
 		this.saveToLocalStorage( 'changedTranslations', changedTranslations );
+		this.saveToLocalStorage( 'filename', filename );
 	}
 };
 
@@ -164,20 +166,28 @@ App.Model.prototype.getTargetTranslation = function ( nodeId ) {
 
 /**
  * Load model values from LocalStorage.
+ * @param {string} filename
  * @return {boolean} Whether translation changes were loaded.
  */
-App.Model.prototype.loadFromLocalStorage = function () {
+App.Model.prototype.loadFromLocalStorage = function ( filename ) {
 	var model = this,
 		changedTranslations = this.getLocalStorageValue( 'changedTranslations' ),
-		changesFromOriginal = false;
+		changesFromOriginal = false,
+		prevFilename = this.getLocalStorageValue( 'filename' );
+
 	this.setSourceLang( this.getLocalStorageValue( 'sourceLang' ) );
 	this.setTargetLang( this.getLocalStorageValue( 'targetLang' ) );
+	if ( filename !== prevFilename ) {
+		this.saveToLocalStorage( 'filename', filename );
+		this.saveToLocalStorage( 'changedTranslations', {} );
+		return false;
+	}
 	// After setting the target language, update the translations.
 	if ( changedTranslations ) {
 		Object.keys( changedTranslations ).forEach( function ( nodeId ) {
 			if ( model.getTargetTranslation( nodeId ) !== changedTranslations[ nodeId ] ) {
 				changesFromOriginal = true;
-				model.setTargetTranslation( nodeId, changedTranslations[ nodeId ] );
+				model.setTargetTranslation( filename, nodeId, changedTranslations[ nodeId ] );
 			}
 		} );
 	}
