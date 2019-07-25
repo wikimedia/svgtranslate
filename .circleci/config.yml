@@ -25,3 +25,5 @@ jobs:
           command: |
             docker-compose exec web composer test
             docker-compose exec assets npm run test
+            git status
+            git status | grep "nothing to commit, working tree clean"
