@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saederup92"
+			"Saederup92",
+			"Tinamalmgren"
 		]
 	},
 	"help": "Hjælp",
@@ -18,6 +19,6 @@
 	"pick-an-image-title": "Vælg et billede",
 	"pick-an-image-desc": "fra Commons.",
 	"translate-labels-title": "Oversæt",
-	"update-commons-title": "Opdater Commons",
+	"update-commons-title": "Opdatér Commons",
 	"upload-complete-translate-another": "Oversæt et andet billede"
 }
