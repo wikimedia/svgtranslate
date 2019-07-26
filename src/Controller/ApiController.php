@@ -54,14 +54,16 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Get a full filesystem path to a temporary PNG file.
+     * Get a full filesystem path to a temporary file.
      * @param string $filename The base SVG filename.
      * @param string $key The unique key to append to the filename.
+     * @param string $ext The file extension to use for the returned filename.
      * @return string
      */
-    protected function getTempPngFilename(string $filename, string $key): string
+    protected function getTempFilename(string $filename, string $key, string $ext): string
     {
-        return $this->cache->fullPath($filename.'_'.$key.'.png');
+        $name = pathinfo($filename, PATHINFO_FILENAME);
+        return $this->cache->fullPath($name.'_'.$key.'.'.$ext);
     }
 
     /**
@@ -85,14 +87,14 @@ class ApiController extends AbstractController
         // Write the modified SVG out to the filesystem, named with a unique key. This is necessary
         // both because multiple people could be translating the same file at the same time, and
         // also means we can use the same key for the rendered PNG file. The key is generated from
-        // the translation set so that the
+        // the translation set in order to not generate redundant cache files.
         $fileKey = md5(serialize($translations));
-        $tempPngFilename = $this->getTempPngFilename($filename, $fileKey);
-        $file->saveToPath($tempPngFilename);
+        $tempPngFilename = $this->getTempFilename($filename, $fileKey, 'png');
+        $tempSvgFilename = $this->getTempFilename($filename, $fileKey, 'svg');
+        $file->saveToPath($tempSvgFilename);
 
         // Render the modified SVG to PNG, and return it's URL.
-        $renderedPngContents = $this->svgRenderer->render($tempPngFilename, $lang);
-        file_put_contents($tempPngFilename, $renderedPngContents);
+        $this->svgRenderer->render($tempSvgFilename, $lang, $tempPngFilename);
         $relativeUrl = $this->generateUrl('api_file_translated', [
             'filename' => $filename,
             'key' => $fileKey,
@@ -113,7 +115,7 @@ class ApiController extends AbstractController
      */
     public function getFileWithTranslations(string $filename, string $lang, string $key, Request $request): Response
     {
-        $tempPngFilename = $this->getTempPngFilename($filename, $key);
+        $tempPngFilename = $this->getTempFilename($filename, $key, 'png');
         if (file_exists($tempPngFilename)) {
             return new BinaryFileResponse($tempPngFilename, 200, ['X-Accel-Buffering' => 'no']);
         }
