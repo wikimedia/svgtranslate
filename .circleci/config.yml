@@ -21,9 +21,14 @@ jobs:
             docker-compose exec assets npm run lint
 
       - run:
+          name: Build assets
+          command: |
+            docker-compose exec assets npm run assets
+            git status
+            git status | grep "nothing to commit, working tree clean"
+
+      - run:
           name: Run tests
           command: |
             docker-compose exec web composer test
             docker-compose exec assets npm run test
-            git status
-            git status | grep "nothing to commit, working tree clean"
