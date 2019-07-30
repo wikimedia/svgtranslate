@@ -18,7 +18,11 @@
                             <li>{{ msg( 'logged-in-as', [ logged_in_user().username ] ) }}</li>
                             <li><a href="{{ path('toolforge_logout') }}">{{ msg('logout') }}</a></li>
                         {% else %}
-                            <li><a href="{{ path('toolforge_login') }}">{{ msg('login') }}</a></li>
+                            <li>
+                                <a href="{{ path( 'toolforge_login', {'callback': url( 'toolforge_oauth_callback', {'redirect': app.request.uri} ) } ) }}">
+                                    {{ msg('login') }}
+                                </a>
+                            </li>
                         {% endif %}
                     </ul>
                 </nav>
