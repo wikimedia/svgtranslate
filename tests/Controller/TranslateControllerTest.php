@@ -19,4 +19,12 @@ class TranslateControllerTest extends WebTestCase
         static::assertEquals(200, $response->getStatusCode());
         static::assertContains('Test.svg', $crawler->filter('h1')->text());
     }
+
+    public function testNonSvgHandling(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/File:Test.jpg');
+        $response = $client->getResponse();
+        static::assertEquals(302, $response->getStatusCode());
+    }
 }
