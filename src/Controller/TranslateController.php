@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Exception\ImageNotFoundException;
 use App\Exception\InvalidFormatException;
+use App\Exception\SvgLoadException;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
@@ -58,14 +59,14 @@ class TranslateController extends AbstractController
         try {
             $this->assertFileType($normalizedFilename);
             $path = $cache->getPath($filename);
+            $svgFile = new SvgFile($path);
         } catch (ImageNotFoundException $exception) {
             return $this->showError('not-found', $normalizedFilename);
         } catch (InvalidFormatException $exception) {
             return $this->showError('invalid-format', $normalizedFilename);
+        } catch (SvgLoadException $exception) {
+            return $this->showError('invalid-svg', $normalizedFilename);
         }
-
-
-        $svgFile = new SvgFile($path);
 
         // If there are no strings to translate, tell the user.
         //   - If they've come from the search form redirect then back there with an error.
