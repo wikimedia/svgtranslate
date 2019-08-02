@@ -29,6 +29,7 @@
 	"translate-button": "Search button text.\n{{Identical|Translate}}",
 	"no-translations": "Error message displayed for SVGs that have nothing to translate.",
 	"not-found": "Error message displayed if the requested file could not be found.",
+	"invalid-format": "Error message displayed if the requested file is not an SVG image.",
 	"pick-another": "Label for backlink from the translate page to the search page.",
 	"view-on-commons": "Link to view the file on Commons. The whole phrase is linked.",
 	"opens-in-new-tab": "Tooltip text for links that will open in a new browser tab.",

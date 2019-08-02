@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace App\Controller;
 
 use App\Exception\ImageNotFoundException;
+use App\Exception\InvalidFormatException;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
@@ -55,18 +56,15 @@ class TranslateController extends AbstractController
 
         // Fetch the SVG from Commons.
         try {
+            $this->assertFileType($normalizedFilename);
             $path = $cache->getPath($filename);
         } catch (ImageNotFoundException $exception) {
-            $notFoundMessage = $this->renderView(
-                'error_message.html.twig',
-                ['msg_name' => 'not-found']
-            );
-            // Flash the message to show to the user under the search form.
-            $this->addFlash('search-errors', (string)$notFoundMessage);
-            // Also flash the failed filename so we can populate the search form.
-            $this->addFlash('search-redirect', $normalizedFilename);
-            return $this->redirectToRoute('home');
+            return $this->showError('not-found', $normalizedFilename);
+        } catch (InvalidFormatException $exception) {
+            return $this->showError('invalid-format', $normalizedFilename);
         }
+
+
         $svgFile = new SvgFile($path);
 
         // If there are no strings to translate, tell the user.
@@ -225,6 +223,41 @@ class TranslateController extends AbstractController
             $url = $uploader->upload($tmpFilename, $filename, $comment);
             $this->addFlash('upload-complete', $url);
             return $this->redirectToRoute('translate', ['filename' => $filename]);
+        }
+    }
+
+    /**
+     * Shows an error related to the selected file
+     *
+     * @param string $messageKey
+     * @param string $fileName
+     * @return Response
+     */
+    private function showError(string $messageKey, string $fileName): Response
+    {
+        $message = $this->renderView(
+            'error_message.html.twig',
+            ['msg_name' => $messageKey]
+        );
+        // Flash the message to show to the user under the search form.
+        $this->addFlash('search-errors', (string)$message);
+        // Also flash the failed filename so we can populate the search form.
+        $this->addFlash('search-redirect', $fileName);
+
+        return $this->redirectToRoute('home');
+    }
+
+    /**
+     * Throws an exception if the given filename is not of an SVG file.
+     * Exceptions are used to unify handling with other places that might encounter this problem.
+     *
+     * @param string $fileName
+     */
+    private function assertFileType(string $fileName): void
+    {
+        $extension = mb_strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+        if ('svg' !== $extension) {
+            throw new InvalidFormatException($extension);
         }
     }
 }

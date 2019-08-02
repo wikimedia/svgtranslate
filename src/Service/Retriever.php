@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Service;
 
+use App\Exception\InvalidFormatException;
 use GuzzleHttp\Client;
 
 /**
@@ -41,6 +42,11 @@ class Retriever
     {
         $client = new Client();
         $response = $client->get($url);
+        $contentType = $response->getHeader('Content-Type');
+        $contentType = reset($contentType);
+        if ('image/svg+xml' !== $contentType) {
+            throw new InvalidFormatException($contentType);
+        }
         return $response->getBody()->getContents();
     }
 }
