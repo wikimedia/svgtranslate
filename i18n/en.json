@@ -26,6 +26,7 @@
   "no-translations": "This file does not have any labels available for translation. Please pick another image.",
   "not-found": "The file you requested could not be found. Please pick another image.",
   "invalid-format": "Only SVG files are supported.",
+  "invalid-svg": "Error reading file.",
 
   "pick-another": "← pick another file",
   "view-on-commons": "View on Commons",

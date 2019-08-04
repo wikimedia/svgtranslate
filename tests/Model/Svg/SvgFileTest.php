@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace App\Tests\Model\Svg;
 
+use App\Exception\SvgLoadException;
 use App\Model\Svg\SvgFile;
 use DOMDocument;
 use PHPUnit\Framework\TestCase;
@@ -559,5 +560,12 @@ class SvgFileTest extends TestCase
         $svg->setTranslations('ru', ['trsvg1' => 'foo', 'trsvg2' => '']);
         // Dummy assertion to avoid this test being marked as risky; the measure of success here is no crash.
         static::assertTrue(true);
+    }
+
+    public function testInvalidFileHandling(): void
+    {
+        self::expectException(SvgLoadException::class);
+        self::expectExceptionMessage("Start tag expected, '<' not found in invalid.svg line 1");
+        $this->getSvg('invalid.svg');
     }
 }

@@ -66,6 +66,8 @@ class SvgFile
 
         $this->document = new DOMDocument('1.0');
 
+        libxml_use_internal_errors(true);
+        libxml_clear_errors();
         // Warnings need to be suppressed in case there are DOM warnings
         if (!$this->document->load($path, LIBXML_NOWARNING)) {
             throw new SvgLoadException();
