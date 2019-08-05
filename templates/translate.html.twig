@@ -44,7 +44,9 @@
             </div>
             {% if not logged_in_user() %}
                 <p class="upload-login-warning">
-                    <a href="{{ path('toolforge_login') }}">{{ msg('upload-login-warning') }}</a>
+                    <a href="{{ path( 'toolforge_login', {'callback': url( 'toolforge_oauth_callback', {'redirect': app.request.uri} ) } ) }}">
+                        {{ msg('upload-login-warning') }}
+                    </a>
                 </p>
             {% endif %}
             <div class="image" id="translation-image">
