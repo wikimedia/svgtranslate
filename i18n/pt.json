@@ -28,6 +28,8 @@
 	"translate-button": "Traduzir",
 	"no-translations": "Este ficheiro não tem nenhuma etiqueta disponível para tradução. Escolha outra imagem, por favor.",
 	"not-found": "O ficheiro que pediu não foi encontrado. Escolha outra imagem, por favor.",
+	"invalid-format": "Só são suportados ficheiros SVG.",
+	"invalid-svg": "Falha na leitura do ficheiro.",
 	"pick-another": "← escolha outro ficheiro",
 	"view-on-commons": "Ver na wiki Commons",
 	"opens-in-new-tab": "Abre num separador novo",

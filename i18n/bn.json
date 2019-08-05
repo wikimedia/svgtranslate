@@ -1,4 +1,29 @@
 {
+	"@metadata": {
+		"authors": [
+			"আফতাবুজ্জামান"
+		]
+	},
+	"svgtranslate": "এসভিজি অনুবাদ",
 	"help": "সাহায্য",
-	"logout": "প্রস্থান"
+	"login": "প্রবেশ করুন",
+	"logout": "প্রস্থান",
+	"logged-in-as": "$1 হিসাবে প্রবেশকৃত",
+	"language-settings": "ভাষা সেটিং",
+	"done": "সম্পন্ন",
+	"cancel": "বাতিল",
+	"interface-lang-field-label": "সরঞ্জামের ভাষা:",
+	"add-preferred-lang": "যোগ করুন",
+	"translate-button": "অনুবাদ করুন",
+	"select-language": "একটি ভাষা নির্বাচন করুন",
+	"confirm-change-target-lang": "ভাষা পরিবর্তন করুন",
+	"upload-button-label": "কমন্সে আপলোড করুন",
+	"upload-button-in-progress": "কমন্সে আপলোড করা হচ্ছে…",
+	"download-button-label": "ডাউনলোড করুন",
+	"download-or-upload": "বা",
+	"pick-an-image-title": "একটি চিত্র বাছাই করুন",
+	"pick-an-image-desc": "কমন্স থেকে।",
+	"upload-complete": "আপলোড করা সম্পূর্ণ হয়েছে",
+	"upload-complete-commons": "চিত্র দেখুন",
+	"upload-complete-translate-another": "আরেকটি চিত্র অনুবাদ করুন"
 }
