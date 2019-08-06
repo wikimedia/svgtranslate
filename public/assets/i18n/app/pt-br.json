@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"svgtranslate": "Traduzir SVG",
@@ -27,6 +28,8 @@
 	"translate-button": "Traduzir",
 	"no-translations": "Este arquivo não possui rótulos disponíveis para tradução. Por favor, escolha outra imagem.",
 	"not-found": "O arquivo que você solicitou não pôde ser encontrado. Por favor, escolha outra imagem.",
+	"invalid-format": "Apenas arquivos SVG são suportados.",
+	"invalid-svg": "Erro ao ler o arquivo.",
 	"pick-another": "← escolha outro arquivo",
 	"view-on-commons": "Ver no Commons",
 	"opens-in-new-tab": "Abrir em nova aba",

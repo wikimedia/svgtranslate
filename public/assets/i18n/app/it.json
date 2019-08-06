@@ -14,6 +14,7 @@
 	"add-preferred-lang": "Aggiungi",
 	"search-label": "Nome del file (senza il prefisso'File:') o URL:",
 	"translate-button": "Traduci",
+	"invalid-format": "Sono supportati solo file SVG.",
 	"view-on-commons": "Vedi su Commons",
 	"opens-in-new-tab": "Apri in una nuova scheda",
 	"default-language": "Lingua predefinita",

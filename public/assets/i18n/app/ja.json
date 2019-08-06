@@ -30,6 +30,7 @@
 	"translate-button": "翻訳",
 	"no-translations": "このファイルには翻訳対象の文字ラベルがありません。他の画像を選び直してください。",
 	"not-found": "お探しのファイルが見つかりませんでした。別の画像を選び直してください。",
+	"invalid-format": "SVGファイルのみがサポートされています。",
 	"pick-another": "← 別のファイルを選択",
 	"view-on-commons": "コモンズで閲覧",
 	"opens-in-new-tab": "新しいタブで開く",
