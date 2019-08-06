@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Elderson"
 		]
 	},
 	"help": "Hulp",
@@ -18,6 +19,7 @@
 	"translate-button": "Vertalen",
 	"no-translations": "Dit bestand heeft geen labels beschikbaar voor vertaling. Kies een andere afbeelding.",
 	"not-found": "Het door u gekozen bestand kon niet worden gevonden. Kies een ander bestand.",
+	"invalid-format": "Alleen SVG-bestanden worden ondersteund.",
 	"pick-another": "← een ander bestand kiezen",
 	"view-on-commons": "Op Commons bekijken",
 	"opens-in-new-tab": "Opent een nieuw tabblad",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Thoji"
+			"Thoji",
+			"Railfail536"
 		]
 	},
 	"svgtranslate": "Tłumacz SVG",
@@ -27,6 +28,7 @@
 	"translate-button": "Przetłumacz",
 	"no-translations": "Ten plik nie posiada żadnych etykiet dostępnych do tłumaczenia. Proszę wybrać inny obrazek.",
 	"not-found": "Plik, który wybrałeś, nie mógł zostać znaleziony. Proszę wybrać inny obrazek.",
+	"invalid-format": "Wspierane są tylko pliki SVG.",
 	"pick-another": "← wybierz inny plik",
 	"view-on-commons": "Zobacz na Commons",
 	"opens-in-new-tab": "Otwórz w nowej karcie",

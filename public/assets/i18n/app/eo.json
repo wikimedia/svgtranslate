@@ -27,6 +27,8 @@
 	"translate-button": "Traduki",
 	"no-translations": "Ĉi tiu dosiero ne havas tradukeblan tekston. Bonvolu elekti alian bildon.",
 	"not-found": "Na dosiero petita de vi ne estas trovebla. Bonvolu elekti alian bildon.",
+	"invalid-format": "Nur SVG-dosieroj estas subtenataj.",
+	"invalid-svg": "Eraro pri legado de dosiero.",
 	"pick-another": "← elekti alian dosieron",
 	"view-on-commons": "Vidi ĉe Komunejo",
 	"opens-in-new-tab": "Ligilo malfermiĝos en nova langeto",

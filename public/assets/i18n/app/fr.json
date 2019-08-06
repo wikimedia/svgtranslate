@@ -29,6 +29,8 @@
 	"translate-button": "Traduire",
 	"no-translations": "Ce fichier n'a aucun texte disponible pour la traduction. Veuillez choisir une autre image.",
 	"not-found": "Le fichier demandé est introuvable. Veuillez choisir une autre image.",
+	"invalid-format": "Seuls les fichiers SVG sont supportés.",
+	"invalid-svg": "Erreur de lecture du fichier.",
 	"pick-another": "← choisir un autre fichier",
 	"view-on-commons": "Affichage sur Commons",
 	"opens-in-new-tab": "Ouvrir dans un nouvel onglet",

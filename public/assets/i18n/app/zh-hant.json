@@ -27,6 +27,8 @@
 	"translate-button": "翻譯",
 	"no-translations": "此檔案沒有任何可用來翻譯的標籤，請挑選其它圖片。",
 	"not-found": "查無您所請求的檔案，請挑選其它圖片。",
+	"invalid-format": "僅支援 SVG 檔案。",
+	"invalid-svg": "錯誤讀取檔案。",
 	"pick-another": "← 挑選其它檔案",
 	"view-on-commons": "在共享資源檢視",
 	"opens-in-new-tab": "在新分頁開啟",
