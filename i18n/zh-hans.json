@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Viztor"
 		]
 	},
 	"svgtranslate": "SVG 翻译",
@@ -13,6 +14,8 @@
 	"cancel": "取消",
 	"add-preferred-lang": "添加",
 	"translate-button": "翻译",
+	"invalid-format": "仅支持SVG格式文件",
+	"invalid-svg": "读取文件出错。",
 	"opens-in-new-tab": "在新标签页打开",
 	"default-language": "默认语言",
 	"confirm-change-target-lang": "更改语言",

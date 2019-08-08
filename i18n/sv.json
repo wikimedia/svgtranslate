@@ -28,6 +28,8 @@
 	"translate-button": "Översätt",
 	"no-translations": "Denna fil har inte några tillgängliga etiketter att översätta. Välj en annan bild.",
 	"not-found": "Filen du begärde kunde inte hittas. Välj en annan bild.",
+	"invalid-format": "Endast SVG-filer stöds.",
+	"invalid-svg": "Fel uppstod när fil lästes in.",
 	"pick-another": "← välj en annan fil",
 	"view-on-commons": "Visa på Commons",
 	"opens-in-new-tab": "Öppnas i ny flik",
