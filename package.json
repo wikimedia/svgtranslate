@@ -17,11 +17,13 @@
   "devDependencies": {
     "eslint": "5.13.0",
     "eslint-config-wikimedia": "0.10.1",
+    "grunt": "1.0.2",
+    "grunt-banana-checker": "0.7.1",
     "qunit": "2.9.2"
   },
   "scripts": {
     "test": "qunit tests/qunit/",
-    "lint": "lessc --lint assets/*.less && eslint .",
+    "lint": "lessc --lint assets/*.less && eslint . && grunt banana",
     "assets": "encore production"
   }
 }
