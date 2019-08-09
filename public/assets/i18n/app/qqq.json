@@ -62,6 +62,8 @@
 	"upload-complete-translate-another": "Second of two buttons shown in the successful-upload banner, linking back to the SVG Translate search form.",
 	"licenced-under": "Sentence describing the licence of the application, shown as a link. Displayed in the footer on every page.",
 	"developed-by": "By-line for the application, shown as a link to CommTech's wiki page. Displayed in the footer on every page.",
+	"version": "Version link text.\n$1 is the version number.",
+	"git-hash": "Version link tooltip.\n$1 is the short hash of the current commit.",
 	"toolforge-logo-alt": "Alt text for the Toolforge anvil image.",
 	"powered-by-toolforge": "Label for the link to the Toolforge homepage. Displayed in the footer on every page.",
 	"privacy-policy": "Label for the link to the Wikimedia privacy policy. Displayed in the footer on every page.",
