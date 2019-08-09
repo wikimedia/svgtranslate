@@ -43,9 +43,10 @@
                 </a>
             </p>
             <div class="info">
-                <p>
-                    <a href='https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech'>{{ msg( 'developed-by' ) }}</a>
-                </p>
+                <ul class="inline-list">
+                    <li><a href="https://github.com/wikimedia/svgtranslate/releases/tag/{{ git_tag() }}" title="{{ msg( 'git-hash', [ git_hash_short() ] ) }}">{{ msg( 'version', [ git_tag() ] ) }}</a></li>
+                    <li><a href='https://meta.wikimedia.org/wiki/Special:MyLanguage/Community_Tech'>{{ msg( 'developed-by' ) }}</a></li>
+                </ul>
                 <ul class="inline-list">
                     <li><a href="https://www.gnu.org/licenses/gpl-3.0.html">{{ msg( 'licenced-under' ) }}</a></li>
                     <li><a href="https://github.com/wikimedia/svgtranslate">{{ msg('view-source') }}</a></li>
