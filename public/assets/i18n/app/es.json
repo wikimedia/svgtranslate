@@ -21,6 +21,8 @@
 	"search-label": "Nombre de archivo (sin prefijo «File:») o URL:",
 	"translate-button": "Traducir",
 	"not-found": "No se encuentra el archivo solicitado. Selecciona otra imagen.",
+	"invalid-format": "Se admiten únicamente archivos SVG.",
+	"invalid-svg": "Error al leer el archivo.",
 	"pick-another": "← seleccionar otro archivo",
 	"view-on-commons": "Ver en Commons",
 	"opens-in-new-tab": "Se abre en otra pestaña",
