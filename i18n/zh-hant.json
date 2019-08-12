@@ -60,6 +60,8 @@
 	"upload-complete-translate-another": "翻譯其它圖片",
 	"licenced-under": "根據 GPL 3.0 或更新版本許可",
 	"developed-by": "由維基媒體基金會 Community Tech 團隊開發",
+	"version": "版本 $1",
+	"git-hash": "目前於提交 $1",
 	"toolforge-logo-alt": "Toolforge 'anvil' 標誌",
 	"powered-by-toolforge": "由 Toolforge 提供支援",
 	"privacy-policy": "隱私政策",

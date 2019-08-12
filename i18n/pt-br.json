@@ -61,6 +61,8 @@
 	"upload-complete-translate-another": "Traduzir outra imagem",
 	"licenced-under": "Licenciado sob GPL 3.0 ou posterior",
 	"developed-by": "Desenvolvido pela equipe da Comunidade Técnica da Fundação Wikimedia",
+	"version": "Versão $1",
+	"git-hash": "Atualmente na validação $1",
 	"toolforge-logo-alt": "Toolforge 'anvil' logo",
 	"powered-by-toolforge": "Alimentado por Toolforge",
 	"privacy-policy": "Política de Privacidade",

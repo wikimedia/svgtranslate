@@ -60,6 +60,8 @@
 	"upload-complete-translate-another": "Traduki alian bildon",
 	"licenced-under": "Permesata laŭ GPL 3.0 aŭ pli nova versio",
 	"developed-by": "Evoluigata de la Komunuma Teknologia teamo de Vikimedia Fondaĵo",
+	"version": "Versio $1",
+	"git-hash": "Aktuale ĉe enmeto $1",
 	"toolforge-logo-alt": "Emblemo 'amboso' de Ilforĝejo",
 	"powered-by-toolforge": "Funkciante per Ilforĝejo",
 	"privacy-policy": "Regularo pri privateco",

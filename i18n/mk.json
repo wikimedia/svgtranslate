@@ -60,6 +60,8 @@
 	"upload-complete-translate-another": "Преведи друга слика",
 	"licenced-under": "Лиценцирано под ОЈЛ 3.0 или понова",
 	"developed-by": "Разработено од Техника на заедницата",
+	"version": "Верзија $1",
+	"git-hash": "Тековно на проверка $1",
 	"toolforge-logo-alt": "Лого со наковална на Алатницата",
 	"powered-by-toolforge": "Овозможено од Алатницата",
 	"privacy-policy": "Лични податоци",
