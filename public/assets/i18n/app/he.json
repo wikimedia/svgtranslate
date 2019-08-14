@@ -61,6 +61,8 @@
 	"upload-complete-translate-another": "תרגום תמונה נוספת",
 	"licenced-under": "ברישיון GPL 3.0 ומעלה",
 	"developed-by": "פותח על ידי צוות Community Tech",
+	"version": "גרסה $1",
+	"git-hash": "כרגע על הגשה $1",
 	"toolforge-logo-alt": "סמל ה‚סדן’ של Toolforge",
 	"powered-by-toolforge": "מופעל על גבי Toolforge",
 	"privacy-policy": "מדיניות פרטיות",

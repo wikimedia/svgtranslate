@@ -60,6 +60,8 @@
 	"upload-complete-translate-another": "ترجم صورة أخرى",
 	"licenced-under": "مرخص بموجب رخصة جنو العمومية 3.0 أو أحدث",
 	"developed-by": "تم تطويره بواسطة مجتمع التقنية",
+	"version": "الإصدار $1",
+	"git-hash": "حاليا في التنفيذ $1",
 	"toolforge-logo-alt": "شعار سندان تول فورج",
 	"powered-by-toolforge": "مدعوم من تول فورج",
 	"privacy-policy": "سياسة الخصوصية",
