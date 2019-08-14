@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@symfony/webpack-encore": "0.23.0",
+    "@symfony/webpack-encore": "0.28",
     "@wikimedia/jquery.i18n": "1.0",
     "copy-webpack-plugin": "4.6",
     "css-loader": "2.1",
