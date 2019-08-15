@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"神樂坂秀吉",
-			"Viztor"
+			"Viztor",
+			"Looong"
 		]
 	},
 	"svgtranslate": "SVG 翻译",
@@ -27,6 +28,8 @@
 	"upload-complete-translate-another": "翻译另一张图片",
 	"licenced-under": "以GPL3.0以及更新版本授权",
 	"developed-by": "由社群技术团队开发",
+	"version": "版本$1",
+	"git-hash": "当前处于第$1个提交",
 	"privacy-policy": "隐私政策",
 	"report-issue": "报告错误",
 	"view-source": "在Github上查看"
