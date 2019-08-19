@@ -11,6 +11,7 @@
 	"cancel": "Ofbriechen",
 	"add-preferred-lang": "Derbäisetzen",
 	"translate-button": "Iwwersetzen",
+	"invalid-format": "Nëmmen SVG-Fichiere ginn ënnerstëtzt",
 	"invalid-svg": "Feeler beim Liese vum Fichier.",
 	"view-on-commons": "Op Commons weisen",
 	"default-language": "Standard-Sprooch",
@@ -26,5 +27,6 @@
 	"upload-complete-message": "Merci! Är Iwwersetzunge fir $1 goufen eropgelueden. Dir kënnt virufuere fir d'Etiketten z'iwwersetzen an nees eropluede fir d'Bild z'aktualiséieren.",
 	"upload-complete-commons": "Bild weisen",
 	"upload-complete-translate-another": "Een anert Bild iwwersetzen",
+	"version": "Versioun $1",
 	"report-issue": "E Feeler mellen"
 }
