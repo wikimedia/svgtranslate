@@ -1,1 +1,45 @@
-{}
+{
+	"@metadata": {
+		"authors": [
+			"Mohsin Ali"
+		]
+	},
+	"svgtranslate": "SVG অনুবাদ",
+	"help": "সহায়",
+	"login": "লগ ইন কৰক",
+	"logout": "লগ আউট কৰক",
+	"logged-in-as": "$1 হিচাপে লগ ইন কৰিছে",
+	"language-settings": "ভাষা ছেটিংছ",
+	"done": "হৈ গ'ল",
+	"cancel": "বাতিল",
+	"interface-lang-field-label": "সঁজুলিৰ ভাষা:",
+	"interface-lang-field-help": "সঁজুলিটোৱে এই ভাষাত দেখুৱা হ'ব।",
+	"add-preferred-lang": "যোগ",
+	"search-help": "ক'ম'ঞ্চৰ ফাইল এটাৰ নাম টাইপ কৰক",
+	"search-label": "ফাইলৰ নাম ('File:' উপসর্গ অভিহনে) বা URL:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "অনুবাদ কৰক",
+	"pick-another": "← অন্য এটা ফাইল বাছি লওক",
+	"view-on-commons": "ক'ম'ঞ্চত চাওক",
+	"opens-in-new-tab": "নতুন টেবত খোলক",
+	"default-language": "ডিফ'ল্ট ভাষা",
+	"source-to-target": "-ৰ পৰা",
+	"select-language": "ভাষা এটা চয়ন কৰক",
+	"confirm-change-target-lang": "ভাষা সলনি কৰক",
+	"upload-button-label": "ক'ম'ঞ্চত আপল'ড কৰক",
+	"upload-button-in-progress": "ক'ম'ঞ্চত আপল'ড হৈ আছে…",
+	"download-button-label": "ডাউনল'ড কৰক",
+	"download-or-upload": "বা",
+	"pick-an-image-title": "এখন ছবি বাছি লওক",
+	"pick-an-image-desc": "ক'ম'ঞ্চৰ পৰা।",
+	"translate-labels-title": "অনুবাদ কৰক",
+	"translate-labels-desc": "ছবিখনৰ লেবেলসমূহ।",
+	"commons-logo-alt": "ৱিকিমিডিয়া ক'ম'ঞ্চ ল'গ'",
+	"update-commons-title": "ক'ম'ঞ্চ আপডেট কৰক",
+	"upload-complete": "আপল'ড সম্পূৰ্ণ",
+	"upload-complete-commons": "ছবি চাওক",
+	"upload-complete-translate-another": "অন্য এখন ছবি অনুবাদ কৰক",
+	"version": "সংস্কৰণ $1",
+	"privacy-policy": "গোপনিয়তা নীতি",
+	"view-source": "Github-ত চাওক"
+}

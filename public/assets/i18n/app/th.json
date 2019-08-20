@@ -1,4 +1,46 @@
 {
+	"@metadata": {
+		"authors": [
+			"Patsagorn Y."
+		]
+	},
+	"svgtranslate": "ตัวแปลภาษาใน SVG",
+	"info": "เครื่องมือช่วยแปลอักษรที่อยู่ในไฟล์ SVG เลือกไฟล์จากคอมมอนส์แล้วเริ่มเลย",
+	"beta": "คุณลักษณะนี้อยู่ระหว่างการทดสอบ อาจมีความมเสถียรน้อยกว่า",
+	"learn-more": "ดูเพิ่มเติมหรือให้ความคิดเห็นแก่เรา",
+	"return-to-home": "กลับไปหน้าหลัก",
 	"help": "วิธีใช้",
-	"logout": "ออกจากระบบ"
+	"login": "เข้าสู่ระบบ",
+	"logout": "ออกจากระบบ",
+	"logged-in-as": "เข้าสู่ระบบในชื่อ $1",
+	"language-settings": "การตั้งค่าภาษา",
+	"done": "ตกลง",
+	"cancel": "ยกเลิก",
+	"interface-lang-field-label": "เครื่องมือสำหรับภาษา:",
+	"interface-lang-field-help": "เครื่องมือจะแสดงในภาษานี้",
+	"preferred-langs-field-label": "ภาษาที่ตะแปลและภาษาที่จะแปลไป",
+	"preferred-langs-field-help": "ภาษาเหล่านี้จะแสดงใกล้กับด้านบนเมื่องคุณสลับระหว่างมันกับหน้าแปลภาษา",
+	"add-preferred-lang": "เพิ่ม",
+	"search-help": "ใส่ชื่อไฟล์จากคอมมอนส์",
+	"search-label": "ชื่อไฟล์(ที่ไม่มี\"File:\"นำหน้า)หรือยูอาร์แอล:",
+	"search-placeholder": "100 Year War France 1435.svg",
+	"translate-button": "เริ่มแปล",
+	"no-translations": "ไฟล์นี้ไม่พร้อมแปลหรือไม่มีเนื้อหาที่แปลได้เลย กรุณาเลือกภาพอื่น",
+	"not-found": "ไฟล์ที่คุณเลือกไม่พบอยู่บนคอมมอนส์ กรุณาเลือกภาพอื่น",
+	"invalid-format": "รองรับเฉพาะไฟล์ SVG",
+	"invalid-svg": "พบข้อผิดพลาดระหว่างอ่านไฟล์",
+	"pick-another": "← เลือกภาพอื่น",
+	"view-on-commons": "ดูบนคอมมอนส์",
+	"opens-in-new-tab": "เปิดในแท็บใหม่",
+	"default-language": "ภาษาโดยปกติ (Default)",
+	"source-lang-not-found": "ไม่ได้แปล ภาษาโดยปกติคือ:$1",
+	"source-to-target": "ถึง",
+	"select-language": "เลือกภาษา",
+	"confirmation-to-switch-target-lang": "คุณกำลังจะเปลี่ยนภาษาในการแปลแต่ยังไม่ได้บันทึกการแปล การเปลี่ยนภาษาจะทำให้การแปลหายไป กรุณาอัพโหลดการแปลภาษาไปทีคอมมอนส์ หรือดาวน์โหลดเก็บใว้ก่อน คุณแน่ใจหรือไม่ว่าจะดำเนินการต่อ",
+	"confirm-change-target-lang": "เปลี่ยนภาษา",
+	"upload-button-label": "อัพโหลดไปที่คอมมอนส์",
+	"upload-button-in-progress": "กำลังอัพโหลด...",
+	"upload-login-warning": "ล็อคอินเพื่ออัพโหลด",
+	"download-button-label": "ดาวน์โหลด",
+	"download-or-upload": "หรือ"
 }
