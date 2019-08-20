@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59736ae6184829c57924e551d9abdd83",
+    "content-hash": "87a96bc5c297f185b9cb3855ed35b1bc",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4896,19 +4896,19 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
+                    "role": "Lead Developer",
                     "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "homepage": "http://fabien.potencier.org"
                 },
                 {
                     "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
+                    "role": "Project Founder",
+                    "email": "armin.ronacher@active-4.com"
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://twig.symfony.com/contributors",
-                    "role": "Contributors"
+                    "role": "Contributors",
+                    "homepage": "https://twig.symfony.com/contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -4971,16 +4971,16 @@
         },
         {
             "name": "wikimedia/toolforge-bundle",
-            "version": "0.16.0",
+            "version": "0.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/ToolforgeBundle.git",
-                "reference": "85e66c50c2b4edac834a24e702e8267d5d8e5759"
+                "reference": "08541ccb0c62ef535c897c59d7d70f51e7d3c8fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/85e66c50c2b4edac834a24e702e8267d5d8e5759",
-                "reference": "85e66c50c2b4edac834a24e702e8267d5d8e5759",
+                "url": "https://api.github.com/repos/wikimedia/ToolforgeBundle/zipball/08541ccb0c62ef535c897c59d7d70f51e7d3c8fa",
+                "reference": "08541ccb0c62ef535c897c59d7d70f51e7d3c8fa",
                 "shasum": ""
             },
             "require": {
@@ -5014,7 +5014,7 @@
             ],
             "description": "Symfony 4 bundle providing useful Toolforge features.",
             "homepage": "https://github.com/wikimedia/toolforgebundle",
-            "time": "2019-08-08T21:37:13+00:00"
+            "time": "2019-08-16T14:16:54+00:00"
         }
     ],
     "packages-dev": [
@@ -5284,9 +5284,9 @@
             "authors": [
                 {
                     "name": "Kitamura Satoshi",
+                    "role": "Original creator",
                     "email": "with.no.parachute@gmail.com",
-                    "homepage": "https://www.facebook.com/satooshi.jp",
-                    "role": "Original creator"
+                    "homepage": "https://www.facebook.com/satooshi.jp"
                 },
                 {
                     "name": "Takashi Matsuo",
