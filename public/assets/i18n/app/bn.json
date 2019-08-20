@@ -25,5 +25,6 @@
 	"pick-an-image-desc": "কমন্স থেকে।",
 	"upload-complete": "আপলোড করা সম্পূর্ণ হয়েছে",
 	"upload-complete-commons": "চিত্র দেখুন",
-	"upload-complete-translate-another": "আরেকটি চিত্র অনুবাদ করুন"
+	"upload-complete-translate-another": "আরেকটি চিত্র অনুবাদ করুন",
+	"version": "সংস্করণ $1"
 }
