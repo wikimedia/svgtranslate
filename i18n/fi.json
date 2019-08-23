@@ -1,4 +1,36 @@
 {
+	"@metadata": {
+		"authors": [
+			"Pyscowicz"
+		]
+	},
+	"svgtranslate": "SVG-käännin",
 	"help": "Ohje",
-	"logout": "Kirjaudu ulos"
+	"login": "Kirjaudu sisään",
+	"logout": "Kirjaudu ulos",
+	"logged-in-as": "Kirjauduttu sisään käyttäjänä $1",
+	"language-settings": "Kieliasetukset",
+	"done": "Valmis",
+	"cancel": "Peruuta",
+	"interface-lang-field-label": "Työkalun kieli:",
+	"add-preferred-lang": "Lisää",
+	"search-help": "Kirjoita tiedostonimi Commonsista",
+	"search-label": "Tiedostonimi (ilman 'File:' etuliitettä) tai URL-osoite:",
+	"search-placeholder": "100 Years War France 1435-fi.svg",
+	"translate-button": "Käännä",
+	"invalid-svg": "Tiedoston lukuvirhe.",
+	"view-on-commons": "Näytä Commonsissa",
+	"opens-in-new-tab": "Avaa uudessa välilehdessä",
+	"default-language": "Oletuskieli",
+	"select-language": "Valitse kieli",
+	"confirm-change-target-lang": "Vaihda kieli",
+	"upload-button-label": "Tallenna Commonsiin",
+	"download-button-label": "Lataa",
+	"download-or-upload": "tai",
+	"pick-an-image-title": "Valitse kuva",
+	"pick-an-image-desc": "Commonsista.",
+	"translate-labels-title": "Käännä",
+	"commons-logo-alt": "Wikimedia Commons -logo",
+	"version": "Versio $1",
+	"view-source": "Näytä Githubissa"
 }
