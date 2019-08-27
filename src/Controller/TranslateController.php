@@ -11,6 +11,7 @@ use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
 use App\Service\FileCache;
 use App\Service\Uploader;
+use GuzzleHttp\Exception\RequestException;
 use Krinkle\Intuition\Intuition;
 use OOUI\ButtonInputWidget;
 use OOUI\DropdownInputWidget;
@@ -66,6 +67,8 @@ class TranslateController extends AbstractController
             return $this->showError('invalid-format', $normalizedFilename);
         } catch (SvgLoadException $exception) {
             return $this->showError('invalid-svg', $normalizedFilename);
+        } catch (RequestException $exception) {
+            return $this->showError('network-error', $normalizedFilename);
         }
 
         // If there are no strings to translate, tell the user.
