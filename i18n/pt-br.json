@@ -30,6 +30,7 @@
 	"not-found": "O arquivo que você solicitou não pôde ser encontrado. Por favor, escolha outra imagem.",
 	"invalid-format": "Apenas arquivos SVG são suportados.",
 	"invalid-svg": "Erro ao ler o arquivo.",
+	"network-error": "Erro ao obter informações dos servidores Wikimedia. Por favor, tente novamente mais tarde.",
 	"pick-another": "← escolha outro arquivo",
 	"view-on-commons": "Ver no Commons",
 	"opens-in-new-tab": "Abrir em nova aba",

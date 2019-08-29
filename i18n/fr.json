@@ -31,6 +31,7 @@
 	"not-found": "Le fichier demandé est introuvable. Veuillez choisir une autre image.",
 	"invalid-format": "Seuls les fichiers SVG sont supportés.",
 	"invalid-svg": "Erreur de lecture du fichier.",
+	"network-error": "Erreur en récupérant les informations des serveurs Wikimédia. Veuillez réessayer ultérieurement.",
 	"pick-another": "← choisir un autre fichier",
 	"view-on-commons": "Affichage sur Commons",
 	"opens-in-new-tab": "Ouvrir dans un nouvel onglet",
