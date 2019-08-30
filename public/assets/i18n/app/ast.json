@@ -30,6 +30,7 @@
 	"not-found": "Nun s'atopó'l ficheru que pidisti. Escueyi otra imaxe.",
 	"invalid-format": "Namái tienen encontu los ficheros SVG.",
 	"invalid-svg": "Error al lleer el ficheru.",
+	"network-error": "Error al llograr información dende los sirvidores de Wikimedia. Tenta nuevamente sero.",
 	"pick-another": "← escueyi otru ficheru",
 	"view-on-commons": "Ver en Commons",
 	"opens-in-new-tab": "Ábrese'n llingüeta nueva",
