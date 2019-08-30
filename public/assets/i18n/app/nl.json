@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"Elderson"
+			"Elderson",
+			"RadioAzureus"
 		]
 	},
 	"help": "Hulp",
@@ -43,6 +44,7 @@
 	"upload-complete-commons": "Afbeelding bekijken",
 	"upload-complete-translate-another": "Een andere afbeelding vertalen",
 	"licenced-under": "Beschikbaar onder de GPL 3.0 of later licentie",
+	"version": "Versie $1",
 	"privacy-policy": "Privacybeleid",
 	"report-issue": "Probleem melden",
 	"view-source": "Bekijk Github"
