@@ -1,4 +1,47 @@
 {
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"svgtranslate": "Перевод SVG",
+	"info": "Помогите перевести текстовые метки в SVG-файлах. Выберите файл на Викискладе, чтобы начать.",
+	"beta": "Эта функция находится в раннем тестировании.",
 	"help": "Помощь",
-	"logout": "Завершение сеанса"
+	"login": "Войти",
+	"logout": "Завершение сеанса",
+	"language-settings": "Установки языка",
+	"done": "Готово",
+	"cancel": "Отмена",
+	"preferred-langs-field-label": "Предпочитаемые языки для перевода на/с:",
+	"add-preferred-lang": "Добавить",
+	"search-help": "Введите имя файла с Викисклада",
+	"search-label": "Имя файла (без префикса 'File:') или URL-адрес:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "Перевести",
+	"invalid-svg": "Ошибка чтения файла.",
+	"pick-another": "← выберите другой файл",
+	"view-on-commons": "Посмотреть на Викискладе",
+	"opens-in-new-tab": "Открывается в новой вкладке",
+	"default-language": "Язык по умолчанию",
+	"source-lang-not-found": "Не переведено. По умолчанию: $1",
+	"source-to-target": "на",
+	"select-language": "Выберите язык",
+	"confirm-change-target-lang": "Изменить язык",
+	"upload-button-label": "Загрузить на Викисклад",
+	"upload-button-in-progress": "Загрузка на Викисклад…",
+	"upload-login-warning": "Войдите для возможности загрузки",
+	"download-button-label": "Скачать",
+	"download-or-upload": "или",
+	"pick-an-image-title": "Выберите изображение",
+	"pick-an-image-desc": "с Викисклада.",
+	"translate-labels-title": "Перевести",
+	"commons-logo-alt": "Логотип Викисклада",
+	"update-commons-title": "Обновить Викисклад",
+	"upload-complete": "Загрузка завершена",
+	"upload-complete-translate-another": "Перевести другое изображение",
+	"version": "Версия $1",
+	"privacy-policy": "Политика конфиденциальности",
+	"report-issue": "Сообщить об ошибке",
+	"view-source": "Посмотреть на Github"
 }
