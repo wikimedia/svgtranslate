@@ -29,6 +29,7 @@
 	"no-translations": "Ten plik nie posiada żadnych etykiet dostępnych do tłumaczenia. Proszę wybrać inny obrazek.",
 	"not-found": "Plik, który wybrałeś, nie mógł zostać znaleziony. Proszę wybrać inny obrazek.",
 	"invalid-format": "Wspierane są tylko pliki SVG.",
+	"network-error": "Podczas pobierania informacji z serwerów Wikimedii wystąpił błąd. Spróbuj ponownie później.",
 	"pick-another": "← wybierz inny plik",
 	"view-on-commons": "Zobacz na Commons",
 	"opens-in-new-tab": "Otwórz w nowej karcie",
