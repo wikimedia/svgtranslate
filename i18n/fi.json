@@ -25,6 +25,7 @@
 	"select-language": "Valitse kieli",
 	"confirm-change-target-lang": "Vaihda kieli",
 	"upload-button-label": "Tallenna Commonsiin",
+	"upload-button-in-progress": "Tallennetaan Commonsiin...",
 	"download-button-label": "Lataa",
 	"download-or-upload": "tai",
 	"pick-an-image-title": "Valitse kuva",
