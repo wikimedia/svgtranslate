@@ -3,7 +3,8 @@
 		"authors": [
 			"Thoji",
 			"Railfail536",
-			"Rail"
+			"Rail",
+			"WaldiSt"
 		]
 	},
 	"svgtranslate": "Tłumacz SVG",
@@ -30,6 +31,7 @@
 	"no-translations": "Ten plik nie posiada żadnych etykiet dostępnych do tłumaczenia. Proszę wybrać inny obrazek.",
 	"not-found": "Plik, który wybrałeś, nie mógł zostać znaleziony. Proszę wybrać inny obrazek.",
 	"invalid-format": "Wspierane są tylko pliki SVG.",
+	"invalid-svg": "Błąd odczytu pliku.",
 	"network-error": "Podczas pobierania informacji z serwerów Wikimedii wystąpił błąd. Spróbuj ponownie później.",
 	"pick-another": "← wybierz inny plik",
 	"view-on-commons": "Zobacz na Commons",
@@ -63,6 +65,7 @@
 	"licenced-under": "Licencjonowane na podstawie licencji GPL 3.0 lub nowszej.",
 	"developed-by": "Opracowane przez zespół Wikimedia Foundation's Community Tech",
 	"version": "Wersja $1",
+	"git-hash": "Obecnie w zatwierdzeniu $1",
 	"toolforge-logo-alt": "Logo 'kowadło' Toolforge",
 	"powered-by-toolforge": "Powered by Toolforge",
 	"privacy-policy": "Polityka prywatności",
