@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87a96bc5c297f185b9cb3855ed35b1bc",
+    "content-hash": "29933ad22f50173c0f9b00a4e7ada604",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -988,16 +988,16 @@
         },
         {
             "name": "oojs/oojs-ui",
-            "version": "v0.33.4",
+            "version": "v0.34.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/oojs-ui.git",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa"
+                "reference": "3913589098aa8cb760873bfc8d02b2104b729742"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/b1f342a319d367dfd60794040f224c10af7848aa",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa",
+                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/3913589098aa8cb760873bfc8d02b2104b729742",
+                "reference": "3913589098aa8cb760873bfc8d02b2104b729742",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1064,7 @@
             ],
             "description": "Provides library of common widgets, layouts, and windows.",
             "homepage": "https://www.mediawiki.org/wiki/OOUI",
-            "time": "2019-07-23T00:02:20+00:00"
+            "time": "2019-09-10T22:27:33+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -5286,9 +5286,9 @@
             "authors": [
                 {
                     "name": "Kitamura Satoshi",
+                    "role": "Original creator",
                     "email": "with.no.parachute@gmail.com",
-                    "homepage": "https://www.facebook.com/satooshi.jp",
-                    "role": "Original creator"
+                    "homepage": "https://www.facebook.com/satooshi.jp"
                 },
                 {
                     "name": "Takashi Matsuo",
