@@ -3,7 +3,8 @@
 		"authors": [
 			"Derugon",
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Urhixidur"
 		]
 	},
 	"svgtranslate": "Traduction SVG",
@@ -29,7 +30,7 @@
 	"translate-button": "Traduire",
 	"no-translations": "Ce fichier n'a aucun texte disponible pour la traduction. Veuillez choisir une autre image.",
 	"not-found": "Le fichier demandé est introuvable. Veuillez choisir une autre image.",
-	"invalid-format": "Seuls les fichiers SVG sont supportés.",
+	"invalid-format": "Seuls les fichiers SVG sont pris en charge.",
 	"invalid-svg": "Erreur de lecture du fichier.",
 	"network-error": "Erreur en récupérant les informations des serveurs Wikimédia. Veuillez réessayer ultérieurement.",
 	"pick-another": "← choisir un autre fichier",
