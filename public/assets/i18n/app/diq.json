@@ -1,3 +1,39 @@
 {
-	"help": "Peşti"
+	"@metadata": {
+		"authors": [
+			"1917 Ekim Devrimi",
+			"Mirzali",
+			"Orbot707"
+		]
+	},
+	"svgtranslate": "SVG Açarnayış",
+	"return-to-home": "Ageyr pelaseri",
+	"help": "Peşti",
+	"login": "Cı kewtış",
+	"logout": "Veciyayış",
+	"logged-in-as": "Şıma zey $1 kewtê cı.",
+	"language-settings": "Eyarê zıwani",
+	"done": "Kerd",
+	"cancel": "Bıtexelne",
+	"interface-lang-field-label": "Hacetê zıwani:",
+	"add-preferred-lang": "Cı kerê",
+	"translate-button": "Açarnayış",
+	"invalid-svg": "Wanayışê Dosya xırabo",
+	"pick-another": "← yewna Dosya weçinê",
+	"view-on-commons": "Commons de bıvinê",
+	"opens-in-new-tab": "Taba newiye de akerê",
+	"default-language": "Zıwano hesabiyaye",
+	"source-lang-not-found": "Nêtadeyayo. Hesabyaye:$1",
+	"source-to-target": "->",
+	"select-language": "Zıwan weçine",
+	"download-button-label": "Biya war",
+	"download-or-upload": "ya zi",
+	"pick-an-image-desc": "Commons ra",
+	"translate-labels-title": "Açarne",
+	"update-commons-title": "Commons'i rocane kerê",
+	"update-commons-desc": "ya zi direkt ronê komputeri",
+	"upload-complete": "Barkerdış biyo temam",
+	"version": "Versiyon $1",
+	"report-issue": "Xeta rapor kerê",
+	"view-source": "Github de bımocne"
 }
