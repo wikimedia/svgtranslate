@@ -10,6 +10,7 @@
 	"logout": "Log ud",
 	"language-settings": "Sprogindstillinger",
 	"done": "Udført",
+	"cancel": "Annullér",
 	"add-preferred-lang": "Tilføj",
 	"translate-button": "Oversæt",
 	"default-language": "Standardsprog",
@@ -21,6 +22,8 @@
 	"pick-an-image-desc": "fra Commons.",
 	"translate-labels-title": "Oversæt",
 	"update-commons-title": "Opdatér Commons",
+	"upload-complete-commons": "Vis billede",
 	"upload-complete-translate-another": "Oversæt et andet billede",
-	"version": "Version $1"
+	"version": "Version $1",
+	"view-source": "Vis på Github"
 }
