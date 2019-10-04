@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"BaRaN6161 TURK"
 		]
 	},
 	"svgtranslate": "SVG Çeviri",
@@ -27,6 +28,9 @@
 	"translate-button": "Çevir",
 	"no-translations": "Bu dosya çeviri için uygun etiket içermiyor. Lütfen başka bir resim seçin.",
 	"not-found": "İstediğiniz dosya bulunamadı. Lütfen başka bir resim seçin.",
+	"invalid-format": "Sadece SVG dosyaları desteklenir.",
+	"invalid-svg": "Dosya okunurken hata oluştu.",
+	"network-error": "Wikimedia sunucularından bilgi alınırken hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
 	"pick-another": "← başka bir dosya seç",
 	"view-on-commons": "Commons'ta görüntüle",
 	"opens-in-new-tab": "Yeni sekmede açar",
@@ -58,6 +62,8 @@
 	"upload-complete-translate-another": "Başka bir resmi çevir",
 	"licenced-under": "GPL 3.0 veya üstü lisanslı",
 	"developed-by": "Wikimedia Vakfı'nın Topluluk Teknik ekibi tarafından geliştirilmiştir",
+	"version": "Sürüm $1",
+	"git-hash": "Şu anda $1 taahhütte",
 	"toolforge-logo-alt": "Toolforge 'örs' logosu",
 	"powered-by-toolforge": "Toolforge tarafından desteklenmektedir",
 	"privacy-policy": "Gizlilik politikası",
