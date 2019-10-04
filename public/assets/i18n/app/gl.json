@@ -1,5 +1,45 @@
 {
-	"developed-by": "Desenvolvido por Community Tech",
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"svgtranslate": "Traducir SVG",
+	"info": "Axude a traducir etiquetas de texto en ficheiros SVG. Escolla un ficheiro de Commons para comezar.",
+	"beta": "Esta funcionalidade está en fase incial de probas.",
+	"learn-more": "Saber máis e deixar comentariosǃ",
+	"return-to-home": "voltar á páxina principal",
 	"help": "Axuda",
-	"logout": "Saír"
+	"login": "Identificarse",
+	"logout": "Saír",
+	"logged-in-as": "Sesión iniciada como $1",
+	"language-settings": "Configuración de lingua",
+	"done": "Feito",
+	"cancel": "Cancelar",
+	"interface-lang-field-label": "Lingua da ferramentaː",
+	"interface-lang-field-help": "A ferramenta en si mesma amosarase nesta lingua.",
+	"preferred-langs-field-label": "Linguas preferidas para/desde traducirː",
+	"preferred-langs-field-help": "Estas linguas amósanse preto da parte superior cando está a cambiarse entre elas na páxina de tradución.",
+	"add-preferred-lang": "Engadir",
+	"search-help": "Indique un nome de ficheiro de Commons",
+	"search-label": "Nome de ficheiro (sen o prefixo 'Ficheiroː') ou URLː",
+	"search-placeholder": "Guerra dos 100 anos Francia 1435.svg",
+	"translate-button": "Traducir",
+	"no-translations": "Este ficheiro non ten ningunha etiqueta dispoñible para traducir. Escolla outra imaxe por favor.",
+	"not-found": "O ficheiro que solicitou non se atopou. Por favor, seleccione outra imaxe.",
+	"invalid-format": "Só se admiten ficheiros SVG.",
+	"invalid-svg": "Erro ó ler o ficheiro.",
+	"network-error": "Erro ó obter a información dos servidores de Wikimedia. Por favor, ténteo de novo máis tarde.",
+	"pick-another": "← escolla outro ficheiro",
+	"view-on-commons": "Ver en Commons",
+	"opens-in-new-tab": "Abre nunha pestana nova",
+	"default-language": "Lingua por defecto",
+	"source-lang-not-found": "Sen traducir. Por defectoː $1",
+	"source-to-target": "a",
+	"select-language": "Seleccionar unha lingua",
+	"confirmation-to-switch-target-lang": "Está tentando modificar a lingua de tradución pero ten traducións sen gardar. A modificación da lingua provocará a perda de tódalas traducións engadidas. Por favor, cargue as traducións en Commons ou descargue o ficheiro traducido antes de continuar. Desexa continuar?",
+	"confirm-change-target-lang": "Cambiar a lingua",
+	"upload-button-label": "Cargar en Commons",
+	"upload-button-in-progress": "Cargando en Commons…",
+	"developed-by": "Desenvolvido por Community Tech"
 }
