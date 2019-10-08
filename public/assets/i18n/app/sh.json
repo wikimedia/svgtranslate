@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"help": "Pomoć",
+	"login": "Prijavi se",
+	"logout": "Odjavi se",
+	"language-settings": "Postavke jezika",
+	"done": "Gotovo",
+	"cancel": "Otkaži",
+	"add-preferred-lang": "Dodaj",
+	"translate-button": "Prevedi",
+	"default-language": "Uobičajen jezik",
+	"source-lang-not-found": "Neprevedena. Podrazumijevano: $1",
+	"source-to-target": "na",
+	"confirmation-to-switch-target-lang": "Pokušate da smijenite prijevodni jezik, ali imate nesačuvane prijevode. Ukoliko naravite smjenu, prijevodi će se izgubiti. Otpremite na Ostavu ili preuzmite prevedenu sliku prije da mijenjati jezik. Želite li da nastavite?",
+	"confirm-change-target-lang": "Smijeni jezik",
+	"download-button-label": "Preuzmi",
+	"download-or-upload": "ili",
+	"translation-image-alt": "Slika koja tjekovno je u prevođenju. Nema opisa na raspolaganju.",
+	"translate-labels-title": "Prevedite",
+	"translate-labels-desc": "etikete na ovoj slici.",
+	"update-commons-title": "Podnovite na Ostavi",
+	"update-commons-desc": "ili pak preuzmite ga pravo na svoj računar.",
+	"upload-complete": "Postavljanje završilo je",
+	"upload-complete-message": "Hvala! Vaši prijevodi na $1 su otpremljeni. Možete nastaviti prevođenjem etiketa i otpremiti ih ponovo da podnovite sliku.",
+	"version": "Verzija $1",
+	"git-hash": "Tjekovno na provjeri $1",
+	"privacy-policy": "Politika privatnosti",
+	"report-issue": "Izvijesti o bugu",
+	"view-source": "Pogl. na Githubu"
+}
