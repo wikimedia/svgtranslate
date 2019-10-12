@@ -16,9 +16,19 @@ use DOMElement;
 use DOMNode;
 use DOMXpath;
 use Krinkle\Intuition\Intuition;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
 class SvgFile
 {
+    use LoggerAwareTrait;
+
+    /**
+     * @var string
+     */
+    private $fileName;
+
     /**
      * @var DOMDocument
      */
@@ -55,13 +65,21 @@ class SvgFile
     private $fallbackLanguage;
 
     /**
+     * @var bool[]
+     */
+    private $usedMessages = [];
+
+    /**
      * Construct an SvgFile object.
      *
      * @param string $path
+     * @param LoggerInterface|null $logger
      * @throws SvgLoadException
      */
-    public function __construct(string $path)
+    public function __construct(string $path, ?LoggerInterface $logger = null)
     {
+        $this->fileName = $path;
+        $this->logger = $logger ?? new NullLogger();
         $this->fallbackLanguage = 'fallback';
 
         $this->document = new DOMDocument('1.0');
@@ -78,6 +96,22 @@ class SvgFile
 
         // $this->isTranslationReady() can be used to test if construction was a success
         $this->makeTranslationReady();
+    }
+
+    /**
+     * Logs issues with the file currently being processed
+     *
+     * @param string $message
+     * @param mixed[] $extraOptions
+     */
+    private function logFileProblem(string $message, array $extraOptions = []): void
+    {
+        if (isset($this->usedMessages[$message])) {
+            return;
+        }
+        $this->usedMessages[$message] = true;
+        $options = ['file' => basename($this->fileName)] + $extraOptions;
+        $this->logger->warning("SvgFile: $message", $options);
     }
 
     /**
@@ -106,6 +140,7 @@ class SvgFile
 
         if (null === $this->document->documentElement) {
             // Empty or malformed file
+            $this->logFileProblem('File {file} looks malformed');
             return false;
         }
 
@@ -126,6 +161,7 @@ class SvgFile
         $textLength = $texts->length;
         if (0 === $textLength) {
             // Nothing to translate!
+            $this->logFileProblem('File {file} has nothing to translate');
             return false;
         }
 
@@ -137,12 +173,14 @@ class SvgFile
             if (false !== strpos($CSS, '#')) {
                 if (!preg_match('/^([^{]+\{[^}]*\})*[^{]+$/', $CSS)) {
                     // Can't easily understand the CSS to check it, so exit
+                    $this->logFileProblem('File {file} has CSS too complex to parse');
                     return false;
                 }
                 $selectors = preg_split('/\{[^}]+\}/', $CSS);
                 foreach ($selectors as $selector) {
                     if (false !== strpos($selector, '#')) {
                         // IDs in CSS will break when we clone things, should be classes
+                        $this->logFileProblem('File {file} has IDs in CSS');
                         return false;
                     }
                 }
@@ -151,6 +189,7 @@ class SvgFile
 
         if (0 !== $this->document->getElementsByTagName('tref')->length) {
             // Tref tags not (yet) supported
+            $this->logFileProblem('File {file} has <tref> tags');
             return false;
         }
 
@@ -163,6 +202,7 @@ class SvgFile
             if ($tspan->childNodes->length > 1
                 || ( 1 == $tspan->childNodes->length && XML_TEXT_NODE !== $tspan->childNodes->item(0)->nodeType )
             ) {
+                $this->logFileProblem('File {file} has nested <tspan> tags');
                 return false; // Nested tspans not (yet) supported
             }
             $translatableNodes[] = $tspan;
@@ -178,10 +218,12 @@ class SvgFile
                 }
                 if (XML_TEXT_NODE !== $node->nodeType) {
                     // Anything but tspans and text nodes is unexpected
+                    $this->logFileProblem('File {file} has an unexpected tag in translatable content');
                     return false;
                 }
                 if ('' === trim($node->nodeValue)) {
                     // Don't bother with whitespace-only nodes
+                    $this->logFileProblem('File {file} has a whitespace-only text node');
                     continue;
                 }
                 // Wrap text in <tspan>
@@ -243,6 +285,7 @@ class SvgFile
             // self::replaceIndicesRecursive() will try to replace them
             // with (non-existent) child nodes.
             if (preg_match('/$[0-9]/', $text->textContent)) {
+                $this->logFileProblem('File {file} has text with $-numbers');
                 return false;
             }
 
@@ -271,6 +314,7 @@ class SvgFile
                     && 'svg:tspan' !== $child->nodeName
                 ) {
                     // Tags other than tspan inside text tags are not (yet) supported
+                    $this->logFileProblem('File {file} has a tag other than tspan inside a text tag');
                     return false;
                 }
             }
@@ -287,6 +331,7 @@ class SvgFile
                 if (XML_TEXT_NODE === $sibling->nodeType) {
                     if ('' !== trim($sibling->textContent)) {
                         // Text content inside switch but outside text tags is awkward.
+                        $this->logFileProblem('File {file} has text content inside switch but outside of a text tag');
                         return false;
                     }
                     continue;
@@ -296,6 +341,9 @@ class SvgFile
                 }
 
                 if ('text' !== $sibling->nodeName && 'svg:text' !== $sibling->nodeName) {
+                    $this->logFileProblem('Encountered unexpected element {elementName} in file {file}',
+                        ['elementName' => $sibling->nodeName]
+                    );
                     return false;
                 }
 
@@ -305,6 +353,7 @@ class SvgFile
                 foreach ($realLangs as $realLang) {
                     if (in_array($realLang, $languagesPresent)) {
                         // Two tags for the same language
+                        $this->logFileProblem('File {file} has 2 tags');
                         return false;
                     }
                     $languagesPresent[] = $realLang;

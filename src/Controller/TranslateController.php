@@ -10,6 +10,7 @@ use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
 use App\Service\FileCache;
+use App\Service\SvgFileFactory;
 use App\Service\Uploader;
 use GuzzleHttp\Exception\RequestException;
 use Krinkle\Intuition\Intuition;
@@ -28,6 +29,12 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class TranslateController extends AbstractController
 {
+    protected $svgFactory;
+
+    public function __construct(SvgFileFactory $svgFactory)
+    {
+        $this->svgFactory = $svgFactory;
+    }
 
     /**
      * The translate page.
@@ -60,7 +67,7 @@ class TranslateController extends AbstractController
         try {
             $this->assertFileType($normalizedFilename);
             $path = $cache->getPath($filename);
-            $svgFile = new SvgFile($path);
+            $svgFile = $this->svgFactory->create($path);
         } catch (ImageNotFoundException $exception) {
             return $this->showError('not-found', $normalizedFilename);
         } catch (InvalidFormatException $exception) {
