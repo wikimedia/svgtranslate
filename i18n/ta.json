@@ -1,4 +1,33 @@
 {
+	"@metadata": {
+		"authors": [
+			"Balajijagadesh"
+		]
+	},
 	"help": "உதவி",
-	"logout": "விடுபதிகை"
+	"login": "உள்நுழை",
+	"logout": "விடுபதிகை",
+	"logged-in-as": "$1 என புகுபதிகை செய்யப்பட்டுள்ளது",
+	"language-settings": "மொழி அமைப்புகள்",
+	"done": "முடிந்தது",
+	"cancel": "கைவிடுக",
+	"interface-lang-field-label": "கருவியின் மொழி:",
+	"interface-lang-field-help": "கருவி இந்த மொழியில் காட்டப்படும்.",
+	"add-preferred-lang": "சேர்",
+	"translate-button": "மொழிபெயர்க்கவும்",
+	"invalid-svg": "கோப்பைப் படிப்பதில் பிழை.",
+	"view-on-commons": "பொதுவகத்தில் பார்க்கவும்",
+	"opens-in-new-tab": "புதிய தாவலில் இணைப்பை திற",
+	"default-language": "இயல்பு நிலை மொழி",
+	"select-language": "ஒரு மொழியைத் தேர்க",
+	"confirm-change-target-lang": "மொழியை மாற்றுக",
+	"upload-button-label": "பொதுவகத்துக்கு பதிவேற்றுக",
+	"download-button-label": "பதிவிறக்குக",
+	"download-or-upload": "அல்லது",
+	"translate-labels-title": "மொழிபெயர்",
+	"upload-complete": "பதிவேற்றம் முழுமையடைந்தது",
+	"upload-complete-commons": "படத்தைப் பார்க்க",
+	"upload-complete-translate-another": "இன்னொரு படத்தை மொழிபெயர்",
+	"privacy-policy": "தனியுரிமைக் கொள்கை",
+	"report-issue": "வழுக்களை அறிக்கையிடுக"
 }
