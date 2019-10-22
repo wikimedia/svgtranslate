@@ -14,7 +14,7 @@ class RendererTest extends TestCase
     {
         $renderer = new Renderer('foo');
         static::expectException(ProcessFailedException::class);
-        static::expectExceptionMessage('foo: not found');
+        static::expectExceptionMessageRegExp('/foo:( command)? not found/');
         $renderer->render('foo.svg', 'fr');
     }
 }

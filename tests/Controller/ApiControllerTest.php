@@ -6,9 +6,11 @@ namespace App\Tests\Controller;
 use App\Controller\ApiController;
 use App\Service\FileCache;
 use App\Service\Renderer;
+use App\Service\SvgFileFactory;
 use App\Tests\Model\Svg\SvgFileTest;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
+use Psr\Log\NullLogger;
 use Symfony\Component\HttpFoundation\Request;
 
 class ApiControllerTest extends TestCase
@@ -75,8 +77,10 @@ class ApiControllerTest extends TestCase
             ->with('Foo.svg')
             ->willReturn('test content');
 
+        $factory = new SvgFileFactory(new NullLogger());
+
         /** @var FileCache $cache */
-        $controller = new ApiController($cache, new Renderer('rsvg-convert'));
+        $controller = new ApiController($cache, new Renderer('rsvg-convert'), $factory);
         $controller->setContainer($container);
 
         return $controller;

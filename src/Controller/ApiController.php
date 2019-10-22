@@ -7,6 +7,9 @@ use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\Service\FileCache;
 use App\Service\Renderer;
+use App\Service\SvgFileFactory;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,17 +23,20 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ApiController extends AbstractController
 {
-
     /** @var FileCache */
     private $cache;
 
     /** @var Renderer */
     protected $svgRenderer;
 
-    public function __construct(FileCache $cache, Renderer $svgRenderer)
+    /** @var SvgFileFactory */
+    protected $svgFactory;
+
+    public function __construct(FileCache $cache, Renderer $svgRenderer, SvgFileFactory $svgFactory)
     {
         $this->cache = $cache;
         $this->svgRenderer = $svgRenderer;
+        $this->svgFactory = $svgFactory;
     }
 
     /**
@@ -80,7 +86,7 @@ class ApiController extends AbstractController
         // receiving one language at a time).
         $filename = Title::normalize($filename);
         $path = $this->cache->getPath($filename);
-        $file = new SvgFile($path);
+        $file = $this->svgFactory->create($path);
         $translations = $request->request->all();
         $file->setTranslations($lang, $translations);
 
@@ -132,7 +138,7 @@ class ApiController extends AbstractController
     {
         $fileName = Title::normalize($fileName);
         $path = $this->cache->getPath($fileName);
-        $file = new SvgFile($path);
+        $file = $this->svgFactory->create($path);
 
         return $this->json($file->getInFileTranslations());
     }
@@ -147,7 +153,7 @@ class ApiController extends AbstractController
     {
         $fileName = Title::normalize($fileName);
         $path = $this->cache->getPath($fileName);
-        $file = new SvgFile($path);
+        $file = $this->svgFactory->create($path);
         $langs = $file->getSavedLanguages();
         sort($langs);
 
