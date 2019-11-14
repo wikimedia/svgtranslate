@@ -1637,7 +1637,7 @@
         },
         {
             "name": "symfony/asset",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset.git",
