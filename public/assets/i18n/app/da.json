@@ -6,6 +6,7 @@
 			"Fnielsen"
 		]
 	},
+	"svgtranslate": "SVG-oversættelse",
 	"help": "Hjælp",
 	"logout": "Log ud",
 	"language-settings": "Sprogindstillinger",
@@ -13,6 +14,7 @@
 	"cancel": "Annullér",
 	"add-preferred-lang": "Tilføj",
 	"translate-button": "Oversæt",
+	"pick-another": "← vælg en anden fil",
 	"default-language": "Standardsprog",
 	"source-to-target": "til",
 	"select-language": "Vælg et sprog",
@@ -25,5 +27,6 @@
 	"upload-complete-commons": "Vis billede",
 	"upload-complete-translate-another": "Oversæt et andet billede",
 	"version": "Version $1",
+	"report-issue": "Rapporter en fejl",
 	"view-source": "Vis på Github"
 }
