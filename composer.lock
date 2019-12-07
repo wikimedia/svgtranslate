@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b33ea973bf91e255d372015f5db5f395",
+    "content-hash": "141516f0a56a3462d38d9e2a5dad9140",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -989,16 +989,16 @@
         },
         {
             "name": "oojs/oojs-ui",
-            "version": "v0.33.4",
+            "version": "v0.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/oojs-ui.git",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa"
+                "reference": "0072d15b009787577537e3294132d759c46a1098"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/b1f342a319d367dfd60794040f224c10af7848aa",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa",
+                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/0072d15b009787577537e3294132d759c46a1098",
+                "reference": "0072d15b009787577537e3294132d759c46a1098",
                 "shasum": ""
             },
             "require": {
@@ -1065,7 +1065,7 @@
             ],
             "description": "Provides library of common widgets, layouts, and windows.",
             "homepage": "https://www.mediawiki.org/wiki/OOUI",
-            "time": "2019-07-23T00:02:20+00:00"
+            "time": "2019-10-10T22:28:42+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
