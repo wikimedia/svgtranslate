@@ -4,7 +4,8 @@
 			"Omotecho",
 			"神樂坂秀吉",
 			"Abijeet Patro",
-			"Afaz"
+			"Afaz",
+			"Aefgh39622"
 		]
 	},
 	"svgtranslate": "SVG 翻訳",
@@ -31,6 +32,7 @@
 	"no-translations": "このファイルには翻訳対象の文字ラベルがありません。他の画像を選び直してください。",
 	"not-found": "お探しのファイルが見つかりませんでした。別の画像を選び直してください。",
 	"invalid-format": "SVGファイルのみがサポートされています。",
+	"invalid-svg": "ファイルの読み取り中にエラーが発生しました。",
 	"pick-another": "← 別のファイルを選択",
 	"view-on-commons": "コモンズで閲覧",
 	"opens-in-new-tab": "新しいタブで開く",
@@ -62,6 +64,7 @@
 	"upload-complete-translate-another": "他の画像を翻訳",
 	"licenced-under": "GPL 3.0 或いは以下で使用許諾",
 	"developed-by": "開発担当：ウィキメディア財団コミュニティ技術チーム",
+	"version": "バージョン $1",
 	"toolforge-logo-alt": "Toolforge のロゴ 'anvil'",
 	"powered-by-toolforge": "Toolforge 提供",
 	"privacy-policy": "プライバシー・ポリシー",
