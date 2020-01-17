@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Steeve815",
-			"YaronSh"
+			"YaronSh",
+			"Ghsuvr"
 		]
 	},
 	"svgtranslate": "תרגום SVG",
 	"info": "סיוע בתרגום תוויות טקסט בקובצי SVG. יש לבחור קובץ בוויקישיתוף כדי להתחיל.",
-	"beta": "תכונה זה נמצאת בשלבי בדיקה ראשוניים.",
-	"learn-more": "מידע נוסף ומשוב!",
+	"learn-more": "מידע נוסף.",
 	"return-to-home": "חזרה לעמוד הבית",
 	"help": "עזרה",
 	"login": "כניסה לחשבון",
