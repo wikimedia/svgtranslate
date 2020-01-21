@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Astrind"
+			"Astrind",
+			"Neptune, the Mystic"
 		]
 	},
+	"learn-more": "Saznajte više.",
 	"help": "Pomoć",
 	"login": "Prijavite se",
 	"logout": "Odjavi se",
