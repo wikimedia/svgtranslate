@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tobi 406"
+			"Tobi 406",
+			"Killarnee"
 		]
 	},
 	"svgtranslate": "SVG-Übersetzung",
 	"info": "Hilfe die Textbeschriftungen auf SVG-Dateien zu übersetzen. Wähle eine Datei aus Commons aus, um anzufangen.",
-	"learn-more": "Erfahre mehr & gebe Feedback!",
+	"learn-more": "Erfahre mehr.",
 	"return-to-home": "zum Hauptbildschirm zurückkehren",
 	"help": "Hilfe",
 	"login": "Anmelden",
