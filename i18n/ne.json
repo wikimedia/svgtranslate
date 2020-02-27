@@ -1,4 +1,46 @@
 {
+	"@metadata": {
+		"authors": [
+			"पर्वत सुबेदी",
+			"हिमाल सुबेदी"
+		]
+	},
+	"svgtranslate": "एसभिजी अनुवाद",
+	"learn-more": "अधिक जानकारी",
+	"return-to-home": "गृहमा फर्कनुहाेस्",
 	"help": "सहायता",
-	"logout": "निर्गमन (लग आउट)"
+	"login": "प्रवेश",
+	"logout": "निर्गमन",
+	"logged-in-as": "$1 का रूपमा प्रवेश गरियो",
+	"language-settings": "भाषाको विकल्पहरू",
+	"done": "सम्पन्न",
+	"cancel": "रद्द गर्नुहोस्",
+	"interface-lang-field-label": "उपकरणका भाषा:",
+	"add-preferred-lang": "थप्नुहोस्",
+	"translate-button": "अनुवाद गर्नुहोस्",
+	"view-on-commons": "कमन्समा हेर्नुहाेस्",
+	"opens-in-new-tab": "नयाँ ट्याबमा खोल्नुहोस्",
+	"default-language": "पूनर्निर्धारित भाषा",
+	"source-lang-not-found": "अनुवाद नभएकाे। पुनर्निर्धारित $1",
+	"source-to-target": "लाई",
+	"select-language": "भाषा छान्नुहाेस्",
+	"confirm-change-target-lang": "भाषा परिवर्तन गर्नुहोस्",
+	"upload-button-label": "कमन्समा उर्ध्वभरण गरियाे",
+	"upload-button-in-progress": "कमन्समा उर्ध्वभरण गरिँदै…",
+	"upload-login-warning": "उर्ध्वभरण सक्षम गर्न प्रवेश गर्नुहाेस्",
+	"download-button-label": "डाउनलोड गरिएकाे",
+	"download-or-upload": "अथवा",
+	"pick-an-image-title": "तस्वीर छान्नुहाेस्",
+	"pick-an-image-desc": "कमन्स बाट",
+	"translate-labels-title": "अनुवाद गर्नुहोस्",
+	"commons-logo-alt": "विकिमिडिया कमन्सकाे लागाे",
+	"update-commons-title": "कमन्स अद्यावधिक",
+	"upload-complete": "उर्ध्वभरण सम्पन्न भयाे",
+	"upload-complete-commons": "तस्वीर हेर्नुहाेस्",
+	"upload-complete-translate-another": "अर्काे तस्वीर अनुवाद गर्नुहाेस्",
+	"version": "संस्करण $1",
+	"powered-by-toolforge": "टुलफाेर्जद्वारा प्रवर्धित",
+	"privacy-policy": "गोपनीयता नीति",
+	"report-issue": "समस्या उजुरी गर्नुहाेस्",
+	"view-source": "गिटहबमा हेर्नुहाेस्"
 }
