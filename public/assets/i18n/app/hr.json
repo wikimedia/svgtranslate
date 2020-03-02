@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Astrind",
-			"Neptune, the Mystic"
+			"Neptune, the Mystic",
+			"Bugoslav"
 		]
 	},
 	"learn-more": "Saznajte više.",
@@ -21,6 +22,8 @@
 	"download-or-upload": "ili",
 	"translate-labels-title": "Prevedi",
 	"upload-complete-commons": "Vidi sliku",
+	"version": "Inačica $1",
+	"privacy-policy": "Pravila privatnosti",
 	"report-issue": "Prijavi pogrešku (''bug'')",
 	"view-source": "Vidi na Githubu"
 }
