@@ -1,1 +1,25 @@
-{}
+{
+	"@metadata": {
+		"authors": [
+			"Fontan 030"
+		]
+	},
+	"help": "Анықтама",
+	"login": "Кіру",
+	"logout": "Шығу",
+	"logged-in-as": "$1 ретінде кіргенсіз",
+	"language-settings": "Тіл баптаулары",
+	"cancel": "Болдырмау",
+	"interface-lang-field-label": "Құралдың тілі:",
+	"add-preferred-lang": "Қосу",
+	"search-label": "Файл атауы ('File:' префикссіз) немесе URL:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"pick-another": "← басқа файлды таңдау",
+	"commons-logo-alt": "Ортаққордың логотипі",
+	"upload-complete": "Жүктеу аяқталды",
+	"upload-complete-translate-another": "Басқа суретті аудару",
+	"version": "$1 нұсқасы",
+	"toolforge-logo-alt": "Toolforge 'төс' логотипі",
+	"privacy-policy": "Құпиялық саясаты",
+	"report-issue": "Қате туралы хабарлау"
+}
