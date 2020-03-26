@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"아라"
 		]
 	},
 	"learn-more": "더 알아봅니다.",
@@ -37,7 +38,7 @@
 	"upload-complete-commons": "이미지 보기",
 	"version": "버전 $1",
 	"powered-by-toolforge": "Toolforge에 의해 지원됨",
-	"privacy-policy": "개인정보 정책",
+	"privacy-policy": "개인정보처리방침",
 	"report-issue": "버그 보고",
 	"view-source": "깃허브에서 보기"
 }
