@@ -1,3 +1,46 @@
 {
-	"help": "Skoazell"
+	"@metadata": {
+		"authors": [
+			"Fulup"
+		]
+	},
+	"svgtranslate": "Troidigezh SVG",
+	"learn-more": "Gouzout hiroc'h.",
+	"return-to-home": "distreiñ d'ar gêr",
+	"help": "Skoazell",
+	"login": "Kevreañ",
+	"logout": "Digevreañ",
+	"logged-in-as": "Kevreet evel $1",
+	"language-settings": "Arventennoù yezh",
+	"done": "Graet",
+	"cancel": "Nullañ",
+	"interface-lang-field-label": "Yezh an ostilhoù :",
+	"interface-lang-field-help": "An ostilh e-unan a vo diskouezet er yezh-mañ.",
+	"preferred-langs-field-label": "Yezhoù karetañ da dreiñ diwarno/da dreiñ enno :",
+	"preferred-langs-field-help": "Diskouezet eo ar yezhoù-se e-kichen al laez pa cheñchit etrezo er bajenn dreiñ.",
+	"add-preferred-lang": "Ouzhpennañ",
+	"translate-button": "Treiñ",
+	"invalid-svg": "Ur fazi zo bet en ur lenn ar restr.",
+	"opens-in-new-tab": "Digeriñ en un ivinell nevez",
+	"default-language": "Yezh dre ziouer",
+	"source-lang-not-found": "Didro. Dre ziouer : $1",
+	"source-to-target": "da",
+	"select-language": "Dibab ur yezh",
+	"confirm-change-target-lang": "Cheñch yezh",
+	"upload-button-label": "Enporzhiañ e Commons",
+	"download-button-label": "Pellgargañ",
+	"download-or-upload": "pe",
+	"pick-an-image-title": "Tapit ur skeudenn",
+	"pick-an-image-desc": "eus Commons",
+	"translate-labels-title": "Treiñ",
+	"translate-labels-desc": "An dikedenn er skeudenn.",
+	"commons-logo-alt": "Logo Wikimedia Commons",
+	"update-commons-title": "Hizivaat Commons",
+	"upload-complete": "Enporzhiet ervat",
+	"upload-complete-commons": "Gwelet ar skeudenn",
+	"upload-complete-translate-another": "Treiñ ur skeudenn all",
+	"version": "Stumm $1",
+	"privacy-policy": "Reolennoù prevezded",
+	"report-issue": "Disklêriañ un draen",
+	"view-source": "Gwelet war Github"
 }
