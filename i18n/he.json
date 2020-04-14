@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ghsuvr",
 			"Steeve815",
 			"YaronSh"
@@ -46,7 +47,7 @@
 	"download-button-label": "הורדה",
 	"download-or-upload": "או",
 	"translation-image-alt": "התמונה שמתורגמת כעת. אין תיאור זמין.",
-	"preview-error-occurred": "אירעה שגיאה בעת קבלת התצוגה המקדימה. נא להמשיך לתרגם, אך אם התקלה הזו נמשכת יש לדווח על תקלה (דרך הקישור שבתחתית העמוד להלן).",
+	"preview-error-occurred": "אירעה שגיאה בעת קבלת התצוגה המקדימה. נא להמשיך לתרגם, אך אם התקלה הזאת נמשכת יש לדווח על תקלה (דרך הקישור שבתחתית העמוד להלן).",
 	"download-icon-alt": "סמל שמציין הורדת קובץ",
 	"pick-an-image-title": "נא לבחור תמונה",
 	"pick-an-image-desc": "מוויקישיתוף.",
