@@ -1,15 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"神樂坂秀吉",
-			"Viztor",
-			"Looong",
-			"予弦",
+			"500000000006城",
 			"A Retired User",
-			"沈澄心",
 			"Josephine W.",
+			"Looong",
 			"Tiger",
-			"VulpesVulpes825"
+			"Viztor",
+			"VulpesVulpes825",
+			"予弦",
+			"沈澄心",
+			"神樂坂秀吉"
 		]
 	},
 	"svgtranslate": "SVG 翻译",
@@ -44,12 +45,15 @@
 	"source-lang-not-found": "尚未翻译。预设：$1",
 	"source-to-target": "至",
 	"select-language": "选择语言",
+	"confirmation-to-switch-target-lang": "您试图更改翻译语言，但您有未保存的翻译。改变语言会导致任何增加的翻译丢失。请在进行之前将翻译上传到Commons或下载翻译后的文件。您想继续吗？",
 	"confirm-change-target-lang": "更改语言",
 	"upload-button-label": "上传至维基共享资源",
 	"upload-button-in-progress": "正在上传至维基共享资源...",
 	"upload-login-warning": "登录以启用上传",
 	"download-button-label": "下载",
 	"download-or-upload": "或",
+	"translation-image-alt": "当前正在翻译的图像。没有可用的描述。",
+	"preview-error-occurred": "获取预览时出错。请继续翻译，但是如果这个错误仍然存在，请报告一个错误(通过下面页脚中的链接)。",
 	"download-icon-alt": "文件下载图标",
 	"pick-an-image-title": "挑选图片",
 	"pick-an-image-desc": "来自维基共享资源。",
@@ -60,6 +64,7 @@
 	"update-commons-title": "更新共享资源",
 	"update-commons-desc": "或直接下载到您的电脑。",
 	"upload-complete": "上传完成",
+	"upload-complete-message": "谢谢!您的翻译到$1已经上传。您可以继续翻译标签并再次上传以更新图像。",
 	"upload-complete-commons": "查看图片",
 	"upload-complete-translate-another": "翻译另一张图片",
 	"licenced-under": "以GPL3.0以及更新版本授权",
