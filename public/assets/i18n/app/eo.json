@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"KuboF",
 			"Mirin"
 		]
 	},
 	"svgtranslate": "SVG-Tradukado",
 	"info": "Helpi tradukadon de tekstaj etikedoj en SVG-bildoj. Elektu dosieron ĉe Komunejo por komenci.",
-	"learn-more": "Lerni plu & lasi komenton!",
+	"learn-more": "Lernu pli.",
 	"return-to-home": "reiri al ĉefpaĝo",
 	"help": "Helpo",
 	"login": "Ensaluti",
