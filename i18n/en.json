@@ -25,6 +25,9 @@
   "no-translations": "This file does not have any labels available for translation. Please pick another image.",
   "not-found": "The file you requested could not be found. Please pick another image.",
   "invalid-format": "Only SVG files are supported.",
+  "unsupported-svg": "This file can not be translated with this tool because it contains unsupported SVG ($1) in the following text: $2",
+  "nested-tspans-without-id": "nested tspan",
+  "nested-tspans-with-id": "nested tspan in $1",
   "invalid-svg": "Error reading file.",
   "network-error": "Error getting information from Wikimedia servers. Please try again later.",
 

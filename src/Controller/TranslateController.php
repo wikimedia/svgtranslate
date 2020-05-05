@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Exception\ImageNotFoundException;
 use App\Exception\InvalidFormatException;
+use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
@@ -76,6 +77,14 @@ class TranslateController extends AbstractController
             return $this->showError('invalid-svg', $normalizedFilename);
         } catch (RequestException $exception) {
             return $this->showError('network-error', $normalizedFilename);
+        } catch (NestedTspanException $exception) {
+            $id = $exception->getTspanId();
+            $reason = $id
+                ? $intuition->msg('nested-tspans-with-id', [ 'variables' => [ "<code>#$id</code>" ] ] )
+                : $intuition->msg( 'nested-tspans-without-id' );
+            return $this->showError('unsupported-svg', $normalizedFilename, [
+                'msg_params' => [ $reason, '<em>' . $exception->getTextContent() . '</em>' ],
+            ]);
         }
 
         // If there are no strings to translate, tell the user.
@@ -88,7 +97,7 @@ class TranslateController extends AbstractController
         if (0 === count($translations)) {
             $noTranslationsMessage = $this->renderView(
                 'error_message.html.twig',
-                ['msg_name' => 'no-translations']
+                ['msg_name' => 'no-translations', 'msg_params' => [] ]
             );
             if ($isSearchRedirect) {
                 $this->addFlash('search-errors', (string)$noTranslationsMessage);
@@ -242,13 +251,14 @@ class TranslateController extends AbstractController
      *
      * @param string $messageKey
      * @param string $fileName
+     * @param mixed[] $errorTemplateParams Additional parameters to pass to the template. 'msg_params' will be used for the message.
      * @return Response
      */
-    private function showError(string $messageKey, string $fileName): Response
+    private function showError(string $messageKey, string $fileName, ?array $errorTemplateParams = []): Response
     {
         $message = $this->renderView(
             'error_message.html.twig',
-            ['msg_name' => $messageKey]
+            array_merge( [ 'msg_name' => $messageKey, 'msg_params' => [] ], $errorTemplateParams )
         );
         // Flash the message to show to the user under the search form.
         $this->addFlash('search-errors', (string)$message);

@@ -9,6 +9,7 @@ declare(strict_types = 1);
 
 namespace App\Tests\Model\Svg;
 
+use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use App\Model\Svg\SvgFile;
 use DOMDocument;
@@ -246,6 +247,17 @@ class SvgFileTest extends TestCase
     private function getSvg(string $fileName = 'Speech_bubbles.svg'): SvgFile
     {
         return new SvgFile(__DIR__."/../../data/$fileName");
+    }
+
+    /**
+     * Create a new SvgFile object from an XML string.
+     * @param string $svgContents Do not include the XML prologue.
+     */
+    protected function getSvgFileFromString( $svgContents )
+    {
+        $filename = dirname( __DIR__, 2 ) . '/data/_test.svg';
+        file_put_contents( $filename, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" . $svgContents );
+        return new SvgFile( $filename );
     }
 
     /*
@@ -567,5 +579,33 @@ class SvgFileTest extends TestCase
         self::expectException(SvgLoadException::class);
         self::expectExceptionMessage("Start tag expected, '<' not found in invalid.svg line 1");
         $this->getSvg('invalid.svg');
+    }
+
+    /**
+     * @dataProvider provideNestedTspansException()
+     */
+    public function testNestedTspansException(string $svg, string $message)
+    {
+        self::expectException(NestedTspanException::class);
+        self::expectExceptionMessage($message);
+        $this->getSvgFileFromString($svg);
+    }
+
+    public function provideNestedTspansException()
+    {
+        return [
+            'Simple nested' => [
+                'svg' => '<svg><text><tspan>foo <tspan>bar</tspan></tspan></text></svg>',
+                'message' => 'Nested tspan elements are not supported (ID: ""; text: "foo bar")',
+            ],
+            'Has ID' => [
+                'svg' => '<svg><text><tspan id="test">foo <tspan>bar</tspan></tspan></text></svg>',
+                'message' => 'Nested tspan elements are not supported (ID: "test"; text: "foo bar")',
+            ],
+            'Grandparent has ID' => [
+                'svg' => '<svg><g id="gparent"><text><tspan>foo <tspan>bar</tspan></tspan></text></g></svg>',
+                'message' => 'Nested tspan elements are not supported (ID: "gparent"; text: "foo bar")',
+            ],
+        ];
     }
 }
