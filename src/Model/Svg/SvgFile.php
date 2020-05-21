@@ -10,6 +10,7 @@ declare(strict_types = 1);
 
 namespace App\Model\Svg;
 
+use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use DOMDocument;
 use DOMElement;
@@ -202,8 +203,8 @@ class SvgFile
             if ($tspan->childNodes->length > 1
                 || ( 1 == $tspan->childNodes->length && XML_TEXT_NODE !== $tspan->childNodes->item(0)->nodeType )
             ) {
-                $this->logFileProblem('File {file} has nested <tspan> tags');
-                return false; // Nested tspans not (yet) supported
+                // Nested tspans not (yet) supported. T250607.
+                throw new NestedTspanException($tspan);
             }
             $translatableNodes[] = $tspan;
         }
