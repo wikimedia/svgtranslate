@@ -1,4 +1,32 @@
 {
+	"@metadata": {
+		"authors": [
+			"FarsiNevis"
+		]
+	},
 	"help": "کمک",
-	"logout": "خروج از سامانه"
+	"login": "ورود به سامانه",
+	"logout": "خروج از سامانه",
+	"logged-in-as": "با نام $1 وارد شدید",
+	"language-settings": "تنظیمات زبان",
+	"done": "انجام شد",
+	"cancel": "لغو",
+	"interface-lang-field-label": "زبان ایزار:",
+	"interface-lang-field-help": "خود ابزار به این زبان نشان داده خواهد شد.",
+	"preferred-langs-field-label": "زبان‌های ترجیحی برای ترجمه به/ از:",
+	"add-preferred-lang": "افزودن",
+	"translate-button": "ترجمه",
+	"opens-in-new-tab": "باز کردن در برگهٔ جدید",
+	"default-language": "زبان پیش‌فرض",
+	"source-to-target": "به",
+	"select-language": "یک زبان انتخاب کنید",
+	"confirm-change-target-lang": "تغییر زبان",
+	"download-button-label": "بارگیری",
+	"download-or-upload": "یا",
+	"translate-labels-title": "ترجمه",
+	"upload-complete": "بارگذاری کامل شد",
+	"upload-complete-commons": "مشاهدهٔ تصویر",
+	"upload-complete-translate-another": "تصویری دیگر را ترجمه کنید",
+	"version": "نسخهٔ $1",
+	"report-issue": "گزارش یک اشکال"
 }
