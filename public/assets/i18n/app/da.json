@@ -9,12 +9,15 @@
 	"svgtranslate": "SVG-oversættelse",
 	"learn-more": "Lær mere.",
 	"help": "Hjælp",
+	"login": "Log ind",
 	"logout": "Log ud",
+	"logged-in-as": "Logget ind som $1",
 	"language-settings": "Sprogindstillinger",
 	"done": "Udført",
 	"cancel": "Annullér",
 	"add-preferred-lang": "Tilføj",
 	"translate-button": "Oversæt",
+	"invalid-format": "Kun SVG-filer understøttes.",
 	"pick-another": "← vælg en anden fil",
 	"default-language": "Standardsprog",
 	"source-to-target": "til",
@@ -28,6 +31,7 @@
 	"upload-complete-commons": "Vis billede",
 	"upload-complete-translate-another": "Oversæt et andet billede",
 	"version": "Version $1",
+	"privacy-policy": "Fortrolighedspolitik",
 	"report-issue": "Rapporter en fejl",
 	"view-source": "Vis på Github"
 }
