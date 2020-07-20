@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"A67-A67",
+			"BaRaN6161 TURK",
 			"Elderson",
 			"Mainframe98",
 			"RadioAzureus"
@@ -9,7 +10,7 @@
 	},
 	"svgtranslate": "SVG-Omzetten",
 	"info": "Help met het omzetten van labels in SVG-bestanden. Kies een bestand op Commons om te starten.",
-	"learn-more": "Leer meer & laat feedback achter!",
+	"learn-more": "Leer meer.",
 	"return-to-home": "terug naar home",
 	"help": "Hulp",
 	"login": "Aanmelden",
@@ -30,6 +31,9 @@
 	"no-translations": "Dit bestand heeft geen labels beschikbaar voor vertaling. Kies een andere afbeelding.",
 	"not-found": "Het door u gekozen bestand kon niet worden gevonden. Kies een ander bestand.",
 	"invalid-format": "Alleen SVG-bestanden worden ondersteund.",
+	"unsupported-svg": "Dit bestand kan niet worden vertaald met deze tool omdat het niet-ondersteunde SVG ($1) bevat in de volgende tekst: $2",
+	"nested-tspans-without-id": "geneste tspan",
+	"nested-tspans-with-id": "geneste tspan in $1",
 	"invalid-svg": "Fout met lezen van bestand",
 	"network-error": "Fout met informatie verzamelen van Wikimedia servers. Probeer later opnieuw.",
 	"pick-another": "← een ander bestand kiezen",
