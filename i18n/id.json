@@ -1,1 +1,27 @@
-{}
+{
+	"@metadata": {
+		"authors": [
+			"Sonic Speedy"
+		]
+	},
+	"svgtranslate": "Terjemahan SVG",
+	"info": "Tolong terjemahkam label teks yang ada di berkas SVG. Ambil berkas di Commons untuk memulai.",
+	"learn-more": "Pelajari lebih lanjut.",
+	"return-to-home": "kembali ke halaman utama",
+	"help": "Bantuan",
+	"login": "Masuk log",
+	"logout": "Keluar log",
+	"logged-in-as": "Logged in as $1",
+	"language-settings": "Pengaturan bahasa",
+	"done": "Selesai",
+	"cancel": "Batal",
+	"interface-lang-field-label": "Alat bahasa",
+	"interface-lang-field-help": "Alat itu sendiri akan ditampilkan dalam bahasa ini.",
+	"preferred-langs-field-label": "Bahasa yang disukai untuk diterjemahkan ke/dari:",
+	"preferred-langs-field-help": "Bahasa-bahasa ini ditampilkan di dekat bagian atas ketika Anda beralih di antara mereka di halaman terjemahan.",
+	"add-preferred-lang": "Tambah",
+	"search-help": "Tipe nama berkasa dari Commons",
+	"search-label": "Nama berkas (tanpa awalan 'File:') atau URL:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "Terjemahkan"
+}
