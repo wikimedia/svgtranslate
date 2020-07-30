@@ -1,4 +1,4 @@
-FROM docker-registry.tools.wmflabs.org/toollabs-php72-web
+FROM docker-registry.tools.wmflabs.org/toolforge-php72-sssd-web
 
 WORKDIR /var/www/
 
