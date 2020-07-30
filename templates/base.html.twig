@@ -37,7 +37,7 @@
         {% block prefooter %}{% endblock %}
         <footer>
             <p class="toolforge">
-                <a href="https://tools.wmflabs.org/">
+                <a href="https://toolforge.org/">
                     <img class="toolforge-logo" src="https://tools-static.wmflabs.org/toolforge/logos/anvil-64.png" alt="{{ msg('toolforge-logo-alt') }}" width="64" height="48" />
                     <span>{{ msg('powered-by-toolforge') }}</span>
                 </a>
@@ -81,7 +81,7 @@
     <script type="text/javascript">
 
         {# Matomo usage tracking #}
-        {% if 'tools.wmflabs.org' == app.request.HttpHost and '/svgtranslate/' == asset('') %}
+        {% if 'svgtranslate.toolforge.org' == app.request.HttpHost %}
         var _paq = _paq || [];
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
