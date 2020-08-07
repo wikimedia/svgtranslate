@@ -23,5 +23,19 @@
 	"search-help": "Tipe nama berkasa dari Commons",
 	"search-label": "Nama berkas (tanpa awalan 'File:') atau URL:",
 	"search-placeholder": "100 Years War France 1435.svg",
-	"translate-button": "Terjemahkan"
+	"translate-button": "Terjemahkan",
+	"no-translations": "File ini tidak memiliki label yang tersedia untuk diterjemahkan.  Silakan pilih gambar lain.",
+	"not-found": "File yang Anda minta tidak dapat ditemukan.  Silakan pilih gambar lain.",
+	"invalid-format": "Hanya berkas SVG yang didukung",
+	"unsupported-svg": "File ini tidak dapat diterjemahkan dengan alat ini karena mengandung SVG yang tidak didukung ($1) dalam teks berikut: $2",
+	"nested-tspans-without-id": "tspan bersarang",
+	"nested-tspans-with-id": "Tspan bersarang di $1",
+	"invalid-svg": "Masalah saat membuka berkas.",
+	"network-error": "Kesalahan dalam mendapatkan informasi dari server Wikimedia.  Silakan coba lagi nanti.",
+	"pick-another": "← ambil berkas lainnya",
+	"view-on-commons": "Lihat di Commons",
+	"opens-in-new-tab": "Buka di tab baru",
+	"default-language": "Bahasa default",
+	"source-lang-not-found": "Tak diterjemahkan. Default: $1",
+	"source-to-target": "untuk"
 }
