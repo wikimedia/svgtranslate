@@ -5,6 +5,7 @@
 		]
 	},
 	"svgtranslate": "SVG-käännin",
+	"learn-more": "Lue lisää.",
 	"help": "Ohje",
 	"login": "Kirjaudu sisään",
 	"logout": "Kirjaudu ulos",
@@ -32,6 +33,10 @@
 	"pick-an-image-desc": "Commonsista.",
 	"translate-labels-title": "Käännä",
 	"commons-logo-alt": "Wikimedia Commons -logo",
+	"upload-complete": "Tallennus valmis",
+	"upload-complete-commons": "Näytä kuva",
+	"upload-complete-translate-another": "Käännä toinen kuva",
+	"licenced-under": "Lisensoitu GPL 3.0 -lisenssillä tai myöhemmällä",
 	"version": "Versio $1",
 	"report-issue": "Raportoi bugeista",
 	"view-source": "Näytä Githubissa"
