@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mjälten",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -32,7 +33,7 @@
 	"nested-tspans-without-id": "inkapslad tspan",
 	"nested-tspans-with-id": "inkapslad tspan i $1",
 	"invalid-svg": "Fel uppstod när fil lästes in.",
-	"network-error": "Får fel från Wikimedia maskinerna. Var vänlig försök igen senare.",
+	"network-error": "Fel när information hämtades från Wikimedia-servrarna. Var vänlig försök igen senare.",
 	"pick-another": "← välj en annan fil",
 	"view-on-commons": "Visa på Commons",
 	"opens-in-new-tab": "Öppnas i ny flik",
