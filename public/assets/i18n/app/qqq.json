@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kizule",
 			"Omotecho",
 			"Robby",
 			"Tacsipacsi",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Zoranzoki21"
 		]
 	},
 	"svgtranslate": "The title of the application.",
@@ -25,7 +27,7 @@
 	"add-preferred-lang": "Label for the button that opens a popup for selecting a new language to add to the list of preferred languages.\n{{Identical|Add}}",
 	"search-help": "Help text for the search box.",
 	"search-label": "Label for the search box.",
-	"search-placeholder": "An example filename visible in the search box. Doesn't have to exist on Commons.",
+	"search-placeholder": "An example filename visible in the search box. Doesn't have to exist on Commons.\n{{optional}}",
 	"translate-button": "Search button text.\n{{Identical|Translate}}",
 	"no-translations": "Error message displayed for SVGs that have nothing to translate.",
 	"not-found": "Error message displayed if the requested file could not be found.",
