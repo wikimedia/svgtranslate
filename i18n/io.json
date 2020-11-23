@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"svgtranslate": "SVG-Tradukuro",
+	"info": "Helpas tradukar etiketi en arkivi SVG. Selektez arkivo en Commons por komencar.",
+	"learn-more": "Lernez pluse.",
+	"return-to-home": "retroirar a komencala pagino",
+	"help": "Helpo",
+	"login": "Enirar",
+	"logout": "Ekirar",
+	"logged-in-as": "Eniris kom $1",
+	"language-settings": "Linguala ajusti",
+	"done": "Facita",
+	"cancel": "Anular",
+	"interface-lang-field-label": "Linguo dil utensilo:",
+	"interface-lang-field-help": "La propra utensilo montresos en ca linguo.",
+	"add-preferred-lang": "Adjuntar",
+	"search-help": "Skribez la nomo di ula arkivo de Commons",
+	"translate-button": "Tradukez",
+	"invalid-format": "Nur imaji SVG suportesas.",
+	"default-language": "implicita linguo"
+}
