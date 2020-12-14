@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
@@ -10,10 +11,13 @@
 	"login": "Čäälit jieijâd siisâ",
 	"logout": "Čäälit jieijâd olgos",
 	"language-settings": "Kielâasâttâsah",
+	"done": "Vaalmâš",
 	"cancel": "Jooskâ",
+	"add-preferred-lang": "Lasseet",
 	"translate-button": "Jurgâl",
 	"source-to-target": "->",
 	"select-language": "Valjii kielâ",
+	"confirm-change-target-lang": "Molso kielâ",
 	"download-button-label": "Luođii",
 	"download-or-upload": "teikkâ",
 	"pick-an-image-title": "Valjii kove",
