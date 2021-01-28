@@ -13,7 +13,7 @@
         "ext-libxml": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "oojs/oojs-ui": "0.33.4",
+        "oojs/oojs-ui": "0.41.1",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "^4.1",
         "symfony/console": "^4.1",
