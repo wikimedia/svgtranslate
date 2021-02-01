@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kyykaarme",
 			"Maantietäjä",
 			"Pyscowicz"
 		]
@@ -39,7 +40,7 @@
 	"confirm-change-target-lang": "Vaihda kieli",
 	"upload-button-label": "Tallenna Commonsiin",
 	"upload-button-in-progress": "Tallennetaan Commonsiin...",
-	"upload-login-warning": "Kirjaudu sisään ladataksesi",
+	"upload-login-warning": "Kirjaudu sisään tallentaaksesi",
 	"download-button-label": "Lataa",
 	"download-or-upload": "tai",
 	"translation-image-alt": "Kuva, jota käännetään parhaillaan. Ei kuvausta saatavilla.",
