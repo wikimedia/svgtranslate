@@ -1,4 +1,23 @@
 {
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"learn-more": "Իմանալ ավելին",
 	"help": "Օգնություն",
-	"logout": "Դուրս գալ"
+	"logout": "Դուրս գալ",
+	"language-settings": "Լեզվական կարգավորումներ",
+	"done": "Արված է",
+	"cancel": "Չեղարկել",
+	"add-preferred-lang": "Ավելացնել",
+	"translate-button": "Թարգմանել",
+	"select-language": "Ընտրեք լեզուն",
+	"confirm-change-target-lang": "Փոխել լեզուն",
+	"download-or-upload": "կամ",
+	"translate-labels-title": "Թարգմանել",
+	"upload-complete-commons": "Դիտել պատկերը",
+	"version": "Տարբերակ $1",
+	"privacy-policy": "Գաղտնիության քաղաքականություն",
+	"report-issue": "Հայտնել խնդրի մասին"
 }

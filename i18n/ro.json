@@ -1,4 +1,7 @@
 {
+	"@metadata": {
+		"authors": []
+	},
 	"help": "Ajutor",
 	"logout": "Închide sesiunea"
 }

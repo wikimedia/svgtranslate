@@ -1,3 +1,11 @@
 {
-	"help": "Pagalba"
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"help": "Pagalba",
+	"invalid-format": "Galimi tik SVG failai.",
+	"invalid-svg": "Klaida skaitant failą.",
+	"version": "Versija $1"
 }

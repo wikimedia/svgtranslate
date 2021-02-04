@@ -1,1 +1,9 @@
-{}
+{
+	"@metadata": {
+		"authors": [
+			"OmniBus"
+		]
+	},
+	"login": "簽到",
+	"download-or-upload": "或"
+}

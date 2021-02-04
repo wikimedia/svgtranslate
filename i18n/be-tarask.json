@@ -1,3 +1,17 @@
 {
-	"help": "Дапамога"
+	"@metadata": {
+		"authors": [
+			"Renessaince"
+		]
+	},
+	"svgtranslate": "Пераклад SVG-файлаў",
+	"info": "Дапамажыце перакласьці тэкставыя меткі SVG-файлаў. Для пачатку абярыце файл зь Вікісховішча.",
+	"help": "Дапамога",
+	"login": "Увайсьці",
+	"logout": "Выйсьці",
+	"logged-in-as": "$1",
+	"language-settings": "Моўныя налады",
+	"done": "Зроблена",
+	"cancel": "Скасаваць",
+	"interface-lang-field-label": "Мова інструмэнту:"
 }
