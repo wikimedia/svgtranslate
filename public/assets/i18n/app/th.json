@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patsagorn Y."
+			"Patsagorn Y.",
+			"TMo3289"
 		]
 	},
 	"svgtranslate": "ตัวแปลภาษาใน SVG",
@@ -27,7 +28,11 @@
 	"no-translations": "ไฟล์นี้ไม่พร้อมแปลหรือไม่มีเนื้อหาที่แปลได้เลย กรุณาเลือกภาพอื่น",
 	"not-found": "ไฟล์ที่คุณเลือกไม่พบอยู่บนคอมมอนส์ กรุณาเลือกภาพอื่น",
 	"invalid-format": "รองรับเฉพาะไฟล์ SVG",
+	"unsupported-svg": "แฟ้มนี้ไม่สามารถแปลโดยใช้เครื่องมือนี้ได้เนื่องจากประกอบด้วย SVG ที่ไม่รองรับ ($1) ในข้อความต่อไปนี้: $2",
+	"nested-tspans-without-id": "tspan ซ้อน",
+	"nested-tspans-with-id": "tspan ซ้อนใน $1",
 	"invalid-svg": "พบข้อผิดพลาดระหว่างอ่านไฟล์",
+	"network-error": "มีข้อผิดพลาดในการรับข้อมูลจากเซิร์ฟเวอร์วิกิมีเดีย โปรดลองใหม่อีกครั้งภายหลัง",
 	"pick-another": "← เลือกภาพอื่น",
 	"view-on-commons": "ดูบนคอมมอนส์",
 	"opens-in-new-tab": "เปิดในแท็บใหม่",
@@ -41,5 +46,23 @@
 	"upload-button-in-progress": "กำลังอัพโหลด...",
 	"upload-login-warning": "ล็อคอินเพื่ออัพโหลด",
 	"download-button-label": "ดาวน์โหลด",
-	"download-or-upload": "หรือ"
+	"download-or-upload": "หรือ",
+	"translation-image-alt": "ภาพที่กำลังถูกแปล ไม่มีคำอธิบาย",
+	"preview-error-occurred": "เกิดความผิดพลาดในการสร้างภาพตัวอย่าง โปรดดำเนินการแปลต่อไป แต่หากความผิดพลาดนี้ยังเกิดขึ้นอยู่ไม่หาย โปรดรายงานข้อผิดพลาดโดยใช้ลิงค์ท้ายหน้าข้างล่าง",
+	"download-icon-alt": "ไอคอนแสดงการดาวน์โหลดแฟ้ม",
+	"pick-an-image-title": "เลือกภาพ",
+	"pick-an-image-desc": "จากคอมมอนส์",
+	"translate-icon-alt": "ไอคอนแสดงภาษาหลายภาษา",
+	"translate-labels-title": "แปล",
+	"translate-labels-desc": "ป้ายข้อความในภาพ",
+	"commons-logo-alt": "ตราสัญลักษณ์วิกิมีเดียคอมมอนส์",
+	"update-commons-title": "ปรับปรุงคอมมอนส์",
+	"update-commons-desc": "หรือดาวน์โหลดโดยตรงลงในเครื่องคอมพิวเตอร์ของท่าน",
+	"upload-complete": "การอัปโหลดสมบูรณ์",
+	"upload-complete-message": "ขอขอบคุณ! การแปลของท่านที่ทำไว้กับ $1 ถูกอัปโหลดแล้ว ท่านสามารถแปลป้ายข้อความต่อและอัปโหลดอีกครั้งเพื่อปรับปรุงภาพดังกล่าว",
+	"upload-complete-commons": "แสดงภาพ",
+	"upload-complete-translate-another": "แปลอีกภาพ",
+	"licenced-under": "อนุญาตภายใต้สัญญา GPL 3.0 หรือใหม่กว่า",
+	"developed-by": "พัฒนาโดยทีมเทคโนโลยีชุมชนของมูลนิธิวิกิมีเดีย",
+	"version": "รุ่นที่ $1"
 }

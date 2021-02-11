@@ -11,7 +11,7 @@ services:
             - .:/var/www:cached
 
     assets:
-        image: node:11.5
+        image: node:14.15
         working_dir: /svgtranslate
         volumes:
             - ./:/svgtranslate:cached

@@ -1,4 +1,19 @@
 {
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"svgtranslate": "SVG-ის თარგმნა",
+	"return-to-home": "მთავარზე დაბრუნება",
 	"help": "დახმარება",
-	"logout": "გასვლა"
+	"login": "შესვლა",
+	"logout": "გასვლა",
+	"logged-in-as": "შესული ხართ როგორც $1",
+	"language-settings": "ენის პარამეტრები",
+	"done": "გაკეთდა",
+	"cancel": "გაუქმება",
+	"interface-lang-field-label": "ხელსაწყოს ენა:",
+	"add-preferred-lang": "დამატება",
+	"translate-button": "თარგმნა"
 }

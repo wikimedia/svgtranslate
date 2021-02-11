@@ -1,3 +1,13 @@
 {
-	"help": "Помощ"
+	"@metadata": {
+		"authors": [
+			"Tlubenov"
+		]
+	},
+	"help": "Помощ",
+	"done": "Готово",
+	"cancel": "Отказ",
+	"add-preferred-lang": "Добави",
+	"translate-button": "Превод",
+	"download-button-label": "Изтегляне"
 }

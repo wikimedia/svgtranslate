@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Akmaie Ajam",
 			"Sonic Speedy"
 		]
 	},
@@ -37,5 +38,37 @@
 	"opens-in-new-tab": "Buka di tab baru",
 	"default-language": "Bahasa default",
 	"source-lang-not-found": "Tak diterjemahkan. Default: $1",
-	"source-to-target": "untuk"
+	"source-to-target": "untuk",
+	"select-language": "Pilih bahasa",
+	"confirmation-to-switch-target-lang": "Anda mencoba mengubah bahasa terjemahan tetapi Anda memiliki terjemahan yang belum disimpan. Mengubah bahasa akan mengakibatkan hilangnya terjemahan yang ditambahkan. Harap unggah terjemahan ke Commons atau unduh file terjemahan sebelum melanjutkan. Apakah Anda ingin melanjutkan?",
+	"confirm-change-target-lang": "Ubah bahasa",
+	"upload-button-label": "Unggah ke Commons",
+	"upload-button-in-progress": "Unggah ke Commons",
+	"upload-login-warning": "Masuk untuk mengunggah",
+	"download-button-label": "Unduh",
+	"download-or-upload": "atau",
+	"translation-image-alt": "Gambar yang sedang diterjemahkan. Deskripsi tidak tersedia.",
+	"preview-error-occurred": "Kesalahan terjadi ketika Terjadi kesalahan saat mengambil pratinjau. Silakan lanjutkan terjemahan, tetapi jika kesalahan ini terus berlanjut, laporkan bug (melalui tautan di footer di bawah).",
+	"download-icon-alt": "Ikon yang menunjukkan unduh file",
+	"pick-an-image-title": "Pilih gambar",
+	"pick-an-image-desc": "dari Commons.",
+	"translate-icon-alt": "Ikon yang menandai beberapa bahasa",
+	"translate-labels-title": "Terjemahkan",
+	"translate-labels-desc": "label di dalam gambar.",
+	"commons-logo-alt": "Logo Wikimedia Commons",
+	"update-commons-title": "Perbarui Commons",
+	"update-commons-desc": "atau unduh secara langsung ke komputer Anda.",
+	"upload-complete": "Unggah selesai",
+	"upload-complete-message": "Terima kasih! Terjemahan Anda ke $1 telah diunggah. Anda dapat terus menerjemahkan label dan mengupload lagi untuk memperbarui gambar.",
+	"upload-complete-commons": "Lihat gambar",
+	"upload-complete-translate-another": "Terjemahkan gambar lain",
+	"licenced-under": "Dilisensikan sebagai GPL 3.0 atau lebih baru",
+	"developed-by": "Dikembangkan oleh tim Komunitas Teknologi Wikimedia Foundation",
+	"version": "Versi $1",
+	"git-hash": "Saat ini di commit $1",
+	"toolforge-logo-alt": "Logo Toolforge 'landasan'",
+	"powered-by-toolforge": "Didukung oleh Toolforge",
+	"privacy-policy": "Kebijakan privasi",
+	"report-issue": "Laporkan kesalahan",
+	"view-source": "Lihat di Github"
 }
