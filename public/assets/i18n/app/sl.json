@@ -1,3 +1,9 @@
 {
-	"help": "Pomoč"
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"help": "Pomoč",
+	"powered-by-toolforge": "Omogoča Toolforge"
 }

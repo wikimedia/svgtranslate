@@ -1,3 +1,17 @@
 {
-	"help": "Laguntza"
+	"@metadata": {
+		"authors": [
+			"An13sa"
+		]
+	},
+	"svgtranslate": "SVG Itzulpena",
+	"help": "Laguntza",
+	"login": "Saioa hasi",
+	"logout": "Saioa itxi",
+	"done": "Egina",
+	"cancel": "Utzi",
+	"add-preferred-lang": "Gehitu",
+	"download-button-label": "Deskargatu",
+	"download-or-upload": "edo",
+	"translate-labels-title": "Itzuli"
 }

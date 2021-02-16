@@ -1,4 +1,10 @@
 {
+	"@metadata": {
+		"authors": [
+			"Leducthn"
+		]
+	},
+	"svgtranslate": "Dịch SVG",
 	"help": "Trợ giúp",
 	"logout": "Đăng xuất"
 }

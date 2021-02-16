@@ -1,3 +1,10 @@
 {
-	"help": "Palīdzība"
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"help": "Palīdzība",
+	"download-or-upload": "vai",
+	"privacy-policy": "Privātuma politika"
 }

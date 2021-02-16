@@ -1,3 +1,15 @@
 {
-	"help": "Alîkarî"
+	"@metadata": {
+		"authors": [
+			"Biyolojiyabikurdi"
+		]
+	},
+	"svgtranslate": "Wergerandina SVG",
+	"info": "Alîkarî bike ji boy wergerandina etîketên nivîsên dosyayên SVG. Ji boy destpêkirinê ji Commonsê belgeyek bijêre.",
+	"return-to-home": "vegere seriyê",
+	"help": "Alîkarî",
+	"language-settings": "Eyarên ziman",
+	"cancel": "Betal",
+	"interface-lang-field-label": "Zimanên amûran:",
+	"interface-lang-field-help": "Amûr wê bi vî zimanê bêne nîşankirin."
 }

@@ -1,1 +1,13 @@
-{}
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"help": "Օգնութիւն",
+	"cancel": "Չեղարկել",
+	"add-preferred-lang": "Աւելցնել",
+	"translate-button": "Թարգմանութիւն",
+	"download-or-upload": "կամ",
+	"translate-labels-title": "Թարգմանութիւն"
+}
