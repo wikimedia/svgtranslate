@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e6b637b647b352914011b5021c86d30",
+    "content-hash": "d65702e278b1c4af0698217b5723e991",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -566,27 +566,28 @@
         },
         {
             "name": "oojs/oojs-ui",
-            "version": "v0.33.4",
+            "version": "v0.41.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/oojs-ui.git",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa"
+                "reference": "0034158b0a4ed728908a6e564a7589c602e4174e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/b1f342a319d367dfd60794040f224c10af7848aa",
-                "reference": "b1f342a319d367dfd60794040f224c10af7848aa",
+                "url": "https://api.github.com/repos/wikimedia/oojs-ui/zipball/0034158b0a4ed728908a6e564a7589c602e4174e",
+                "reference": "0034158b0a4ed728908a6e564a7589c602e4174e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.99"
+                "php": ">=7.2.9"
             },
             "require-dev": {
-                "jakub-onderka/php-console-highlighter": "0.3.2",
-                "jakub-onderka/php-parallel-lint": "1.0.0",
-                "mediawiki/mediawiki-codesniffer": "26.0.0",
-                "mediawiki/minus-x": "0.3.1",
-                "phpunit/phpunit": "4.8.36 || ^6.5"
+                "mediawiki/mediawiki-codesniffer": "35.0.0",
+                "mediawiki/mediawiki-phan-config": "0.10.6",
+                "mediawiki/minus-x": "1.1.1",
+                "php-parallel-lint/php-console-highlighter": "0.5.0",
+                "php-parallel-lint/php-parallel-lint": "1.2.0",
+                "phpunit/phpunit": "^8.5"
             },
             "type": "library",
             "autoload": {
@@ -642,7 +643,10 @@
             ],
             "description": "Provides library of common widgets, layouts, and windows.",
             "homepage": "https://www.mediawiki.org/wiki/OOUI",
-            "time": "2019-07-23T00:02:20+00:00"
+            "support": {
+                "source": "https://github.com/wikimedia/oojs-ui/tree/v0.41.3"
+            },
+            "time": "2021-03-12T19:07:25+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -6115,5 +6119,6 @@
         "ext-libxml": "*",
         "ext-mbstring": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
