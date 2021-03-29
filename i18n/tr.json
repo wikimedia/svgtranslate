@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"Hedda"
+			"Hedda",
+			"Joseph"
 		]
 	},
 	"svgtranslate": "SVG Çeviri",
@@ -68,7 +69,7 @@
 	"git-hash": "Şu anda $1 taahhütte",
 	"toolforge-logo-alt": "Toolforge 'örs' logosu",
 	"powered-by-toolforge": "Toolforge tarafından desteklenmektedir",
-	"privacy-policy": "Gizlilik politikası",
+	"privacy-policy": "Gizlilik ilkesi",
 	"report-issue": "Hata bildir",
 	"view-source": "Github'da görüntüleyin"
 }
