@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leducthn"
+			"Leducthn",
+			"Nghiemtrongdai VN"
 		]
 	},
 	"svgtranslate": "Dịch SVG",
 	"help": "Trợ giúp",
-	"logout": "Đăng xuất"
+	"login": "Đăng nhập",
+	"logout": "Đăng xuất",
+	"download-button-label": "Tải xuống",
+	"download-or-upload": "hoặc",
+	"translate-labels-title": "Biên dịch"
 }

@@ -1,7 +1,44 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"咽頭べさ"
+		]
 	},
+	"svgtranslate": "SVG ကၠာဲဘာသာ",
+	"learn-more": "ဆက်ဗ္တောန်ဗှ်အာ",
+	"return-to-home": "ကလင်ဆက်မုလိက်",
 	"help": "ရီု",
-	"logout": "တိတ်"
+	"login": "လုပ်လံက်အောန်",
+	"logout": "တိတ်",
+	"logged-in-as": "လုပ်လံက်အေန်လဝ် နကဵု $1",
+	"language-settings": "ဖျေဟ်ဒၞာဲ အရေဝ်ဘာသာ",
+	"done": "တုဲဒှ်",
+	"cancel": "ဟွံဆက်ကၠောန်ရ",
+	"interface-lang-field-label": "အရေဝ်ဘာသာကိရိယာ:",
+	"interface-lang-field-help": "နူကိရယာတအ်ထ္ၜးကဵုအရေဝ်ဘာသာ။",
+	"preferred-langs-field-label": "ပ္ဍဲအရေဝ်ဘာသာမိက်ဂွံကၠာဲ/နူ:",
+	"add-preferred-lang": "ထပ်စုတ်",
+	"search-help": "နူCommonsချူစုတ်ယၟုဝှာင်",
+	"search-label": "ယၟုဝှာင် (without 'File:' prefix) ဟွံသေင်မ္ဂး URL:",
+	"search-placeholder": "1435.svg ပွဲပၞာန်ပြင်သေတ် ၁၀၀သၞာံ",
+	"translate-button": "ကၠာဲဘာသာ",
+	"invalid-format": "ဒုင်တဲဝှာင် SVGဂမၠိုင်မွဲဟေင်",
+	"invalid-svg": "ဝှာင်လီုလာဲ",
+	"pick-another": "← အာကေတ်ဝှာင်တဏဟ်",
+	"view-on-commons": "ဗှ်ပ္ဍဲကောန်မန်စ်",
+	"opens-in-new-tab": "ပံက်ပ္ဍဲ မုက်လိက်တၟိ",
+	"default-language": "အရေဝ်ဘာသာ ဒတန်",
+	"source-to-target": "နူ",
+	"select-language": "ရုဲအရေဝ်ဘာသာညိ",
+	"confirm-change-target-lang": "သၠာဲအရေဝ်ဘာသာ",
+	"upload-button-label": "ပတိုန်ပၠုပ် ပ္ဍဲကောမ်မောန်",
+	"upload-button-in-progress": "ပတိုန်ပၠုပ် ပ္ဍဲကောမ်မောန်…",
+	"download-button-label": "တံင်လုပ်ကေတ်",
+	"download-or-upload": "ဟွံသေင်မ္ဂး",
+	"pick-an-image-desc": "နူကောမ်မောန်",
+	"translate-labels-title": "ကၠာဲဘာသာ",
+	"translate-labels-desc": "မုလိက်ပ္ဍဲဗီုရုပ်",
+	"commons-logo-alt": "လိုဂိုဝဳကဳမဳဒဳယာကောမ်မောန်",
+	"update-commons-title": "ပတိုန်ဒါန်ပ္ဍဲကောမ်မောန်",
+	"upload-complete": "ပတိုန်ဒါန် တဲုဒှ်အာ"
 }
