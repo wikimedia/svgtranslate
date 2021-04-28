@@ -1,0 +1,53 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: oojs/oojs-ui
+    versions:
+    - ">= 0.34.a, < 0.35"
+  - dependency-name: symfony/mime
+    versions:
+    - 5.2.2
+    - 5.2.3
+    - 5.2.4
+    - 5.2.5
+  - dependency-name: symfony/form
+    versions:
+    - 5.2.2
+    - 5.2.3
+    - 5.2.4
+    - 5.2.5
+  - dependency-name: oojs/oojs-ui
+    versions:
+    - 0.41.1
+    - 0.41.2
+  - dependency-name: symfony/yaml
+    versions:
+    - 5.2.2
+    - 5.2.3
+    - 5.2.4
+  - dependency-name: symfony/web-link
+    versions:
+    - 5.2.2
+    - 5.2.3
+    - 5.2.4
+  - dependency-name: symfony/expression-language
+    versions:
+    - 5.2.2
+    - 5.2.3
+  - dependency-name: symfony/process
+    versions:
+    - 5.2.2
+    - 5.2.3
+  - dependency-name: symfony/dotenv
+    versions:
+    - 5.2.2
+    - 5.2.3
+  - dependency-name: symfony/asset
+    versions:
+    - 5.2.2
+    - 5.2.3
