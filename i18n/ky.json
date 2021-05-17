@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bosogo"
+		]
+	},
+	"learn-more": "Көбүрөөк окуу.",
+	"help": "Жардам",
+	"login": "Кирүү",
+	"logout": "Чыгуу",
+	"logged-in-as": "$1 катары кирдиңиз",
+	"language-settings": "Тилдин жөндөөлөрү",
+	"done": "Даяр",
+	"cancel": "Жокко чыгаруу",
+	"add-preferred-lang": "Кошуу",
+	"translate-button": "Которуу",
+	"invalid-format": "SVG файлдарды гана колдойт.",
+	"invalid-svg": "Файлды окуу катасы.",
+	"default-language": "Демейки тил",
+	"select-language": "Тилди тандаңыз",
+	"confirm-change-target-lang": "Тилди өзгөртүү",
+	"download-button-label": "Жүктөп алуу",
+	"download-or-upload": "же",
+	"upload-complete": "Жүктөө аяктады",
+	"upload-complete-commons": "Сүрөттү көрүү",
+	"upload-complete-translate-another": "Башка сүрөттү которуу",
+	"version": "$1 версиясы",
+	"powered-by-toolforge": "Toolforge хостинг чөйрөсүндө иштейт",
+	"privacy-policy": "Купуялык саясаты",
+	"report-issue": "Ката жөнүндө кабар кылуу"
+}
