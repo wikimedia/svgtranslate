@@ -16,6 +16,9 @@
 	"done": "Зроблена",
 	"cancel": "Скасаваць",
 	"interface-lang-field-label": "Мова інструмэнту:",
+	"interface-lang-field-help": "Інструмэнт будзе паказвацца гэтай мовай.",
+	"preferred-langs-field-label": "Пажаданыя мовы для перакладу на/з:",
 	"add-preferred-lang": "Дадаць",
-	"search-help": "Увядзіце назву файла зь Вікісховішча"
+	"search-help": "Увядзіце назву файла зь Вікісховішча",
+	"source-lang-not-found": "Не перакладзена. Дапомна: $1"
 }
