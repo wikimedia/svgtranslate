@@ -6,6 +6,8 @@
 	},
 	"svgtranslate": "Пераклад SVG-файлаў",
 	"info": "Дапамажыце перакласьці тэкставыя меткі SVG-файлаў. Для пачатку абярыце файл зь Вікісховішча.",
+	"learn-more": "Даведацца болей.",
+	"return-to-home": "вярнуцца на галоўную",
 	"help": "Дапамога",
 	"login": "Увайсьці",
 	"logout": "Выйсьці",
@@ -13,5 +15,10 @@
 	"language-settings": "Моўныя налады",
 	"done": "Зроблена",
 	"cancel": "Скасаваць",
-	"interface-lang-field-label": "Мова інструмэнту:"
+	"interface-lang-field-label": "Мова інструмэнту:",
+	"interface-lang-field-help": "Інструмэнт будзе паказвацца гэтай мовай.",
+	"preferred-langs-field-label": "Пажаданыя мовы для перакладу на/з:",
+	"add-preferred-lang": "Дадаць",
+	"search-help": "Увядзіце назву файла зь Вікісховішча",
+	"source-lang-not-found": "Не перакладзена. Дапомна: $1"
 }
