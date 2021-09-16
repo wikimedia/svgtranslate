@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Balajijagadesh"
+			"Balajijagadesh",
+			"Gurulenin"
 		]
 	},
+	"svgtranslate": "SVG மொழிபெயர்ப்பு",
 	"help": "உதவி",
 	"login": "உள்நுழை",
 	"logout": "விடுபதிகை",
