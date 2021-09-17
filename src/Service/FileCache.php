@@ -9,9 +9,9 @@ namespace App\Service;
 class FileCache
 {
     /**
-     * 5 hours
+     * 5 minutes
      */
-    private const CACHE_DURATION = 5 * 60 * 60;
+    private const CACHE_DURATION = 5 * 60;
 
     /** @var Retriever */
     private $retriever;
