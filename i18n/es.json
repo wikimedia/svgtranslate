@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Destinid10 2",
 			"Fitoschido",
 			"Joanmp17",
 			"MarcoAurelio"
 		]
 	},
 	"svgtranslate": "Traducir SVG",
+	"info": "Ayude a traducir campos de texto en archivos SVG. Escoge un archivo de Commons para comenzar.",
 	"learn-more": "Más información.",
 	"return-to-home": "volver a la página principal",
 	"help": "Ayuda",
@@ -18,9 +20,11 @@
 	"cancel": "Cancelar",
 	"interface-lang-field-label": "Idioma de herramienta:",
 	"interface-lang-field-help": "La herramienta misma se mostrará en este idioma.",
+	"preferred-langs-field-label": "Lenguajes preferidos para traducir al/desde:",
 	"add-preferred-lang": "Añadir",
 	"search-help": "Escribe un nombre de archivo de Commons",
 	"search-label": "Nombre de archivo (sin prefijo «File:») o URL:",
+	"search-placeholder": "100 Años Guerra Francia 1435.svg",
 	"translate-button": "Traducir",
 	"not-found": "No se encuentra el archivo solicitado. Selecciona otra imagen.",
 	"invalid-format": "Se admiten únicamente archivos SVG.",
@@ -36,9 +40,12 @@
 	"confirm-change-target-lang": "Cambiar idioma",
 	"upload-button-label": "Cargar en Commons",
 	"upload-button-in-progress": "Cargando en Commons…",
+	"upload-login-warning": "Inicie sesión para habilitar la carga",
 	"download-button-label": "Descargar",
 	"download-or-upload": "o bien",
 	"translation-image-alt": "La imagen que está traduciéndose ahora. No está disponible ninguna descripción.",
+	"download-icon-alt": "Un icono que indica la descarga del archivo",
+	"pick-an-image-title": "Escoge una imagen",
 	"pick-an-image-desc": "de Commons.",
 	"translate-labels-title": "Traducir",
 	"translate-labels-desc": "las etiquetas en la imagen.",

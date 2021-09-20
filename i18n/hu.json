@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"GBAB",
 			"Tacsipacsi"
 		]
 	},
 	"svgtranslate": "SVG-fordító",
 	"info": "Segíts az SVG-fájlok szövegcímkéinek lefordításában. Válassz egy fájlt a Commonsról a kezdéshez.",
-	"learn-more": "Tudj meg többet, és adj visszajelzést!",
+	"learn-more": "Tudjon meg többet.",
 	"return-to-home": "vissza a kezdőlapra",
 	"help": "Súgó",
 	"login": "Bejelentkezés",
@@ -27,6 +28,9 @@
 	"no-translations": "Ebben a fájlban nincsenek lefordítható címkék, válassz másik képet.",
 	"not-found": "A kért fájl nem található, válassz másik képet.",
 	"invalid-format": "Csak SVG-fájlok támogatottak.",
+	"unsupported-svg": "Ez a fájl nem fordítható le ezzel az eszközzel, mert nem támogatott SVG-t ($1) tartalmaz a következő szövegnél: $2",
+	"nested-tspans-without-id": "beágyazott tspan",
+	"nested-tspans-with-id": "beágyazott tspan itt: $1",
 	"invalid-svg": "Hiba a fájl olvasása közben.",
 	"network-error": "Nem sikerült az információk lekérése a Wikimédia-szerverekről. Próbáld újra később.",
 	"pick-another": "← másik fájl választása",
@@ -61,6 +65,9 @@
 	"licenced-under": "Licencelve a GPL 3.0-s vagy újabb verziója alatt",
 	"developed-by": "Fejlesztette a Wikimédia Alapítvány Community Tech csapata",
 	"version": "$1 verzió",
+	"git-hash": "Jelenleg ennél a véglegesítésnél: $1",
+	"toolforge-logo-alt": "A Toolforge „üllő” logója",
+	"powered-by-toolforge": "Powered by Toolforge",
 	"privacy-policy": "Adatvédelmi irányelv",
 	"report-issue": "Hibajelentés",
 	"view-source": "Megtekintés a GitHubon"
