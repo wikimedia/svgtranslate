@@ -37,7 +37,7 @@
     "require-dev": {
         "mediawiki/minus-x": "^0.3",
         "php-coveralls/php-coveralls": "^2.1",
-        "slevomat/coding-standard": "^5.0",
+        "slevomat/coding-standard": "^7.0",
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",
