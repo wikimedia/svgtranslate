@@ -19,11 +19,15 @@
 	"select-language": "ဘာသာစကားတစ်ခု ရွေးရန်",
 	"confirm-change-target-lang": "ဘာသာစကား ပြောင်းလဲရန်",
 	"upload-button-label": "ကွန်မွန်းစ်သို့ အက်ပလုဒ်တင်ရန်",
+	"upload-button-in-progress": "ကွန်မွန်းစ်သို့ အက်ပလုဒ်တင်နေသည်...",
+	"upload-login-warning": "အက်ပလုဒ်တင်ခွင့်ရှိရန် လော့ဂ်အင်ဝင်ပါ",
 	"download-button-label": "ဒေါင်းလုဒ်",
 	"download-or-upload": "သို့မဟုတ်",
 	"translate-labels-title": "ဘာသာပြန်ပါ",
 	"upload-complete-commons": "ရုပ်ပုံ ကြည့်ရန်",
 	"upload-complete-translate-another": "အခြားပုံတစ်ခု ဘာသာပြန်ရန်",
+	"version": "ဗားရှင်း $1",
+	"powered-by-toolforge": "Toolforge မှ ထောက်ပံ့ထားသည်",
 	"privacy-policy": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ",
 	"report-issue": "အခက်အခဲများ သတင်းပို့ရန်"
 }
