@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a0b7444ffb90b43ded07d2afc10f604",
+    "content-hash": "75276be040c04aa9b4c23fb5274fbb27",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -6152,26 +6152,26 @@
         },
         {
             "name": "mediawiki/minus-x",
-            "version": "0.3.2",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/mediawiki-tools-minus-x.git",
-                "reference": "5ef302a0e911959caf42b713e66b93a1b7c7ad76"
+                "reference": "74b1fce4acbe6be1f9b4a0775287e09e0e3f6af2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/mediawiki-tools-minus-x/zipball/5ef302a0e911959caf42b713e66b93a1b7c7ad76",
-                "reference": "5ef302a0e911959caf42b713e66b93a1b7c7ad76",
+                "url": "https://api.github.com/repos/wikimedia/mediawiki-tools-minus-x/zipball/74b1fce4acbe6be1f9b4a0775287e09e0e3f6af2",
+                "reference": "74b1fce4acbe6be1f9b4a0775287e09e0e3f6af2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
-                "symfony/console": "^3.3.5 || ^4"
+                "php": ">=7.2.9",
+                "symfony/console": "^3.3.5 || ^4 || ^5"
             },
             "require-dev": {
-                "jakub-onderka/php-console-highlighter": "0.3.2",
-                "jakub-onderka/php-parallel-lint": "1.0.0",
-                "mediawiki/mediawiki-codesniffer": "22.0.0"
+                "mediawiki/mediawiki-codesniffer": "34.0.0",
+                "php-parallel-lint/php-console-highlighter": "0.5.0",
+                "php-parallel-lint/php-parallel-lint": "1.2.0"
             },
             "bin": [
                 "bin/minus-x"
@@ -6194,7 +6194,10 @@
             ],
             "description": "Removes executable bit from files that shouldn't be executable",
             "homepage": "https://www.mediawiki.org/wiki/MinusX",
-            "time": "2018-10-02T05:14:16+00:00"
+            "support": {
+                "source": "https://github.com/wikimedia/mediawiki-tools-minus-x/tree/1.1.1"
+            },
+            "time": "2021-01-06T01:11:18+00:00"
         },
         {
             "name": "nikic/php-parser",
