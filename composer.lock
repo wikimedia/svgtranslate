@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "844901563097e127a49ef34a587aa390",
+    "content-hash": "b43052b393dcb7b73763924cf0101c1a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -4117,27 +4117,23 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.13",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "65e70bab62f3da7089a8d4591fb23fbacacb3479"
+                "reference": "5be20b3830f726e019162b26223110c8f47cf274"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/65e70bab62f3da7089a8d4591fb23fbacacb3479",
-                "reference": "65e70bab62f3da7089a8d4591fb23fbacacb3479",
+                "url": "https://api.github.com/repos/symfony/process/zipball/5be20b3830f726e019162b26223110c8f47cf274",
+                "reference": "5be20b3830f726e019162b26223110c8f47cf274",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1.3"
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Process\\": ""
@@ -4160,9 +4156,26 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Process Component",
+            "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
-            "time": "2020-07-23T08:31:43+00:00"
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v5.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-11-28T15:25:38+00:00"
         },
         {
             "name": "symfony/property-access",
