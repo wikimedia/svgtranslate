@@ -18,7 +18,11 @@
 	"interface-lang-field-label": "Мова інструмэнту:",
 	"interface-lang-field-help": "Інструмэнт будзе паказвацца гэтай мовай.",
 	"preferred-langs-field-label": "Пажаданыя мовы для перакладу на/з:",
+	"preferred-langs-field-help": "Гэтыя мовы паказваюцца ўверсе, калі вы пераключаецеся між імі на старонцы перакладу.",
 	"add-preferred-lang": "Дадаць",
 	"search-help": "Увядзіце назву файла зь Вікісховішча",
+	"search-label": "Назва файлу (бяз прэфіксу „File:“) або URL:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "Перакласьці",
 	"source-lang-not-found": "Не перакладзена. Дапомна: $1"
 }
