@@ -31,7 +31,7 @@
         "symfony/twig-bundle": "^4.1",
         "symfony/validator": "^5.0",
         "symfony/web-link": "^5.2",
-        "symfony/yaml": "^4.1",
+        "symfony/yaml": "^5.3",
         "wikimedia/toolforge-bundle": "^1.0"
     },
     "require-dev": {
