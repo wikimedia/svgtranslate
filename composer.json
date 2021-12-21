@@ -20,7 +20,7 @@
         "symfony/dotenv": "^5.4",
         "symfony/expression-language": "^5.4",
         "symfony/flex": "^1.1",
-        "symfony/form": "^4.1",
+        "symfony/form": "^5.4",
         "symfony/framework-bundle": "^4.2",
         "symfony/mime": "^4.2",
         "symfony/monolog-bundle": "^3.1",
