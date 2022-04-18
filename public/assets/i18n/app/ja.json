@@ -4,11 +4,12 @@
 			"Aefgh39622",
 			"Afaz",
 			"Omotecho",
+			"Shirayuki",
 			"神樂坂秀吉"
 		]
 	},
 	"svgtranslate": "SVG 翻訳",
-	"info": "SVG ファイル内のテキストラベルの翻訳を支援します。コモンスでファイルを選び、作業を開始します。",
+	"info": "SVG ファイル内のテキストラベルの翻訳を支援します。コモンスのファイルを選択して、作業を開始します。",
 	"learn-more": "詳細をご参照ください。",
 	"return-to-home": "ホーム画面に戻る",
 	"help": "ヘルプ",
@@ -24,7 +25,7 @@
 	"preferred-langs-field-help": "翻訳ページでこれらの言語を切り替えると、ページ上部付近に表示されます。",
 	"add-preferred-lang": "追加",
 	"search-help": "コモンズのファイル名を入力",
-	"search-label": "ファイル名（ファイル:など接頭辞は不用）もしくは URL：",
+	"search-label": "ファイル名 (ファイル:など接頭辞は不用) または URL:",
 	"search-placeholder": "100 Years War France 1435.svg",
 	"translate-button": "翻訳",
 	"no-translations": "このファイルには翻訳対象の文字ラベルがありません。他の画像を選び直してください。",

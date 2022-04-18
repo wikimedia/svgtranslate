@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"Darafsh",
 			"FarsiNevis"
 		]
@@ -56,10 +57,10 @@
 	"translate-labels-title": "ترجمه",
 	"translate-labels-desc": "برچسب‌های در این تصویر.",
 	"commons-logo-alt": "The Wikimedia Commons logo",
-	"update-commons-title": "بروزرسانی ویکی‌انبار",
+	"update-commons-title": "به‌روزرسانی ویکی‌انبار",
 	"update-commons-desc": "یا دانلود مستقیم بر روی رایانه‌تان.",
 	"upload-complete": "بارگذاری کامل شد",
-	"upload-complete-message": "تشکر! ترجمه‌های شما بر روی $1 در ویکی‌انبار بارگذاری شد. می‌توانید ترجمهٔ برچسب‌ها را ادامه دهید و فایل را دوباره بارگذاری کنید تا تصویر مجدداً بروز شود.",
+	"upload-complete-message": "تشکر! ترجمه‌های شما بر روی $1 در ویکی‌انبار بارگذاری شد. می‌توانید ترجمهٔ برچسب‌ها را ادامه دهید و فایل را دوباره بارگذاری کنید تا تصویر مجدداً به‌روزرسانی شود.",
 	"upload-complete-commons": "مشاهدهٔ تصویر",
 	"upload-complete-translate-another": "تصویری دیگر را ترجمه کنید",
 	"licenced-under": "تحت مجوز GPL 3.0 یا بالاتر",

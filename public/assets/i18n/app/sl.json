@@ -5,7 +5,10 @@
 		]
 	},
 	"help": "Pomoč",
+	"cancel": "Prekliči",
+	"translate-button": "Prevedi",
 	"upload-button-label": "Naloži v Zbirko",
 	"upload-button-in-progress": "Nalagam v Zbirko ...",
+	"translate-labels-title": "Prevedi",
 	"powered-by-toolforge": "Omogoča Toolforge"
 }
