@@ -1,9 +1,8 @@
-version: 2
+version: 2.1
 jobs:
   build:
     machine:
-      enabled: true
-      image: circleci/classic:latest
+      image: ubuntu-2004:202201-02
 
     steps:
       - checkout
