@@ -29,6 +29,7 @@ jobs:
         run: |
           sudo docker compose up --build -d
           sudo docker compose exec web composer install
+          sudo docker compose exec web npm install
       - name: Run linting
         run: |
           sudo docker compose exec web composer lint
