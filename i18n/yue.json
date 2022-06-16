@@ -1,9 +1,47 @@
 {
 	"@metadata": {
 		"authors": [
-			"OmniBus"
+			"OmniBus",
+			"Z423x5c6"
 		]
 	},
+	"svgtranslate": "SVG 翻譯",
+	"learn-more": "知多啲",
+	"return-to-home": "返去首頁",
+	"help": "指南",
 	"login": "簽到",
-	"download-or-upload": "或"
+	"logout": "登出",
+	"logged-in-as": "以 $1 嘅身份登入",
+	"language-settings": "語言設定",
+	"done": "搞掂",
+	"cancel": "取消",
+	"interface-lang-field-label": "工具語言：",
+	"add-preferred-lang": "新增",
+	"search-help": "輸入嚟自共享資源嘅檔案名",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "翻譯",
+	"view-on-commons": "喺共享資源到睇",
+	"opens-in-new-tab": "喺新分頁開啟",
+	"default-language": "預設語言",
+	"source-to-target": "至",
+	"select-language": "揀語言",
+	"confirm-change-target-lang": "改語言",
+	"upload-button-label": "上載去共享資源",
+	"upload-button-in-progress": "上載緊上去共享資源",
+	"download-button-label": "下載",
+	"download-or-upload": "或",
+	"pick-an-image-title": "揀一幅相",
+	"pick-an-image-desc": "嚟自共享資源。",
+	"translate-labels-title": "翻譯",
+	"translate-labels-desc": "圖入邊嘅標簽",
+	"commons-logo-alt": "維基共享資源標誌",
+	"update-commons-title": "更新共享資源",
+	"upload-complete": "上載完",
+	"upload-complete-commons": "睇相",
+	"upload-complete-translate-another": "翻譯另一張圖片",
+	"version": "版本 $1",
+	"powered-by-toolforge": "由 Toolforge 支援",
+	"privacy-policy": "私隱政策",
+	"report-issue": "報告錯誤",
+	"view-source": "喺 Github 到睇"
 }
