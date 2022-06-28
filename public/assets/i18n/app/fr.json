@@ -21,7 +21,7 @@
 	"language-settings": "Paramètres de langue",
 	"done": "Fait",
 	"cancel": "Annuler",
-	"interface-lang-field-label": "Langue des outils :",
+	"interface-lang-field-label": "Langue de l’outil :",
 	"interface-lang-field-help": "L’outil lui-même sera affiché dans cette langue.",
 	"preferred-langs-field-label": "Langues de traduction source/cible préférées :",
 	"preferred-langs-field-help": "Ces langues sont visibles près du haut lorsque vous en changez sur la page de traduction.",

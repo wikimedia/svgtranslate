@@ -18,7 +18,18 @@
 	"interface-lang-field-label": "Мова інструмэнту:",
 	"interface-lang-field-help": "Інструмэнт будзе паказвацца гэтай мовай.",
 	"preferred-langs-field-label": "Пажаданыя мовы для перакладу на/з:",
+	"preferred-langs-field-help": "Гэтыя мовы паказваюцца ўверсе, калі вы пераключаецеся між імі на старонцы перакладу.",
 	"add-preferred-lang": "Дадаць",
 	"search-help": "Увядзіце назву файла зь Вікісховішча",
+	"search-label": "Назва файлу (бяз прэфіксу „File:“) або URL:",
+	"search-placeholder": "100 Years War France 1435.svg",
+	"translate-button": "Перакласьці",
+	"no-translations": "Гэты файл ня мае ніякіх метак для перакладу. Калі ласка, абярыце іншую выяву.",
+	"not-found": "Запытаны вамі файл ня знойдзены. Калі ласка, абярыце іншую выяву.",
+	"invalid-format": "Падтрымліваюцца толькі SVG-файлы.",
+	"unsupported-svg": "Гэты файл ня можа быць перакладзены дадзеным інструмэнтам, бо ў ім месьціцца непадтрымваны SVG ($1) у гэтым тэксьце: $2",
+	"nested-tspans-without-id": "укладзены tspan",
+	"nested-tspans-with-id": "вкладений tspan в $1",
+	"invalid-svg": "Памылка чытаньня файла.",
 	"source-lang-not-found": "Не перакладзена. Дапомна: $1"
 }
