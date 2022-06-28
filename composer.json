@@ -4,7 +4,7 @@
     "type": "project",
     "license": "GPL-3.0-or-later",
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-dom": "*",
@@ -37,12 +37,11 @@
     "require-dev": {
         "mediawiki/minus-x": "^1.1",
         "php-coveralls/php-coveralls": "^2.1",
-        "slevomat/coding-standard": "^5.0",
+        "slevomat/coding-standard": "^8.0",
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "^1.0",
-        "symfony/test-pack": "^1.0",
-        "symfony/web-server-bundle": "^4.1"
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "sort-packages": true
