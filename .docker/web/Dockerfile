@@ -1,4 +1,4 @@
-FROM docker-registry.tools.wmflabs.org/toolforge-php72-sssd-web
+FROM docker-registry.wikimedia.org/releng/composer-package-php74
 
 WORKDIR /var/www/
 
