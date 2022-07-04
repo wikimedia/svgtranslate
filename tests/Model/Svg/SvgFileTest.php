@@ -479,16 +479,16 @@ class SvgFileTest extends TestCase
         // The test file does not contain Spanish.
         $svg = $this->getSvg();
         $svg->setTranslations('es', ['tspan2993' => 'FooBarX']);
-        static::assertContains('FooBarX', $svg->saveToString());
+        static::assertStringContainsString('FooBarX', $svg->saveToString());
 
         // Test that multiple languages can be set, and modified.
         $svg->setTranslations('es', ['tspan2993' => 'FooBarModified']);
         $svg->setTranslations('fr', ['tspan2993' => 'BarFoo']);
 
         $svgContent = $svg->saveToString();
-        static::assertContains('FooBarModified', $svgContent);
-        static::assertContains('BarFoo', $svgContent);
-        static::assertNotContains('FooBarX', $svgContent);
+        static::assertStringContainsString('FooBarModified', $svgContent);
+        static::assertStringContainsString('BarFoo', $svgContent);
+        static::assertStringNotContainsString('FooBarX', $svgContent);
     }
 
     public function testT214717(): void

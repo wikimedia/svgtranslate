@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 
 use App\Kernel;
-use Symfony\Component\Debug\Debug;
 use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\ErrorHandler\DebugClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
 require __DIR__.'/../vendor/autoload.php';
@@ -25,7 +25,7 @@ $debug = (bool) ($_SERVER['APP_DEBUG'] ?? $_ENV['APP_DEBUG'] ?? ('prod' !== $env
 
 if ($debug) {
     umask(0000);
-    Debug::enable();
+    DebugClassLoader::enable();
 }
 
 $trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? $_ENV['TRUSTED_PROXIES'] ?? false;
