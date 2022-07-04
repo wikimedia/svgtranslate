@@ -2,7 +2,7 @@
 
 # Give the web server access to write cache and log files.
 mkdir -p .composer vendor
-chown -R www-data:www-data var .composer vendor
+chown -R www-data:www-data var .composer vendor tests/data
 
 # Install dependencies.
 chsh -s /bin/bash www-data
