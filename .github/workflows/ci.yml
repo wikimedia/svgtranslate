@@ -15,16 +15,16 @@ jobs:
 
             - name: Run linting
               run: |
-                  docker-compose exec web composer lint
-                  docker-compose exec assets npm run lint
+                  docker-compose exec --no-TTY web composer lint
+                  docker-compose exec --no-TTY assets npm run lint
 
             - name: Build assets
               run: |
-                  docker-compose exec assets npm run assets
+                  docker-compose exec --no-TTY assets npm run assets
                   git status
                   git status | grep "nothing to commit, working tree clean"
 
             - name: Run tests
               run: |
-                  docker-compose exec web composer test
-                  docker-compose exec assets npm run test
+                  docker-compose exec --no-TTY web composer test
+                  docker-compose exec --no-TTY assets npm run test
