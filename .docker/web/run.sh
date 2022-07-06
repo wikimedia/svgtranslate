@@ -4,7 +4,7 @@
 chown -R www-data:www-data var
 
 # Install dependencies.
-composer install
+composer install -vvv
 
 # Start the Lighttpd web server.
 echo SVG Translate is now at http://localhost:8042
