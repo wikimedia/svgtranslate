@@ -3,7 +3,7 @@
 # Give the web server access to write cache and log files.
 chown -R www-data:www-data var
 
-COMPOSER_CACHE_DIR="./.composer" composer install -vvv
+composer install
 
 # Start the Lighttpd web server.
 echo SVG Translate is now at http://localhost:8042
