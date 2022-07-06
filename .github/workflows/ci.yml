@@ -12,7 +12,6 @@ jobs:
             - name: Start containers
               run: |
                   docker-compose up --build -d
-                  docker-compose exec -T web composer install
 
             - name: Run linting
               run: |
