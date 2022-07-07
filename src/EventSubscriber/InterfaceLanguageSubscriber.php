@@ -6,7 +6,7 @@ namespace App\EventSubscriber;
 
 use Krinkle\Intuition\Intuition;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\ControllerEvent;
 
 class InterfaceLanguageSubscriber implements EventSubscriberInterface
 {
@@ -22,9 +22,9 @@ class InterfaceLanguageSubscriber implements EventSubscriberInterface
     /**
      * See if there's an interface language stored in the cookie
      * and set the current language if there is.
-     * @param FilterControllerEvent $event
+     * @param ControllerEvent $event
      */
-    public function onKernelController(FilterControllerEvent $event):void
+    public function onKernelController(ControllerEvent $event):void
     {
         $cookie = $event->getRequest()->cookies->get('svgtranslate');
         if (!$cookie) {

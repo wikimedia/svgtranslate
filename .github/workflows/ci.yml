@@ -1,0 +1,30 @@
+on: push
+
+jobs:
+
+    test:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Start containers
+              run: |
+                  docker-compose up --build -d
+
+            - name: Run linting
+              run: |
+                  docker-compose exec --no-TTY web composer lint
+                  docker-compose exec --no-TTY assets npm run lint
+
+            - name: Build assets
+              run: |
+                  docker-compose exec --no-TTY assets npm run assets
+                  git status
+                  git status | grep "nothing to commit, working tree clean"
+
+            - name: Run tests
+              run: |
+                  docker-compose exec --no-TTY web composer test
+                  docker-compose exec --no-TTY assets npm run test
