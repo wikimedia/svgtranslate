@@ -290,6 +290,11 @@ class SvgFile
                 return false;
             }
 
+            // Normalize systemLanguage attributes to IETF standard.
+            if ($text->hasAttribute('systemLanguage')) {
+                $text->setAttribute('systemLanguage', $this->normalizeLang($text->getAttribute('systemLanguage')));
+            }
+
             // Sort out switches
             if ('switch' !== $text->parentNode->nodeName
                 && 'svg:switch' !== $text->parentNode->nodeName
@@ -427,8 +432,7 @@ class SvgFile
                 /** @var DOMElement $text */
                 $text = $actualNode->cloneNode(true);
                 $numChildren = $text->childNodes->length;
-                $lang = $text->hasAttribute('systemLanguage') ? $text->getAttribute('systemLanguage') : 'fallback';
-                $langCode = str_replace('_', '-', strtolower($lang));
+                $langCode = $text->hasAttribute('systemLanguage') ? $text->getAttribute('systemLanguage') : 'fallback';
 
                 $counter = 1;
                 for ($k = 0; $k < $numChildren; $k++) {
@@ -489,12 +493,13 @@ class SvgFile
 
     /**
      * Set translations for a single language.
-     * @param string $lang Language code of the translations being provided.
+     * @param string $langCode Language code of the translations being provided.
      * @param string[] $translations Array of tspan-IDs to message texts.
      * @return string[][]
      */
-    public function setTranslations(string $lang, array $translations): array
+    public function setTranslations(string $langCode, array $translations): array
     {
+        $lang = $this->normalizeLang($langCode);
         // Load the existing translation structure, and go through it swapping the messages.
         $inFileTranslations = $this->getInFileTranslations();
         $filteredTextNodes = $this->getFilteredTextNodes();
@@ -577,7 +582,7 @@ class SvgFile
             foreach ($translations[$textId] as $language => $translation) {
                 // Sort out systemLanguage attribute
                 if ('fallback' !== $language) {
-                    $translation['systemLanguage'] = self::langCodeToOs($language);
+                    $translation['systemLanguage'] = $language;
                 }
 
                 // Prepare an array of "children" (sub-messages)
@@ -628,6 +633,10 @@ class SvgFile
             }
         }
         $this->reorderTexts();
+
+        // These will be re-populated when next requested.
+        $this->savedLanguages = null;
+        $this->inFileTranslations = null;
 
         return [
             'started' => array_unique($started),
@@ -798,10 +807,7 @@ class SvgFile
     protected function reorderTexts(): void
     {
         // Move sublocales to the beginning of their switch elements
-        $sublocales = $this->xpath->query(
-            "//text[contains(@systemLanguage,'-') or contains(@systemLanguage,'_')]"
-            ."|//svg:text[contains(@systemLanguage,'-') or contains(@systemLanguage,'_')]"
-        );
+        $sublocales = $this->xpath->query("//text[contains(@systemLanguage,'-')]|//svg:text[contains(@systemLanguage,'-')]");
         $count = $sublocales->length;
         for ($i = 0; $i < $count; $i++) {
             $sublocale = $sublocales->item($i);
@@ -823,16 +829,15 @@ class SvgFile
     }
 
     /**
-     * @param string $langCode
+     * Normalize a language code by replacing underscores with hyphens and making it all lowercase. Although the IETF
+     * recommends that language codes have e.g. uppercase region tags, they're actually case-insensitive and it's
+     * simpler to work with them if they're normalized to lowercase.
+     *
+     * @param string $lang
      * @return string
      */
-    private static function langCodeToOs(string $langCode): string
+    private function normalizeLang(string $lang): string
     {
-        if (false === strpos($langCode, '-')) {
-            // No territory specified, so no change to make (fr => fr)
-            return $langCode;
-        }
-        [ $prefix, $suffix ] = explode('-', $langCode, 2);
-        return $prefix.'_'.strtoupper($suffix);
+        return strtolower(str_replace('_', '-', $lang));
     }
 }
