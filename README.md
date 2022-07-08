@@ -5,7 +5,7 @@ SVG Translate
 * Issue tracker: https://phabricator.wikimedia.org/tag/svg_translate_tool/
 * Source code: https://github.com/wikimedia/svgtranslate
 
-[![CircleCI](https://circleci.com/gh/wikimedia/svgtranslate.svg?style=svg)](https://circleci.com/gh/wikimedia/svgtranslate)
+[![.github/workflows/ci.yml](https://github.com/wikimedia/svgtranslate/actions/workflows/ci.yml/badge.svg)](https://github.com/wikimedia/svgtranslate/actions/workflows/ci.yml)
 
 For information about contributing to this project, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
