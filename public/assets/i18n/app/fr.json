@@ -26,7 +26,7 @@
 	"preferred-langs-field-label": "Langues de traduction source/cible préférées :",
 	"preferred-langs-field-help": "Ces langues sont visibles près du haut lorsque vous en changez sur la page de traduction.",
 	"add-preferred-lang": "Ajouter",
-	"search-help": "Entrer un nom de fichier de Commons",
+	"search-help": "Saisissez un nom de fichier sur Commons",
 	"search-label": "Nom de fichier (sans le préfixe « Fichier: » ou « File: ») ou URL :",
 	"search-placeholder": "Guerre de 100 ans France 1435.svg",
 	"translate-button": "Traduire",
