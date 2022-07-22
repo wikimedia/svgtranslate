@@ -22,5 +22,6 @@
 	"translate-button": "Tradukez",
 	"no-translations": "Ca arkivo havas nula etiketi disponebla por traduko. Voluntez selektar altra imajo.",
 	"invalid-format": "Nur imaji SVG suportesas.",
-	"default-language": "implicita linguo"
+	"default-language": "implicita linguo",
+	"translate-labels-title": "Tradukar"
 }
