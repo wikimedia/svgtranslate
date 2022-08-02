@@ -491,6 +491,33 @@ class SvgFileTest extends TestCase
         static::assertStringNotContainsString('FooBarX', $svgContent);
     }
 
+    public function testRemovesUnderscoresFromLangTags() {
+        // Test that underscores are replaced with hyphens when loading an SVG.
+        $svgFile = $this->getSvgFileFromString('<svg><switch><text systemLanguage="zh_HANT">foo</text><text>bar</text></switch></svg>');
+        $this->assertSame(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            . '<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
+            . '<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
+            . '</switch></svg>' . "\n",
+            $svgFile->saveToString()
+        );
+        $this->assertSame( ['zh-hant', 'fallback'], $svgFile->getSavedLanguages() );
+
+        // And also when writing new languages to the file.
+        $svgFile->setTranslations('en_gb', ['trsvg2' => 'baz']);
+        $this->assertSame(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            . '<text id="trsvg4-en-gb" systemLanguage="en-gb"><tspan id="trsvg2-en-gb">baz</tspan></text>'
+            . '<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
+            . '<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
+            . '</switch></svg>' . "\n",
+            $svgFile->saveToString()
+        );
+        $this->assertSame(['en-gb', 'zh-hant', 'fallback'], $svgFile->getSavedLanguages());
+    }
+
     public function testT214717(): void
     {
         $fileName = tempnam(sys_get_temp_dir(), 'SvgFile');
