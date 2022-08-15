@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Pacha Tchernof"
+		]
 	},
-	"help": "הילף"
+	"help": "הילף",
+	"cancel": "אַנולירן"
 }
