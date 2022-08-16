@@ -285,7 +285,7 @@ class SvgFile
             // Text strings like $1, $2 will cause problems later because
             // self::replaceIndicesRecursive() will try to replace them
             // with (non-existent) child nodes.
-            if (preg_match('/$[0-9]/', $text->textContent)) {
+            if (preg_match('/\$[0-9]/', $text->textContent)) {
                 $this->logFileProblem('File {file} has text with $-numbers');
                 return false;
             }
