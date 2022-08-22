@@ -39,7 +39,7 @@
     "require-dev": {
         "mediawiki/minus-x": "^1.1",
         "php-coveralls/php-coveralls": "^2.1",
-        "phpunit/phpunit": "^8.5",
+        "phpunit/phpunit": "^9.5",
         "slevomat/coding-standard": "^8.0",
         "symfony/browser-kit": "^5.4",
         "symfony/css-selector": "^5.4",
