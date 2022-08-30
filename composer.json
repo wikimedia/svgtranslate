@@ -38,6 +38,7 @@
     },
     "require-dev": {
         "mediawiki/minus-x": "^1.1",
+        "phan/phan": "^5.0",
         "php-coveralls/php-coveralls": "^2.1",
         "phpunit/phpunit": "^8.5",
         "slevomat/coding-standard": "^8.0",
@@ -95,8 +96,15 @@
             "phpcs -s .",
             "minus-x check ."
         ],
-        "test": [
+        "phan": [
+            "phan --allow-polyfill-parser --long-progress-bar --color --load-baseline=.phan/baseline.php"
+        ],
+        "phpunit": [
             "./bin/phpunit tests"
+        ],
+        "test": [
+            "@phpunit",
+            "@phan"
         ]
     },
     "conflict": {
