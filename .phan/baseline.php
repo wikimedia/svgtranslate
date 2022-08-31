@@ -26,7 +26,7 @@ return [
     'file_suppressions' => [
         'src/Controller/SearchController.php' => ['PhanAccessMethodInternal', 'PhanTypeMismatchArgumentProbablyReal'],
         'src/Controller/TranslateController.php' => ['PhanTypeMismatchArgumentNullableInternal', 'PhanTypeMismatchDeclaredParamNullable', 'PhanTypePossiblyInvalidDimOffset'],
-        'src/Model/Svg/SvgFile.php' => ['PhanTypeMismatchArgumentInternalProbablyReal', 'PhanTypeMismatchArgumentNullable', 'PhanTypeMismatchArgumentNullableInternal', 'PhanTypeMismatchPropertyProbablyReal', 'PhanUndeclaredMethod'],
+        'src/Model/Svg/SvgFile.php' => ['PhanTypeMismatchArgumentInternalProbablyReal', 'PhanTypeMismatchArgumentNullableInternal', 'PhanTypeMismatchPropertyProbablyReal', 'PhanUndeclaredMethod'],
         'src/OOUI/TranslationsFieldset.php' => ['PhanCommentDuplicateParam', 'PhanTypeSuspiciousNonTraversableForeach'],
         'src/Service/MediaWikiApi.php' => ['PhanDeprecatedFunction'],
         'src/Service/Renderer.php' => ['PhanTypeMismatchDeclaredParamNullable'],
