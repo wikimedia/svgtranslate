@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Kareyac"
+		]
 	},
-	"help": "Даведка"
+	"help": "Даведка",
+	"add-preferred-lang": "Дадаць"
 }
