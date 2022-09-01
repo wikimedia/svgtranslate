@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
 	"svgtranslate": "Troidigezh SVG",
@@ -54,8 +55,8 @@
 	"commons-logo-alt": "Logo Wikimedia Commons",
 	"update-commons-title": "Hizivaat Commons",
 	"update-commons-desc": "pe pellgargañ war-eeun war hoc'h urzhiataer.",
-	"upload-complete": "Enporzhiet ervat",
-	"upload-complete-message": "Trugarez vras deoc'h ! Enporzhiet eo bet ho troidigezhioù evit $1. Gallout a rit kenderc'hel da dreiñ an tikedennoù hag enporzhiañ anezho en-dro evit hizivaat ar skeudenn.",
+	"upload-complete": "Pellgaset ervat",
+	"upload-complete-message": "Trugarez vras deoc'h ! Pellgaset eo bet ho troidigezhioù evit $1. Gallout a rit kenderc'hel da dreiñ an tikedennoù ha pellgas anezho en-dro evit hizivaat ar skeudenn.",
 	"upload-complete-commons": "Gwelet ar skeudenn",
 	"upload-complete-translate-another": "Treiñ ur skeudenn all",
 	"licenced-under": "Dindan an aotre-implijout GPL 3.0 pe nevesoc'h",
