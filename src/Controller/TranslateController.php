@@ -78,7 +78,7 @@ class TranslateController extends AbstractController
         } catch (RequestException $exception) {
             return $this->showError('network-error', $normalizedFilename);
         } catch (NestedTspanException $exception) {
-            $id = $exception->getTspanId();
+            $id = $exception->getClosestId();
             $reason = $id
                 ? $intuition->msg('nested-tspans-with-id', [ 'variables' => [ "<code>#$id</code>" ] ] )
                 : $intuition->msg( 'nested-tspans-without-id' );

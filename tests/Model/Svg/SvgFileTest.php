@@ -635,4 +635,43 @@ class SvgFileTest extends TestCase
             ],
         ];
     }
+
+    /**
+     * Existing switch elements can contain text elements that will be replaced,
+     * but not if there are multiple with the same systemLangauge.
+     */
+    public function testAddsTextToSwitch() {
+        // No matching text element, so it adds one.
+        $svgFile = $this->getSvgFileFromString('<svg><switch><text>lang none</text></switch></svg>');
+        $svgFile->setTranslations('la', ['trsvg1' => 'lang la']);
+        $this->assertSame(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            . '<text id="trsvg2-la" systemLanguage="la"><tspan id="trsvg1-la">lang la</tspan></text>'
+            . '<text id="trsvg2"><tspan id="trsvg1">lang none</tspan></text>'
+            . '</switch></svg>' . "\n",
+            $svgFile->saveToString()
+        );
+
+        // One matching text element, so it's updated.
+        $svgFile2 = $this->getSvgFileFromString('<svg><switch><text systemLanguage="la">lang la</text><text>lang none</text></switch></svg>');
+        $svgFile2->setTranslations('la', ['trsvg2' => 'lang la (new)']);
+        $this->assertSame(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            . '<text id="trsvg3" systemLanguage="la"><tspan id="trsvg1">lang la (new)</tspan></text>'
+            . '<text id="trsvg4"><tspan id="trsvg2">lang none</tspan></text>'
+            . '</switch></svg>' . "\n",
+            $svgFile2->saveToString()
+        );
+
+        // If there are more than one text element with the same language, give up.
+        $svgFile3 = $this->getSvgFileFromString('<svg><switch id="testswitch">'
+            . '<text systemLanguage="la">lang la (1)</text>'
+            . '<text systemLanguage="la">lang la (2)</text>'
+            . '<text>lang none</text></switch>'
+            . '</svg>');
+        $this->expectExceptionMessage("Multiple text elements found with language 'la' (ID: \"testswitch\"; text: \"lang la (1)lang la (2)lang none\")");
+        $svgFile3->setTranslations('la', ['trsvg3' => 'lang la (new)']);
+    }
 }

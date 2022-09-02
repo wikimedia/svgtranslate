@@ -12,6 +12,7 @@ namespace App\Model\Svg;
 
 use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
+use App\Exception\SvgStructureException;
 use DOMDocument;
 use DOMElement;
 use DOMNode;
@@ -566,6 +567,10 @@ class SvgFile
         $number = $switches->length;
         for ($i = 0; $i < $number; $i++) {
             $switch = $switches->item($i);
+            if (null === $switch) {
+                // This can never happen, but it keeps Phan happy to guard against null here.
+                continue;
+            }
             $fallback = $this->xpath->query(
                 "text[not(@systemLanguage)]|svg:text[not(@systemLanguage)]",
                 $switch
@@ -611,16 +616,20 @@ class SvgFile
                 $path = 'fallback' === $language ?
                     "svg:text[not(@systemLanguage)]|text[not(@systemLanguage)]" :
                     "svg:text[@systemLanguage='$language']|text[@systemLanguage='$language']";
-                $existing = $this->xpath->query($path, $switch);
-                if (1 == $existing->length) {
+                $existingTexts = $this->xpath->query($path, $switch);
+                if (1 === $existingTexts->length) {
+                    $existingText = $existingTexts->item(0);
                     // Only one matching text node, replace if different
-                    if ($this->nodeToArray($newTextTag) === $this->nodeToArray($existing->item(0))) {
+                    if ($existingText && $this->nodeToArray($newTextTag) === $this->nodeToArray($existingText)) {
                         continue;
                     }
-                    $switch->replaceChild($newTextTag, $existing->item(0));
-                } elseif (0 == $existing->length) {
+                    $switch->replaceChild($newTextTag, $existingText);
+                } elseif (0 === $existingTexts->length) {
                     // No matching text node for this language, so we'll create one
                     $switch->appendChild($newTextTag);
+                } else {
+                    // If there is more than existing text element in a switch (with the given lang), give up on this file.
+                    throw new SvgStructureException("Multiple text elements found with language '$language'", $switch);
                 }
 
                 // To have got this far, we must have either updated or started a new language
