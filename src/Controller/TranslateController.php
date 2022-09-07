@@ -7,6 +7,7 @@ use App\Exception\ImageNotFoundException;
 use App\Exception\InvalidFormatException;
 use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
+use App\Exception\SvgStructureException;
 use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\OOUI\TranslationsFieldset;
@@ -77,14 +78,16 @@ class TranslateController extends AbstractController
             return $this->showError('invalid-svg', $normalizedFilename);
         } catch (RequestException $exception) {
             return $this->showError('network-error', $normalizedFilename);
-        } catch (NestedTspanException $exception) {
+        } catch (SvgStructureException $exception) {
+            $msgParams = $exception->getMessageParams();
+            // Get the element ID, or fall back to the no-ID placeholder message.
             $id = $exception->getClosestId();
-            $reason = $id
-                ? $intuition->msg('nested-tspans-with-id', [ 'variables' => [ "<code>#$id</code>" ] ] )
-                : $intuition->msg( 'nested-tspans-without-id' );
-            return $this->showError('unsupported-svg', $normalizedFilename, [
-                'msg_params' => [ $reason, '<em>' . $exception->getTextContent() . '</em>' ],
-            ]);
+            array_unshift($msgParams, $id ?: $intuition->msg('structure-error-no-id'));
+            return $this->showError(
+                $exception->getMessage(),
+                $normalizedFilename,
+                ['msg_params' => $msgParams]
+            );
         }
 
         // If there are no strings to translate, tell the user.
