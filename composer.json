@@ -56,7 +56,8 @@
             "php": "7.4"
         },
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "symfony/flex": true
         }
     },
     "autoload": {
@@ -79,11 +80,11 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "./bin/console cache:clear",
+            "@php ./bin/console cache:clear",
             "@generate-test-data"
         ],
         "post-update-cmd": [
-            "./bin/console cache:clear",
+            "@php ./bin/console cache:clear",
             "@generate-test-data"
         ],
         "generate-test-data": [
@@ -91,8 +92,8 @@
         ],
         "lint": [
             "composer validate",
-            "./bin/console lint:twig ./templates",
-            "./bin/console lint:yaml ./config",
+            "@php ./bin/console lint:twig ./templates",
+            "@php ./bin/console lint:yaml ./config",
             "phpcs -s .",
             "minus-x check ."
         ],
@@ -100,7 +101,7 @@
             "phan --allow-polyfill-parser --long-progress-bar --color --load-baseline=.phan/baseline.php"
         ],
         "phpunit": [
-            "./bin/phpunit tests"
+            "@php ./bin/phpunit tests"
         ],
         "test": [
             "@phpunit",
