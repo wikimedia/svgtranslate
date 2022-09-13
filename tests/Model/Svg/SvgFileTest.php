@@ -13,7 +13,9 @@ use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use App\Model\Svg\SvgFile;
 use DOMDocument;
+use Monolog\Handler\StreamHandler;
 use PHPUnit\Framework\TestCase;
+use Symfony\Bridge\Monolog\Logger;
 
 /**
  * Unit tests for SVGFile class.
@@ -257,7 +259,9 @@ class SvgFileTest extends TestCase
     {
         $filename = dirname( __DIR__, 2 ) . '/data/_test.svg';
         file_put_contents( $filename, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" . $svgContents );
-        return new SvgFile( $filename );
+        $logger = new Logger( 'svgtranslate' );
+        $logger->pushHandler( new StreamHandler( 'php://stderr' ) );
+        return new SvgFile( $filename, $logger );
     }
 
     /*
@@ -516,6 +520,71 @@ class SvgFileTest extends TestCase
             $svgFile->saveToString()
         );
         $this->assertSame(['en-gb', 'zh-hant', 'fallback'], $svgFile->getSavedLanguages());
+    }
+
+    /**
+     * @covers \App\Model\Svg\SvgFile::makeTranslationReady()
+     * @dataProvider provideSvgNamespace()
+     */
+    public function testSvgNamespace(string $input, string $expected) {
+        $svgFile = $this->getSvgFileFromString('<svg xmlns:svg="http://www.w3.org/2000/svg">' . $input . '</svg>');
+        $this->assertSame(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+            . '<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
+            . $expected
+            . '</svg>' . "\n",
+            $svgFile->saveToString()
+        );
+    }
+
+    /**
+     * Test various element namespace support, without making any changes to translations.
+     *
+     * @return string[][]
+     */
+    public function provideSvgNamespace() {
+        return [
+            'no_namespace' => [
+                'input' => '<switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    . '</switch>',
+                'expected' => '<switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    . '</switch>',
+            ],
+            'switch_namespace' => [
+                'input' => '<svg:switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    . '</svg:switch>',
+                'expected' => '<svg:switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    . '</svg:switch>',
+            ],
+            'text_namespace' => [
+                'input' => '<switch>'
+                    . '<svg:text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
+                    . '<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
+                    . '</switch>',
+                'expected' => '<switch>'
+                    . '<svg:text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
+                    . '<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
+                    . '</switch>',
+            ],
+            'tspan_namespace' => [
+                'input' => '<switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
+                    . '<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
+                    . '</switch>',
+                'expected' => '<switch>'
+                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
+                    . '<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
+                    . '</switch>',
+            ],
+        ];
     }
 
     public function testT214717(): void

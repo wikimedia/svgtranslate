@@ -215,7 +215,7 @@ class SvgFile
             // Everything in a <text> should be a <tspan>s, otherwise we can't translate it
             for ($i = 0; $i < count($text->childNodes); $i++) {
                 $node = $text->childNodes[$i];
-                if ('tspan' === $node->nodeName) {
+                if ('tspan' === $node->nodeName || 'svg:tspan' === $node->nodeName) {
                     continue;
                 }
                 if (XML_TEXT_NODE !== $node->nodeType) {
