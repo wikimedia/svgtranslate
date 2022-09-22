@@ -9,8 +9,8 @@ declare(strict_types = 1);
 
 namespace App\Tests\Model\Svg;
 
-use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
+use App\Exception\SvgStructureException;
 use App\Model\Svg\SvgFile;
 use DOMDocument;
 use Monolog\Handler\StreamHandler;
@@ -678,29 +678,60 @@ class SvgFileTest extends TestCase
     }
 
     /**
-     * @dataProvider provideNestedTspansException()
+     * @dataProvider provideSvgStructureException()
      */
-    public function testNestedTspansException(string $svg, string $message)
+    public function testSvgStructureException(string $svg, string $message, array $params)
     {
-        self::expectException(NestedTspanException::class);
-        self::expectExceptionMessage($message);
-        $this->getSvgFileFromString($svg);
+        try {
+            $this->getSvgFileFromString($svg);
+        } catch (SvgStructureException $exception) {
+            $this->assertSame($message, $exception->getMessage());
+            $this->assertSame($params, $exception->getMessageParams());
+            return;
+        }
+        // If exception not caught, this is a fail.
+        $this->fail();
     }
 
-    public function provideNestedTspansException()
+    public function provideSvgStructureException()
     {
         return [
-            'Simple nested' => [
+            'Simple nested tspan' => [
                 'svg' => '<svg><text><tspan>foo <tspan>bar</tspan></tspan></text></svg>',
-                'message' => 'Nested tspan elements are not supported (ID: ""; text: "foo bar")',
+                'message' => 'structure-error-nested-tspan-not-supported',
+                'params' => [0 => ''],
             ],
-            'Has ID' => [
+            'Nested tspan with ID' => [
                 'svg' => '<svg><text><tspan id="test">foo <tspan>bar</tspan></tspan></text></svg>',
-                'message' => 'Nested tspan elements are not supported (ID: "test"; text: "foo bar")',
+                'message' => 'structure-error-nested-tspan-not-supported',
+                'params' => [0 => 'test'],
             ],
-            'Grandparent has ID' => [
+            'Nested tspan with grandparent with ID' => [
                 'svg' => '<svg><g id="gparent"><text><tspan>foo <tspan>bar</tspan></tspan></text></g></svg>',
-                'message' => 'Nested tspan elements are not supported (ID: "gparent"; text: "foo bar")',
+                'message' => 'structure-error-nested-tspan-not-supported',
+                'params' => [0 => 'gparent'],
+            ],
+            'CSS too complex' => [
+                'svg' => '<svg><style>#foo { stroke:1px; } .bar { color:pink; }</style><text>Foo</text></svg>',
+                'message' => 'structure-error-css-too-complex',
+                'params' => [0 => ''],
+            ],
+            'tref' => [
+                'svg' => '<svg xmlns="http://www.w3.org/2000/svg" version="1.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs><text id="tref-id">Lorem</text></defs>
+                    <text id="text"><tref xlink:href="#tref-id" /></text></svg>',
+                'message' => 'structure-error-contains-tref',
+                'params' => [0 => 'text'],
+            ],
+            'id-chars' => [
+                'svg' => '<svg><text id="x|">Foo</text></svg>',
+                'message' => 'structure-error-invalid-node-id',
+                'params' => ['x|'],
+            ],
+            'Text with dollar numbers' => [
+                'svg' => '<svg><text id="blah">Foo $3 bar</text></svg>',
+                'message' => 'structure-error-text-contains-dollar',
+                'params' => ['blah', 'Foo $3 bar'],
             ],
         ];
     }
@@ -735,12 +766,16 @@ class SvgFileTest extends TestCase
         );
 
         // If there are more than one text element with the same language, give up.
-        $svgFile3 = $this->getSvgFileFromString('<svg><switch id="testswitch">'
-            . '<text systemLanguage="la">lang la (1)</text>'
-            . '<text systemLanguage="la">lang la (2)</text>'
-            . '<text>lang none</text></switch>'
-            . '</svg>');
-        $this->expectExceptionMessage("Multiple text elements found with language 'la' (ID: \"testswitch\"; text: \"lang la (1)lang la (2)lang none\")");
-        $svgFile3->setTranslations('la', ['trsvg3' => 'lang la (new)']);
+        try {
+            $svgFile3 = $this->getSvgFileFromString('<svg><switch id="testswitch">'
+                . '<text systemLanguage="la">lang la (1)</text>'
+                . '<text systemLanguage="la">lang la (2)</text>'
+                . '<text>lang none</text></switch>'
+                . '</svg>');
+                $svgFile3->setTranslations('la', ['trsvg3' => 'lang la (new)']);
+        } catch (SvgStructureException $exception) {
+            $this->assertSame('multiple-text-same-lang', $exception->getMessage());
+            $this->assertSame(['testswitch', 'la'], $exception->getMessageParams());
+        }
     }
 }

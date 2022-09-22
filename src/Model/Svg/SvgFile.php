@@ -10,7 +10,6 @@ declare(strict_types = 1);
 
 namespace App\Model\Svg;
 
-use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use App\Exception\SvgStructureException;
 use DOMDocument;
@@ -96,7 +95,6 @@ class SvgFile
 
         $this->xpath->registerNamespace('svg', 'http://www.w3.org/2000/svg');
 
-        // $this->isTranslationReady() can be used to test if construction was a success
         $this->makeTranslationReady();
     }
 
@@ -128,22 +126,22 @@ class SvgFile
 
     /**
      * Makes $this->document ready for translation by inserting <switch> tags where they need to be, etc.
-     * Also works as a check on the compatibility of the file since it will return false if it fails.
+     * Also works as a check on the compatibility of the file since it will throw exceptions for failures.
      *
      * @todo Find a way of making isTranslationReady a proper check
      * @todo add interlanguage consistency check
-     * @return bool False on failure, DOMDocument on success
+     * @return void
+     * @throws SvgStructureException If untranslatable structures are detected.
      */
-    protected function makeTranslationReady(): bool
+    protected function makeTranslationReady(): void
     {
         if ($this->isTranslationReady) {
-            return true;
+            return;
         }
 
+        // Empty or malformed file.
         if (null === $this->document->documentElement) {
-            // Empty or malformed file
-            $this->logFileProblem('File {file} looks malformed');
-            return false;
+            throw new SvgStructureException('structure-error-no-doc-element');
         }
 
         // Automated editors have a habit of using XML entity references in the SVG namespace
@@ -159,12 +157,13 @@ class SvgFile
             $defaultNS = 'http://www.w3.org/2000/svg';
         }
 
+        // Check that there is something to translate.
         $texts = $this->document->getElementsByTagName('text');
         $textLength = $texts->length;
         if (0 === $textLength) {
-            // Nothing to translate!
+            // Nothing to translate. Given special handling in TranslateController.
             $this->logFileProblem('File {file} has nothing to translate');
-            return false;
+            return;
         }
 
         $styles = $this->document->getElementsByTagName('style');
@@ -175,24 +174,22 @@ class SvgFile
             if (false !== strpos($CSS, '#')) {
                 if (!preg_match('/^([^{]+\{[^}]*\})*[^{]+$/', $CSS)) {
                     // Can't easily understand the CSS to check it, so exit
-                    $this->logFileProblem('File {file} has CSS too complex to parse');
-                    return false;
+                    throw new SvgStructureException( 'structure-error-css-too-complex', $style );
                 }
                 $selectors = preg_split('/\{[^}]+\}/', $CSS);
                 foreach ($selectors as $selector) {
                     if (false !== strpos($selector, '#')) {
                         // IDs in CSS will break when we clone things, should be classes
-                        $this->logFileProblem('File {file} has IDs in CSS');
-                        return false;
+                        throw new SvgStructureException( 'structure-error-css-has-ids', $style );
                     }
                 }
             }
         }
 
-        if (0 !== $this->document->getElementsByTagName('tref')->length) {
-            // Tref tags not (yet) supported
-            $this->logFileProblem('File {file} has <tref> tags');
-            return false;
+        // tref tags are not supported.
+        $trefs = $this->document->getElementsByTagName('tref');
+        if (0 !== $trefs->length) {
+            throw new SvgStructureException( 'structure-error-contains-tref', $trefs->item(0) );
         }
 
         // Strip empty tspans, texts, fill $idsInUse
@@ -205,7 +202,7 @@ class SvgFile
                 || ( 1 == $tspan->childNodes->length && XML_TEXT_NODE !== $tspan->childNodes->item(0)->nodeType )
             ) {
                 // Nested tspans not (yet) supported. T250607.
-                throw new NestedTspanException($tspan);
+                throw new SvgStructureException('structure-error-nested-tspan-not-supported', $tspan);
             }
             $translatableNodes[] = $tspan;
         }
@@ -220,8 +217,7 @@ class SvgFile
                 }
                 if (XML_TEXT_NODE !== $node->nodeType) {
                     // Anything but tspans and text nodes is unexpected
-                    $this->logFileProblem('File {file} has an unexpected tag in translatable content');
-                    return false;
+                    throw new SvgStructureException('structure-error-unexpected-node-in-text', $node);
                 }
                 if ('' === trim($node->nodeValue)) {
                     // Don't bother with whitespace-only nodes
@@ -243,7 +239,7 @@ class SvgFile
                 $translatableNode->setAttribute('id', $id);
                 if (false !== strpos($id, '|') || false !== strpos($id, '/')) {
                     // Will cause problems later
-                    return false;
+                    throw new SvgStructureException('structure-error-invalid-node-id', $translatableNode);
                 }
                 if (preg_match('/^trsvg([0-9]+)/', $id, $matches)) {
                     $idsInUse[] = $matches[1];
@@ -286,9 +282,8 @@ class SvgFile
             // Text strings like $1, $2 will cause problems later because
             // self::replaceIndicesRecursive() will try to replace them
             // with (non-existent) child nodes.
-            if (preg_match('/\$[0-9]/', $text->textContent)) {
-                $this->logFileProblem('File {file} has text with $-numbers');
-                return false;
+            if (preg_match('/(\$[0-9]+)/', $text->textContent, $matches)) {
+                throw new SvgStructureException('structure-error-text-contains-dollar', $text, [$text->textContent]);
             }
 
             // Normalize systemLanguage attributes to IETF standard.
@@ -321,8 +316,7 @@ class SvgFile
                     && 'svg:tspan' !== $child->nodeName
                 ) {
                     // Tags other than tspan inside text tags are not (yet) supported
-                    $this->logFileProblem('File {file} has a tag other than tspan inside a text tag');
-                    return false;
+                    throw new SvgStructureException('structure-error-non-tspan-inside-text', $child);
                 }
             }
         }
@@ -338,20 +332,16 @@ class SvgFile
                 if (XML_TEXT_NODE === $sibling->nodeType) {
                     if ('' !== trim($sibling->textContent)) {
                         // Text content inside switch but outside text tags is awkward.
-                        $this->logFileProblem('File {file} has text content inside switch but outside of a text tag');
-                        return false;
+                        throw new SvgStructureException('structure-error-switch-text-content-outside-text', $sibling);
                     }
                     continue;
                 } elseif (XML_ELEMENT_NODE !== $sibling->nodeType) {
                     // Only text tags are allowed inside switches
-                    return false;
+                    throw new SvgStructureException('structure-error-switch-text-is-not-node', $sibling);
                 }
 
                 if ('text' !== $sibling->nodeName && 'svg:text' !== $sibling->nodeName) {
-                    $this->logFileProblem('Encountered unexpected element {elementName} in file {file}',
-                        ['elementName' => $sibling->nodeName]
-                    );
-                    return false;
+                    throw new SvgStructureException('structure-error-switch-child-not-text', $sibling);
                 }
 
                 $language = $sibling->hasAttribute('systemLanguage') ?
@@ -360,8 +350,7 @@ class SvgFile
                 foreach ($realLangs as $realLang) {
                     if (in_array($realLang, $languagesPresent)) {
                         // Two tags for the same language
-                        $this->logFileProblem('File {file} has 2 tags');
-                        return false;
+                        throw new SvgStructureException('structure-error-multiple-lang-in-text', $sibling, [$realLang]);
                     }
                     $languagesPresent[] = $realLang;
                 }
@@ -389,7 +378,6 @@ class SvgFile
         $this->reorderTexts();
 
         $this->isTranslationReady = true;
-        return true;
     }
 
     /**
@@ -629,7 +617,7 @@ class SvgFile
                     $switch->appendChild($newTextTag);
                 } else {
                     // If there is more than existing text element in a switch (with the given lang), give up on this file.
-                    throw new SvgStructureException("Multiple text elements found with language '$language'", $switch);
+                    throw new SvgStructureException('multiple-text-same-lang', $switch, [$language]);
                 }
 
                 // To have got this far, we must have either updated or started a new language
