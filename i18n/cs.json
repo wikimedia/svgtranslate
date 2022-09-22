@@ -29,7 +29,6 @@
 	"no-translations": "Tento obrázek neobsahuje žádný text, který by bylo možné přeložit. Prosíme, vyberte jiný obrázek.",
 	"not-found": "Požadovaný obrázek nebylo možné nalézt. Prosíme, vyberte jiný obrázek.",
 	"invalid-format": "Podporovány jsou pouze soubory ve formátu SVG.",
-	"unsupported-svg": "Tento soubor nemůže být přeložen pomocí tohoto nástroje, protože obsahuje nepodporované SVG ($1) v následujícím textu: $2",
 	"invalid-svg": "Chyba při čtení souboru.",
 	"network-error": "Chyba při získávání informací ze serverů Wikimedia. Prosíme, zkuste to znovu později.",
 	"pick-another": "← vybrat jiný obrázek",

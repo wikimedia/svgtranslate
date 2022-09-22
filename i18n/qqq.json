@@ -35,7 +35,6 @@
 	"invalid-format": "Error message displayed if the requested file is not an SVG image.",
 	"invalid-svg": "Error message displayed if the requested file is an SVG image but software can't interpret it.",
 	"network-error": "Error message displayed if request to Wikimedia servers fails.",
-
 	"structure-error-no-doc-element": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-nested-tspans-not-supported": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.",
 	"structure-error-multiple-text-same-lang": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.\n* $2 — Offending language code.",
@@ -51,7 +50,6 @@
 	"structure-error-switch-child-not-text": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-multiple-lang-in-text": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.",
 	"structure-error-no-id": "[element ID could be determined]",
-  
 	"pick-another": "Label for backlink from the translate page to the search page.",
 	"view-on-commons": "Link to view the file on Commons. The whole phrase is linked.",
 	"opens-in-new-tab": "Tooltip text for links that will open in a new browser tab.",
