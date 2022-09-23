@@ -7,9 +7,10 @@ use App\Model\Title;
 use App\OOUI\SearchWidget;
 use Krinkle\Intuition\Intuition;
 use OOUI\ActionFieldLayout;
-use OOUI\ButtonInputWidget;
+use OOUI\ButtonWidget;
 use OOUI\FormLayout;
 use OOUI\HtmlSnippet;
+use OOUI\Tag;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,8 +33,10 @@ class SearchController extends AbstractController
             'infusable' => true,
             'value' => $failedSearchTerm[0] ?? '',
         ]);
-        $submitButton = new ButtonInputWidget([
-            'type' => 'submit',
+        $button = new Tag( 'button' );
+        $button->setAttributes(['type' => 'submit']);
+        $submitButton = new ButtonWidget([
+            'button' => $button,
             'label' => $intuition->msg('translate-button'),
             'flags' =>  ['primary', 'progressive'],
         ]);

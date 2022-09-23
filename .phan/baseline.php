@@ -24,7 +24,7 @@ return [
 
     // Currently, file_suppressions and directory_suppressions are the only supported suppressions
     'file_suppressions' => [
-        'src/Controller/SearchController.php' => ['PhanAccessMethodInternal', 'PhanTypeMismatchArgumentProbablyReal'],
+        'src/Controller/SearchController.php' => ['PhanAccessMethodInternal'],
         'src/Controller/TranslateController.php' => ['PhanTypeMismatchArgumentNullableInternal', 'PhanTypeMismatchDeclaredParamNullable', 'PhanTypePossiblyInvalidDimOffset'],
         'src/Model/Svg/SvgFile.php' => ['PhanTypeMismatchArgumentInternalProbablyReal', 'PhanTypeMismatchArgumentNullableInternal', 'PhanTypeMismatchPropertyProbablyReal', 'PhanUndeclaredMethod'],
         'src/OOUI/TranslationsFieldset.php' => ['PhanCommentDuplicateParam', 'PhanTypeSuspiciousNonTraversableForeach'],
