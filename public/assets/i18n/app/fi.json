@@ -29,7 +29,6 @@
 	"no-translations": "Tässä tiedostossa ei ole käännettäviä tarroja. Valitse toinen kuva.",
 	"not-found": "Pyytämääsi tiedostoa ei löytynyt. Valitse toinen kuva.",
 	"invalid-format": "Ainoastaan SVG-tiedostot ovat tuettuja.",
-	"nested-tspans-without-id": "sisäkkäinen tspan",
 	"invalid-svg": "Tiedoston lukuvirhe.",
 	"view-on-commons": "Näytä Commonsissa",
 	"opens-in-new-tab": "Avaa uudessa välilehdessä",
