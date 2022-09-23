@@ -32,6 +32,7 @@ class SearchController extends AbstractController
             'id' => 'search-widget',
             'infusable' => true,
             'value' => $failedSearchTerm[0] ?? '',
+            'required' => true,
         ]);
         $button = new Tag( 'button' );
         $button->setAttributes(['type' => 'submit']);
