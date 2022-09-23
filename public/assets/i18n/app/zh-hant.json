@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"svgtranslate": "SVG 翻譯",
@@ -27,9 +28,6 @@
 	"no-translations": "此檔案沒有任何可用來翻譯的標籤，請挑選其它圖片。",
 	"not-found": "查無您所請求的檔案，請挑選其它圖片。",
 	"invalid-format": "僅支援 SVG 檔案。",
-	"unsupported-svg": "該檔案無法用此工具做出翻譯，因為在以下文字裡包含未支援的 SVG（$1）：$2",
-	"nested-tspans-without-id": "嵌套 tspan",
-	"nested-tspans-with-id": "嵌套 tspan 在$1",
 	"invalid-svg": "錯誤讀取檔案。",
 	"network-error": "從 Wikimedia 伺服器取得資訊時出現錯誤，請稍後再試。",
 	"pick-another": "← 挑選其它檔案",
@@ -67,7 +65,7 @@
 	"git-hash": "目前於提交 $1",
 	"toolforge-logo-alt": "Toolforge 'anvil' 標誌",
 	"powered-by-toolforge": "由 Toolforge 提供支援",
-	"privacy-policy": "隱私政策",
+	"privacy-policy": "隱私權政策",
 	"report-issue": "報告錯誤",
 	"view-source": "在 Github 上檢視"
 }

@@ -29,7 +29,6 @@
 	"no-translations": "Diese Datei hat keine übersetzbaren Beschriftungen. Bitte wähle ein anderes Bild.",
 	"not-found": "Die angeforderte Datei konnte nicht gefunden werden. Bitte wähle ein anderes Bild aus.",
 	"invalid-format": "Nur SVG-Dateien werden unterstützt.",
-	"unsupported-svg": "Diese Datei kann mit diesem Werkzeug nicht übersetzt werden, weil sie nicht unterstütztes SVG ($1) im folgenden Text enthält: $2",
 	"invalid-svg": "Fehler beim Lesen der Datei.",
 	"network-error": "Fehler beim Holen von Informationen von den Wikimedia-Servern. Bitte versuche es später erneut.",
 	"pick-another": "← andere Datei auswählen",

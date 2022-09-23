@@ -26,7 +26,6 @@
 	"no-translations": "Ova datoteka nema nijednu oznaku koja je dostupna za prevod. Molimo odaberite drugu sliku.",
 	"not-found": "Datoteka koju ste tražili nije pronađena. Molimo odaberite drugu sliku.",
 	"invalid-format": "Podržane su samo SVG datoteke.",
-	"unsupported-svg": "Ova datoteka se ne može prevesti ovim alatom jer sadrži nepodržani SVG ($1) u sljedećem tekstu: $2",
 	"invalid-svg": "Greška pri čitanju datoteke.",
 	"network-error": "Greška pri preuzimanju informacija s Wikimedia servera. Molimo pokušajte ponovo kasnije.",
 	"pick-another": "← izaberite drugu datoteku",

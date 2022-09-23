@@ -8,8 +8,12 @@
 	"info": "Alîkarî bike ji boy wergerandina etîketên nivîsên dosyayên SVG. Ji boy destpêkirinê ji Commonsê belgeyek bijêre.",
 	"return-to-home": "vegere seriyê",
 	"help": "Alîkarî",
+	"logout": "Derkeve",
 	"language-settings": "Eyarên ziman",
 	"cancel": "Betal",
 	"interface-lang-field-label": "Zimanên amûran:",
-	"interface-lang-field-help": "Amûr wê bi vî zimanê bêne nîşankirin."
+	"interface-lang-field-help": "Amûr wê bi vî zimanê bêne nîşankirin.",
+	"add-preferred-lang": "Lê zêde bike",
+	"translate-button": "wergerîne",
+	"no-translations": "Ev peldank ji bo wergerê tu etîketan lixwe nagire. Ji kerema xwe wêneyek din bibijêre."
 }
