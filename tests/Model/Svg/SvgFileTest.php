@@ -698,17 +698,17 @@ class SvgFileTest extends TestCase
         return [
             'Simple nested tspan' => [
                 'svg' => '<svg><text><tspan>foo <tspan>bar</tspan></tspan></text></svg>',
-                'message' => 'structure-error-nested-tspan-not-supported',
+                'message' => 'structure-error-nested-tspans-not-supported',
                 'params' => [0 => ''],
             ],
             'Nested tspan with ID' => [
                 'svg' => '<svg><text><tspan id="test">foo <tspan>bar</tspan></tspan></text></svg>',
-                'message' => 'structure-error-nested-tspan-not-supported',
+                'message' => 'structure-error-nested-tspans-not-supported',
                 'params' => [0 => 'test'],
             ],
             'Nested tspan with grandparent with ID' => [
                 'svg' => '<svg><g id="gparent"><text><tspan>foo <tspan>bar</tspan></tspan></text></g></svg>',
-                'message' => 'structure-error-nested-tspan-not-supported',
+                'message' => 'structure-error-nested-tspans-not-supported',
                 'params' => [0 => 'gparent'],
             ],
             'CSS too complex' => [

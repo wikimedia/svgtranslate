@@ -202,7 +202,7 @@ class SvgFile
                 || ( 1 == $tspan->childNodes->length && XML_TEXT_NODE !== $tspan->childNodes->item(0)->nodeType )
             ) {
                 // Nested tspans not (yet) supported. T250607.
-                throw new SvgStructureException('structure-error-nested-tspan-not-supported', $tspan);
+                throw new SvgStructureException('structure-error-nested-tspans-not-supported', $tspan);
             }
             $translatableNodes[] = $tspan;
         }
