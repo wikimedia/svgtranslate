@@ -1,11 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Pavel1513"
 		]
 	},
 	"help": "Pagalba",
 	"invalid-format": "Galimi tik SVG failai.",
 	"invalid-svg": "Klaida skaitant failą.",
+	"structure-error-no-doc-element": "Dokumento elemento nerasta.",
+	"structure-error-nested-tspans-not-supported": "Šio failo negalima išversti, nes jame yra įterptų \"tspan\" elementų $1.",
+	"structure-error-multiple-text-same-lang": "Rasti keli teksto elementai su kalba '$1'",
+	"structure-error-contains-tref": "Šiame faile yra \"tref\" žymų, kurių šis įrankis nepalaiko.",
+	"structure-error-css-too-complex": "Šiame faile yra CSS, kurį per daug sudėtinga analizuoti.",
+	"structure-error-css-has-ids": "Šiame faile naudojami CSS elementų ID, kurie gali būti sugadinti, kai \"SVG Translate\" prideda naujus ID. Jei įmanoma, vietoj to reikėtų naudoti klases.",
+	"structure-error-unexpected-node-in-text": "Šio failo teksto elemente yra netikėto turinio. Tekste turėtų būti naudojami tik \"tspan\" elementai.",
+	"structure-error-invalid-node-id": "Šiame faile yra teksto elemetų ID ($1), kuriame yra \"SVG Translate\" neleidžiamų simbolių.",
+	"structure-error-text-contains-dollar": "Šiame faile yra nepalaikomo teksto turinio $1 ('$2'). \"SVG Translate\" negali dirbti su \"dolerio-skaičiaus\" sintakse.",
+	"structure-error-non-tspan-inside-text": "Šiame faile yra teksto elementas, kuriuo turinys nėra \"tspan\" elementas.",
+	"structure-error-switch-text-is-not-node": "Šiame faile elemente \"switch\" yra nemazginio (\"non-node\") turinio.",
+	"structure-error-switch-text-content-outside-text": "Šiame faile yra teksto turinio \"switch\" elemente, bet už teksto žymos ribų, todėl \"SVG Translate\" neglai jo apdoroti.",
+	"structure-error-switch-child-not-text": "Šiame faile yra elementas \"switch\", turintis elementą, kuris nėra teksto elementas.",
+	"structure-error-multiple-lang-in-text": "Šiame faile yra teksto elementų, kurių \"systemLanguage\" atributuose pasikartoja kalbos kodas '$2'.",
+	"structure-error-no-id": "[elemento ID gali būti nustatytas]",
 	"version": "Versija $1"
 }
