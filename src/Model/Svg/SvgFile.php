@@ -274,10 +274,11 @@ class SvgFile
             }
         }
 
-        $textLength = $this->document->getElementsByTagName('text')->length;
+        $texts = $this->document->getElementsByTagName('text');
+        $textLength = $texts->length;
         for ($i = 0; $i < $textLength; $i++) {
             /** @var DOMElement $text */
-            $text = $this->document->getElementsByTagName('text')->item($i);
+            $text = $texts->item($i);
 
             // Text strings like $1, $2 will cause problems later because
             // self::replaceIndicesRecursive() will try to replace them
@@ -325,6 +326,7 @@ class SvgFile
         for ($i = 0; $i < $switchLength; $i++) {
             $switch = $this->document->getElementsByTagName('switch')->item($i);
             $siblings = $switch->childNodes;
+            $existingLangs = [];
             foreach ($siblings as $sibling) {
                 /** @var DOMElement $sibling */
 
@@ -344,6 +346,14 @@ class SvgFile
                     throw new SvgStructureException('structure-error-switch-child-not-text', $sibling);
                 }
 
+                // Make sure there's not more than one text element with the same lang.
+                $textLang = $sibling->getAttribute('systemLanguage');
+                if ( in_array( $textLang, $existingLangs ) ) {
+                    throw new SvgStructureException('structure-error-multiple-text-same-lang', $switch, [$textLang]);
+                }
+                $existingLangs[] = $textLang;
+
+                // Check for comma-separated language codes (and reject the file if any duplicates are found).
                 $language = $sibling->hasAttribute('systemLanguage') ?
                     $sibling->getAttribute('systemLanguage') : 'fallback';
                 $realLangs = preg_split('/, */', $language);
@@ -616,8 +626,9 @@ class SvgFile
                     // No matching text node for this language, so we'll create one
                     $switch->appendChild($newTextTag);
                 } else {
-                    // If there is more than existing text element in a switch (with the given lang), give up on this file.
-                    throw new SvgStructureException('multiple-text-same-lang', $switch, [$language]);
+                    // If there is more than one existing text element in a switch (with the given lang), give up on this file.
+                    // This should never happen, because this same check is done in makeTranslationReady().
+                    throw new SvgStructureException('structure-error-multiple-text-same-lang', $switch, [$language]);
                 }
 
                 // To have got this far, we must have either updated or started a new language

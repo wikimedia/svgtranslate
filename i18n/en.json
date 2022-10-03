@@ -30,7 +30,7 @@
 
   "structure-error-no-doc-element": "No document element found.",
   "structure-error-nested-tspans-not-supported": "This file can not be translated because it contains nested tspan elements in $1.",
-  "structure-error-multiple-text-same-lang": "Multiple text elements found with language '$1'",
+  "structure-error-multiple-text-same-lang": "Multiple text elements found with language code '$2' (in element with ID '$1').",
   "structure-error-contains-tref": "This file contains tref tags, which are not supported by this tool.",
   "structure-error-css-too-complex": "This file contains CSS that is too complicated to parse.",
   "structure-error-css-has-ids": "This file uses element IDs in the CSS, which may break when SVG Translate adds new IDs. It should use classes instead, if possible.",

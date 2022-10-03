@@ -43,7 +43,7 @@
 	"structure-error-css-has-ids": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-unexpected-node-in-text": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-invalid-node-id": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.",
-	"structure-error-text-contains-dollar": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.",
+	"structure-error-text-contains-dollar": "Message displayed when an SVG file has an error that renders it untranslatable.\n\nParameters:\n* $1 — Closest parent element ID.\n* $2 — Offending text content.",
 	"structure-error-non-tspan-inside-text": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-switch-text-is-not-node": "Message displayed when an SVG file has an error that renders it untranslatable.",
 	"structure-error-switch-text-content-outside-text": "Message displayed when an SVG file has an error that renders it untranslatable.",
