@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"learn-more": "Իմանալ ավելին",
@@ -18,6 +19,7 @@
 	"translate-labels-title": "Թարգմանել",
 	"upload-complete-commons": "Դիտել պատկերը",
 	"version": "Տարբերակ $1",
+	"powered-by-toolforge": "Աշխատում է Toolforge֊ի վրա",
 	"privacy-policy": "Գաղտնիության քաղաքականություն",
 	"report-issue": "Հայտնել խնդրի մասին"
 }
