@@ -3,7 +3,8 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Hedda",
-			"Joseph"
+			"Joseph",
+			"ToprakM"
 		]
 	},
 	"svgtranslate": "SVG Çeviri",
@@ -67,7 +68,7 @@
 	"git-hash": "Şu anda $1 taahhütte",
 	"toolforge-logo-alt": "Toolforge 'örs' logosu",
 	"powered-by-toolforge": "Toolforge tarafından desteklenmektedir",
-	"privacy-policy": "Gizlilik ilkesi",
+	"privacy-policy": "Gizlilik politikası",
 	"report-issue": "Hata bildir",
 	"view-source": "Github'da görüntüleyin"
 }
