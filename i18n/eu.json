@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"An13sa",
-			"Theklan"
+			"Theklan",
+			"Xabier Armendaritz"
 		]
 	},
 	"svgtranslate": "SVG Itzulpena",
@@ -45,15 +46,15 @@
 	"download-or-upload": "edo",
 	"translation-image-alt": "Itzultzen saiatzen ari zaren irudia. Ez dago deskribapenik erabilgarri.",
 	"preview-error-occurred": "Aurreikuspena eskaintzerakoan akatsa egon da. Mesedez, jarraitu itzultzen, eta arazoak jarraitzen badu akatsaren berri eman (behean dagoen lotura jarraituz).",
-	"download-icon-alt": "Fitxategia jaisteko aukera adierazten duen ikonoa",
+	"download-icon-alt": "Fitxategiaren deskarga adierazten duen ikono bat",
 	"pick-an-image-title": "Irudi bat aukeratu",
 	"pick-an-image-desc": "Commonsetik",
 	"translate-icon-alt": "Hainbat hizkuntza daudela adierazteko ikonoa",
 	"translate-labels-title": "Itzuli",
 	"translate-labels-desc": "irudian dauden testuak.",
 	"commons-logo-alt": "Wikimedia Commonsen logoa",
-	"update-commons-title": "Commons gaurkotu",
-	"update-commons-desc": "edo zuzenean zure ordenagailura jaitsi.",
+	"update-commons-title": "Eguneratu Commons",
+	"update-commons-desc": "edo deskargatu zuzenean zure ordenagailura.",
 	"upload-complete": "Igoera bete da",
 	"upload-complete-message": "Eskerrik asko! $1 fitxategiari egin diozun itzulpena igo da. Oraindik itzultzen jarrai dezakezu eta irudia gaurkotu.",
 	"upload-complete-commons": "Irudia ikusi",
