@@ -45,6 +45,7 @@
 	"structure-error-text-contains-dollar": "Цей файл містить непідтримуваний текстовий вміст у $1 ('$2'). SVG Translate не може працювати з синтаксисом долара-числа.",
 	"structure-error-non-tspan-inside-text": "Цей файл містить текстовий елемент із вмістом, який не є елементом tspan.",
 	"structure-error-switch-text-is-not-node": "Цей файл містить невузловий вміст у елементі switch.",
+	"structure-error-switch-child-not-text": "Цей файл містить елемент switch, який містить елемент, який не є текстовим елементом.",
 	"pick-another": "← вибрати інший файл",
 	"view-on-commons": "Переглянути у Вікісховищі",
 	"opens-in-new-tab": "Відкривається у новій вкладці",
