@@ -80,9 +80,10 @@ class TranslateController extends AbstractController
             return $this->showError('network-error', $normalizedFilename);
         } catch (SvgStructureException $exception) {
             $msgParams = $exception->getMessageParams();
-            // Get the element ID, or fall back to the no-ID placeholder message.
-            $id = $exception->getClosestId();
-            array_unshift($msgParams, $id ?: $intuition->msg('structure-error-no-id'));
+            // If there's no element ID fall back to the no-ID placeholder message.
+            if ($msgParams[0] === null) {
+                $msgParams[0] = $intuition->msg('structure-error-no-id');
+            }
             return $this->showError(
                 $exception->getMessage(),
                 $normalizedFilename,

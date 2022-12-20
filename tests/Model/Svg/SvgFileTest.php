@@ -774,7 +774,7 @@ class SvgFileTest extends TestCase
                 . '</svg>');
                 $svgFile3->setTranslations('la', ['trsvg3' => 'lang la (new)']);
         } catch (SvgStructureException $exception) {
-            $this->assertSame('multiple-text-same-lang', $exception->getMessage());
+            $this->assertSame('structure-error-multiple-text-same-lang', $exception->getMessage());
             $this->assertSame(['testswitch', 'la'], $exception->getMessageParams());
         }
     }
