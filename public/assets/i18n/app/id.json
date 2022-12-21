@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agam Riyandana",
 			"Akmaie Ajam",
 			"Sonic Speedy"
 		]
@@ -30,6 +31,7 @@
 	"invalid-format": "Hanya berkas SVG yang didukung",
 	"invalid-svg": "Masalah saat membuka berkas.",
 	"network-error": "Kesalahan dalam mendapatkan informasi dari server Wikimedia.  Silakan coba lagi nanti.",
+	"structure-error-multiple-text-same-lang": "Beberapa elemen teks ditemukan dengan kode bahasa ' $2 ' (dalam elemen dengan ID ' $1 ').",
 	"pick-another": "← ambil berkas lainnya",
 	"view-on-commons": "Lihat di Commons",
 	"opens-in-new-tab": "Buka di tab baru",
