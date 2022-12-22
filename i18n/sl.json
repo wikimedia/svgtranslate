@@ -31,7 +31,7 @@
 	"network-error": "Napaka pri pridobivanju informacij iz strežnikov Wikimedie. Prosimo, poskusite pozneje.",
 	"structure-error-no-doc-element": "Ni nobenega najdenega elementa dokumenta.",
 	"structure-error-nested-tspans-not-supported": "Te datoteke ni mogoče prevesti, saj v $1 vsebuje ugnezdene elemente »tspan«.",
-	"structure-error-multiple-text-same-lang": "Najdenih je bilo več besedilnih elementov v jeziku »$1«",
+	"structure-error-multiple-text-same-lang": "Za oznako jezika »$2« je bilo najdenih več besedilnih elementov (v elementu z ID »$1«).",
 	"structure-error-contains-tref": "Datoteka vsebuje značke »tref«, ki jih to orodje ne podpira.",
 	"structure-error-css-too-complex": "Datoteka vsebuje CSS, ki je prezapleten za razčlembo.",
 	"structure-error-css-has-ids": "Ta datoteka uporablja v CSS-u ID-je elementov, ki lahko po dodajanju novih ID-jev delujejo napačno. Če je mogoče, naj namesto tega uporablja razrede.",
