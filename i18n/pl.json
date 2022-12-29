@@ -8,7 +8,7 @@
 		]
 	},
 	"svgtranslate": "Tłumacz SVG",
-	"info": "Pomóż przetłumaczyć etykiety tekstowe plików SVG. Wybierz plik z commons, aby rozpocząć.",
+	"info": "Pomóż przetłumaczyć etykiety tekstowe plików SVG. Wybierz plik z Commons, aby rozpocząć.",
 	"learn-more": "Dowiedz się więcej.",
 	"return-to-home": "Wróć na stronę główną",
 	"help": "Pomoc",
@@ -65,9 +65,9 @@
 	"developed-by": "Opracowane przez zespół Wikimedia Foundation's Community Tech",
 	"version": "Wersja $1",
 	"git-hash": "Obecnie w zatwierdzeniu $1",
-	"toolforge-logo-alt": "Logo 'kowadło' Toolforge",
+	"toolforge-logo-alt": "Logo Toolforge „kowadło”",
 	"powered-by-toolforge": "Powered by Toolforge",
 	"privacy-policy": "Polityka prywatności",
 	"report-issue": "Zgłoś błąd",
-	"view-source": "Zobacz na Github"
+	"view-source": "Zobacz na Githubie"
 }

@@ -34,7 +34,7 @@
 	"network-error": "אירעה שגיאה בקבלת המידע משרתי ויקימדיה. נא לנסות שוב מאוחר יותר.",
 	"structure-error-no-doc-element": "לא נמצא רכיב document.",
 	"structure-error-nested-tspans-not-supported": "אי אפשר לתרגם את הקובץ הזה כיוון שהוא מכיל רכיבי tspan מקוננים ב־$1.",
-	"structure-error-multiple-text-same-lang": "נמצאו מספר רכיבי text עם השפה ‚$1’",
+	"structure-error-multiple-text-same-lang": "נמצאו רכיבי text מרובים עם קוד השפה \"$2\" (ברכיב עם המזהה \"$1\").",
 	"structure-error-contains-tref": "קובץ זה מכיל תגיות tref, שאינן נתמכות על ידי הכלי הזה.",
 	"structure-error-css-too-complex": "קובץ זה מכיל CSS שמורכב מדי לפענח אותו.",
 	"structure-error-css-has-ids": "הקובץ הזה משתמש במזהי אלמנטים ב־CSS, שעלולים להתקלקל כאשר SVG Translate מוסיף מזהים חדשים. הוא צריך להשתמש במחלקות במקום זה, אם זה אפשרי.",
