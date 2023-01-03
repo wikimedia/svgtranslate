@@ -12,6 +12,7 @@
 	"cancel": "Otkaži",
 	"add-preferred-lang": "Dodaj",
 	"translate-button": "Prevedi",
+	"structure-error-unexpected-node-in-text": "Ova datoteka ima neočekivani sadržaj unutar tekstualnog elementa. Samo tspan elemente treba koristiti unutar teksta.",
 	"default-language": "Uobičajen jezik",
 	"source-lang-not-found": "Neprevedena. Podrazumijevano: $1",
 	"source-to-target": "na",

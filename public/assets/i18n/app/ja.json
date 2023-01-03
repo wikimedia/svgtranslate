@@ -3,6 +3,7 @@
 		"authors": [
 			"Aefgh39622",
 			"Afaz",
+			"Mugenpman",
 			"Omotecho",
 			"Shirayuki",
 			"神樂坂秀吉"
@@ -33,6 +34,7 @@
 	"invalid-format": "SVGファイルのみがサポートされています。",
 	"invalid-svg": "ファイルの読み取り中にエラーが発生しました。",
 	"network-error": "ウィキメディアのサーバから情報取得中にエラーが発生しました。のちほどもう一度実行してください。",
+	"structure-error-no-id": "[element ID could be determined]",
 	"pick-another": "← 別のファイルを選択",
 	"view-on-commons": "コモンズで閲覧",
 	"opens-in-new-tab": "新しいタブで開く",

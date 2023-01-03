@@ -16,7 +16,7 @@
 	"language-settings": "語言設定",
 	"done": "完成",
 	"cancel": "取消",
-	"interface-lang-field-label": "工具的語言：:",
+	"interface-lang-field-label": "工具的語言：",
 	"interface-lang-field-help": "工具本身會顯示在此語言。",
 	"preferred-langs-field-label": "要翻譯的目標/來源首選語言：",
 	"preferred-langs-field-help": "這些語言會當您在翻譯頁面之間切換它們時，顯示在頂端附近。",

@@ -1,30 +1,55 @@
-on: push
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - '**'
+
+env:
+  APP_ENV: test
+  WIKI_URL: "https://commons.wikimedia.org/w/api.php"
 
 jobs:
+  build:
 
-    test:
-        runs-on: ubuntu-latest
-        steps:
+    strategy:
+      matrix:
+        php: [ '7.4', '8.0', '8.1' ]
 
-            - name: Checkout
-              uses: actions/checkout@v2
+    runs-on: ubuntu-latest
 
-            - name: Start containers
-              run: |
-                  docker-compose up --build -d
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
 
-            - name: Run linting
-              run: |
-                  docker-compose exec --no-TTY web composer lint
-                  docker-compose exec --no-TTY assets npm run lint
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{matrix.php}}
 
-            - name: Build assets
-              run: |
-                  docker-compose exec --no-TTY assets npm run assets
-                  git status
-                  git status | grep "nothing to commit, working tree clean"
+    - name: Install
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -y librsvg2-bin
+        composer install
+        npm ci
 
-            - name: Run tests
-              run: |
-                  docker-compose exec --no-TTY web composer test
-                  docker-compose exec --no-TTY assets npm run test
+    - name: Run linting
+      run: |
+        composer lint
+        npm run lint
+
+    - name: Build assets
+      run: |
+          npm run assets
+          git status
+          git status | grep "nothing to commit, working tree clean"
+
+    - name: Run tests
+      run: |
+        composer test
+        npm run test
