@@ -65,6 +65,7 @@ class ApiControllerTest extends TestCase
         $container = $this->getMockBuilder(ContainerInterface::class)
             ->getMock();
 
+        /** @var FileCache $cache */
         $cache = $this->getMockBuilder(FileCache::class)
             ->disableOriginalConstructor()
             ->setMethodsExcept()
@@ -80,7 +81,6 @@ class ApiControllerTest extends TestCase
 
         $factory = new SvgFileFactory(new NullLogger());
 
-        /** @var FileCache $cache */
         $controller = new ApiController($cache, new Renderer('rsvg-convert'), $factory);
         $controller->setContainer($container);
 

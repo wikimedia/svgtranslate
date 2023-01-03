@@ -18,6 +18,7 @@ class RetrieverTest extends TestCase
         $apiJson = file_get_contents(__DIR__.'/../data/imageinfo.json');
         $apiResult = \GuzzleHttp\json_decode($apiJson, true);
 
+        /** @var MediaWikiApi $api */
         $api = $this->getMockBuilder(MediaWikiApi::class)
             ->disableOriginalConstructor()
             ->setMethodsExcept([])
@@ -27,7 +28,7 @@ class RetrieverTest extends TestCase
             ->with('File:Test.svg')
             ->willReturn($apiResult);
 
-        /** @var MediaWikiApi $api */
+        /** @var Retriever $retriever */
         $retriever = $this->getMockBuilder(Retriever::class)
             ->setConstructorArgs([$api])
             ->setMethods(['httpGet'])
@@ -38,7 +39,6 @@ class RetrieverTest extends TestCase
             ->with('https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg')
             ->willReturn('test content');
 
-        /** @var Retriever $retriever */
         self::assertEquals('test content', $retriever->retrieve('File:Test.svg'));
     }
 }

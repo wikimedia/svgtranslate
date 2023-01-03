@@ -14,6 +14,7 @@ class TranslationsFieldsetTest extends TestCase
 
     /**
      * @dataProvider fieldsetGroupingProvider()
+     * @param string[] $translations
      */
     public function testFieldsetGrouping(array $translations, int $fieldsetCount, string $sourceLang = 'fallback'): void
     {
