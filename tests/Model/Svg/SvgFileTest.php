@@ -682,6 +682,7 @@ class SvgFileTest extends TestCase
 
     /**
      * @dataProvider provideSvgStructureException()
+     * @param string[] $params
      */
     public function testSvgStructureException(string $svg, string $message, array $params)
     {

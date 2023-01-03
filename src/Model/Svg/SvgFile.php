@@ -553,7 +553,7 @@ class SvgFile
     /**
      * Compile an updated DOM model of the SVG using the provided set of translations
      *
-     * @param array $translations
+     * @param string[][][] $translations
      * @return string[][] Array with keys 'expanded' and 'started', each an array of language names
      */
     public function switchToTranslationSet(array $translations): array
@@ -741,7 +741,7 @@ class SvgFile
      * three main formats for handling data (nodes, translations and arrays).
      * This one converts between the array and node formats.
      *
-     * @param array $array An associative array of properties, inc 'text'
+     * @param string[] $array An associative array of properties, inc 'text'
      * @param string $nodeName (optional) The name of the node (no <>), default 'text'
      * @return DOMNode A new DOMNode ready to be inserted, complete with text child
      */
@@ -771,7 +771,7 @@ class SvgFile
      * is formalised as actual text nodes
      *
      * @param string $text The text to search for $1, $2 etc.
-     * @param array &$newNodes An array of DOMNodes, indexed by which $ number they represent
+     * @param DOMNode[] &$newNodes An array of DOMNodes, indexed by which $ number they represent
      * @param DOMNode &$parentNode A node to fill with the generated content
      * @param DOMDocument $document Base document to use
      * @return void

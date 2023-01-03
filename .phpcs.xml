@@ -1,11 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="SVGTranslate">
     <rule ref="./vendor/wikimedia/toolforge-bundle/Resources/phpcs/ruleset.xml">
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification"/>
         <exclude name="Generic.Files.LineLength.TooLong"/>
-        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable"/>
     </rule>
     <file>.</file>
     <exclude-pattern>*.js</exclude-pattern><!-- Javascript linting is handled by ESLint; see .eslintrc.js -->
