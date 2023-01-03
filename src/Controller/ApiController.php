@@ -1,15 +1,13 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace App\Controller;
 
-use App\Model\Svg\SvgFile;
 use App\Model\Title;
 use App\Service\FileCache;
 use App\Service\Renderer;
 use App\Service\SvgFileFactory;
-use Psr\Log\LoggerAwareTrait;
-use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;

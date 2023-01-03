@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace App\Exception;
@@ -20,7 +21,7 @@ class SvgStructureException extends Exception
      * @param DOMNode|null $node The DOM node of interest to this exception. The ID and text contents of this node may be shown to the user.
      * @param string[] $messageParams Extra message parameters. Parameter 1 is always the closes element ID (if found).
      */
-    public function __construct(string $message, DOMNode $node = null, array $messageParams = [])
+    public function __construct(string $message, ?DOMNode $node = null, array $messageParams = [])
     {
         parent::__construct($message);
         $this->node = $node;
@@ -51,7 +52,8 @@ class SvgStructureException extends Exception
      * Get a simplified representation of the text content of the element.
      * @return string
      */
-    public function getTextContent(): string {
+    public function getTextContent(): string
+    {
         return $this->node->textContent ?? '';
     }
 
@@ -59,7 +61,8 @@ class SvgStructureException extends Exception
      * Get the parameters to pass to the i18n message.
      * @return string[]
      */
-    public function getMessageParams(): array {
+    public function getMessageParams(): array
+    {
         return $this->messageParams;
     }
 }

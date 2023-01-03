@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types = 1);
+
 /**
  * This is an automatically generated baseline for Phan issues.
  * When Phan is invoked with --load-baseline=path/to/baseline.php,

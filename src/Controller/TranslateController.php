@@ -1,11 +1,11 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace App\Controller;
 
 use App\Exception\ImageNotFoundException;
 use App\Exception\InvalidFormatException;
-use App\Exception\NestedTspanException;
 use App\Exception\SvgLoadException;
 use App\Exception\SvgStructureException;
 use App\Model\Svg\SvgFile;
@@ -81,7 +81,7 @@ class TranslateController extends AbstractController
         } catch (SvgStructureException $exception) {
             $msgParams = $exception->getMessageParams();
             // If there's no element ID fall back to the no-ID placeholder message.
-            if ($msgParams[0] === null) {
+            if (null === $msgParams[0]) {
                 $msgParams[0] = $intuition->msg('structure-error-no-id');
             }
             return $this->showError(
@@ -262,7 +262,7 @@ class TranslateController extends AbstractController
     {
         $message = $this->renderView(
             'error_message.html.twig',
-            array_merge( [ 'msg_name' => $messageKey, 'msg_params' => [] ], $errorTemplateParams )
+            array_merge([ 'msg_name' => $messageKey, 'msg_params' => [] ], $errorTemplateParams)
         );
         // Flash the message to show to the user under the search form.
         $this->addFlash('search-errors', (string)$message);

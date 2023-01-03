@@ -255,13 +255,13 @@ class SvgFileTest extends TestCase
      * Create a new SvgFile object from an XML string.
      * @param string $svgContents Do not include the XML prologue.
      */
-    protected function getSvgFileFromString( $svgContents )
+    protected function getSvgFileFromString(string $svgContents)
     {
-        $filename = dirname( __DIR__, 2 ) . '/data/_test.svg';
-        file_put_contents( $filename, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" . $svgContents );
-        $logger = new Logger( 'svgtranslate' );
-        $logger->pushHandler( new StreamHandler( 'php://stderr' ) );
-        return new SvgFile( $filename, $logger );
+        $filename = dirname(__DIR__, 2).'/data/_test.svg';
+        file_put_contents($filename, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n".$svgContents);
+        $logger = new Logger('svgtranslate');
+        $logger->pushHandler(new StreamHandler('php://stderr'));
+        return new SvgFile($filename, $logger);
     }
 
     /*
@@ -495,28 +495,29 @@ class SvgFileTest extends TestCase
         static::assertStringNotContainsString('FooBarX', $svgContent);
     }
 
-    public function testRemovesUnderscoresFromLangTags() {
+    public function testRemovesUnderscoresFromLangTags()
+    {
         // Test that underscores are replaced with hyphens when loading an SVG.
         $svgFile = $this->getSvgFileFromString('<svg><switch><text systemLanguage="zh_HANT">foo</text><text>bar</text></switch></svg>');
         $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
-            . '<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
-            . '<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
-            . '</switch></svg>' . "\n",
+            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            .'<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
+            .'<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
+            .'</switch></svg>'."\n",
             $svgFile->saveToString()
         );
-        $this->assertSame( ['zh-hant', 'fallback'], $svgFile->getSavedLanguages() );
+        $this->assertSame(['zh-hant', 'fallback'], $svgFile->getSavedLanguages());
 
         // And also when writing new languages to the file.
         $svgFile->setTranslations('en_gb', ['trsvg2' => 'baz']);
         $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
-            . '<text id="trsvg4-en-gb" systemLanguage="en-gb"><tspan id="trsvg2-en-gb">baz</tspan></text>'
-            . '<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
-            . '<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
-            . '</switch></svg>' . "\n",
+            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            .'<text id="trsvg4-en-gb" systemLanguage="en-gb"><tspan id="trsvg2-en-gb">baz</tspan></text>'
+            .'<text systemLanguage="zh-hant" id="trsvg3"><tspan id="trsvg1">foo</tspan></text>'
+            .'<text id="trsvg4"><tspan id="trsvg2">bar</tspan></text>'
+            .'</switch></svg>'."\n",
             $svgFile->saveToString()
         );
         $this->assertSame(['en-gb', 'zh-hant', 'fallback'], $svgFile->getSavedLanguages());
@@ -526,13 +527,14 @@ class SvgFileTest extends TestCase
      * @covers \App\Model\Svg\SvgFile::makeTranslationReady()
      * @dataProvider provideSvgNamespace()
      */
-    public function testSvgNamespace(string $input, string $expected) {
-        $svgFile = $this->getSvgFileFromString('<svg xmlns:svg="http://www.w3.org/2000/svg">' . $input . '</svg>');
+    public function testSvgNamespace(string $input, string $expected)
+    {
+        $svgFile = $this->getSvgFileFromString('<svg xmlns:svg="http://www.w3.org/2000/svg">'.$input.'</svg>');
         $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
-            . $expected
-            . '</svg>' . "\n",
+            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
+            .$expected
+            .'</svg>'."\n",
             $svgFile->saveToString()
         );
     }
@@ -542,47 +544,48 @@ class SvgFileTest extends TestCase
      *
      * @return string[][]
      */
-    public function provideSvgNamespace() {
+    public function provideSvgNamespace()
+    {
         return [
             'no_namespace' => [
                 'input' => '<switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
-                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
-                    . '</switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    .'<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    .'</switch>',
                 'expected' => '<switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
-                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
-                    . '</switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    .'<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    .'</switch>',
             ],
             'switch_namespace' => [
                 'input' => '<svg:switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
-                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
-                    . '</svg:switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    .'<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    .'</svg:switch>',
                 'expected' => '<svg:switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
-                    . '<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
-                    . '</svg:switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></text>'
+                    .'<text id="trsvg18"><tspan id="trsvg2">B</tspan></text>'
+                    .'</svg:switch>',
             ],
             'text_namespace' => [
                 'input' => '<switch>'
-                    . '<svg:text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
-                    . '<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
-                    . '</switch>',
+                    .'<svg:text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
+                    .'<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
+                    .'</switch>',
                 'expected' => '<switch>'
-                    . '<svg:text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
-                    . '<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
-                    . '</switch>',
+                    .'<svg:text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
+                    .'<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
+                    .'</switch>',
             ],
             'tspan_namespace' => [
                 'input' => '<switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
-                    . '<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
-                    . '</switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-Hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
+                    .'<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
+                    .'</switch>',
                 'expected' => '<switch>'
-                    . '<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
-                    . '<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
-                    . '</switch>',
+                    .'<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
+                    .'<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
+                    .'</switch>',
             ],
         ];
     }
@@ -740,16 +743,17 @@ class SvgFileTest extends TestCase
      * Existing switch elements can contain text elements that will be replaced,
      * but not if there are multiple with the same systemLangauge.
      */
-    public function testAddsTextToSwitch() {
+    public function testAddsTextToSwitch()
+    {
         // No matching text element, so it adds one.
         $svgFile = $this->getSvgFileFromString('<svg><switch><text>lang none</text></switch></svg>');
         $svgFile->setTranslations('la', ['trsvg1' => 'lang la']);
         $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
-            . '<text id="trsvg2-la" systemLanguage="la"><tspan id="trsvg1-la">lang la</tspan></text>'
-            . '<text id="trsvg2"><tspan id="trsvg1">lang none</tspan></text>'
-            . '</switch></svg>' . "\n",
+            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            .'<text id="trsvg2-la" systemLanguage="la"><tspan id="trsvg1-la">lang la</tspan></text>'
+            .'<text id="trsvg2"><tspan id="trsvg1">lang none</tspan></text>'
+            .'</switch></svg>'."\n",
             $svgFile->saveToString()
         );
 
@@ -757,21 +761,21 @@ class SvgFileTest extends TestCase
         $svgFile2 = $this->getSvgFileFromString('<svg><switch><text systemLanguage="la">lang la</text><text>lang none</text></switch></svg>');
         $svgFile2->setTranslations('la', ['trsvg2' => 'lang la (new)']);
         $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
-            . '<svg xmlns="http://www.w3.org/2000/svg"><switch>'
-            . '<text id="trsvg3" systemLanguage="la"><tspan id="trsvg1">lang la (new)</tspan></text>'
-            . '<text id="trsvg4"><tspan id="trsvg2">lang none</tspan></text>'
-            . '</switch></svg>' . "\n",
+            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            .'<svg xmlns="http://www.w3.org/2000/svg"><switch>'
+            .'<text id="trsvg3" systemLanguage="la"><tspan id="trsvg1">lang la (new)</tspan></text>'
+            .'<text id="trsvg4"><tspan id="trsvg2">lang none</tspan></text>'
+            .'</switch></svg>'."\n",
             $svgFile2->saveToString()
         );
 
         // If there are more than one text element with the same language, give up.
         try {
             $svgFile3 = $this->getSvgFileFromString('<svg><switch id="testswitch">'
-                . '<text systemLanguage="la">lang la (1)</text>'
-                . '<text systemLanguage="la">lang la (2)</text>'
-                . '<text>lang none</text></switch>'
-                . '</svg>');
+                .'<text systemLanguage="la">lang la (1)</text>'
+                .'<text systemLanguage="la">lang la (2)</text>'
+                .'<text>lang none</text></switch>'
+                .'</svg>');
                 $svgFile3->setTranslations('la', ['trsvg3' => 'lang la (new)']);
         } catch (SvgStructureException $exception) {
             $this->assertSame('structure-error-multiple-text-same-lang', $exception->getMessage());
