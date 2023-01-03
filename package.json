@@ -19,7 +19,7 @@
     "eslint-config-wikimedia": "0.10.1",
     "grunt": "1.0.2",
     "grunt-banana-checker": "0.7.1",
-    "qunit": "2.9.2"
+    "qunit": "2.19.3"
   },
   "scripts": {
     "test": "qunit tests/qunit/",
