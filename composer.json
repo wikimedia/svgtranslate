@@ -103,8 +103,13 @@
             "@php ./bin/phpunit tests"
         ],
         "test": [
+            "@lint",
             "@phpunit",
             "@phan"
+        ],
+        "fix": [
+            "minus-x fix .",
+            "phpcbf"
         ]
     },
     "conflict": {
