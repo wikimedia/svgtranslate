@@ -174,13 +174,13 @@ class SvgFile
             if (false !== strpos($CSS, '#')) {
                 if (!preg_match('/^([^{]+\{[^}]*\})*[^{]+$/', $CSS)) {
                     // Can't easily understand the CSS to check it, so exit
-                    throw new SvgStructureException( 'structure-error-css-too-complex', $style );
+                    throw new SvgStructureException('structure-error-css-too-complex', $style);
                 }
                 $selectors = preg_split('/\{[^}]+\}/', $CSS);
                 foreach ($selectors as $selector) {
                     if (false !== strpos($selector, '#')) {
                         // IDs in CSS will break when we clone things, should be classes
-                        throw new SvgStructureException( 'structure-error-css-has-ids', $style );
+                        throw new SvgStructureException('structure-error-css-has-ids', $style);
                     }
                 }
             }
@@ -189,7 +189,7 @@ class SvgFile
         // tref tags are not supported.
         $trefs = $this->document->getElementsByTagName('tref');
         if (0 !== $trefs->length) {
-            throw new SvgStructureException( 'structure-error-contains-tref', $trefs->item(0) );
+            throw new SvgStructureException('structure-error-contains-tref', $trefs->item(0));
         }
 
         // Strip empty tspans, texts, fill $idsInUse
@@ -348,7 +348,7 @@ class SvgFile
 
                 // Make sure there's not more than one text element with the same lang.
                 $textLang = $sibling->getAttribute('systemLanguage');
-                if ( in_array( $textLang, $existingLangs ) ) {
+                if (in_array($textLang, $existingLangs)) {
                     throw new SvgStructureException('structure-error-multiple-text-same-lang', $switch, [$textLang]);
                 }
                 $existingLangs[] = $textLang;
@@ -715,7 +715,7 @@ class SvgFile
         $array = [ 'text' => $node->textContent ];
         $attributes = $node->hasAttributes() ? $node->attributes : [];
         foreach ($attributes as $attribute) {
-            $prefix = '' === $attribute->prefix ? '' : ( $attribute->prefix.':' );
+            $prefix = '' === $attribute->prefix ? '' : $attribute->prefix.':';
             if ('space' === $attribute->name) {
                 // XML namespace prefix seems to disappear: TODO?
                 $prefix = 'xml:';

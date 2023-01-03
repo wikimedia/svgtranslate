@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace App\Controller;
@@ -34,7 +35,7 @@ class SearchController extends AbstractController
             'value' => $failedSearchTerm[0] ?? '',
             'required' => true,
         ]);
-        $button = new Tag( 'button' );
+        $button = new Tag('button');
         $button->setAttributes(['type' => 'submit']);
         $submitButton = new ButtonWidget([
             'button' => $button,
