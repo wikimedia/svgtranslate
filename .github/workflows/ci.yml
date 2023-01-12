@@ -42,6 +42,7 @@ jobs:
       run: |
         composer lint
         npm run lint
+        ./bin/console
 
     - name: Build assets
       run: |

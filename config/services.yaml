@@ -41,6 +41,3 @@ services:
     App\Service\Renderer:
         arguments:
             $rsvgCommand: 'rsvg-convert'
-
-    Wikimedia\ToolforgeBundle\Service\ReplicasClient:
-        autowire: false
