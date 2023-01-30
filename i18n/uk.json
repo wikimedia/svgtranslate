@@ -46,6 +46,7 @@
 	"structure-error-text-contains-dollar": "Цей файл містить непідтримуваний текстовий вміст у $1 ('$2'). SVG Translate не може працювати з синтаксисом долара-числа.",
 	"structure-error-non-tspan-inside-text": "Цей файл містить текстовий елемент із вмістом, який не є елементом tspan.",
 	"structure-error-switch-text-is-not-node": "Цей файл містить невузловий вміст у елементі switch.",
+	"structure-error-switch-text-content-outside-text": "Цей файл містить текстовий вміст усередині елемента switch, але поза текстовим тегом, і SVG Translate не може з цим впоратися.",
 	"structure-error-switch-child-not-text": "Цей файл містить елемент switch, який містить елемент, який не є текстовим елементом.",
 	"structure-error-multiple-lang-in-text": "Цей файл містить текстові елементи, які мають повторюваний код мови '$2' в атрибутах systemLanguage.",
 	"structure-error-no-id": "[ідентифікатор елемента можна визначити]",
