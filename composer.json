@@ -40,7 +40,7 @@
         "mediawiki/minus-x": "^1.1",
         "phan/phan": "^5.0",
         "php-coveralls/php-coveralls": "^2.1",
-        "phpunit/phpunit": "^8.5",
+        "phpunit/phpunit": "^9.6",
         "slevomat/coding-standard": "^8.0",
         "symfony/browser-kit": "^5.4",
         "symfony/css-selector": "^5.4",
