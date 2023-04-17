@@ -53,7 +53,7 @@
 	"source-to-target": "至",
 	"select-language": "選擇語言",
 	"confirmation-to-switch-target-lang": "您正嘗試更改翻譯語言；但尚未將翻譯儲存，所更改的語言會遺失任何增加的翻譯內容。在繼續之前，請先上傳翻譯至維基共享資源或是下載翻譯的檔案。您確定要繼續嗎？",
-	"confirm-change-target-lang": "更改語言",
+	"confirm-change-target-lang": "變更語言",
 	"upload-button-label": "上傳至共享資源",
 	"upload-button-in-progress": "正在上傳至共享資源…",
 	"upload-login-warning": "登入以啟用上傳",
