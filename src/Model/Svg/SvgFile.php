@@ -255,15 +255,7 @@ class SvgFile
         }
 
         // Reset $translatableNodes
-        $translatableNodes = [];
-        $tspans = $this->document->getElementsByTagName('tspan');
-        $texts = $this->document->getElementsByTagName('text');
-        foreach ($tspans as $tspan) {
-            array_push($translatableNodes, $tspan);
-        }
-        foreach ($texts as $text) {
-            array_push($translatableNodes, $text);
-        }
+        $translatableNodes = $this->xpath->query('//*[name()="tspan"]|//*[name()="text"]');
 
         // Create id attributes for text, tspan nodes missing it
         foreach ($translatableNodes as $translatableNode) {
