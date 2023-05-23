@@ -29,6 +29,8 @@
 	"invalid-format": "Hanya fail SVG yang disokong.",
 	"invalid-svg": "Ralat membaca fail.",
 	"network-error": "Ralat mendapatkan maklumat dari pelayan Wikimedia. Sila cuba lagi nanti.",
+	"structure-error-no-doc-element": "Tiada unsur dokumen dijumpai.",
+	"structure-error-no-id": "[ID unsur tidak dapat ditentukan]",
 	"pick-another": "← pilih fail lain",
 	"view-on-commons": "Lihat di Commons",
 	"opens-in-new-tab": "Buka di tab baru",

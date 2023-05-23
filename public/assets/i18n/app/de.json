@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"DraconicDark",
+			"Justman10000",
 			"Killarnee",
 			"Tobi 406"
 		]
@@ -31,6 +32,21 @@
 	"invalid-format": "Nur SVG-Dateien werden unterstützt.",
 	"invalid-svg": "Fehler beim Lesen der Datei.",
 	"network-error": "Fehler beim Holen von Informationen von den Wikimedia-Servern. Bitte versuche es später erneut.",
+	"structure-error-no-doc-element": "Kein Dokumentelement gefunden.",
+	"structure-error-nested-tspans-not-supported": "Diese Datei kann nicht übersetzt werden, weil sie verschachtelte tspan-Elemente in $1 enthält.",
+	"structure-error-multiple-text-same-lang": "Mehrere Textelemente mit Sprachcode '$2' (in Element mit ID '$1') gefunden.",
+	"structure-error-contains-tref": "Diese Datei enthält tref-Tags, die von diesem Tool nicht unterstützt werden.",
+	"structure-error-css-too-complex": "Diese Datei enthält CSS, das zu kompliziert zum Parsen ist.",
+	"structure-error-css-has-ids": "Diese Datei verwendet Element-IDs in der CSS, die kaputt gehen können, wenn SVG Translate neue IDs hinzufügt. Wenn möglich, sollte sie stattdessen Klassen verwenden.",
+	"structure-error-unexpected-node-in-text": "Diese Datei hat unerwarteten Inhalt innerhalb eines Textelements. Es sollten nur tspan-Elemente innerhalb von Text verwendet werden.",
+	"structure-error-invalid-node-id": "Diese Datei enthält eine Textelement-ID ($1), die Zeichen enthält, die mit SVG Translate nicht zulässig sind.",
+	"structure-error-text-contains-dollar": "Diese Datei enthält nicht unterstützten Textinhalt in $1 ('$2'). SVG Translate ist nicht in der Lage, mit der Dollar-Zahlen-Syntax zu arbeiten.",
+	"structure-error-non-tspan-inside-text": "Diese Datei enthält ein Textelement mit einem Inhalt, der kein tspan-Element ist.",
+	"structure-error-switch-text-is-not-node": "Diese Datei verfügt über Nicht-Knoten-Inhalte innerhalb eines Schalter-Elements.",
+	"structure-error-switch-text-content-outside-text": "Diese Datei hat Textinhalte innerhalb eines Switch-Elements, jedoch außerhalb eines Text-Tags, und SVG Translate kann damit nicht umgehen.",
+	"structure-error-switch-child-not-text": "Diese Datei enthält ein Schalterelement, das ein Element enthält, das kein Textelement ist.",
+	"structure-error-multiple-lang-in-text": "Diese Datei enthält Textelemente, die in den systemLanguage-Attributen einen wiederholten Sprachcode \"$2\" haben.",
+	"structure-error-no-id": "[Element-ID konnte ermittelt werden]",
 	"pick-another": "← andere Datei auswählen",
 	"view-on-commons": "Auf Commons ansehen",
 	"opens-in-new-tab": "In neuem Tab öffnen",
