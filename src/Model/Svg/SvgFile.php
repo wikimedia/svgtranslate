@@ -15,6 +15,7 @@ use App\Exception\SvgStructureException;
 use DOMDocument;
 use DOMElement;
 use DOMNode;
+use DOMNodeList;
 use DOMXpath;
 use Krinkle\Intuition\Intuition;
 use Psr\Log\LoggerAwareTrait;
@@ -158,7 +159,7 @@ class SvgFile
         }
 
         // Check that there is something to translate.
-        $texts = $this->document->getElementsByTagName('text');
+        $texts = $this->getElementsByTagName('text');
         $textLength = $texts->length;
         if (0 === $textLength) {
             // Nothing to translate. Given special handling in TranslateController.
@@ -166,7 +167,7 @@ class SvgFile
             return;
         }
 
-        $styles = $this->document->getElementsByTagName('style');
+        $styles = $this->getElementsByTagName('style');
         $styleLength = $styles->length;
         for ($i = 0; $i < $styleLength; $i++) {
             $style = $styles->item($i);
@@ -187,7 +188,7 @@ class SvgFile
         }
 
         // tref tags are not supported.
-        $trefs = $this->document->getElementsByTagName('tref');
+        $trefs = $this->getElementsByTagName('tref');
         if (0 !== $trefs->length) {
             throw new SvgStructureException('structure-error-contains-tref', $trefs->item(0));
         }
@@ -195,8 +196,8 @@ class SvgFile
         // Strip empty tspans, texts, fill $idsInUse
         $idsInUse = [ 0 ];
         $translatableNodes = [];
-        $tspans = $this->document->getElementsByTagName('tspan');
-        $texts = $this->document->getElementsByTagName('text');
+        $tspans = $this->getElementsByTagName('tspan');
+        $texts = $this->getElementsByTagName('text');
         foreach ($tspans as $tspan) {
             if ($tspan->childNodes->length > 1
                 || ( 1 == $tspan->childNodes->length && XML_TEXT_NODE !== $tspan->childNodes->item(0)->nodeType )
@@ -256,8 +257,8 @@ class SvgFile
 
         // Reset $translatableNodes
         $translatableNodes = [];
-        $tspans = $this->document->getElementsByTagName('tspan');
-        $texts = $this->document->getElementsByTagName('text');
+        $tspans = $this->getElementsByTagName('tspan');
+        $texts = $this->getElementsByTagName('text');
         foreach ($tspans as $tspan) {
             array_push($translatableNodes, $tspan);
         }
@@ -274,7 +275,7 @@ class SvgFile
             }
         }
 
-        $texts = $this->document->getElementsByTagName('text');
+        $texts = $this->getElementsByTagName('text');
         $textLength = $texts->length;
         for ($i = 0; $i < $textLength; $i++) {
             /** @var DOMElement $text */
@@ -322,9 +323,9 @@ class SvgFile
             }
         }
 
-        $switchLength = $this->document->getElementsByTagName('switch')->length;
+        $switchLength = $this->getElementsByTagName('switch')->length;
         for ($i = 0; $i < $switchLength; $i++) {
-            $switch = $this->document->getElementsByTagName('switch')->item($i);
+            $switch = $this->getElementsByTagName('switch')->item($i);
             $siblings = $switch->childNodes;
             $existingLangs = [];
             foreach ($siblings as $sibling) {
@@ -396,7 +397,7 @@ class SvgFile
      */
     protected function analyse(): void
     {
-        $switches = $this->document->getElementsByTagName('switch');
+        $switches = $this->getElementsByTagName('switch');
         $number = $switches->length;
         $translations = [];
         $this->filteredTextNodes = []; // Reset
@@ -468,6 +469,17 @@ class SvgFile
         }
         $this->inFileTranslations = $translations;
         $this->savedLanguages = array_unique($this->savedLanguages);
+    }
+
+    /**
+     * Workaround for O(N^2) performance of DOMDocument::getElementsByTagName() T336917
+     *
+     * @param string $name
+     * @return DOMNodeList
+     */
+    private function getElementsByTagName(string $name): DOMNodeList
+    {
+        return $this->xpath->query("//*[local-name()=\"$name\"]");
     }
 
     /**
@@ -561,7 +573,7 @@ class SvgFile
         $currentLanguages = $this->getSavedLanguages();
         $expanded = $started = [];
 
-        $switches = $this->document->getElementsByTagName('switch');
+        $switches = $this->getElementsByTagName('switch');
         $number = $switches->length;
         for ($i = 0; $i < $number; $i++) {
             $switch = $switches->item($i);
