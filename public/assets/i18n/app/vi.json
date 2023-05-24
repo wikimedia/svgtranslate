@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Leducthn",
+			"Minh Nguyen",
 			"Nghiemtrongdai VN",
 			"Nguyenphutrong2"
 		]
@@ -10,7 +11,7 @@
 	"help": "Trợ giúp",
 	"login": "Đăng nhập",
 	"logout": "Đăng xuất",
-	"structure-error-multiple-text-same-lang": "Đã tìm thấy nhiều phần tử văn bản có mã ngôn ngữ ' $2 ' (trong phần tử có ID ' $1 ').",
+	"structure-error-multiple-text-same-lang": "Đã tìm thấy nhiều phần tử văn bản có mã ngôn ngữ “$2” (trong phần tử có ID “$1”).",
 	"download-button-label": "Tải xuống",
 	"download-or-upload": "hoặc",
 	"translate-labels-title": "Biên dịch"

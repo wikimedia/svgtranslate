@@ -32,6 +32,7 @@ $( function () {
 
 /**
  * Helper function for getting values out of the 'svgtranslate' cookie.
+ *
  * @param {string} key The key to get, either 'interfaceLang' or 'preferredLangs'.
  * @param {*} defaultVal The default value to use if none is set in the cookie.
  * @return {*}

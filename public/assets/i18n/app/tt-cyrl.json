@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Blackisnewyellow",
 			"Ильгиз"
 		]
 	},
 	"help": "Ярдәм",
+	"add-preferred-lang": "Өстәргә",
 	"structure-error-multiple-text-same-lang": "'$2' тел коды белән табылган берничә текст элементы (ID '$1' белән элементта)."
 }

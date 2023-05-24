@@ -1,5 +1,6 @@
 /**
  * The language settings dialog window.
+ *
  * @param {Object} [config] Configuration options
  * @constructor
  */
@@ -17,6 +18,7 @@ OO.inheritClass( App.InterfaceLangButton, OO.ui.ButtonWidget );
 
 /**
  * Handles mouse click events.
+ *
  * @protected
  * @param {jQuery.Event} e Mouse click event
  * @fires click
@@ -33,6 +35,7 @@ App.InterfaceLangButton.prototype.onClick = function ( e ) {
 
 /**
  * Called when the user selects a language in the ULS.
+ *
  * @param {string} language The code of the selected language.
  */
 App.InterfaceLangButton.prototype.onUlsSelect = function ( language ) {

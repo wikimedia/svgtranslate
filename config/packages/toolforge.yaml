@@ -1,7 +1,7 @@
 toolforge:
   oauth:
-    url: '%env(OAUTH_URL)%'
-    consumer_key: '%env(OAUTH_KEY)%'
-    consumer_secret: '%env(OAUTH_SECRET)%'
+    url: "%env(OAUTH_URL)%"
+    consumer_key: "%env(OAUTH_KEY)%"
+    consumer_secret: "%env(OAUTH_SECRET)%"
   intuition:
-    domain: 'svgtranslate'
+    domain: svgtranslate

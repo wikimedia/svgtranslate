@@ -32,6 +32,8 @@
 	"invalid-format": "Wspierane są tylko pliki SVG.",
 	"invalid-svg": "Błąd odczytu pliku.",
 	"network-error": "Podczas pobierania informacji z serwerów Wikimedii wystąpił błąd. Spróbuj ponownie później.",
+	"structure-error-no-doc-element": "Nie znaleziono elementu dokumentu.",
+	"structure-error-nested-tspans-not-supported": "Ten plik nie może zostać przetłumaczony, ponieważ zawiera zagnieżdżone elementy tspan w $1 .",
 	"pick-another": "← wybierz inny plik",
 	"view-on-commons": "Zobacz na Commons",
 	"opens-in-new-tab": "Otwórz w nowej karcie",

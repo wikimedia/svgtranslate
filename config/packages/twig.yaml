@@ -1,6 +1,6 @@
 twig:
-    default_path: '%kernel.project_dir%/templates'
-    debug: '%kernel.debug%'
-    strict_variables: '%kernel.debug%'
-    globals:
-        wiki_url: '%env(WIKI_URL)%'
+  default_path: "%kernel.project_dir%/templates"
+  debug: "%kernel.debug%"
+  strict_variables: "%kernel.debug%"
+  globals:
+    wiki_url: "%env(WIKI_URL)%"

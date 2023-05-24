@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/check-tag-names */
 /**
  * SVG file search widget.
  *
@@ -17,6 +18,7 @@ OO.mixinClass( App.SearchWidget, OO.ui.mixin.LookupElement );
 /**
  * Get a new request object of the current lookup query value.
  * Note that the default result count limit of the API is 10.
+ *
  * @link https://www.mediawiki.org/wiki/API:Search
  *
  * @protected
@@ -27,7 +29,7 @@ App.SearchWidget.prototype.getLookupRequest = function () {
 	var val = this.getValue();
 	if ( val.indexOf( 'File:' ) !== -1 ) {
 		// Strip any 'File:' prefix, including if a URL has been supplied.
-		val = val.substring( val.indexOf( 'File:' ) + 'File:'.length );
+		val = val.slice( Math.max( 0, val.indexOf( 'File:' ) + 'File:'.length ) );
 	}
 	return $.ajax( {
 		url: appConfig.wikiUrl,
@@ -74,7 +76,7 @@ App.SearchWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
 		i, svgFilename;
 	for ( i = 0; i < data.length; i++ ) {
 		// Strip 'File:' prefix.
-		svgFilename = String( data[ i ].title ).substring( 'File:'.length );
+		svgFilename = String( data[ i ].title ).slice( 'File:'.length );
 		items.push( new OO.ui.MenuOptionWidget( {
 			data: svgFilename,
 			label: svgFilename

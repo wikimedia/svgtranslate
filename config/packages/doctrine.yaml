@@ -1,5 +1,5 @@
 doctrine:
-    dbal:
-        connections:
-            default:
-                dbname: null
+  dbal:
+    connections:
+      default:
+        dbname: null

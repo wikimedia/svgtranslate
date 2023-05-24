@@ -31,6 +31,7 @@
 	"invalid-format": "Endast SVG-filer stöds.",
 	"invalid-svg": "Fel uppstod när fil lästes in.",
 	"network-error": "Fel när information hämtades från Wikimedia-servrarna. Var vänlig försök igen senare.",
+	"structure-error-no-doc-element": "Inga dokumentelement hittades.",
 	"pick-another": "← välj en annan fil",
 	"view-on-commons": "Visa på Commons",
 	"opens-in-new-tab": "Öppnas i ny flik",

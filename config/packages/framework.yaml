@@ -1,38 +1,24 @@
 framework:
-    secret: '%env(APP_SECRET)%'
-    #default_locale: en
-    #csrf_protection: true
-    #http_method_override: true
+  secret: "%env(APP_SECRET)%"
+  # default_locale: en
+  # csrf_protection: true
+  # http_method_override: true
 
-    # Enable session support. Note that the session will ONLY be started if you read or write from it.
-    # Write session files to the var/ directory
-    # and make sure they're limited to the tool's own path on Toolforge.
-    session:
-        storage_id: Wikimedia\ToolforgeBundle\Service\NativeSessionStorage
-        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+  # Enable session support. Note that the session will ONLY be started if you read or write from it.
+  # Write session files to the var/ directory
+  # and make sure they're limited to the tool's own path on Toolforge.
+  session:
+    storage_id: Wikimedia\ToolforgeBundle\Service\NativeSessionStorage
+    save_path: "%kernel.project_dir%/var/sessions/%kernel.environment%"
 
-    #esi: true
-    #fragments: true
-    php_errors:
-        log: true
+    # esi: true
+    # fragments: true
+  php_errors:
+    log: true
 
-    cache:
-        # Put the unique name of your app here: the prefix seed
-        # is used to compute stable namespaces for cache keys.
-        #prefix_seed: your_vendor_name/app_name
+  cache:
+    pools:
+      cache.replicas: null
 
-        # The app cache caches to the filesystem by default.
-        # Other options include:
-
-        # Redis
-        #app: cache.adapter.redis
-        #default_redis_provider: redis://localhost
-
-        # APCu (not recommended with heavy random-write workloads as memory fragmentation can cause perf issues)
-        #app: cache.adapter.apcu
-
-        pools:
-            cache.replicas:
-
-    assets:
-        json_manifest_path: '%kernel.project_dir%/public/assets/manifest.json'
+  assets:
+    json_manifest_path: "%kernel.project_dir%/public/assets/manifest.json"
