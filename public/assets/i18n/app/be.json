@@ -1,9 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Plaga med"
 		]
 	},
+	"svgtranslate": "SVG Translate",
 	"help": "Даведка",
-	"add-preferred-lang": "Дадаць"
+	"login": "Увайсці",
+	"logout": "Выйсці",
+	"cancel": "Скасаваць",
+	"add-preferred-lang": "Дадаць",
+	"translate-button": "Перакласці",
+	"download-button-label": "Спампаваць",
+	"download-or-upload": "або"
 }
