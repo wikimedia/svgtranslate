@@ -1,4 +1,5 @@
 /vendor/
 /node_modules/
 /public/assets/
-
+/i18n/
+/public/i18n/
