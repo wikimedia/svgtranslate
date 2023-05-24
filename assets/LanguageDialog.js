@@ -1,5 +1,6 @@
 /**
  * The language settings dialog window.
+ *
  * @param {Object} [config] Configuration options
  * @constructor
  */
@@ -17,6 +18,7 @@ App.LanguageDialog.static.size = 'medium';
 
 /**
  * Set the height to a reasonable maximum.
+ *
  * @return {number} Body height.
  */
 App.LanguageDialog.prototype.getBodyHeight = function () {
@@ -26,6 +28,7 @@ App.LanguageDialog.prototype.getBodyHeight = function () {
 
 /**
  * Called each time the window is opened.
+ *
  * @param {Object} [data] Dialog opening data
  * @param {jQuery|string|Function|null} [data.title] Dialog title.
  * @param {Object[]} [data.actions] List of configuration options for each action.
@@ -98,8 +101,9 @@ App.LanguageDialog.prototype.initialize = function () {
 /**
  * Get the required top offset (in pixels) for a ULS menu.
  * Should be bound to the button element in question.
- * @HACK: ULS doesn't know its position relative to the button because of OOUI.
- * @return {int}
+ * HACK: ULS doesn't know its position relative to the button because of OOUI.
+ *
+ * @return {number}
  */
 App.LanguageDialog.prototype.calculateUlsTop = function () {
 	return $( this ).offset().top - ( $( this ).outerHeight() / 2 );
@@ -107,6 +111,7 @@ App.LanguageDialog.prototype.calculateUlsTop = function () {
 
 /**
  * Handle actions.
+ *
  * @param {string} [action] Symbolic name of action
  * @return {OO.ui.Process} Action process
  */

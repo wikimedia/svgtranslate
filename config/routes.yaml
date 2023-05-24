@@ -1,2 +1,2 @@
 toolforge:
-  resource: '@ToolforgeBundle/Resources/config/routes.yaml'
+  resource: "@ToolforgeBundle/Resources/config/routes.yaml"

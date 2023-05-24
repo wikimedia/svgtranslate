@@ -1,5 +1,6 @@
 /**
  * The preferred languages input widget.
+ *
  * @param {Object} [config] Configuration options
  * @constructor
  */
@@ -33,6 +34,7 @@ OO.inheritClass( App.UlsTagMultiselectWidget, OO.ui.TagMultiselectWidget );
 
 /**
  * Select handler for the ULS popup.
+ *
  * @param {string} language The code of the selected language.
  */
 App.UlsTagMultiselectWidget.prototype.onUlsSelect = function ( language ) {

@@ -110,6 +110,7 @@ App.Model.prototype.getSourceTranslation = function ( nodeId ) {
 
 /**
  * Set a single target translation string for the current target language.
+ *
  * @param {string} filename
  * @param {string} nodeId
  * @param {string} translation
@@ -137,18 +138,18 @@ App.Model.prototype.setTargetTranslation = function ( filename, nodeId, translat
 	// Save the new translation.
 	this.translations[ nodeId ][ this.targetLang ].text = translation;
 	// Also save to local storage if it differs from the original translation.
-	Object.keys( this.translations ).forEach( function ( nodeId ) {
+	Object.keys( this.translations ).forEach( function ( nId ) {
 		var origTrans, currentTrans;
-		currentTrans = model.translations[ nodeId ][ model.targetLang ] !== undefined ?
-			model.translations[ nodeId ][ model.targetLang ].text :
+		currentTrans = model.translations[ nId ][ model.targetLang ] !== undefined ?
+			model.translations[ nId ][ model.targetLang ].text :
 			'';
-		origTrans = model.originalTranslations[ nodeId ][ model.targetLang ] !== undefined ?
-			model.originalTranslations[ nodeId ][ model.targetLang ].text :
+		origTrans = model.originalTranslations[ nId ][ model.targetLang ] !== undefined ?
+			model.originalTranslations[ nId ][ model.targetLang ].text :
 			'';
 		if ( currentTrans !== origTrans ) {
-			changedTranslations[ nodeId ] = model.translations[ nodeId ][ model.targetLang ].text;
+			changedTranslations[ nId ] = model.translations[ nId ][ model.targetLang ].text;
 		} else {
-			delete changedTranslations[ nodeId ];
+			delete changedTranslations[ nId ];
 		}
 	} );
 	if ( changedTranslations ) {
@@ -166,6 +167,7 @@ App.Model.prototype.getTargetTranslation = function ( nodeId ) {
 
 /**
  * Load model values from LocalStorage.
+ *
  * @param {string} filename
  * @return {boolean} Whether translation changes were loaded.
  */
@@ -196,6 +198,7 @@ App.Model.prototype.loadFromLocalStorage = function ( filename ) {
 
 /**
  * Get a value from our LocalStorage item.
+ *
  * @protected
  * @param {string} key
  * @return {*}
@@ -214,6 +217,7 @@ App.Model.prototype.getLocalStorageValue = function ( key ) {
 
 /**
  * Set a value in our LocalStorage item.
+ *
  * @protected
  * @param {string} key
  * @param {*} val
