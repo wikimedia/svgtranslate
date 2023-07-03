@@ -33,7 +33,7 @@
 	"network-error": "Erro ao tentar obter informação dos servidores da Wikimedia. Tente novamente mais tarde, por favor.",
 	"structure-error-no-doc-element": "Não foi encontrado nenhum elemento de documento.",
 	"structure-error-nested-tspans-not-supported": "Este ficheiro não pode ser traduzido porque contém elementos intercalados ''tspan'' em $1.",
-	"structure-error-multiple-text-same-lang": "Foram encontrados vários elementos de texto com a língua '$1'",
+	"structure-error-multiple-text-same-lang": "Foram encontrados vários elementos de texto com o código de língua '$2' (no elemento com o identificador '$1').",
 	"structure-error-contains-tref": "Este ficheiro contém etiquetas ''tref'', que não são suportadas por esta ferramenta.",
 	"structure-error-css-too-complex": "Este ficheiro contém código CSS que é demasiado complicado para fazer a análise sintática.",
 	"structure-error-css-has-ids": "Este ficheiro usa identificadores de elementos no CSS, que podem ser quebrados quando o Tradutor de SVG adicionar identificadores novos. Devem antes ser usadas classes, se possível.",
