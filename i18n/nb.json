@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"EdoAug"
+			"EdoAug",
+			"Jon Harald Søby"
 		]
 	},
 	"svgtranslate": "SVG-oversetting",
@@ -22,6 +23,7 @@
 	"add-preferred-lang": "Legg til",
 	"search-help": "Skriv inn et filnavn fra Commons",
 	"search-label": "Filnavn (uten «Fil:»-prefiksen) eller URL:",
+	"search-placeholder": "100-årskrigen i Frankrike 1435.svg",
 	"translate-button": "Oversett",
 	"no-translations": "Denne filen har ingen etiketter som er tilgjengelige for oversetting. Velg et annet bilde.",
 	"not-found": "Fant ikke filen du forespurte. Velg et annet bilde.",
