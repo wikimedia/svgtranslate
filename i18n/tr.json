@@ -33,6 +33,8 @@
 	"invalid-svg": "Dosya okunurken hata oluştu.",
 	"network-error": "Wikimedia sunucularından bilgi alınırken hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
 	"structure-error-no-doc-element": "Belge ögesi bulunamadı.",
+	"structure-error-nested-tspans-not-supported": "Bu dosya $1 içinde iç içe geçmiş tspan ögeleri içerdiğinden çevrilemiyor.",
+	"structure-error-no-id": "[öge kimliği belirlenebilir]",
 	"pick-another": "← başka bir dosya seç",
 	"view-on-commons": "Commons'ta görüntüle",
 	"opens-in-new-tab": "Yeni sekmede açar",
