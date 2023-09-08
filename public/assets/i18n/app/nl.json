@@ -22,7 +22,7 @@
 	"cancel": "Annuleren",
 	"interface-lang-field-label": "Taal van tool:",
 	"interface-lang-field-help": "De tool zelf wordt in deze taal weergegeven.",
-	"preferred-langs-field-label": "Voorkeurstalen om van/naar te vertalen:",
+	"preferred-langs-field-label": "Voorkeurstalen om in/uit te vertalen:",
 	"preferred-langs-field-help": "Deze talen worden aan de bovenkant weergegeven wanneer u ertussen schakelt in de vertaalpagina.",
 	"add-preferred-lang": "Toevoegen",
 	"search-help": "Typ een bestandsnaam uit Commons",

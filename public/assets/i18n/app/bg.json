@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"StanProg",
 			"Tlubenov"
 		]
 	},
@@ -9,5 +10,6 @@
 	"cancel": "Отказ",
 	"add-preferred-lang": "Добави",
 	"translate-button": "Превод",
-	"download-button-label": "Изтегляне"
+	"download-button-label": "Изтегляне",
+	"translate-labels-title": "Превеждане"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hakimi97",
 			"Tofeiku"
 		]
 	},
@@ -30,6 +31,19 @@
 	"invalid-svg": "Ralat membaca fail.",
 	"network-error": "Ralat mendapatkan maklumat dari pelayan Wikimedia. Sila cuba lagi nanti.",
 	"structure-error-no-doc-element": "Tiada unsur dokumen dijumpai.",
+	"structure-error-nested-tspans-not-supported": "Fail ini tidak boleh diterjemahkan kerana ia mengandungi elemen tspan bersarang dalam $1.",
+	"structure-error-multiple-text-same-lang": "Elemen teks berbilang ditemui dengan kod bahasa '$2' (dalam elemen dengan ID '$1').",
+	"structure-error-contains-tref": "Fail ini mengandungi tag tref, yang tidak disokong oleh alat ini.",
+	"structure-error-css-too-complex": "Fail ini mengandungi CSS yang terlalu rumit untuk dihuraikan.",
+	"structure-error-css-has-ids": "Fail ini menggunakan ID elemen dalam CSS, yang mungkin rosak apabila SVG Translate menambah ID baharu. Ia sepatutnya menggunakan kelas sebaliknya, jika boleh.",
+	"structure-error-unexpected-node-in-text": "Fail ini mempunyai kandungan yang tidak terjangka dalam elemen teks. Hanya elemen tspan harus digunakan dalam teks.",
+	"structure-error-invalid-node-id": "Fail ini mengandungi ID elemen teks ($1) yang mengandungi aksara yang tidak dibenarkan apabila menggunakan Terjemahan SVG.",
+	"structure-error-text-contains-dollar": "Fail ini mengandungi kandungan teks yang tidak disokong dalam $1 ('$2'). Terjemahan SVG tidak dapat berfungsi dengan sintaks nombor dolar.",
+	"structure-error-non-tspan-inside-text": "Fail ini mengandungi elemen teks dengan kandungan yang bukan elemen tspan.",
+	"structure-error-switch-text-is-not-node": "Fail ini mempunyai kandungan bukan nod dalam elemen suis.",
+	"structure-error-switch-text-content-outside-text": "Fail ini mempunyai kandungan teks di dalam elemen suis tetapi di luar tag teks dan Terjemahan SVG tidak dapat mengendalikannya.",
+	"structure-error-switch-child-not-text": "Fail ini mengandungi elemen suis yang mengandungi elemen yang bukan elemen teks.",
+	"structure-error-multiple-lang-in-text": "Fail ini mengandungi elemen teks yang mempunyai kod bahasa berulang '$2' dalam atribut systemLanguage.",
 	"structure-error-no-id": "[ID unsur tidak dapat ditentukan]",
 	"pick-another": "← pilih fail lain",
 	"view-on-commons": "Lihat di Commons",
