@@ -3,7 +3,8 @@
 		"authors": [
 			"Agam Riyandana",
 			"Akmaie Ajam",
-			"Sonic Speedy"
+			"Sonic Speedy",
+			"Veracious"
 		]
 	},
 	"svgtranslate": "Terjemahan SVG",
@@ -13,7 +14,7 @@
 	"help": "Bantuan",
 	"login": "Masuk log",
 	"logout": "Keluar log",
-	"logged-in-as": "Logged in as $1",
+	"logged-in-as": "Masuk sebagai $1",
 	"language-settings": "Pengaturan bahasa",
 	"done": "Selesai",
 	"cancel": "Batal",
