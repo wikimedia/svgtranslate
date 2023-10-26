@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"svgtranslate": "SVG Translate",
@@ -15,7 +16,7 @@
 	"logged-in-as": "Aniciasti sesión como $1",
 	"language-settings": "Preferencies de llingua",
 	"done": "Fecho",
-	"cancel": "Encaboxar",
+	"cancel": "Zarrar",
 	"interface-lang-field-label": "Idioma de ferramienta:",
 	"interface-lang-field-help": "La propia ferramienta veráse nesti idioma.",
 	"preferred-langs-field-label": "Llingües de preferencia pa traducir a/dende:",
