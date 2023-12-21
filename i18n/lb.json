@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"svgtranslate": "SVG Iwwersetzen",
@@ -45,6 +46,7 @@
 	"upload-complete-commons": "Bild weisen",
 	"upload-complete-translate-another": "Een anert Bild iwwersetzen",
 	"version": "Versioun $1",
+	"privacy-policy": "Dateschutzrichtlinnen",
 	"report-issue": "E Feeler mellen",
 	"view-source": "Op Github weisen"
 }
