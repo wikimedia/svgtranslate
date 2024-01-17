@@ -1,5 +1,5 @@
 {
 	"ignore": [
-		"./bin/.phpunit/phpunit-8.5-0/phpunit"
+		"./bin/.phpunit/phpunit-9.6-0/phpunit"
 	]
 }
