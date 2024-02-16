@@ -4,7 +4,7 @@
 	"type": "project",
 	"license": "GPL-3.0-or-later",
 	"require": {
-		"php": "^7.2|^8",
+		"php": "^8.2",
 		"ext-ctype": "*",
 		"ext-curl": "*",
 		"ext-dom": "*",
@@ -53,7 +53,7 @@
 	"config": {
 		"sort-packages": true,
 		"platform": {
-			"php": "7.4"
+			"php": "8.2"
 		},
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
