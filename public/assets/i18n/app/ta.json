@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Balajijagadesh",
+			"Fahimrazick",
 			"Gurulenin"
 		]
 	},
 	"svgtranslate": "SVG மொழிபெயர்ப்பு",
 	"help": "உதவி",
-	"login": "உள்நுழை",
+	"login": "புகுபதிகை",
 	"logout": "விடுபதிகை",
 	"logged-in-as": "$1 என புகுபதிகை செய்யப்பட்டுள்ளது",
 	"language-settings": "மொழி அமைப்புகள்",
@@ -18,7 +19,7 @@
 	"add-preferred-lang": "சேர்",
 	"translate-button": "மொழிபெயர்க்கவும்",
 	"invalid-svg": "கோப்பைப் படிப்பதில் பிழை.",
-	"view-on-commons": "பொதுவகத்தில் பார்க்கவும்",
+	"view-on-commons": "பொதுவகத்திற் பார்",
 	"opens-in-new-tab": "புதிய தாவலில் இணைப்பை திற",
 	"default-language": "இயல்பு நிலை மொழி",
 	"select-language": "ஒரு மொழியைத் தேர்க",
@@ -28,7 +29,7 @@
 	"download-or-upload": "அல்லது",
 	"translate-labels-title": "மொழிபெயர்",
 	"upload-complete": "பதிவேற்றம் முழுமையடைந்தது",
-	"upload-complete-commons": "படத்தைப் பார்க்க",
+	"upload-complete-commons": "படத்தைப் பார்",
 	"upload-complete-translate-another": "இன்னொரு படத்தை மொழிபெயர்",
 	"privacy-policy": "தனியுரிமைக் கொள்கை",
 	"report-issue": "வழுக்களை அறிக்கையிடுக"
