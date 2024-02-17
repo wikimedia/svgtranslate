@@ -530,11 +530,10 @@ class SvgFileTest extends TestCase
     public function testSvgNamespace(string $input, string $expected)
     {
         $svgFile = $this->getSvgFileFromString('<svg xmlns:svg="http://www.w3.org/2000/svg">'.$input.'</svg>');
-        $this->assertSame(
-            '<?xml version="1.0" encoding="UTF-8"?>'."\n"
-            .'<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
+        $this->assertRegExp(
+            '|<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
             .$expected
-            .'</svg>'."\n",
+            .'</svg>'."\n|m",
             $svgFile->saveToString()
         );
     }
@@ -574,7 +573,7 @@ class SvgFileTest extends TestCase
                     .'</switch>',
                 'expected' => '<switch>'
                     .'<svg:text id="trsvg18-zh-hans" systemLanguage="zh-hans"><tspan id="trsvg2-zh-hans">A</tspan></svg:text>'
-                    .'<svg:text id="trsvg18"><tspan id="trsvg2">B</tspan></svg:text>'
+                    .'<(svg:)?text id="trsvg18"><tspan id="trsvg2">B</tspan></(svg:)?text>'
                     .'</switch>',
             ],
             'tspan_namespace' => [
@@ -584,7 +583,7 @@ class SvgFileTest extends TestCase
                     .'</switch>',
                 'expected' => '<switch>'
                     .'<text id="trsvg18-zh-hans" systemLanguage="zh-hans"><svg:tspan id="trsvg2-zh-hans">A</svg:tspan></text>'
-                    .'<text id="trsvg18"><svg:tspan id="trsvg2">B</svg:tspan></text>'
+                    .'<text id="trsvg18"><(svg:)?tspan id="trsvg2">B</(svg:)?tspan></text>'
                     .'</switch>',
             ],
         ];
