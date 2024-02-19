@@ -1,6 +1,10 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Lhanars"
+		]
 	},
-	"help": "Ajuda"
+	"help": "Ajuda",
+	"translate-button": "Tradusètz",
+	"translate-labels-title": "Tradusètz"
 }
