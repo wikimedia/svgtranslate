@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"svgtranslate": "SVG Iwwersetzen",
@@ -16,6 +17,7 @@
 	"done": "Fäerdeg",
 	"cancel": "Ofbriechen",
 	"interface-lang-field-label": "Sprooch vum Geschier:",
+	"interface-lang-field-help": "D'Geschier gëtt an dëser Sprooch gewisen.",
 	"add-preferred-lang": "Derbäisetzen",
 	"search-help": "Tippt en Numm vun engem Fichier op Commons",
 	"search-label": "Numm vum Fichier (ouni 'Fichier:' Prefix) oder URL:",
@@ -45,6 +47,7 @@
 	"upload-complete-commons": "Bild weisen",
 	"upload-complete-translate-another": "Een anert Bild iwwersetzen",
 	"version": "Versioun $1",
+	"privacy-policy": "Dateschutzrichtlinnen",
 	"report-issue": "E Feeler mellen",
 	"view-source": "Op Github weisen"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
+			"Sandra Hanbo",
 			"أَحمد",
 			"ديفيد"
 		]
@@ -33,7 +34,7 @@
 	"network-error": "خطأ في الحصول على معلومات من خوادم ويكيميديا؛ الرجاء معاودة المحاولة في وقت لاحق.",
 	"structure-error-no-doc-element": "لم يُعثر على عنصر مُستند",
 	"structure-error-nested-tspans-not-supported": "لا يمكن ترجمة هذا الملف لأنه يحتوي على عناصر tspan متداخلة في $1 .",
-	"structure-error-multiple-text-same-lang": "تم العثور على عناصر نصية متعددة مع اللغة \" $1 \"",
+	"structure-error-multiple-text-same-lang": "تم العثور على عناصر نصية متعددة برمز اللغة ' $2 ' (في العنصر بالمعرف ' $1 ').",
 	"structure-error-contains-tref": "يحتوي هذا الملف على علامات tref ، والتي لا تدعمها هذه الأداة.",
 	"structure-error-css-too-complex": "يحتوي هذا الملف على CSS معقد للغاية بحيث يتعذر تحليله.",
 	"structure-error-css-has-ids": "يستخدم هذا الملف معرفات العناصر في CSS ، والتي قد تنكسر عندما تضيف ترجمة SVG معرفات جديدة. يجب أن تستخدم الفئات بدلاً من ذلك ، إن أمكن.",
