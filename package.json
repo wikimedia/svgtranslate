@@ -22,9 +22,9 @@
 		"qunit": "2.9.2"
 	},
 	"scripts": {
-		"test": "qunit tests/qunit/",
-		"lint": "lessc --lint assets/*.less && eslint . && grunt banana",
+		"test": "lessc --lint assets/*.less && eslint . && grunt banana && qunit tests/qunit/",
 		"fix": "eslint --fix .",
-		"assets": "encore production"
+		"build": "encore production",
+		"watch": "encore dev --watch"
 	}
 }
