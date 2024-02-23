@@ -87,7 +87,7 @@
 			"@generate-test-data"
 		],
 		"generate-test-data": [
-			"LANG=de rsvg-convert ./tests/data/Speech_bubbles.svg > ./tests/data/Speech_bubbles.png"
+			"rsvg-convert --accept-language=de ./tests/data/Speech_bubbles.svg > ./tests/data/Speech_bubbles.png"
 		],
 		"lint": [
 			"composer validate",
