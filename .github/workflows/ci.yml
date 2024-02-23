@@ -32,7 +32,7 @@ jobs:
         php-version: ${{matrix.php}}
 
     - name: Set up Node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version-file: '.nvmrc'
 
@@ -43,19 +43,14 @@ jobs:
         composer install
         npm ci
 
-    - name: Run linting
+    - name: Build
       run: |
-        composer lint
-        npm run lint
-        ./bin/console
+          npm run build
 
-    - name: Build assets
-      run: |
-          npm run assets
-          git status
-          git status | grep "nothing to commit, working tree clean"
-
-    - name: Run tests
+    - name: Test
       run: |
         composer test
         npm run test
+        ./bin/console
+        git status
+        git status | grep "nothing to commit, working tree clean"

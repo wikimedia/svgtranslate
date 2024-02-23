@@ -57,23 +57,22 @@ The usual commands you'll need for development are as follows:
 1. If you change anything in `assets/` you'll need to rebuild the asset files
    (running `npm install` before the first time doing this, if you haven't already):
 
-       docker-compose exec assets npm run assets
+       docker-compose exec assets npm run build
 
    Or, to have it monitor the files for changes while you're working
    (note the double-hyphens to to prevent the `watch` flag from being treated as an argument to `npm`):
 
-       docker-compose exec assets npm run assets -- --watch
+       docker-compose exec assets npm run watch
 
 2. If you change `composer.json` or `packages.json`, you need to update:
 
        docker-compose exec web composer update
        docker-compose exec assets npm update
 
-3. To run linting and tests:
+3. To run tests:
 
-       docker-compose exec web composer lint
-       docker-compose exec assets npm run lint
        docker-compose exec web composer test
+       docker-compose exec assets npm run test
 
 You can get to a shell inside any of the containers with the following:
 
@@ -102,11 +101,6 @@ Run development web server:
 
 ## Development commands
 
-Run linting:
-
-    composer lint
-    npm run lint
-
 Run tests:
 
     composer test
@@ -114,7 +108,16 @@ Run tests:
 
 Generate assets:
 
-    ./node_modules/.bin/encore production
+    npm run build
 
-Note that the generated assets (in `public/assets/`) are also committed to Git,
-for ease of deployment in production (where we don't have Node).
+## Deployment on Toolforge
+
+The tool is deployed in a `tool/` directory in the tool's home directory,
+with `tool/public/` symlinked from `public_html/`.
+
+To deploy, first checkout the relevant version into `tool/`,
+and then load the PHP and Node installation jobs from the home directory:
+
+```console
+$ toolforge-jobs load tool/toolforge/install.yaml
+```
