@@ -3401,16 +3401,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v5.4.35",
+            "version": "v5.4.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "c827d421caccf467ef1a969e7412a8755fa88093"
+                "reference": "3bbf663b8021a5a7b8f4bf9b868354db6611a514"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/c827d421caccf467ef1a969e7412a8755fa88093",
-                "reference": "c827d421caccf467ef1a969e7412a8755fa88093",
+                "url": "https://api.github.com/repos/symfony/form/zipball/3bbf663b8021a5a7b8f4bf9b868354db6611a514",
+                "reference": "3bbf663b8021a5a7b8f4bf9b868354db6611a514",
                 "shasum": ""
             },
             "require": {
@@ -3483,7 +3483,7 @@
             "description": "Allows to easily create, process and reuse HTML forms",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/form/tree/v5.4.35"
+                "source": "https://github.com/symfony/form/tree/v5.4.36"
             },
             "funding": [
                 {
@@ -3499,7 +3499,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-23T14:28:09+00:00"
+            "time": "2024-02-08T18:38:25+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -5626,16 +5626,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.4.35",
+            "version": "v5.4.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "c209c4d0559acce1c9a2067612cfb5d35756edc2"
+                "reference": "4e232c83622bd8cd32b794216aa29d0d266d353b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/c209c4d0559acce1c9a2067612cfb5d35756edc2",
-                "reference": "c209c4d0559acce1c9a2067612cfb5d35756edc2",
+                "url": "https://api.github.com/repos/symfony/string/zipball/4e232c83622bd8cd32b794216aa29d0d266d353b",
+                "reference": "4e232c83622bd8cd32b794216aa29d0d266d353b",
                 "shasum": ""
             },
             "require": {
@@ -5692,7 +5692,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v5.4.35"
+                "source": "https://github.com/symfony/string/tree/v5.4.36"
             },
             "funding": [
                 {
@@ -5708,7 +5708,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-23T13:51:25+00:00"
+            "time": "2024-02-01T08:49:30+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -9736,5 +9736,5 @@
     "platform-overrides": {
         "php": "7.4"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
