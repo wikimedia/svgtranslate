@@ -36,17 +36,17 @@ class Renderer
     {
         // Construct the command, using variables that will be escaped when it's run.
         $command = $this->rsvgCommand.' "$SVG"';
+        if ('fallback' !== $lang) {
+            // Set the language to use from the SVG systemLanguage.
+            // If the fallback language is being requested, the OS's default will be
+            // used instead (as is done in MediaWiki).
+            $command .= " --accept-language=$lang";
+        }
         if ($outFile) {
             // Redirect to output file if required.
             $command .= ' > "$PNG"';
         }
         $process = Process::fromShellCommandline($command);
-        if ('fallback' !== $lang) {
-            // Set the LANG environment variable, which will be interpreted as the SVG
-            // systemLanguage. If the fallback language is being requested, the OS's default will be
-            // used instead (as is done in MediaWiki).
-            $process->setEnv(['LANG' => $lang]);
-        }
         $process->mustRun(null, ['SVG' => $file, 'PNG' => $outFile]);
         return $process->getOutput();
     }
