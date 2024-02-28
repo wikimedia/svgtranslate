@@ -4,7 +4,7 @@
 		"@wikimedia/jquery.i18n": "1.0",
 		"copy-webpack-plugin": "4.6",
 		"css-loader": "2.1",
-		"jquery": "3.3",
+		"jquery": "3.5",
 		"jquery.uls": "0.1",
 		"js-cookie": "2.2",
 		"leaflet": "1.4.0",
