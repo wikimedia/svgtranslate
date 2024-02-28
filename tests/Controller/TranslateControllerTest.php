@@ -15,10 +15,10 @@ class TranslateControllerTest extends WebTestCase
     public function testExists(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/File:Test.svg');
+        $crawler = $client->request('GET', '/File:SVG_Translate_test_-_valid.svg');
         $response = $client->getResponse();
         static::assertEquals(200, $response->getStatusCode());
-        static::assertStringContainsString('Test.svg', $crawler->filter('h1')->text());
+        static::assertStringContainsString('SVG Translate test - valid.svg', $crawler->filter('h1')->text());
     }
 
     public function testNonSvgHandling(): void
