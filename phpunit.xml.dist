@@ -14,7 +14,7 @@
         <env name="SHELL_VERBOSITY" value="-1" />
         <!-- define your env variables for the test env here -->
 
-        <env name="SYMFONY_PHPUNIT_VERSION" value="8.5" />
+        <env name="SYMFONY_PHPUNIT_VERSION" value="9" />
 
         <!-- ###+ symfony/framework-bundle ### -->
         <env name="APP_ENV" value="test" />
@@ -43,23 +43,16 @@
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist>
+    <coverage>
+        <include>
             <directory>src</directory>
-        </whitelist>
-    </filter>
+        </include>
+        <report>
+            <clover outputFile="var/log/phpunit_clover.xml"/>
+        </report>
+    </coverage>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
     </listeners>
-
-    <groups>
-        <exclude>
-            <group>Broken</group>
-        </exclude>
-    </groups>
-
-    <logging>
-        <log type="coverage-clover" target="var/log/phpunit_clover.xml" />
-    </logging>
 </phpunit>

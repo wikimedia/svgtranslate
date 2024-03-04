@@ -530,7 +530,7 @@ class SvgFileTest extends TestCase
     public function testSvgNamespace(string $input, string $expected)
     {
         $svgFile = $this->getSvgFileFromString('<svg xmlns:svg="http://www.w3.org/2000/svg">'.$input.'</svg>');
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '|<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">'
             .$expected
             .'</svg>'."\n|m",
