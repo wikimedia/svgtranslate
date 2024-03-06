@@ -28,7 +28,7 @@
 		"symfony/process": "^5.4",
 		"symfony/property-access": "^5.4",
 		"symfony/property-info": "^5.4",
-		"symfony/serializer": "^5.4",
+		"symfony/serializer": "^6.3",
 		"symfony/mailer": "^5.4",
 		"symfony/twig-bundle": "^5.4",
 		"symfony/validator": "^5.4",
