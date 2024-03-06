@@ -1,7 +1,7 @@
 ---
 - name: svgtranslate-composer-install
-  command: composer -d app --no-dev -o install
-  image: tf-php74
+  command: composer -d tool --no-dev -o install
+  image: php8.2
 - name: svgtranslate-npm-build
-  command: cd app && npm ci && npm run build
-  image: tf-node16
+  command: cd tool && npm ci && npm run build
+  image: node16
