@@ -1,4 +1,4 @@
-FROM docker-registry.wikimedia.org/dev/buster-php74
+FROM docker-registry.tools.wmflabs.org/toolforge-php82-sssd-base
 
 WORKDIR /var/www/
 
