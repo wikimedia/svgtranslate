@@ -7,8 +7,9 @@ $wgShowDBErrorBacktrace = true;
 // Site.
 $wgSitename = "SVG Translate Dev Wiki";
 $wgMetaNamespace = "Project";
-//$wgServer = "http://localhost:8043";
+$wgServer = 'http://localhost:8043';
 $wgScriptPath = '';
+$wgArticlePath = '/index.php?title=$1';
 $wgResourceBasePath = $wgScriptPath;
 
 // Database.
