@@ -32,7 +32,7 @@ services:
     arguments:
       $entryPoint: "%wiki_url%"
       $client: '@MediaWiki\OAuthClient\Client'
-      $session: "@session"
+      $requestStack: "@request_stack"
 
   App\Service\FileCache:
     arguments:
