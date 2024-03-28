@@ -5,6 +5,7 @@
 			"LametinoWiki"
 		]
 	},
+	"svgtranslate": "SVG Translate",
 	"info": "Aiutaci a tradurre le etichette di testo sui file SVG. Scegli un file su Commons per iniziare.",
 	"learn-more": "Ulteriori informazioni.",
 	"return-to-home": "torna alla schermata principale",
@@ -17,6 +18,7 @@
 	"cancel": "Annulla",
 	"interface-lang-field-label": "Lingua dello strumento:",
 	"interface-lang-field-help": "Lo strumento verrà mostrato in questa lingua.",
+	"preferred-langs-field-label": "Lingue preferite di traduzione in entrata/uscita:",
 	"add-preferred-lang": "Aggiungi",
 	"search-help": "Digita il nome di un file su Commons",
 	"search-label": "Nome del file (senza il prefisso'File:') o URL:",
