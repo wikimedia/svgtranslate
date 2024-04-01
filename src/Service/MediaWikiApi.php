@@ -11,7 +11,7 @@ use GuzzleHttp\Client;
 use MediaWiki\OAuthClient\Client as OauthClient;
 use MediaWiki\OAuthClient\Token;
 use stdClass;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
@@ -33,11 +33,11 @@ class MediaWikiApi
     /**
      * @param string $entryPoint Fully-qualified URL of the wiki's api.php
      */
-    public function __construct(string $entryPoint, OauthClient $client, Session $session)
+    public function __construct(string $entryPoint, OauthClient $client, RequestStack $requestStack)
     {
         $this->entryPoint = $entryPoint;
         $this->oauthClient = $client;
-        $this->oauthAccessToken = $session->get('oauth.access_token');
+        $this->oauthAccessToken = $requestStack->getSession()->get('oauth.access_token');
     }
 
     /**

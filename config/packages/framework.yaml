@@ -8,7 +8,7 @@ framework:
   # Write session files to the var/ directory
   # and make sure they're limited to the tool's own path on Toolforge.
   session:
-    storage_id: Wikimedia\ToolforgeBundle\Service\NativeSessionStorage
+    storage_factory_id: session.storage.factory.native
     save_path: "%kernel.project_dir%/var/sessions/%kernel.environment%"
 
     # esi: true
