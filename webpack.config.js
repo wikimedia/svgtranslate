@@ -8,20 +8,20 @@
 		.setOutputPath( './public/assets/' )
 
 		// Public URL path used by the web server to access the output path.
-		.setPublicPath( 'assets/' )
+		.setPublicPath( '/assets/' )
 
 		// Set up global variables.
 		.autoProvideVariables( {
-			OO: 'oojs',
-			jQuery: 'jquery',
-			$: 'jquery'
+			OO: 'oojs'
 		} )
 
 		// Copy i18n files for use by jquery.i18n.
-		.addPlugin( new CopyWebpackPlugin( [
-			{ from: './node_modules/jquery.uls/i18n/', to: 'i18n/jquery.uls/' },
-			{ from: './i18n/', to: 'i18n/app/' }
-		] ) )
+		.addPlugin( new CopyWebpackPlugin( {
+			patterns: [
+				{ from: './node_modules/jquery.uls/i18n/', to: 'i18n/jquery.uls/' },
+				{ from: './i18n/', to: 'i18n/app/' }
+			]
+		} ) )
 
 		// Add extra loader for OOUI's *.cur cursor image files.
 		.addLoader( { test: /\.cur$/, loader: 'file-loader' } )
@@ -45,7 +45,7 @@
 		 */
 		.addEntry( 'app', [
 			// JQuery.
-			'./node_modules/jquery/dist/jquery.js',
+			'./assets/jqueryinit.js',
 
 			// OOJS.
 			'./node_modules/oojs/dist/oojs.js',
@@ -105,8 +105,4 @@
 
 	// eslint-disable-next-line no-undef
 	module.exports = Encore.getWebpackConfig();
-
-	// Set a relative path for image assets; see https://github.com/symfony/webpack-encore/issues/88
-	// eslint-disable-next-line no-undef
-	module.exports.module.rules[ 2 ].options.publicPath = '../assets/';
 }() );

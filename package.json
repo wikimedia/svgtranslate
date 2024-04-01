@@ -1,25 +1,25 @@
 {
 	"dependencies": {
-		"@symfony/webpack-encore": "0.28",
+		"@symfony/webpack-encore": "4.6.1",
 		"@wikimedia/jquery.i18n": "1.0",
-		"copy-webpack-plugin": "4.6",
-		"css-loader": "2.1",
-		"jquery": "3.3",
+		"copy-webpack-plugin": "12.0.2",
+		"css-loader": "6.10.0",
+		"jquery": "3.7.1",
 		"jquery.uls": "0.1",
-		"js-cookie": "2.2",
-		"leaflet": "1.4.0",
-		"less": "3.9",
-		"less-loader": "4.1",
-		"oojs-ui": "0.33.4",
-		"popper.js": "1.14.7",
-		"wikimedia-ui-base": "0.13"
+		"js-cookie": "3.0.5",
+		"leaflet": "1.9.4",
+		"less": "4.2.0",
+		"oojs-ui": "0.49.0",
+		"popper.js": "1.16.1",
+		"wikimedia-ui-base": "0.22.0"
 	},
 	"devDependencies": {
-		"eslint": "8.41.0",
-		"eslint-config-wikimedia": "0.25.0",
-		"grunt": "1.0.2",
-		"grunt-banana-checker": "0.7.1",
-		"qunit": "2.9.2"
+		"eslint": "8.57.0",
+		"eslint-config-wikimedia": "0.26.0",
+		"grunt": "1.6.1",
+		"grunt-banana-checker": "0.11.1",
+		"less-loader": "^11.1.4",
+		"qunit": "2.20.1"
 	},
 	"scripts": {
 		"test": "lessc --lint assets/*.less && eslint . && grunt banana && qunit tests/qunit/",
