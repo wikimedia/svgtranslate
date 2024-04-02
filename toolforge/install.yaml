@@ -4,4 +4,4 @@
   image: php8.2
 - name: svgtranslate-npm-build
   command: cd tool && npm ci && npm run build
-  image: node16
+  image: node18
