@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
+			"GolyatGeri",
 			"Mirzali",
 			"Orbot707"
 		]
@@ -31,6 +32,9 @@
 	"invalid-format": "Teyna dosyay SVG rê pheşti deyena.",
 	"invalid-svg": "Wendışê dosya xırabeyo.",
 	"network-error": "Serveranê Wikimedia ra melumat gırotış de problem veciya. Bahdo reyna bıcerrebnê.",
+	"structure-error-no-doc-element": "Obcey dokumani nêvineya",
+	"structure-error-nested-tspans-not-supported": "Na dosya dê pê zerê kewte obcey tspan ihtiwa kena coka $1 nê tadiyena.",
+	"structure-error-no-id": "[Kamiya Obcey kês şeno nışandon]",
 	"pick-another": "← yewna dosya weçinê",
 	"view-on-commons": "Embari de bıvêne",
 	"opens-in-new-tab": "Hesabdariya newiye de keno a",
