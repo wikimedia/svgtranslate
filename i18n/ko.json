@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Codenstory",
+			"Suleiman the Magnificent Television",
 			"Ykhwong",
 			"그냥기여자",
 			"아라"
@@ -32,6 +33,7 @@
 	"invalid-format": "SVG 파일만 지원합니다.",
 	"invalid-svg": "파일 읽기 오류입니다.",
 	"network-error": "위키미디어 서버로부터 정보를 가져오는 중 오류가 발생했습니다. 나중에 다시 시도해 주십시오.",
+	"structure-error-no-doc-element": "문서 요소가 발견되지 않았습니다.",
 	"pick-another": "← 다른 파일 선택",
 	"view-on-commons": "공용에서 보기",
 	"opens-in-new-tab": "새 탭에서 열기",
