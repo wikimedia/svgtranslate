@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Service;
 
+use Symfony\Component\HttpFoundation\AcceptHeader;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -35,19 +36,23 @@ class Renderer
     public function render(string $file, string $lang, ?string $outFile = null) : string
     {
         // Construct the command, using variables that will be escaped when it's run.
-        $command = $this->rsvgCommand.' "$SVG"';
+        $command = $this->rsvgCommand.' "${:SVG}"';
+        $env = ['SVG' => $file];
         if ('fallback' !== $lang) {
             // Set the language to use from the SVG systemLanguage.
             // If the fallback language is being requested, the OS's default will be
             // used instead (as is done in MediaWiki).
-            $command .= " --accept-language=$lang";
+            $command .= ' --accept-language="${:LANG}"';
+            // Reformat the lang as an accept header.
+            $env['LANG'] = (string)AcceptHeader::fromString($lang);
         }
         if ($outFile) {
             // Redirect to output file if required.
-            $command .= ' > "$PNG"';
+            $command .= ' > "${:PNG}"';
+            $env['PNG'] = $outFile;
         }
         $process = Process::fromShellCommandline($command);
-        $process->mustRun(null, ['SVG' => $file, 'PNG' => $outFile]);
+        $process->mustRun(null, $env);
         return $process->getOutput();
     }
 }
