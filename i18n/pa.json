@@ -17,7 +17,7 @@
 	"done": "ਮੁਕੰਮਲ",
 	"cancel": "ਰੱਦ ਕਰੋ",
 	"interface-lang-field-label": "ਸੰਦ ਦੀ ਭਾਸ਼ਾ:",
-	"interface-lang-field-help": "ਟੂਲ ਖੁਦ ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਦਿਖਾਇਆ ਜਾਵੇਗਾ।",
+	"interface-lang-field-help": "ਸੰਦ ਖ਼ੁਦ ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਦਿਖਾਇਆ ਜਾਵੇਗਾ।",
 	"preferred-langs-field-label": "ਵਿੱਚ/ਤੋਂ ਤਰਜਮਾ ਕਰਨ ਲਈ ਤਰਜੀਹੀ ਭਾਸ਼ਾਵਾਂ:",
 	"add-preferred-lang": "ਸ਼ਾਮਲ ਕਰੋ",
 	"search-help": "ਕਾਮਨਜ਼ ਤੋਂ ਫਾਈਲ ਦਾ ਨਾਮ ਲਿਖੋ",
@@ -66,6 +66,6 @@
 	"version": "ਵਰਜਨ $1",
 	"toolforge-logo-alt": "ਟੂਲਫੋਰਜ 'ਐਨਵਿਲ' ਲੋਗੋ",
 	"privacy-policy": "ਪਰਦਾ ਨੀਤੀ",
-	"report-issue": "ਬੱਗ ਦੀ ਰਿਪੋਰਟ ਕਰੋ",
+	"report-issue": "ਬੱਗ ਦੀ ਇਤਲਾਹ ਦਿਓ",
 	"view-source": "ਗਿਟਹਬ ਉੱਤੇ ਵੇਖੋ"
 }
