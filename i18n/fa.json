@@ -31,6 +31,8 @@
 	"invalid-format": "فقط فایل‌های با پسوند SVG پشتیبانی می‌شوند.",
 	"invalid-svg": "خطا در خوانش فایل.",
 	"network-error": "خطا در دریافت اطلاعات از سرورهای ویکی‌مدیا. لطفاً بعداً دوباره تلاش کنید.",
+	"structure-error-no-doc-element": "هیچ عنصر سندی یافت نشد.",
+	"structure-error-nested-tspans-not-supported": "این فایل نمی‌تواند ترجمه شود زیرا حاوی عناصر tspan تو در تو در $1 است.",
 	"pick-another": "← انتخاب یک فایل دیگر",
 	"view-on-commons": "مشاهدهٔ در ویکی‌انبار",
 	"opens-in-new-tab": "باز کردن در برگهٔ جدید",
