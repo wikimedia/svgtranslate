@@ -4,6 +4,8 @@
 			"Умар"
 		]
 	},
+	"svgtranslate": "SVG гоч",
+	"info": "SVG файлаш чохь текстан билгало гочйан гӀо дехьа. ДӀадолош, Commons чуьра цхьа файл схьахаржа.",
 	"learn-more": "Ма-дарра.",
 	"return-to-home": "коьрта агӀонга дехьагӀо",
 	"help": "ГӀо",
@@ -21,6 +23,11 @@
 	"view-on-commons": "Викилармехь хьажа",
 	"default-language": "Ӏадйитаран кепаца мотт",
 	"source-to-target": "тӀехь",
+	"select-language": "Харжа мотт",
+	"confirm-change-target-lang": "Хийца мотт",
+	"upload-button-label": "Викилармин чуйаккха",
+	"upload-button-in-progress": "Викилармин чуйаккхар...",
+	"upload-login-warning": "Чуйаккхархьама авторизаци йина",
 	"download-button-label": "Схьаэца",
 	"download-or-upload": "йа",
 	"pick-an-image-title": "Сурт харжа",
@@ -33,8 +40,12 @@
 	"upload-complete": "Чуйаккхар чекхдаьлла",
 	"upload-complete-commons": "Сурте хьажар",
 	"upload-complete-translate-another": "Кхийдолу сурт гочде",
+	"licenced-under": "ДӀасадаржайо GPL 3.0 а, цул лакхара а лицензица",
+	"developed-by": "Викимедиа Фондан техникин говзанчийн командо кхоьллина",
 	"version": "$1 верси",
 	"git-hash": "ТӀаьххьара коммит - $1",
+	"toolforge-logo-alt": "Toolforge 'анвил' логотип",
+	"powered-by-toolforge": "Toolforge тӀехь болх бо",
 	"privacy-policy": "Къайлаха политика",
 	"report-issue": "Хаийта гӀалатах",
 	"view-source": "Github тӀехь хьажа"
