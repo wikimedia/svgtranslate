@@ -19,6 +19,7 @@
 	"interface-lang-field-label": "ਸੰਦ ਦੀ ਭਾਸ਼ਾ:",
 	"interface-lang-field-help": "ਸੰਦ ਖ਼ੁਦ ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਦਿਖਾਇਆ ਜਾਵੇਗਾ।",
 	"preferred-langs-field-label": "ਵਿੱਚ/ਤੋਂ ਤਰਜਮਾ ਕਰਨ ਲਈ ਤਰਜੀਹੀ ਭਾਸ਼ਾਵਾਂ:",
+	"preferred-langs-field-help": "ਇਹ ਭਾਸ਼ਾਵਾਂ ਸਿਖਰ ਦੇ ਨੇੜੇ ਵਿਖਾਈਆਂ ਜਾਂਦੀਆਂ ਹਨ ਜਦੋਂ ਤੁਸੀਂ ਤਰਜਮੇ ਵਰਕੇ ਵਿੱਚ ਉਹਨਾਂ ਵਿਚਕਾਰ ਬਦਲਦੇ ਹੋ।",
 	"add-preferred-lang": "ਸ਼ਾਮਲ ਕਰੋ",
 	"search-help": "ਕਾਮਨਜ਼ ਤੋਂ ਫਾਈਲ ਦਾ ਨਾਮ ਲਿਖੋ",
 	"search-label": "ਫਾਈਲ ਦਾ ਨਾਮ ('File:' ਅਗੇਤਰ ਤੋਂ ਬਿਨਾਂ) ਜਾਂ URL:",
