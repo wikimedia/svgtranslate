@@ -78,6 +78,7 @@
 	"licenced-under": "Licencijuota pagal GPL 3.0 arba naujesnę versiją",
 	"developed-by": "Sukūrė Wikimedia Vikimedijos fondo technologijų komanda",
 	"version": "Versija $1",
+	"git-hash": "Dabartinė versija $1",
 	"toolforge-logo-alt": "Toolforge 'anvil' logotipas",
 	"powered-by-toolforge": "Naudojama Toolforge",
 	"privacy-policy": "Privatumo politika",
