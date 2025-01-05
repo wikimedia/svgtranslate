@@ -2,5 +2,6 @@
 	"@metadata": {
 		"authors": []
 	},
-	"logout": "Шығу"
+	"logout": "Шығу",
+	"translatewiki": "Осы құралды Translatewiki-де аударуға көмектесіңіз"
 }

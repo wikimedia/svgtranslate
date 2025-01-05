@@ -61,5 +61,6 @@
 	"upload-complete-translate-another": "แปลอีกภาพ",
 	"licenced-under": "อนุญาตภายใต้สัญญา GPL 3.0 หรือใหม่กว่า",
 	"developed-by": "พัฒนาโดยทีมเทคโนโลยีชุมชนของมูลนิธิวิกิมีเดีย",
-	"version": "รุ่นที่ $1"
+	"version": "รุ่นที่ $1",
+	"translatewiki": "ช่วยแปลเครื่องมือนี้ใน Translatewiki"
 }

@@ -16,5 +16,6 @@
 	"structure-error-multiple-text-same-lang": "Đã tìm thấy nhiều phần tử văn bản có mã ngôn ngữ “$2” (trong phần tử có ID “$1”).",
 	"download-button-label": "Tải xuống",
 	"download-or-upload": "hoặc",
-	"translate-labels-title": "Biên dịch"
+	"translate-labels-title": "Biên dịch",
+	"translatewiki": "Giúp dịch công cụ này trên Translatewiki"
 }
