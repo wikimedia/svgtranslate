@@ -11,7 +11,6 @@
 	"login": "Log in",
 	"logout": "Log out",
 	"logged-in-as": "Logged in as $1",
-	"language-settings": "Language settings",
-    "translatewiki": "Help translate this tool on Translatewiki"
+	"language-settings": "Language settings"
 
 }

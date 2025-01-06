@@ -33,6 +33,5 @@
 	"structure-error-nested-tspans-not-supported": "Ùn pò esse traduttu stu file chì cuntene elementi almanacati inseme in $1.",
 	"structure-error-multiple-text-same-lang": "Parecchji elementi scritti trovi incù codice di lingua '$2' (in l'elementu '$1')",
 	"structure-error-contains-tref": "In istu file ci sonu tag tref, ch'ùn sò accittati da stu strumentu.",
-	"structure-error-css-too-complex": "Ci hè CSS troppu cumplicatu da analizà in istu file.",
-	"translatewiki": "Aiuta à traduce stu strumentu in Translatewiki"
+	"structure-error-css-too-complex": "Ci hè CSS troppu cumplicatu da analizà in istu file."
 }

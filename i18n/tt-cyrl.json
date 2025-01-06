@@ -7,6 +7,5 @@
 	},
 	"help": "Ярдәм",
 	"add-preferred-lang": "Өстәргә",
-	"structure-error-multiple-text-same-lang": "'$2' тел коды белән табылган берничә текст элементы (ID '$1' белән элементта).",
-	"translatewiki": "Бу коралны Translatewiki-да тәрҗемә итәргә ярдәм итегез"
+	"structure-error-multiple-text-same-lang": "'$2' тел коды белән табылган берничә текст элементы (ID '$1' белән элементта)."
 }
