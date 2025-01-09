@@ -88,5 +88,5 @@
 	"privacy-policy": "Label for the link to the Wikimedia privacy policy. Displayed in the footer on every page.",
 	"report-issue": "Label for issue-reporting link to Phabricator. Displayed in the footer on every page.",
 	"view-source": "Label for the link to the Github project page. Displayed in the footer on every page.",
-	"translatewiki": "This is a link for the translate tool (translatewiki.net). Displayed in the footer on every page."	
+	"translatewiki": "This is a link for the translate tool (translatewiki.net). Displayed in the footer on every page."
 }

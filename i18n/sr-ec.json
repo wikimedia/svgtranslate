@@ -3,6 +3,7 @@
 		"authors": [
 			"BadDog",
 			"Kizule",
+			"Milicevic01",
 			"Zoranzoki21"
 		]
 	},
@@ -62,5 +63,6 @@
 	"powered-by-toolforge": "Покреће Toolforge",
 	"privacy-policy": "Политика приватности",
 	"report-issue": "Пријави грешку",
-	"view-source": "Github"
+	"view-source": "Github",
+	"translatewiki": "Преведите ову алатку"
 }
