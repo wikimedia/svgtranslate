@@ -7,6 +7,7 @@
 			"GuoPC",
 			"Josephine W.",
 			"Looong",
+			"TFX202X",
 			"Tiger",
 			"Vikarna",
 			"Viztor",
@@ -95,5 +96,6 @@
 	"powered-by-toolforge": "由Toolforge提供支持",
 	"privacy-policy": "隐私政策",
 	"report-issue": "报告错误",
-	"view-source": "在Github上查看"
+	"view-source": "在Github上查看",
+	"translatewiki": "翻译此工具"
 }
