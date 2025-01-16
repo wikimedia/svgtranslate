@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Rivoz"
+		]
 	},
-	"logout": "Logi välja"
+	"logout": "Logi välja",
+	"translatewiki": "Tõlgi see tööriist"
 }
