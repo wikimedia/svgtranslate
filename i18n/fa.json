@@ -3,7 +3,8 @@
 		"authors": [
 			"Beginneruser",
 			"Darafsh",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"svgtranslate": "ترجمهٔ SVG",
@@ -70,5 +71,6 @@
 	"powered-by-toolforge": "طراحی‌شده توسط Toolforge",
 	"privacy-policy": "سیاست محرمانگی",
 	"report-issue": "گزارش یک اشکال",
-	"view-source": "مشاهده در گیت‌هاب"
+	"view-source": "مشاهده در گیت‌هاب",
+	"translatewiki": "ترجمهٔ این ابزار"
 }

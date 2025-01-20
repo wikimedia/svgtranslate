@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"GinawaSaHapon"
+			"GinawaSaHapon",
+			"Qwrop"
 		]
 	},
 	"svgtranslate": "SVG Translate",
@@ -31,7 +32,7 @@
 	"network-error": "Nagka-error habang kinukuha ang impormasyon mula sa mga server ng Wikimedia. Pakisubukan mamaya.",
 	"structure-error-no-doc-element": "Walang nakitang element ng dokumento.",
 	"structure-error-nested-tspans-not-supported": "Hindi masasalin ang file na ito dahil naglalaman ito ng naka-nest na mga tspan element sa $1.",
-	"structure-error-multiple-text-same-lang": "Maraming nakitang mga element na teksto sa wikang '$1'",
+	"structure-error-multiple-text-same-lang": "Maraming nakitang mga elemento na may kodigo ng wika na '$2' (sa elemento na may ID na '$1')",
 	"structure-error-contains-tref": "Naglalaman ang file na ito ng mga tref na tag, na hindi suportado ng kagamitan na ito.",
 	"structure-error-css-too-complex": "Naglalaman ang file na ito ng CSS na masyadong komplikadong mai-parse.",
 	"structure-error-css-has-ids": "Naglalaman ang file na ito ng mga ID ng element sa CSS, na posibleng masira kapag nagdagdag na ang SVG Translate ng mga bagong ID. Dapat gumagamit ito ng mga class, kung kaya.",
@@ -81,5 +82,6 @@
 	"powered-by-toolforge": "Pinapagana ng Toolforge",
 	"privacy-policy": "Patakaran sa pagkapribado",
 	"report-issue": "Mag-ulat ng bug",
-	"view-source": "Tingnan sa Github"
+	"view-source": "Tingnan sa Github",
+	"translatewiki": "Isalin ang kagamitan na ito"
 }
