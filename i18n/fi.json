@@ -3,7 +3,8 @@
 		"authors": [
 			"Kyykaarme",
 			"Maantietäjä",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Samoasambia"
 		]
 	},
 	"svgtranslate": "SVG-käännin",
@@ -61,5 +62,6 @@
 	"powered-by-toolforge": "Voimanlähteenä Toolforge",
 	"privacy-policy": "Tietosuojakäytäntö",
 	"report-issue": "Raportoi bugeista",
-	"view-source": "Näytä Githubissa"
+	"view-source": "Näytä Githubissa",
+	"translatewiki": "Käännä tämä työkalu"
 }
