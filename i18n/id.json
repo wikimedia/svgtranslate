@@ -3,6 +3,7 @@
 		"authors": [
 			"Agam Riyandana",
 			"Akmaie Ajam",
+			"Boesenbergia",
 			"Daud I.F. Argana",
 			"Sonic Speedy",
 			"Veracious"
@@ -27,7 +28,7 @@
 	"search-help": "Tipe nama berkasa dari Commons",
 	"search-label": "Nama berkas (tanpa awalan 'File:') atau URL:",
 	"search-placeholder": "100 Years War France 1435.svg",
-	"translate-button": "Terjemahkan",
+	"translate-button": "Pertalaghi",
 	"no-translations": "File ini tidak memiliki label yang tersedia untuk diterjemahkan.  Silakan pilih gambar lain.",
 	"not-found": "File yang Anda minta tidak dapat ditemukan.  Silakan pilih gambar lain.",
 	"invalid-format": "Hanya berkas SVG yang didukung",
@@ -68,7 +69,7 @@
 	"pick-an-image-title": "Pilih gambar",
 	"pick-an-image-desc": "dari Commons.",
 	"translate-icon-alt": "Ikon yang menandai beberapa bahasa",
-	"translate-labels-title": "Terjemahkan",
+	"translate-labels-title": "Pertalaghi",
 	"translate-labels-desc": "label di dalam gambar.",
 	"commons-logo-alt": "Logo Wikimedia Commons",
 	"update-commons-title": "Perbarui Commons",
