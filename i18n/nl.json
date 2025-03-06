@@ -6,7 +6,8 @@
 			"Elderson",
 			"Mainframe98",
 			"McDutchie",
-			"RadioAzureus"
+			"RadioAzureus",
+			"Siebrand"
 		]
 	},
 	"svgtranslate": "SVG-vertaling",
@@ -86,5 +87,6 @@
 	"powered-by-toolforge": "Mogelijk gemaakt door Toolforge",
 	"privacy-policy": "Privacybeleid",
 	"report-issue": "Probleem melden",
-	"view-source": "Op Github bekijken"
+	"view-source": "Op Github bekijken",
+	"translatewiki": "Dit hulpprogramma vertalen"
 }
