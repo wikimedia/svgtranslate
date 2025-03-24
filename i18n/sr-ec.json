@@ -53,6 +53,7 @@
 	"update-commons-title": "Отпремите слику на Оставу",
 	"update-commons-desc": "или је прво преузмите на свој рачунар.",
 	"upload-complete": "Отпремање је завршено",
+	"upload-complete-message": "Хвала! Ваш превод $1 је отпремљен. Можете наставити превођење термина и поново отпремити исту — допуњеном.",
 	"upload-complete-commons": "Прикажи слику",
 	"upload-complete-translate-another": "Преведи другу слику",
 	"licenced-under": "Лиценца: ОЈЛ 3.0 или новија",
