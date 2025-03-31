@@ -26,7 +26,7 @@
 		"symfony/mime": "^5.4",
 		"symfony/monolog-bundle": "^3.1",
 		"symfony/process": "^5.4",
-		"symfony/property-access": "^5.4",
+		"symfony/property-access": "^6.4",
 		"symfony/property-info": "^5.4",
 		"symfony/serializer": "^5.4",
 		"symfony/mailer": "^5.4",
