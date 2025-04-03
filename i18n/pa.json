@@ -33,7 +33,7 @@
 	"structure-error-no-doc-element": "ਕੋਈ ਲਿਖਤ ਤੱਤ ਨਹੀਂ ਮਿਲਿਆ।",
 	"structure-error-nested-tspans-not-supported": "ਇਸ ਫਾਈਲ ਦਾ ਤਰਜਮਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਇਸ ਵਿੱਚ $1 ਵਿੱਚ ਨੈਸਟਡ tspan ਤੱਤ ਹਨ।",
 	"structure-error-multiple-text-same-lang": "ਭਾਸ਼ਾ ਕੋਡ '$2' (ID '$1' ਦੇ ਨਾਲ ਤੱਤ ਵਿੱਚ) ਨਾਲ ਪਾਏ ਗਏ ਕਈ ਟੈਕਸਟ ਤੱਤ।",
-	"structure-error-contains-tref": "ਇਸ ਫਾਈਲ  ਵਿੱਚ tref ਟੈਗ ਹਨ, ਜੋ ਇਸ ਟੂਲ ਦੁਆਰਾ ਸਹਾਇਕ ਨਹੀਂ ਹਨ।",
+	"structure-error-contains-tref": "ਇਸ ਫਾਈਲ  ਵਿੱਚ tref ਟੈਗ ਹਨ, ਜੋ ਇਸ ਸੰਦ ਵੱਲੋ ਸਹਾਇਕ ਨਹੀਂ ਹਨ।",
 	"structure-error-css-too-complex": "ਇਸ ਫਾਈਲ ਵਿੱਚ CSS ਹੈ ਜੋ ਪਾਰਸ ਕਰਨ ਲਈ ਬਹੁਤ ਗੁੰਝਲਦਾਰ ਹੈ।",
 	"pick-another": "← ਇੱਕ ਹੋਰ ਫਾਇਲ ਚੁਣੋ",
 	"view-on-commons": "ਕਾਮਨਜ਼ ਉੱਤੇ ਵੇਖੋ",
