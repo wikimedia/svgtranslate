@@ -4,6 +4,7 @@
 			"Fnielsen",
 			"Peterleth",
 			"Saederup92",
+			"Silas Nicolaisen",
 			"Tinamalmgren"
 		]
 	},
@@ -84,5 +85,6 @@
 	"powered-by-toolforge": "Powered by Toolforge",
 	"privacy-policy": "Fortrolighedspolitik",
 	"report-issue": "Rapportér en fejl",
-	"view-source": "Vis på Github"
+	"view-source": "Vis på Github",
+	"translatewiki": "Oversæt dette værktøj"
 }
