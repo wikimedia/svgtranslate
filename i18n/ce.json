@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Робин",
 			"Умар"
 		]
 	},
@@ -17,8 +18,19 @@
 	"cancel": "Йухайаккхар",
 	"interface-lang-field-label": "ГӀирсан мотт:",
 	"interface-lang-field-help": "ГӀирсан интерфейс хӀокху маттахь гойтур бу.",
+	"preferred-langs-field-label": "Гоч дан мегаш долу меттнаш хӀокх/кху тӀе:",
+	"preferred-langs-field-help": "ХӀар меттнаш лакхахь гойтур ду, агӀо царца гоч йаш хенахь.",
 	"add-preferred-lang": "ТӀетоха",
+	"search-help": "Викиларма чура файлан цӀе йаза йе",
+	"search-label": "Файлан цӀе ('File:' дешхьалхе йоцуш) йа URL:",
+	"search-placeholder": "Францера 100 шеран тӀом.  1435 шо.svg",
 	"translate-button": "Гочйе",
+	"no-translations": "ХӀокху файлан цхьа а ярлыкаш яц гочъян йиш йолуш. Дехар ду, кхин сурт харжар.",
+	"not-found": "Лоьхуш йол файл ца карийна. \nДехар ду, кхин файла харжар.",
+	"invalid-format": "SVG файлаш бен ца мега.",
+	"invalid-svg": "Файл йошуш гӀалат даьлла.",
+	"network-error": "Викиларма серверш тӀера хаамаш схьаэцарехь гӀалат даьлла. Дехар ду, тӀаьхо хьажар.",
+	"structure-error-no-doc-element": "Document элемент ца карийна.",
 	"pick-another": "← кхий файл харжа",
 	"view-on-commons": "Викилармехь хьажа",
 	"default-language": "Ӏадйитаран кепаца мотт",
