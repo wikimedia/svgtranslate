@@ -33,6 +33,7 @@
 	"structure-error-no-doc-element": "Document элемент ца карийна.",
 	"pick-another": "← кхий файл харжа",
 	"view-on-commons": "Викилармехь хьажа",
+	"opens-in-new-tab": "Керлачу вкладкехь схьайелало",
 	"default-language": "Ӏадйитаран кепаца мотт",
 	"source-to-target": "тӀехь",
 	"select-language": "Харжа мотт",
@@ -60,5 +61,6 @@
 	"powered-by-toolforge": "Toolforge тӀехь болх бо",
 	"privacy-policy": "Къайлаха политика",
 	"report-issue": "Хаийта гӀалатах",
-	"view-source": "Github тӀехь хьажа"
+	"view-source": "Github тӀехь хьажа",
+	"translatewiki": "ХӀара гӀирс гочбе"
 }
