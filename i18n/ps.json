@@ -34,7 +34,7 @@
 	"structure-error-nested-tspans-not-supported": "دا دوتنه نشي ژباړل کېدای ځکه چې په $1 کې ځړول شوي tspan توکي لري.",
 	"pick-another": "← بله دوتنه راخيستل",
 	"view-on-commons": "په ويکي‌خونديځ کې کتل",
-	"opens-in-new-tab": "په نوې کړکۍ کې پرانيستل",
+	"opens-in-new-tab": "په نوې کړکۍ کې پرانېستل",
 	"default-language": "تلواليزه ژبه",
 	"source-lang-not-found": "ناژباړل شوی. تلواليز: $1",
 	"source-to-target": "ته",
