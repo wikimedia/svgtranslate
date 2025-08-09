@@ -39,8 +39,8 @@ $( function () {
  */
 App.getCookieVal = function ( key, defaultVal ) {
 	var cookieData,
-		Cookies = require( 'js-cookie' ),
-		cookie = Cookies.get( 'svgtranslate' );
+		JsCookie = require( 'js-cookie' ),
+		cookie = JsCookie.get( 'svgtranslate' );
 	if ( cookie ) {
 		try {
 			cookieData = JSON.parse( cookie );
@@ -52,6 +52,27 @@ App.getCookieVal = function ( key, defaultVal ) {
 	}
 	// If no cookie is set, return the default.
 	return defaultVal;
+};
+
+/**
+ * Set a value in the svgtranslate cookie.
+ *
+ * @param {string} key
+ * @param {*} val
+ */
+App.setCookieVal = function ( key, val ) {
+	var JsCookie = require( 'js-cookie' );
+	var cookie = {};
+	var cookieData = JsCookie.get( 'svgtranslate' );
+	if ( cookieData ) {
+		try {
+			cookie = JSON.parse( cookieData );
+		} catch ( e ) {
+			// If the cookie is invalid JSON, ignore it.
+		}
+	}
+	cookie[ key ] = val;
+	JsCookie.set( 'svgtranslate', JSON.stringify( cookie ) );
 };
 
 /**
