@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mormegil",
 			"Patriccck",
 			"Patrik L.",
 			"Robins7"
@@ -38,12 +39,14 @@
 	"source-lang-not-found": "Nepřeloženo. Výchozí: $1",
 	"source-to-target": "do",
 	"select-language": "Vyberte jazyk",
+	"confirmation-to-switch-target-lang": "Pokoušíte se změnit jazyk překladu, ale máte neuložené překlady. Změnou jazyka ztratíte jakékoli přidané překlady. Před pokračováním prosím nahrajte překlady na Commons nebo si stáhněte přeložený soubor. Chcete pokračovat?",
 	"confirm-change-target-lang": "Změnit jazyk",
 	"upload-button-label": "Nahrát na Commons",
 	"upload-button-in-progress": "Nahrávání na Commons…",
 	"upload-login-warning": "Přihlaste se pro umožnění nahrávání",
 	"download-button-label": "Stáhnout",
 	"download-or-upload": "nebo",
+	"translation-image-alt": "Obrázek, který se právě překládá. Popis není k dispozici.",
 	"preview-error-occurred": "Při načítání náhledu došlo k chybě. Pokračujte v překládání, pokud chyba přetrvává, nahlaste ji (pomocí odkazu v zápatí níže).",
 	"download-icon-alt": "Ikona označující stažení souboru",
 	"pick-an-image-title": "Vybrat obrázek",
@@ -61,8 +64,11 @@
 	"licenced-under": "Dostupné pod licencí GPL 3.0 nebo pozdější",
 	"developed-by": "Vyvinuto komunitou technického týmu nadace Wikimedia",
 	"version": "Verze $1",
+	"git-hash": "Aktuálně na commitu $1",
 	"toolforge-logo-alt": "Logo „kovadlina“ Toolforge",
+	"powered-by-toolforge": "Běží na Toolforge",
 	"privacy-policy": "Zásady ochrany osobních údajů",
 	"report-issue": "Nahlásit chybu",
-	"view-source": "Zobrazit na Githubu"
+	"view-source": "Zobrazit na Githubu",
+	"translatewiki": "Přeložit tento nástroj"
 }
