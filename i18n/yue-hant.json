@@ -3,7 +3,8 @@
 		"authors": [
 			"JeffreyKim",
 			"Ktchankt",
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"svgtranslate": "SVG 翻譯",
@@ -70,7 +71,7 @@
 	"translate-labels-desc": "圖入邊嘅標簽",
 	"commons-logo-alt": "維基共享資源標誌",
 	"update-commons-title": "更新共享資源",
-	"update-commons-desc": "或者直接單撈去你部電腦。",
+	"update-commons-desc": "或者直接下載去你部電腦。",
 	"upload-complete": "上載完",
 	"upload-complete-message": "多謝！你嘅翻譯成 $1 已經上載咗。你可以繼續翻譯啲標籤，然後再上載過嚟更新啲相。",
 	"upload-complete-commons": "睇相",
