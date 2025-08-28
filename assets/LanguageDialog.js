@@ -119,18 +119,12 @@ App.LanguageDialog.prototype.getActionProcess = function ( action ) {
 	var dialog = this;
 	if ( action === 'done' ) {
 		return new OO.ui.Process( function () {
-			var newUrl,
-				cookieVal = {
-					interfaceLang: dialog.interfaceLangButton.currentLang,
-					preferredLangs: dialog.preferredLangsWidget.getValue()
-				},
-				Cookies = require( 'js-cookie' );
 			// Store the new cookie value.
-			// This is the only place the SVG Translate cookie is written.
-			Cookies.set( 'svgtranslate', cookieVal );
+			App.setCookieVal( 'interfaceLang', dialog.interfaceLangButton.currentLang );
+			App.setCookieVal( 'preferredLangs', dialog.preferredLangsWidget.getValue() );
 			// Redirect back to where we currently are (without the #lang-settings fragment),
 			// in order to reload the interface in the new language.
-			newUrl = window.location.href.slice( 0, window.location.href.indexOf( '#' ) );
+			var newUrl = window.location.href.slice( 0, window.location.href.indexOf( '#' ) );
 			window.location.href = newUrl;
 			dialog.close( { action: action } );
 		} );
