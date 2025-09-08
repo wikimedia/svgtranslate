@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bapham123",
 			"Doraemonluonbentoi",
 			"Flyplanevn27",
 			"Leducthn",
@@ -11,11 +12,28 @@
 		]
 	},
 	"svgtranslate": "Dịch SVG",
+	"learn-more": "Tìm hiểu thêm.",
 	"help": "Trợ giúp",
 	"login": "Đăng nhập",
 	"logout": "Đăng xuất",
+	"language-settings": "Tùy chọn ngôn ngữ",
+	"done": "Xong",
+	"cancel": "Hủy bỏ",
+	"add-preferred-lang": "Thêm",
+	"translate-button": "Dịch",
 	"structure-error-multiple-text-same-lang": "Đã tìm thấy nhiều phần tử văn bản có mã ngôn ngữ “$2” (trong phần tử có ID “$1”).",
+	"view-on-commons": "Xem trên Commons",
+	"opens-in-new-tab": "Mở trong thẻ mới",
+	"default-language": "Ngôn ngữ mặc định",
+	"source-to-target": "thành",
+	"select-language": "Chọn ngôn ngữ",
+	"confirm-change-target-lang": "Thay đổi ngôn ngữ",
+	"upload-button-label": "Tải lên Commons",
+	"upload-button-in-progress": "Đang tải lên Commons…",
 	"download-button-label": "Tải xuống",
 	"download-or-upload": "hoặc",
-	"translate-labels-title": "Biên dịch"
+	"translate-labels-title": "Biên dịch",
+	"upload-complete": "Tải lên hoàn tất",
+	"version": "Phiên bản $1",
+	"view-source": "Xem trên Github"
 }
