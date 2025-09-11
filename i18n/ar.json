@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
+			"Mohammed Qays",
 			"Sandra Hanbo",
 			"أَحمد",
 			"ديفيد"
@@ -73,7 +74,7 @@
 	"update-commons-title": "تحديث كومنز",
 	"update-commons-desc": "أو قم بالتنزيل مباشرةً على حاسوبك.",
 	"upload-complete": "اكتمل الرفع",
-	"upload-complete-message": "شكر! تم رفعترجماتك إلى $1، يمكنك متابعة ترجمة التسميات ورفعها مرة أخرى لتحديث الصورة.",
+	"upload-complete-message": "شكر! تم رفع ترجماتك إلى $1، يمكنك متابعة ترجمة التسميات ورفعها مرة أخرى لتحديث الصورة.",
 	"upload-complete-commons": "عرض الصورة",
 	"upload-complete-translate-another": "ترجم صورة أخرى",
 	"licenced-under": "مرخص بموجب رخصة جنو العمومية 3.0 أو أحدث",
