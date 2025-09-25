@@ -43,7 +43,7 @@
 		"slevomat/coding-standard": "^8.0",
 		"symfony/browser-kit": "^5.4",
 		"symfony/css-selector": "^5.4",
-		"symfony/debug-bundle": "^5.4",
+		"symfony/debug-bundle": "^6.4",
 		"symfony/phpunit-bridge": "^7",
 		"symfony/stopwatch": "^5.4",
 		"symfony/web-profiler-bundle": "^5.4"
