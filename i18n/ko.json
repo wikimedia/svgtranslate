@@ -23,7 +23,7 @@
 	"interface-lang-field-label": "도구 언어:",
 	"interface-lang-field-help": "번역 도구가 이 언어로 표시됩니다.",
 	"preferred-langs-field-label": "번역 선호 언어:",
-	"preferred-langs-field-help": "이 언어들은 번역 페이지에서 언어를 전환할 때 상단에 표시됩니다.",
+	"preferred-langs-field-help": "이 언어들은 번역 문서에서 언어를 전환할 때 상단에 표시됩니다.",
 	"add-preferred-lang": "추가",
 	"search-help": "공용으로부터 파일 이름 입력하기",
 	"search-label": "파일 이름 ('파일:' 접두어 없이) 또는 URL:",
